@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <ul>
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+  </ul>
+  <script>
+    // 克隆节点 复制
+    // 语法
+    // const dupNode = node.cloneNode()
+    // duplicate 复制
+
+    // 想要把ul中第一个li标签复制克隆一份
+    const ul = document.querySelector('ul')
+    const dup_li = ul.children[0].cloneNode(true)
+    console.log(dup_li)
+
+    // 2. 传参  使用的时候常会传入true
+    // false  如果不传参,默认是false,表示克隆标签,不复制标签里的内容
+    // true   复制标签和标签内的内容
+
+    const dup_li2 = ul.children[1].cloneNode(true)
+    console.log(dup_li2)
+
+    // 3. 应用
+    // 我们可以克隆节点,往ul中追加(插入)
+    ul.appendChild(dup_li)
+
+
+  </script>
+</body>
+
+</html>

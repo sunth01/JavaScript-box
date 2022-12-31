@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script src="./lodash.min.js"></script>
+    <script>
+        // 库 ===> library JS库 ，我们可以拿来直接用
+
+        const obj = {
+            name:'航桑',
+            age:18,
+            hobby:['dance', 'music'],
+            book:{
+                title:'Javascript',
+                price:66
+            }
+        }
+
+        // lodash 给我们封装好了，直接用就行了 但是需要注意  
+        // _.cloneDeep()//名字不能修改
+        // cloneDeep 深拷贝    _.cloneDeep(obj)  _表示lodash
+
+        const o = _.cloneDeep(obj)
+        console.log(o)
+
+        o.hobby[0] = 'rap'
+        console.log(o, obj)
+    </script>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 静态方法：
+        // Object.keys() 返回对象的所有属性名，他是一个数组
+        // Object.values 返回对象的所有属性值，他也是一个数组
+        const obj = {
+            name: '胡英俊',
+            age: 37
+        }
+        for (let key in obj) {
+            console.log(key)
+            console.log(obj[key])
+        }
+        // 取属性名
+        console.log(Object.keys(obj))
+        // 取属性值
+        console.log(Object.values(obj))
+
+        // 语法：Object.assign(target, ...sources)
+        // target:目标（左边）
+        // sources:源对象，可以是一个或多个（右边）
+        // 对象的浅拷贝
+        // 把sources里面的属性拷贝给target
+        const obj1 = {}
+        const obj2 = {name:'ssd', ggg:34}
+        const res = Object.assign(obj1,obj2)
+        console.log(obj1)
+        console.log(res)
+        console.log(obj1 === res) // true
+
+        const obj3 = {
+            a: 1,
+        }
+        const obj4 = {
+            b: 2,
+        }
+        const obj5 = {
+            c: 4,
+        }
+        Object.assign(obj4,obj3,obj5)
+        console.log(obj4,obj3,obj5)
+    </script>
+</body>
+
+</html>

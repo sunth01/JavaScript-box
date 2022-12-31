@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+          width: 500px;
+          height: 500px;
+          background-color: #ccc;
+          color: #fff;
+          text-align: center;
+          font-size: 100px;
+        }
+      </style>
+</head>
+<body>
+    <div class="box"></div>
+    <script>
+        const box = document.querySelector('.box')
+        let i = 1 
+        const move = () => {
+            // 只要鼠标一移动，i就会变化
+            box.innerHTML = i++
+        }
+
+        // 需求： 每隔100ms只执行一次。setTimeout 
+        // 整个程序，应该只有一个定时器在走
+        const throttle = (fn, ms = 0) => {
+            let timerId
+            return function(){
+                // 如果没有定时器，就开启定时器
+                if(!timerId){
+                    // 开启第一个定时器之后，timerId 
+                    timerId = setTimeout(() => {
+                        // 箭头函数没有arguments对象，找的是上层函数中的arguments
+                        fn.apply(this, arguments)
+                        // fn.apply(this, args)
+                        // 这里，让下一次定时器又可以开启
+                        timerId = null
+                    }, ms);
+                }
+
+            }
+        }
+        box.addEventListener('mousemove', throttle(move, 10))
+
+
+
+    </script>
+</body>
+</html>

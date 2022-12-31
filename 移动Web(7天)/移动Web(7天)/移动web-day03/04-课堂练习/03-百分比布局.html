@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        ul {
+            /* 给块级元素添加固定定位(脱标后) 块级宽度由默认的父级100%,变为有实际内容撑开 */
+            list-style: none;
+            position: fixed;
+            bottom: 0;
+            /* 补充宽度代码 */
+            width: 100%;
+            /* background-color: pink; */
+        }
+        li {
+            float: left;
+            width: 20%;
+        }
+        li img {
+            width: 100%;
+        }
+        /* 百分比布局,也叫流式布局 */
+        /* 实际开发中作为布局手段的频率较低 */
+        /* 和前面所学的布局混合使用,取其优点 */
+    </style>
+</head>
+<body>
+    <ul>
+        <li>
+            <a href="#">
+                <img src="../01-案例/02-京东/images/car.png" alt="">
+            </a>
+        </li>
+        <li>
+            <a href="#">
+                <img src="../01-案例/02-京东/images/classify.png" alt="">
+            </a>
+        </li>
+        <li>
+            <a href="#">
+                <img src="../01-案例/02-京东/images/index.png" alt="">
+            </a>
+        </li>
+        <li>
+            <a href="#">
+                <img src="../01-案例/02-京东/images/jd.png" alt="">
+            </a>
+        </li>
+        <li>
+            <a href="#">
+                <img src="../01-案例/02-京东/images/login.png" alt="">
+            </a>
+        </li>
+    </ul>
+</body>
+</html>

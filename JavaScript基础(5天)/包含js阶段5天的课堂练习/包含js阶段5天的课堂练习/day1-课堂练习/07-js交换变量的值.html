@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>交换变量的值</title>
+</head>
+
+<body>
+    <script>
+        // 需求:
+        let num1 = 10
+        let num2 = 20
+        // 交换两个变量的值, 最终结果变为:
+        // num1:20
+        // num2:10
+
+        // 1. num1和num2不能互相赋值, 不然会造成其中一个值的丢失, 所以需要一个第三方临时变量
+        let linshi
+        // 2. 把num1的值 赋予 临时变量, 此时num1就空出来
+        linshi = num1
+        console.log(linshi);
+        // 3. 把num2的值赋予num1, 此时num1完成需求, num2就空出来了
+        num1 = num2
+        console.log(num1);
+        // 4. 把临时变量的值赋予num2, 此时num2完成需求
+        num2 = linshi
+        console.log(num2);
+    </script>
+</body>
+
+</html>

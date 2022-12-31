@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function getSum(num1, num2) {
+            console.log(num2) // undefined
+            document.write(num1 + num2 + "<br>")
+        }
+        // 1. 正常调用并传递参数
+        getSum(10, 15) // 25
+
+        // 2. 调用时传一个参数
+        getSum(10) // NaN  => 10 + undefined = NaN(非数值)
+
+        // 3. 优化代码: 给形参默认值
+        function getSum2(num1 = 0, num2 = 0) {
+            document.write(num1 + num2 + "<br>")
+        }
+        getSum2(3) // 3
+
+        // 4. 传递undefined作为参数
+        getSum2(7, undefined) // 7+0 = 7
+        // ☆ undefined 不能作为参数进行传递 ☆
+    </script>
+</body>
+
+</html>

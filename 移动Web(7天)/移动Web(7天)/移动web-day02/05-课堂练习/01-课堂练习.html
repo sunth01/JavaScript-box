@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* perspective 透视/视距 */
+        body {
+            /* 视距的取值通常为:800-1200px / 通常为body添加 */
+            perspective: 1200px;
+        }
+
+        div {
+            width: 200px;
+            height: 200px;
+            margin: 50px auto;
+            transition: all 1s;
+            font-size: 30px;
+            text-align: center;
+            line-height: 200px;
+        }
+
+        .box1 {
+            background-color: pink;
+        }
+
+        .box2 {
+            background-color: skyblue;
+        }
+
+        .box3 {
+            background-color: #f70;
+        }
+
+        .box1:hover {
+            transform: translateX(200px);
+        }
+
+        .box2:hover {
+            transform: translateY(200px);
+        }
+
+        .box3:hover {
+            transform: translateZ(-200px);
+        }
+
+        /* 元素朝X和Y轴位移时, 可以直观看到位移过程 */
+        /* 元素朝Z轴位移时, 无法直观看到 */
+        /* Z轴是视线方向, 移动效果为近大远小, 页面/屏幕是平面的, 默认无法观察到效果 */
+        /* 需要一个观察者, 代替人眼, 站在网页里去观察这个元素变化 */
+        /* 做法： 给元素的父级添加这双眼睛（透视 => perspective(视距)） */
+    </style>
+</head>
+
+<body>
+    <div class="box1">X</div>
+    <div class="box2">Y</div>
+    <div class="box3">Z</div>
+</body>
+
+</html>

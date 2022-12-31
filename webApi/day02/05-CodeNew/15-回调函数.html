@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button>点击</button>
+    <script>
+        // 回调函数: 把函数A作为参数传入到另一个函数B里面，我们把函数A叫做回调函数
+        // ==> 理解 : 目前可以这么理解，一开始不执行，回头再调用的函数
+        // 目前遇到的使用场景 两个
+        // 1. 定时器
+        // setInterval(function(){
+        //     console.log('我是回调函数')
+        // },1000)
+
+        // // 2. 事件监听
+        const btn = document.querySelector('button')
+        // btn.addEventListener('click', function(){
+        //     console.log('我也是回调函数')
+        // })
+
+
+
+
+        // 写在外面的情况
+            // 表达式的方式定义了一个函数 callback ==> 回调
+        const callback = function(){
+            console.log('好好学习,天天向上')
+        }
+        // 把callback作为另一个函数的参数传入
+        // ==> 注意:这里没有加括号 callback() 加括号表示调用函数
+        setInterval(callback, 1000)
+
+
+        const cb = function(){
+            console.log('早睡早起身体好')
+        }
+        //注意,这里也不要加括号
+        btn.addEventListener('click', cb)
+    </script>
+</body>
+</html>

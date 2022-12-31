@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>js数组</title>
+</head>
+
+<body>
+    <script>
+        // 数组: 把一把数组存储在单个变量名下的一种方式.
+        // 例如: 需要30条热搜的数据, 后端如果返回30个变量,过于麻烦, 会选择传递一个变量, 但是这个变量包含了30条数据.
+        // 这种存储多条数据的形式, 称之为数组
+
+        // 数组(Array) 语法格式:
+        let arr = ["数据1", "数据2", "数据3", 100]
+
+        // document.write(arr)
+        console.log(arr);
+
+        // 注意点:
+        // 1. 通常会使用log去打印数组(查看更多信息)
+        // 2. 数组有自己的顺序, 每个数据都有自己的编号(索引/下标)
+        // 3. 下标是从0开始计算的(重点)
+        // 4. 数组可以存储任意类型的数据
+
+        // 数组取值:
+        // 从数组里单独取出某个值, 通过元素的下标来获取   数据名[下标]
+        console.log(arr[3]);
+
+        // 获取数据的长度?
+        console.log(arr.length);
+        
+
+    </script>
+</body>
+
+</html>

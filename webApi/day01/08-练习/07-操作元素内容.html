@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="div1">距离过年还有58天</div>
+    <script>
+        // 1. 获取元素
+        const div1 = document.querySelector('#div1')
+        // 2. 修改文本内容
+        console.log(div1)
+        console.dir(div1)
+        // 输出文本内容
+        console.log(div1.innerHTML)
+        console.log(div1.innerText)
+        // 修改文本内容
+        div1.innerHTML = '生活生活生活'
+        div1.innerText = '学习学习学习'
+
+        // 3. 修改内容的同时
+        // innerText 不解析标签
+        // innerHTML 解析标签
+        div1.innerText = `<a href="#">距离过年还有58天</a>`
+        div1.innerHTML = `<a href="#">距离过年还有58天</a>`
+
+
+
+
+
+    </script>
+       
+</body>
+</html>

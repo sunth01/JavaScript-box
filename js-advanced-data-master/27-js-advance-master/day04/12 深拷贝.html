@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 深拷贝： 在堆内存中新开辟一个空间存放新的对象，
+        //        递归的拷贝原对象的所有属性和方法，拷贝前后两个对象，相互不影响。
+
+        // 递归的拷贝: 一层一层，每一层都新建一个内存空间。
+
+        let obj = {
+            name:'JS',
+            book:{
+                title:"You Don't Know JS",
+                price:"169"
+            }
+        }
+
+        let a1 = { b: { c:{ d:{} }}}
+        // 浅拷贝  只拷贝第一层 
+        let a2 = {...a1}
+        console.log(a1.b.c === a2.b.c) // true 
+
+        // 深拷贝  一层一层，每一层都开辟一个空间，存放新的对象
+        // 新旧两个对象，不共享内存。
+        let a3 = deepClone(a1)  // deepClone 表示深拷贝的实现方法
+
+        console.log(a3.b.c === a3.b.c) // false  看内存图得出结论。。。
+
+        // 面试题：
+        // Q1 : 什么是深拷贝 ？
+        // Q2 : 实现深拷贝的方式？
+        // 1. JSON.parse(JSON.stringify(obj))
+        // 2. 手写递归实现
+        // 3. 使用一些JS库，比如lodash等 
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 1. 创建对象
+        // 字面量的方式创建对象   
+        // 字面量  ==>  字面意思，看见{}就知道 哦 这是一个对象 
+                //   ==>  []  这个就是一个数组 ，  ''  ==> 字符串
+                const obj = {
+            name:'贵儿桑',
+            age:18
+        }
+
+        // 2. 通过new Object()
+        const obj2 = new Object({name:'贵儿桑2', age:19})
+
+        // 3. 通过构造函数来创建
+        // 构造函数就相当于是一个模板,我们可以把一些公共的属性放到构造函数中
+        // 约定:构造函数首字母大写
+        function Star (name, age, dizhi){
+            this.name = name
+            this.age = age
+            this.dizhi = dizhi
+        }
+        // new 一个对象
+        const ldh = new Star('刘德华', 18, '北京')
+        const zxy = new Star('张学友', 20, '上海')
+        console.log(ldh)
+        console.log(zxy)
+
+        
+    </script>
+</body>
+</html>

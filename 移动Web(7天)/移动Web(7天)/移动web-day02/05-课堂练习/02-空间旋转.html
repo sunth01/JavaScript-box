@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* perspective 透视/视距 */
+        body {
+            /* 视距的取值通常为:800-1200px / 通常为body添加 */
+            perspective: 1200px;
+        }
+
+        div {
+            width: 200px;
+            height: 200px;
+            margin: 50px auto;
+            transition: all 1s;
+            font-size: 30px;
+            text-align: center;
+            line-height: 200px;
+        }
+
+        .box1 {
+            background-color: pink;
+        }
+
+        .box2 {
+            background-color: skyblue;
+        }
+
+        .box3 {
+            background-color: #f70;
+        }
+
+        .box1:hover {
+            /* 左手法则: 大拇指朝X轴的正值方向(→) 手指弯曲的方向就是翻转的方向 */
+            transform: rotateX(200deg);
+        }
+
+        .box2:hover {
+            /* 左手法则: 大拇指朝Y轴的正值方向(下) 手指弯曲的方向就是翻转的方向 */
+            transform: rotateY(200deg);
+
+        }
+
+        .box3:hover {
+            /* 左手法则: 大拇指朝Z轴的正值方向(朝向自己) 手指弯曲的方向就是翻转的方向(顺时针) */
+            transform: rotateZ(200deg);
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box1">X</div>
+    <div class="box2">Y</div>
+    <div class="box3">Z</div>
+</body>
+
+</html>

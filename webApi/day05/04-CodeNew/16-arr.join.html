@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // arr.join(分隔符)
+
+        // 作用： 将数组转为由分隔符隔开的字符串，并返回这个字符串。
+        // 参数： 分隔符
+        // 1. 如果参数省略,默认使用逗号分隔
+        const arr = ['pink', 'blue', 'skyblue']
+        const res = arr.join()
+        console.log(res)  // pink,blue,skyblue
+
+        // 2. 如果传入一个空字符串 ''   ==> 常用
+        const res2 = arr.join('')
+        console.log(res2) // pinkblueskyblue
+
+        // 3. 用分隔符来拼接  ==> 常用
+        const res3 = arr.join('-')
+        const res4 = arr.join('🎈')
+        console.log(res3)
+        console.log(res4)
+    </script>
+</body>
+
+</html>

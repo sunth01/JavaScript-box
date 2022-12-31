@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 范围表示法
+        // 用-表示范围
+        // [0123456789]  ==> [0-9] [a-z]
+        // 但是，注意，不能写 [9-0]  [Z-A] [z-a], 码值小的-码值大的
+
+        // [a-z]  匹配所有的英文小写字母   只能选一个
+        // [A-Z]  匹配所有的大写字母     只能选一个
+        // [0-9]  0-9只选一个
+        // [a-zA-Z0-9]  大小写字母加数字  只选一个
+        // [a-zA-Z0-9_] 大小写字母加数字加下划线 只选一个
+
+        console.log(/^[A-Z]$/.test('d')) // false 
+        console.log(/^[A-Z]$/.test('D')) // true 
+        console.log(/^[a-z]$/.test('i')) // true
+
+
+
+        // 密码校验
+        console.log(/^[a-zA-Z0-9_]{8,16}$/.test('zhan69898_'))
+
+        // 需求 腾讯qq号 从 10000开始 
+        //  10000   第一位 1-9 ， 后面的只要是数字就行了 整个>=5，
+
+        // 校验qq号
+        const reg = /^[1-9][0-9]{4,}$/
+    </script>
+</body>
+
+</html>

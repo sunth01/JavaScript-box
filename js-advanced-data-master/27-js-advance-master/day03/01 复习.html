@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 对象 Object 静态方法：在构造函数本身上定义的方法
+        // 1. Object.keys(obj)  返回传入对象的所有属性名组成的字符串数组
+        const obj = {
+            name:'松桑',
+            age:18
+        }
+        const res = Object.keys(obj)
+        console.log(res)
+
+        // 2. Object.values(obj) 返回传入对象的所有属性值组成的数组
+        const res2 = Object.values(obj)
+        console.log(res2)
+
+        // 3. Object.assign()  
+        // 语法：Object.assign(target, ...sources)
+        // 作用：对象的浅拷贝
+                // target 目标对象  
+                // sources 源对象，一个或者多个
+        // 返回值：目标对象
+
+        const obj2 = {}
+        const o = {name:'练练'}
+        const res3 = Object.assign(obj2, o)
+        console.log(res3)
+        console.log(res3 === obj2)
+
+        // 合并对象
+        const o1 = {a:1}
+        const o2 = {b:2}
+        const o3 = {c:3}
+
+        const res4 = Object.assign(o1, o2, o3)
+        console.log(res4)
+
+
+
+
+    </script>
+</body>
+</html>

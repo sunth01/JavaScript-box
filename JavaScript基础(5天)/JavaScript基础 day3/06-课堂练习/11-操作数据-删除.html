@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        let arr = [1,2,3,4,5,6,7,8]
+        //(1) pop
+        //语法：数组.pop（）
+        // 作用：从数组里删除‘最后’一个元素，并返回被删除的元素
+        // console.log(arr.pop());//8
+        // console.log(arr);
+
+        // (2) shift
+        // 语法：数组.shift（）
+        // 作用：从数组里删除“第一个”元素，并返回被删除的元素
+        // console.log(arr.shift());//1
+        // console.log(arr);
+
+        // (3) splice
+        // 语法：数组.splice（）
+        // 作用：数组.splice（“第一个值 其实删除位置的下标”，“第二个值 需要删除元素的个数”）并返回第一个数组，包含被删除的元素
+        // console.log(arr.splice(2, 2));// 3 4
+        console.log(arr.splice(2)); // 如不写参数2，默认从其实位置删到最后
+        console.log(arr);
+    </script>
+</body>
+</html>

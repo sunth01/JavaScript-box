@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>js书写位置</title>
+</head>
+<body>
+    <!-- 第一种: 内部js书写位置(通常书写在body内部的最下面) -->
+    <script>
+        // alert("自定义内容")  警示弹窗 触发浏览器自带的弹窗并展示自定义内容
+        alert("我是内部js书写位置")
+    </script>
+
+    <!-- 第二种: 外部js书写位置 利用script标签的src属性, 引入相应的.js后缀的文件 -->
+    <script src="./js/外部js文件.js">
+        // 禁止在引入标签的内部继续书写内容, 写入的代码会被忽略, 只会下载并执行外部引入的js文件
+        alert("测试内容")
+    </script>
+
+    <!-- 第三种: 行内js书写位置 -->
+    <!-- 注意: 现阶段了解即可, 在框架阶段有特殊用法 -->
+    <button onclick="alert(123)">点击按钮</button>
+</body>
+
+</html>

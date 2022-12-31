@@ -1,0 +1,17 @@
+// 变量是存储值的容器，且值是可以改变的
+// 定义变量
+@yanse:skyblue;
+
+body {
+    background-color: @yanse;
+}
+
+@rem:37.5rem;
+
+div {
+    // width: 400px;
+    width: (37.5 / @rem);
+    height: 400px;
+    // 使用变量
+    background-color: red;
+}

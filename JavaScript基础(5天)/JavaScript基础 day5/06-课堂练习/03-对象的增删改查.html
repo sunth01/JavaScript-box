@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let shouj = {
+            uname:'华为9999',
+            price:'8999',
+            timeM:'2023/3/2'
+        }
+        // 1,。 属性-查
+        // 理解：访问对象里的某个属性值
+        // 语法：对象名.属性名
+        console.log(`这款产品是华为预计在${shouj.timeM}要上架的一款售价${shouj.price}元的手机，型号是${shouj.uname}`);
+
+        // 属性-查 （第二种）
+        let diann = {
+            uname:'联想',
+            price:'8999',
+            "downloa-url":"成都",
+            "URL":"测试地址"
+        }
+        console.log(diann.URL);
+        // - - - -因为对象名中有 -
+        console.log(diann['downloa-url']);
+        // 说明：
+        // 1. 部分场景下，对象属性名带有 - 之类的字符，需要用到引号包裹才能合法书写
+        // 2. 此时就不能通过用 对象.属性的方式来取值
+        // 3. 使用 对象名['属性名'] 来取值
+
+        // 2.属性-改
+        // 理解：修改地向里的某个属性的属性值
+        // 语法：对象名.属性值：= 新值
+        shouj.uname = '至尊华为'
+
+        // 3. 属性-增
+        // 理解：为对象新增属性
+        // 语法：对象名.属性名 = 新值
+        // 注意点：确保新增的属性名在原对象里没有存在过
+        shouj.name = '华为至尊1000'
+        console.log(shouj);
+
+        // 4.属性 - 删
+        // 为对象删除某个属性
+        // 语法：delete 对象名.属性名
+        delete shouj.name
+        console.log(shouj);
+
+
+
+    </script>
+</body>
+</html>

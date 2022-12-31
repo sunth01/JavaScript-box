@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 字符组简写 小写
+
+        // \d  [0-9]  记忆：digit （数字） 小写 
+        // \w  [0-9a-zA-Z_]  单词字符， 表示数字，字母下划线，记忆： word 单词  
+        // \s  [ \n\t\v\r\f]   空白字符  意义：space  s
+
+        console.log(/\d/.test('9999')) // 数字
+        console.log(/\w/.test('9999')) // 单词 数字字母下划线  
+        console.log(/[0-9a-zA-Z_]/.test('9999')) // 单词 数字字母下划线  
+
+
+        console.log(/\w/.test('word'))
+
+
+
+        // 排除型字符组简写 大写
+        // \D   [^0-9] 除了数字以外的任意单个字符
+        // \W   [^0-9a-zA-Z_] 除了这些以外的
+        // \S   非空白字符   
+
+
+        // 2022-11-12 匹配日期格式 
+        const reg = /^\d{4}-\d{1,2}-\d{1,2}$/
+    </script>
+</body>
+
+</html>

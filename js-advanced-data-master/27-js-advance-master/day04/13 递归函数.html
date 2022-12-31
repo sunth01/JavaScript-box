@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 递归：自己调用自己。有递，有归。
+
+        function fn(n){
+            // 这个递归函数的终止条件
+            if (n === 1) {
+                return 1
+            }
+            return n + fn(n - 1)
+        }
+
+        // fn(3) ==> 3 + fn(2) ==> 3 + 2 + fn(1)  ===> 3 + 2 + 1 ==> 6 
+        // const res = fn(3)
+        // console.log(res)
+
+        // fn(5)  ==>  5 + fn(4) ==> 5 + 4 + fn(3) ==> 5 + 4 + 3 + fn(2)
+            // ==> 5 + 4 + 3 + 2 + 1 ===>  15
+
+        // 递归爆栈  (栈溢出)
+        // 栈 数据结构 , 栈有深度, 如果超出了，就会造成栈溢出，报错 
+        // Maximum call stack size exceeded
+
+        // 特点：后进先出  Last In First Out
+        // const res = fn(100000)
+        // console.log(res)
+
+
+        // 递归也可以看作是一种循环（不断的自己调用自己），循环有终止条件，递归当然也需要有终止条件。
+        // 递归的终止条件，一般写在第二次调用自己之前， return 可以终止函数的执行。
+
+        let i = 1 
+        function count(){
+            console.log(`这是第${i}次调用`)
+            i++
+            if ( i >= 100){
+                return  // 自己规定，当i >=100 停止调用自己
+            }
+            count() // 自己调用自己
+        }
+        count()
+
+    </script>
+</body>
+</html>

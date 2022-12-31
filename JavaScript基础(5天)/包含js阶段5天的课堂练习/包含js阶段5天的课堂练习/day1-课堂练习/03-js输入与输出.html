@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>输入与输出</title>
+</head>
+
+<body>
+    <script>
+        // 举例: 计算机硬件设备
+        // 输出设备: 把计算机内部的内容, 以不同的形式传递到计算机外部(显示器/音响/打印机等)
+        // 输入设备: 把计算机外部的内容, 以不同的形式传递到计算机内部(键盘/鼠标/摄像头/绘画板/手柄等)
+
+        // js层面:
+        // 输出: 把js里的内容, 传递在浏览器的不同位置上进行展示(body/网页/控制台)
+        // 输入: 利用js的操作, 通过浏览器的某种形式让用户进行输入操作, 在js层面得到用户所输入的内容数据
+
+        // 输出语法:
+
+        // (1) document(文档) write(写)
+        // 浏览器的文档里有写入这个功能, 通过 "." 去调用
+        document.write(999)
+        document.write("用js的输出语法, 在body里写内容")
+        document.write("<div>生成一个div</div>")
+        document.write("<div style='color: red; font-size: 55px;'>生成一个div</div>")
+
+
+        // (2) alert("自定义内容")
+        alert("我是一个警示对话框");
+
+        // (3) console.log("自定义")
+        console.log("打印内容在浏览器的控制台");
+        console.log("中文");
+        // 注意点: 使用频率: 极高
+
+        
+        // 输入语法:
+        // prompt("自定义内容")
+        prompt("请输入内容")
+        // 作用: 用于接收用户所输入的内容(变量)
+
+    </script>
+
+
+</body>
+
+</html>

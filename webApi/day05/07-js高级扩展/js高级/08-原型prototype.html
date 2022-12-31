@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 原型: 字面意思 原始的模型 原始祖先
+        // js里: 原型就是一个对象,也叫作原型对象
+        // 原型对象: 构造函数.prorotype
+
+        // 1. 所有的函数 ,都有一个prototype属性(显示原型), 这个属性是一个指针,指向原型对象
+        function Person (){}
+        console.dir(Person)
+
+        // 2. 原型对象默认有一个叫做constructor的属性,这个属性指向构造函数
+
+        // 3. 我么可以往这个原型对象上添加属性和方法
+        // 所有通过构造函数创建的实例,都共享原型对象上包含的属性方法
+        function Star(name, age) {
+            this.name = name
+            this.age = age
+        }
+        // 公共方法写在原型上
+        Star.prototype.sing = function () {
+            console.log('我会唱歌')
+        }
+        Star.prototype.cheer = 'Every Step Counts' // 每一步都有意义
+        const ldh = new Star('刘德华', 18)
+        const zxy = new Star('张学友', 20)
+        ldh.sing()
+        zxy.sing()
+        // console.log(ldh.sing)
+        // console.log(zxy.sing)
+
+        console.log(ldh, zxy)
+    </script>
+</body>
+
+</html>

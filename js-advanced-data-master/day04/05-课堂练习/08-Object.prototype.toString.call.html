@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let num = 123
+        let str = '123'
+        let bool = true
+        let und = undefined
+        let nul = null
+        let symb = Symbol('id')
+        let big = 9007199254740999n
+
+        let arr = [1,2,3]
+        let obj = {}
+        let fn = function(){}
+        let date = new Date()   // [object Date]
+        let reg = /a/g          // [object RegExp]
+        let error = new Error() // [object Error]
+        // 前面的object小写, 后面的类型, 大写开头; 字符串
+        console.log(Object.prototype.toString.call(num)) // [object Number]
+        console.log(Object.prototype.toString.call(str))  // [object String]
+        console.log(Object.prototype.toString.call(bool)) // [object Boolean]
+        console.log(Object.prototype.toString.call(und)) // [object Undefined]
+        console.log(Object.prototype.toString.call(nul)) // [object Null]
+        console.log(Object.prototype.toString.call(symb)) // [object Symbol]
+        console.log(Object.prototype.toString.call(big)) // [object BigInt]
+
+        console.log(Object.prototype.toString.call(arr))  // [object Array]
+        console.log(Object.prototype.toString.call(obj))  // [object Object]
+        console.log(Object.prototype.toString.call(fn))   // [object Function]
+        console.log(Object.prototype.toString.call(date))   // [object Date]
+        console.log(Object.prototype.toString.call(reg))   // [object RegExp]
+        console.log(Object.prototype.toString.call(error))   // [object Error]
+
+        // 最完美的方式~~~
+        console.log('-------------------------------------')
+        const tempArr = [num, str, bool, und, nul, symb, big, arr, obj, fn, date, reg, error]
+        const checkType = (arr) => {
+            arr.forEach(el => console.log(Object.prototype.toString.call(el)))
+        }
+        checkType(tempArr)
+    </script>
+</body>
+</html>

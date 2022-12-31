@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button>111</button>
+    <script>
+
+        // 1. 箭头函数本身没有this,他的this指向的是上层作用域中的this
+        console.log(this)
+        const fn = () => {
+            // 箭头函数没有this
+            console.log(this)
+        }
+        fn()
+
+        // 2. 对象方法的情况
+        // 对象不会形成作用域
+        const obj = {
+            name:'刘德华',
+            fn:() => {
+                // 箭头函数中,没有this,往上层作用域中查找
+                console.log(this)
+            }
+        }
+        obj.fn() // window
+        // 全局作用域/局部作用域(函数作用域) / 块级作用域
+
+        // 3. 事件绑定
+        const btn = document.querySelector('button')
+        // 注意这里的this不是btn
+        btn.addEventListener('click', () => {
+            console.log(this)
+        })
+
+        // 定时器
+        setInterval(() => {
+            // 上层作用域是window
+            console.log(this)
+        }, 1000)
+    </script>
+</body>
+</html>

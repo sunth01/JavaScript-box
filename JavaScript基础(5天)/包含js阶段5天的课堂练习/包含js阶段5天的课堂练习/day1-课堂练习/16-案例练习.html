@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>案例</title>
+</head>
+
+<body>
+    <script>
+        // 1. 询问用户充值金额
+        // 2. 告诉用户充值成功, 并且加上原本的20元余额
+        let num = +prompt("请输入您要充值的话费金额")
+        console.log(num); // "100" 
+        console.log(typeof num); // 
+
+        // 运算结果需要重新赋值给变量
+        num = num + 20
+        console.log(`话费充值成功,您目前的话费余额为${num}元`); // 10020 (字符串与其他值相加结果都为字符串)
+
+
+        // 通过 typeof 关键字检测数据类型
+        console.log(typeof num); // "string"
+        console.log(typeof 123); // "number"
+        console.log(typeof true); // "boolean"
+
+        // 该需求解决方案 => 把获取到的 "100" 转换为 数字型的 100 => 学习数据类型转换
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>03-双重for循环</title>
+</head>
+
+<body>
+    <script>
+        // 部分情况下, 单层的for循环无法满足需求
+        // 做法: for循环里再嵌套一层for循环
+
+        // 1. 外层循环 记录天数
+        debugger
+        for (let i = 1; i <= 3; i++) {
+            // console.log(i)
+            document.write(`今天是第${i}天<br>`)
+            // 2. 在内部嵌套一层for循环, 用于记录当天的单词数量
+            // 内层循环
+            for (let j = 1; j <= 5; j++) {
+                document.write(`------- 我背了${j}个单词<br>`)
+            }
+
+        }
+        // ☆☆☆ 外层循环执行1次, 内层循环执行全部 ☆☆☆
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 原型链继承。====> 原型链有关
+        // 继承：子类拥有父类的属性和方法
+
+        // 类： JS ==> 构造函数 
+
+        // 父类 
+        function Parent(name){
+            this.name = name || '父类'  // 相当于给默认值
+            this.arr = [1, 2, 3]
+        }
+
+        Parent.prototype.sayHi = function(){
+            console.log('hi~~')
+        }
+
+        // 子类 
+        function Child(hobby){
+            this.hobby = hobby
+        }
+
+        // 核心 ==> 让子类的原型 等于 父类构造函数的实例 
+        Child.prototype = new Parent() // 相当于Child和Parent两个构造函数之间有了关联
+        Child.prototype.constructor = Child  // 手动的修正Child的constructor
+
+        const boy1 = new Child('sing')
+        const boy2 = new Child('dance')
+        console.log(boy1, boy2)
+        // 需求：让boy1, boy2 两个实例 可以访问（拥有）sayHi / name / arr属性
+
+        // 1. 优点：方法复用，共享
+        // 因为方法定义在父类的原型上，实例共享了父类原型上的方法
+        boy1.sayHi()
+        boy2.sayHi()
+
+
+        // 2. 缺点：
+        // 1. 子类在实例化的时候，不能给父类构造函数传参
+
+        // 2. 子类的实例共享了父类构造函数的属性和方法
+        //   如果父类里的属性值是引用类型（数组，对象等），实例修改这个值后会相互影响
+        console.log(boy1.arr, boy2.arr)
+        boy1.arr.push(666)
+        console.log(boy2.arr)
+        // 因为有上面两个缺陷，原型链继承一般不会单独使用！
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>轮播图点击切换</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    .slider {
+      width: 560px;
+      height: 400px;
+      overflow: hidden;
+    }
+
+    .slider-wrapper {
+      width: 100%;
+      height: 320px;
+    }
+
+    .slider-wrapper img {
+      width: 100%;
+      height: 100%;
+      display: block;
+    }
+
+    .slider-footer {
+      height: 80px;
+      background-color: rgb(100, 67, 68);
+      padding: 12px 12px 0 12px;
+      position: relative;
+    }
+
+    .slider-footer .toggle {
+      position: absolute;
+      right: 0;
+      top: 12px;
+      display: flex;
+    }
+
+    .slider-footer .toggle button {
+      margin-right: 12px;
+      width: 28px;
+      height: 28px;
+      appearance: none;
+      border: none;
+      background: rgba(255, 255, 255, 0.1);
+      color: #fff;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    .slider-footer .toggle button:hover {
+      background: rgba(255, 255, 255, 0.2);
+    }
+
+    .slider-footer p {
+      margin: 0;
+      color: #fff;
+      font-size: 18px;
+      margin-bottom: 10px;
+    }
+
+    .slider-indicator {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      display: flex;
+      align-items: center;
+    }
+
+    .slider-indicator li {
+      width: 8px;
+      height: 8px;
+      margin: 4px;
+      border-radius: 50%;
+      background: #fff;
+      opacity: 0.4;
+      cursor: pointer;
+    }
+
+    /* 交集选择器 */
+    /* 不常用 */
+    /* 代表含义: 带有active类名的li */
+    /* 理解: 给li添加active类名, 就可以让这个li享受下面的样式 */
+    /* 了解即可, 实际开发中可以按照自己习惯的后代选择器或者是特定类名来进行书写 */
+    .slider-indicator li.active {
+      width: 12px;
+      height: 12px;
+      opacity: 1;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="slider">
+
+    <div class="slider-wrapper">
+      <img src="./images/slider01.jpg" alt="" />
+    </div>
+
+    <div class="slider-footer">
+      <p>对人类来说会不会太超前了？</p>
+      <ul class="slider-indicator">
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+      </ul>
+      <div class="toggle">
+        <button class="prev">&lt;</button>
+        <button class="next">&gt;</button>
+      </div>
+    </div>
+  </div>
+  <script>
+    const sliderData = [{
+        url: './images/slider01.jpg',
+        title: '对人类来说会不会太超前了？',
+        color: 'rgb(100, 67, 68)'
+      },
+      {
+        url: './images/slider02.jpg',
+        title: '开启剑与雪的黑暗传说！',
+        color: 'rgb(43, 35, 26)'
+      },
+      {
+        url: './images/slider03.jpg',
+        title: '真正的jo厨出现了！',
+        color: 'rgb(36, 31, 33)'
+      },
+      {
+        url: './images/slider04.jpg',
+        title: '李玉刚：让世界通过B站看到东方大国文化',
+        color: 'rgb(139, 98, 66)'
+      },
+      {
+        url: './images/slider05.jpg',
+        title: '快来分享你的寒假日常吧~',
+        color: 'rgb(67, 90, 92)'
+      },
+      {
+        url: './images/slider06.jpg',
+        title: '哔哩哔哩小年YEAH',
+        color: 'rgb(166, 131, 143)'
+      },
+      {
+        url: './images/slider07.jpg',
+        title: '一站式解决你的电脑配置问题！！！',
+        color: 'rgb(53, 29, 25)'
+      },
+      {
+        url: './images/slider08.jpg',
+        title: '谁不想和小猫咪贴贴呢！',
+        color: 'rgb(99, 72, 114)'
+      },
+    ]
+
+    // 思路:
+    // (1) 素材是公司提供好的(实习生写了静态, 把动态逻辑交给你来实现)
+    // (2) 简单梳理一下结构和样式的关系, 看看是否有特殊注意点
+    // 大容器, 上部分和下部分
+    // 上部分是(1)img
+    // 下部分是(2)背景模块和(3)文本(4)小圆点
+
+    // 背景模块 :  .slider-footer  (更换颜色)
+    // 图片    :  .slider-wrapper img  (更换src)
+    // p标签    :  .slider-footer p   (更换文本)
+    // 小圆点   :  .slider-indicator li   (添加active类名)
+
+    // (3) 获取元素对象
+    // (4) 根据需求, 对元素对象进行操作
+    // (5) 需要基于随机数去原数组里随机选中一个对象取里面内容
+
+
+    // 1. 获取元素和相关数据 (直接把所需要的元素全部先获取)
+    // (1) 获取随机数
+    const SJnum = Math.floor(Math.random() * sliderData.length)
+    // (2) 获取img元素
+    const img = document.querySelector('.slider-wrapper img')
+    // (3) 获取p元素
+    const p = document.querySelector('.slider-footer p')
+    // (4) 获取背景模块元素
+    const footer = document.querySelector('.slider-footer')
+    // (5) 根据随机数获取当前选中的li(随机数从0,nth -child(1) 所以需要随机数+1)
+    const li = document.querySelector(`.slider-footer li:nth-child(${SJnum+1})`)
+    // console.log(SJnum)
+    // console.dir(img)
+    // console.dir(p)
+    // console.dir(footer)
+    // console.dir(li)
+    // 2. 根据随机数去从数组里取相应的对象, 再从对象里取值来对选中的元素进行赋值操作
+    // (1) 设置img的地址
+    img.src = sliderData[SJnum].url
+    img.title = `这是第${SJnum+1}张图片`
+    // (2) 设置p标签的文本
+    p.innerText = sliderData[SJnum].title
+    
+    // (3) 设置背景模块的背景色
+    footer.style.backgroundColor = sliderData[SJnum].color
+
+    // (4) 让当前选中的li, 添加active类名(此类名是实习生预定好的)
+    li.classList.add("active")
+
+
+  </script>
+</body>
+
+</html>

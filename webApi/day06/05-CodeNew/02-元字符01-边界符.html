@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    console.log(/哈/.test('哈')) // true
+    console.log(/哈/.test('二哈')) // true
+    console.log(/哈/.test('二哈哈')) // true
+
+
+    // 边界符  
+    // ^ 脱字符 以什么什么开头
+    console.log(/^哈/.test('哈')) // true
+    console.log(/^哈/.test('哈哈')) // true
+    console.log(/^哈/.test('二哈')) // false  没有以哈字开头
+
+    console.log(/^二哈/.test('二哈')) // true  
+    console.log(/^二哈/.test('哈二哈')) // false  
+
+
+    console.log('------------------')
+
+    // $ 以什么什么结尾
+    console.log(/哈$/.test('哈'))
+    console.log(/二哈$/.test('哈二哈'))
+
+
+    // 两个边界符一起配合使用
+    console.log(/^哈$/.test('哈')) // true
+    console.log(/^二哈hhh$/.test('二哈hhh')) // false
+
+    console.log(/^哈哈$/.test('哈')) // false
+    console.log(/^123$/.test("123"))
+
+    // 如果^$一起使用，必须精确匹配，检测的字符串和我们的规则一模一样，多一个字符少一个字都不行
+  </script>
+
+</body>
+
+</html>

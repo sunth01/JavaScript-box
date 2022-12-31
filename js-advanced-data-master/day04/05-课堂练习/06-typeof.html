@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 检测数据类型 
+        // 1. typeof 可以用来判断一个变量是否是除了null以外的基本数据类型
+        // typeof null   ===> 'object'
+
+        // 基本数据类型
+        console.log(typeof 1);
+        console.log(typeof "");
+        console.log(typeof true);
+        console.log(typeof undefined);
+        console.log(typeof null); // object---有点儿特殊 Bug
+        console.log(typeof Symbol('id'))
+        console.log(typeof 9007199254740999n)
+        console.log(typeof BigInt(9007199254740999))
+
+        // 2. typeof 总是返回一个字符串 
+        console.log(typeof (typeof 1)) // string 
+
+        console.log('-----------------------')
+        // 3. typeof 不能区分数组
+        console.log(typeof [1, 2, 3])  // 'object'
+        console.log(typeof function(){}) // 'function'
+        console.log(typeof {}) // 'object'
+    </script>
+</body>
+</html>

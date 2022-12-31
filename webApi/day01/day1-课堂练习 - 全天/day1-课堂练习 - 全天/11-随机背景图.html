@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+    </style>
+</head>
+
+<body>
+    <script>
+        function getRandom(min, max) {
+            return Math.floor(Math.random() * (max - min + 1) + min)
+        }
+        // 获取随机数
+        const SJnum = getRandom(1, 10)
+        // console.log(SJnum)
+        // 操作body设置背景图
+        // body较为特殊, 只有一个, 所以可以直接选中
+        // 备用方案之一:
+        document.body.style.backgroundSize = "100vw 100vh"
+        document.body.style.backgroundImage = `url(./images/desktop_${SJnum}.jpg)`
+        
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // Immediately-Invoked Function Expression
+        // 立即执行函数   ==>  IIFE  也叫做自执行函数
+
+        // 1. 普通函数， 先声明 后调用
+        function fn(a){ // 形参
+            console.log(a)
+            console.log('普通函数')
+        }
+        fn(6)
+
+        // 2. 立即执行函数 
+        // 两种写法
+        // 1. (function(){ /* code */})()
+        // 2. (function(){/* code */}())
+
+        // 3. 多个立即执行函数之间，要用分号隔开
+        // 大家以后如果写立即执行函数，养成一个习惯，先写一个分号，再写
+        ;(function(){
+            console.log(666)
+        })()
+        ;(function(){ 
+            console.log('感觉自己棒棒哒')
+        })()
+
+        // 4. 立即执行函数 前面的一个小括号中写形参，后一个括号写实参
+        ;(function(a, b){
+            console.log(a + b)
+        })(1, 2)
+
+        ;(function(a, b){
+            console.log(a * b)
+        }(2, 8))
+
+        // 5. 立即执行函数的作用 
+        // 作用：创建一个独立的空间（作用域） 内部声明的变量和外部不影响
+        const a = 10
+        console.log(a)
+        ;(function(){
+            // 这个立即执行函数中的变量和外面的不影响
+            const a = 10
+            console.log(a)
+        })()
+        ;(function(){
+            const a = 10 
+            console.log(a)
+        })()
+
+
+        // 6. 注意，特例
+        ;(function(){
+            // 如果立即执行函数中的这个变量，不用关键字声明, 这个变量会成为window对象的属性
+            abc = 77
+            console.log(abc)
+        })()
+        console.log(window)
+    </script>
+</body>
+</html>

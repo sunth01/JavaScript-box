@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 求和函数
+        // function getSum() {
+        //     let num1 = 10
+        //     let num2 = 20
+        //     let sum = num1 + num2
+        //     document.write(`和是${sum}`)
+        // }
+
+        // 调用函数
+        // getSum()
+        // 这样的函数时没有意义的, 数值固定了, 不够灵活, 复用性极低!!
+
+        // 优化: 在调用此函数时, 给定2个数, 然后可以得到和
+
+        // -------------------------------------------------------
+        // (1) 函数传参的目的:
+        // 部分功能需要用到调用者传入的数据, 使函数更加灵活.
+        // 参考: alert("自定义的数据") => 在页面中弹出调用者自定义的数据
+
+        // (2) 语法格式:
+        // function 函数名(参数列表) {
+        //     函数体
+        // }
+
+        // (3) 参数列表
+        // 1. 可以传入多个数据
+        // 2. 多个数据之间用逗号隔开
+        // 参考: 数组方法    数组名.splice('起始位置',"删除的个数")
+
+        // (4) 声明一个带自定义参数的函数 (2个数求和)
+
+        function getSum(num1, num2) {
+            document.write(num1 + num2 + "<br>")
+        }
+
+        // 调用并传递参数
+        getSum(10, 15)
+        getSum(5, 7)
+
+        // 传参注意点:
+        // 1. 在"声明"函数时, 函数名右边括号里的参数, 称之为 形参(形式上的参数)
+        // 2. 形参的作用: 接收调用者传递过来的参数, 理解理解为(let num1 = 10)
+        // 3. 形参的参数名称可以自定义, 尽量保持正确的语义
+
+        // 4. 在"调用" 函数时, 函数名右边括号里的参数, 称之为实参(实际上的参数)
+        // 5. 尽量保证 形参与实参的个数一致!!!
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    input[value] {
+      color: red;
+    }
+
+    /* input[type=text] {
+      color: red;
+    } */
+  </style>
+</head>
+
+<body>
+  <input type="text" value="123" data-id="0" data-name="andy">
+  <input type="password">
+  <script>
+    // 属性选择器
+    // 1. 先写标签名[] [方括号里面协商属性]
+    const input = document.querySelector('input[type="text"]')
+    console.log(input)
+    // 2. [] 方括号中的引号可以省略==>如果属性值是数字，不能省略引号
+    const input2 = document.querySelector('input[type=text]')
+    console.log(input2)
+    // 3.可以直接写属性，不要标签名
+    const input3 = document.querySelector('[type=password]')
+    console.log(input3)
+    // 4. 单独写属性名，不写属性值
+    const input4 = document.querySelector('[type]')
+    console.log(input4)
+    // ==> 方括号一定要写，属性选择器 []
+  </script>
+</body>
+
+</html>

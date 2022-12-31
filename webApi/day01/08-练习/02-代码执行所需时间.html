@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    // 测试代码执行时间  console.time()｜console.timeEnd()
+    let arr = []
+    for (let index = 0; index < 5000; index++) {
+      arr.unshift([index])
+    }
+
+    
+    // 初始版本:
+    console.time("冒泡无优化排序5000个数花费时间:")
+
+    for (let j = 0; j < arr.length; j++) {
+      for (let i = 0; i < arr.length; i++) {
+        if (arr[i] > arr[i + 1]) {
+          let temp = arr[i]
+          arr[i] = arr[i + 1]
+          arr[i + 1] = temp
+        }
+      }
+    }
+
+    console.timeEnd("冒泡无优化排序5000个数花费时间:");
+
+    // 优化版本:
+    console.time("优化后5000个数花费时间:")
+    for (let j = 0; j < arr.length - 1; j++) {
+      for (let i = 0; i < arr.length - 1 - j; i++) {
+        if (arr[i] > arr[i + 1]) {
+          let temp = arr[i]
+          arr[i] = arr[i + 1]
+          arr[i + 1] = temp
+        }
+      }
+    }
+    console.timeEnd("优化后5000个数花费时间:");
+  </script>
+</body>
+
+</html>

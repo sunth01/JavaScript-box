@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        .box {
+            width: 140px;
+            height: 140px;
+            /* background-color: pink; */
+            background-image: url(./images/bg.png);
+            /* 不平铺 */
+            background-repeat: no-repeat;
+            /* steps 属于运动曲线的一种 千万不要和linear使用  */
+            /* steps 将动画过程等分位N份 */
+            animation: pao 1s steps(12) infinite,
+            yidong 2s linear forwards;
+        }
+        @keyframes pao {
+            0% {
+                background-position: 0 0;
+            }
+            100% {
+                background-position: -1680px 0px;
+            }
+        }
+        @keyframes yidong {
+            0% {
+                transform: translate(0);
+            }
+            100% {
+                transform: translate(800px);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+
+    </div>
+</body>
+</html>

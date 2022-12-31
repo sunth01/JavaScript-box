@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let calculator = {
+            name:'大大计算器',
+            version:'16.231',
+            author:'大大',
+            // 添加计算器的功能 => 为计算器对象的属性名，赋予一个函数作为属性值
+            jia: function(num1, num2) {
+                return num1 + num2
+            },
+            jian: function (num1, num2) {
+                return num1 - num2
+            }
+        }
+        // 使用计算器对象访问内容
+        console.log(`版本号为${calculator.version}`);
+        let res1 = calculator.jia(23,22)
+        console.log(`我使用了${calculator.name}大大计算器里的加法,得到的结果为：${res1}`);
+        let res2 = calculator.jian(23,10)
+        console.log(`我使用了${calculator.name}大大计算器里的加减法,得到的结果为：${res2}`);
+
+    </script>
+</body>
+</html>

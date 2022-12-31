@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            margin: 100px auto;
+            width: 800px;
+            height: 300px;
+            /* background-color: pink; */
+        }
+        .houzi,
+        .bajie,
+        .shifu,
+        .shaseng {
+            display: inline-block;
+            width: 200px;
+            height: 180px;
+            /* background-color: pink; */
+            background-image: url(./大师兄.png);
+            /* 不平铺 */
+            background-repeat: no-repeat;
+            /* steps 属于运动曲线的一种 千万不要和linear使用  */
+            /* steps 将动画过程等分位N份 */
+            animation: houzi 1s steps(8) infinite;
+            vertical-align:middle;
+
+        }
+
+        .bajie {
+            background-image: url(./二师兄.png);
+            animation: bajie 1s steps(8) infinite;
+
+        }
+
+        .shifu {
+            width: 170px;
+            height: 240px;
+            background-image: url(./师傅.png);
+            animation: shifu 1s steps(8) infinite;
+
+        }
+
+        .shaseng {
+            width: 210px;
+            height: 200px;
+            background-image: url(./三师弟.png);
+            animation: shaseng 1s steps(8) infinite;
+
+        }
+
+        @keyframes houzi {
+            0% {
+                background-position: 0 0;
+            }
+
+            100% {
+                background-position: -1600px 0px;
+            }
+        }
+        @keyframes bajie {
+            0% {
+                background-position: 0 0;
+            }
+
+            100% {
+                background-position: -1600px 0px;
+            }
+        }
+
+        @keyframes shifu {
+            0% {
+                background-position: 0 0;
+            }
+
+            100% {
+                background-position: -1360px 0px;
+            }
+        }
+
+        @keyframes shaseng {
+            0% {
+                background-position: 0 0;
+            }
+
+            100% {
+                background-position: -1680px 0px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <div class="houzi"></div>
+        <div class="bajie"></div>
+        <div class="shifu"></div>
+        <div class="shaseng"></div>
+
+    </div>
+
+</body>
+
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* vw的理解 */
+        /* 1. 相对单位 */
+        /* 2. 相对于视口宽度来计算的 */
+        /* 3. 1vw = 视口宽度的百分之一 */
+        /* 设计稿在375px下 1vw = 3.75px */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .box1 {
+            /* vw相对于视口变化 */
+            width: 50vw;
+            height: 300px;
+            background-color: pink;
+        }
+
+        .box2 {
+            /* 百分比会基于父容器的变化而变化 */
+            width: 50%;
+            height: 300px;
+            background-color: skyblue;
+        }
+
+        /* vw适配和rem适配方案区别? */
+        /* 1. rem利用js文件获取屏幕宽度处理达到适配效果 */
+        /* 2. vw不需要js文件辅助, 可以直接得到屏幕宽度的百分之一, 达到适配效果 */
+        /* rem适配原理相对复杂 */
+        /* vw 适配原理相对简单 */
+
+        /* 目前市面上rem方案居多, 但是vw是未来的主流 */
+    </style>
+</head>
+
+<body>
+    <div class="box1"></div>
+    
+    <div class="box2"></div>
+</body>
+
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .box {
+            width: 1400px;
+            height: 400px;
+            margin: 100px auto;
+            /* background-color: pink; */
+            display:flex;
+            
+            justify-content: center;
+
+           
+
+        }
+        .box div {
+            width: 200px;
+            height: 200px;
+            border: 1px solid #000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .son1 {
+            background-color: rgba(255, 0, 0, 0.255);
+            /* order (顺序) */
+            /* 默认值为0 可手动修改参数,数字越小,排列越靠前,且可以是负数 */
+            order: 4;
+
+        }
+        .son2 {
+            background-color: rgba(0, 8, 255, 0.264);
+            order: 3;
+
+        }
+        .son3 {
+            background-color: rgba(34, 255, 0, 0.204);
+            order: -1;
+        }
+        .son4 {
+            background-color: rgba(255, 0, 200, 0.248);
+            order: 1;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <div class="son1">1</div>
+        <div class="son2">2</div>
+        <div class="son3">3</div>
+        <div class="son4">4</div>
+    </div>
+</body>
+</html>

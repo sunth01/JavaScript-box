@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div></div>
+    <script>
+        const gift = '50g茶叶,清洗球'
+
+        // 1. 可以把上面的字符串 转为数组 ['50g茶叶', '清洗球']
+        const arr = gift.split(',')
+        console.log(arr)
+        // 2. 根据数组的元素  ===> map遍历 转为 ['<span>【赠品】50g茶叶</span>', '<span>【赠品】清洗球</span>']
+        const resArr = arr.map(el => `<span>【赠品】${el}</span>`)
+        // 3. 将得到的数组，转为字符串，放到div中显示
+        document.querySelector('div').innerHTML = resArr.join('</br>')
+    </script>
+</body>
+</html>

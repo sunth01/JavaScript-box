@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // BOM borwser object model 浏览器对象模型
+        // 把浏览器当做一个对象来看待
+        // 浏览器的顶级对象 window  (js --> Node  --> Global)
+        // 通常可以省略window
+
+        console.log(document === window.document)
+
+        // 1. 在全局作用域中，用var声明的变量，会挂载到window对象上（成为window对象的属性）
+        var abc = 100
+        console.log(window.abc)
+
+        // 2. 全局作用域中，function声明的函数，也会挂载到window对象上
+        function ab() {
+            console.log('中午吃的啥')
+        }
+        console.log(window)
+    </script>
+</body>
+
+</html>

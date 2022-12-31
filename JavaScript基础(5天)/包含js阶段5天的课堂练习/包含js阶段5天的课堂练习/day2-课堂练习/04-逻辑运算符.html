@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>逻辑运算符</title>
+</head>
+
+<body>
+    <script>
+        // (1) 逻辑与 - 符号: && - 读作 "并且"
+        // 特点: 符号两边都为true, 结果才为true, 口诀: 一假则假
+
+        console.log(100 > 99 && 2 > 1); // true && true => true
+        console.log(98 > 99 && 2 > 1); // 第一个的结果为false, 后面就不需要去看了, 一假则假
+
+        // (2) 逻辑或 - 符号: || - 读作 "或者"
+        // 特点: 符号两边只有有一个为true, 结果就为true, 口诀: 一真则真
+        console.log(5 > 4 || 4 > 5); // true
+
+        // (3) 逻辑非 - 符号: ! - 读作 "取反"
+        // 特点: 真变假, 假变真
+        console.log(!true); // false
+        console.log(!false); // true
+
+        //  三种运算都很重要, 需要好好掌握!!!
+        
+    </script>
+</body>
+
+</html>

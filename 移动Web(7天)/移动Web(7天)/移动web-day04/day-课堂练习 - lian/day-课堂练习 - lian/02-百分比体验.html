@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>百分比</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        /* div {
+            background-color: blue;
+            height: 100%;
+        } */
+
+        body,
+        html {
+            height: 100%;
+        }
+
+
+        /* 问题: */
+        /* body默认的高度是多少? */
+        /* 0 */
+        html {
+            background-color: blue;
+        }
+
+        body {
+            background-color: pink;
+        }
+
+        /* 1. 百分比单位参照的是当前父级的大小来计算的 */
+        /* 2. body和html都是块级元素,所以高度默认为0,如果让一个div高度铺满页面, 需要设置html和body的高度为100% */
+
+        /* 3. body和html高度为都0, 但是为什么设置背景色能够铺满页面? */
+        /* 4. html和body都有背景色时, 以html的背景色为准 */
+
+        /* 3.4答案: */
+        /* 给body设置背景色, 其实真正渲染颜色的是浏览器, 会把颜色拿去渲染在网页画布上 */
+        /* 给html设置背景色, 依旧是浏览器在渲染,会觉得html理浏览器更近,所以选择html  */
+        /* 了解即可 */
+
+        /* 1.写一个div铺满页面 */
+        /* 2.给body和html设置颜色，且互换位置，体验 （查看html和body的实际大小）*/
+    </style>
+</head>
+
+<body>
+    <div></div>
+</body>
+
+</html>

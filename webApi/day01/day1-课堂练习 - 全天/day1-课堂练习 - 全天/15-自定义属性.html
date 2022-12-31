@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>自定义属性</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        li {
+            float: left;
+            width: 150px;
+            height: 200px;
+            border: 2px solid #000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 100px 30px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- 场景1: -->
+    <ul>
+        <li data-id="1001">商品1</li>
+        <li data-id="1002">商品2</li>
+        <li data-id="1003">商品3</li>
+        <li data-id="1004">商品4</li>
+    </ul>
+    <!-- 场景2: -->
+
+    <img src="./images/loading.gif" data-src="./images/2.webp" alt="">
+    <img src="./images/loading.gif" alt="">
+
+    <script>
+        // 场景1:
+        const li = document.querySelector('li')
+        console.dir(li)
+        console.log(li.dataset.id)
+        // 点击商品后, 得到被点击商品身上的id就可以进行访问
+        // 或者在跳转页面的时候, 把这个参数携带过去
+
+        // 场景2: 图片的懒加载方案!
+        const img = document.querySelector('img')
+        console.dir(img)
+
+        // 把自定义属性赋值给img的src
+        img.src = img.dataset.src
+        // (避免一次性向服务器请求过多的图片, 造成网页渲染慢)
+
+        // 先把所有的未加载的图片都给一个加载中的图片样式占据位置
+        // 先把图片的真正地址, 存在自定义属性中,
+        // 等到用户滑动页面时, 就把自定义属性中的图片地址取出来, 赋值给src
+        // 实现图片会随着用户往下滑动, 逐一进行显示
+
+    </script>
+</body>
+
+</html>

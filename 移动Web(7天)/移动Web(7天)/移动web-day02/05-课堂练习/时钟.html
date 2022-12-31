@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            position: relative;
+            margin: 100px auto;
+            width: 413px;
+            height: 413px;
+            background-color: pink;
+            border-radius: 50%;
+            overflow: hidden;
+        }
+        .box::after {
+            content: '';
+            position: absolute;
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            background-color: #ff7501;
+            border-radius: 50%;
+        }
+        .shizhen,
+        .fenzhen,
+        .miaozhen {
+            position: absolute;
+            width: 8px;
+            height: 80px;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-100%);
+            background-color: #000;
+            transform-origin: bottom;
+        }
+        
+        .miaozhen {
+            width: 3px;
+            height: 140px;
+            background-color: red;
+            animation: miaozhen 60s steps(60) 0s infinite ;
+        }
+        @keyframes miaozhen {
+            0% {
+                transform:translate(-50%,-100%) rotate(0);
+            }
+            100% {
+                transform: translate(-50%,-100%) rotate(360deg);
+            }
+        }
+
+        .fenzhen {
+            width: 6px;
+            height: 120px;
+            background-color: #999;
+            animation: miaozhen 3600s steps(60) 0s infinite ;
+        }
+        @keyframes fenzhen {
+            0% {
+                transform:translate(-50%,-100%) rotate(0);
+            }
+            100% {
+                transform: translate(-50%,-100%) rotate(360deg);
+            }
+        }
+
+        .shizhen {
+            width: 8px;
+            height: 80px;
+            background-color: rgb(0, 0, 0);
+            animation: miaozhen 43200s steps(60) 0s infinite ;
+        }
+        @keyframes shizhen {
+            0% {
+                transform:translate(-50%,-100%) rotate(0);
+            }
+            100% {
+                transform: translate(-50%,-100%) rotate(360deg);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <img src="./时钟案例素材/时钟.png" alt="">
+        <div class="shizhen"></div>
+        <div class="fenzhen"></div>
+        <div class="miaozhen"></div>
+    </div>
+</body>
+</html>

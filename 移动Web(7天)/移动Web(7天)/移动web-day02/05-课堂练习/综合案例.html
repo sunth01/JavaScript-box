@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        .big_box {
+            margin: 100px auto;
+            width: 1450px;
+            height: 270px;
+            /* background-color: pink; */
+            border: 10px solid #000;
+            overflow: hidden;
+
+        }
+        .box {
+            /* margin: auto; */
+            width: 4850px;
+            height: 270px;
+            background-color: skyblue;
+            animation: donghua 15s linear infinite;
+        }
+        .box li {
+            float: left;
+            width: 480px;
+            height: 270px;
+        }
+
+        .box1{
+            width: 480px;
+            height: 270px;
+        }
+        .box2 {
+            width: 480px;
+            height: 270px;
+        }
+        @keyframes donghua {
+            0% {
+                transform: translate(0px);
+            }
+            100% {
+                transform: translate(-3360px);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="big_box">
+        <div class="box">
+            <ul>
+                <li>
+                    <div class="box1">
+                        <img src="./images/1.jpg" alt="">
+                    </div>
+                </li>
+                <li>
+                    <div class="box2">
+                        <img src="./images/2.jpg" alt="">
+                    </div>
+                </li>
+                <li>
+                    <div class="box3">
+                        <img src="./images/3.jpg" alt="">
+                    </div>
+                </li>
+                <li>
+                    <div class="box4">
+                        <img src="./images/4.jpg" alt="">
+                    </div>
+                </li>
+                <li>
+                    <div class="box5">
+                        <img src="./images/5.jpg" alt="">
+                    </div>
+                </li>
+                <li>
+                    <div class="box6">
+                        <img src="./images/6.jpg" alt="">
+                    </div>
+                </li>
+                <li>
+                    <div class="box7">
+                        <img src="./images/7.jpg" alt="">
+                    </div>
+                </li>
+                
+                <li>
+                    <div class="box1">
+                        <img src="./images/1.jpg" alt="">
+                    </div>
+                </li>
+                <li>
+                    <div class="box2">
+                        <img src="./images/2.jpg" alt="">
+                    </div>
+                </li>
+                <li>
+                    <div class="box3">
+                        <img src="./images/3.jpg" alt="">
+                    </div>
+                </li>
+
+                
+                
+            </ul>
+
+        </div>
+
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 模拟班级数据
+        let arr1 = [80, 60, 90, 100, 65]
+        let arr2 = [85, 60, 90, 100, 64]
+        let arr3 = [100, 60, 90, 30, 59]
+
+        // 封装求和函数
+        function getSum(arr999) {
+            let sum = 0
+            for (let i = 0; i < arr999.length; i++) {
+                sum += arr999[i]
+            }
+            document.write(`班级总分是${sum}<br>`)
+        }
+
+        // 传递不同的参数调用函数
+        getSum(arr1)
+        getSum(arr2)
+        getSum(arr3)
+        
+    </script>
+</body>
+
+</html>

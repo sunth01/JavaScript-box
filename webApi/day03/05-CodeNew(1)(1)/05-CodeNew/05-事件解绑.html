@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <button>点击</button>
+  <script>
+    // 有时候, 绑定了事件, 执行一次后,  我们不想让他继续触发.  想把这个事件解绑掉.
+    const btn = document.querySelector('button')
+    // dom0 的方式注册点击事件
+    // 1. dom0 解绑事件 btn.事件名 = null
+    btn.onclick = function () {
+      console.log('今天中午吃什么')
+      btn.onclick = null
+    }
+
+    // 2. DOM2 绑定事件
+    const cb = function () {
+      console.log('今中午吃佛跳墙')
+      btn.removeEventListener('click', cb)
+    }
+    btn.addEventListener('click', cb)
+
+    // 固定写法:解绑dom2的时间监听
+    // btn.removeEventListener('click', 函数名)
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button>点击</button>
+    <script>
+        // DOM 0 事件监听方法
+        const btn = document.querySelector('button')
+        // on --> 但点击的时候
+        // 缺陷:同一个元素,绑定同一个事件的时候,后一个事件会覆盖前一个
+        btn.onclick = function() {
+            console.log(666)
+        }
+        btn.onclick = function() {
+            console.log(999)
+        }
+        //  想象赋值 直接替换了
+        // let num = 10
+        // num = 20
+
+
+
+        // DOM 2 事件监听方式  --> 推荐使用这种
+        const btn2 = document.querySelector('button')
+        // DOM2 新版的方式:同一个元素可以绑定多次相同的时间,不会覆盖,
+        btn2.addEventListener("click", function(){
+            console.log(888)
+        })
+
+        btn2.addEventListener("click", function(){
+            console.log(777)
+        })
+
+
+    </script>
+</body>
+</html>

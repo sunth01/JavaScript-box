@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text">
+    <script>
+        // const input = document.querySelector('input')
+        // input.addEventListener('keyup', function(){
+        //     console.log('发送搜索请求')
+        //     // 如果每一次键盘抬起，就执行一次这个函数内部的代码
+        //     // 如果是真实的向服务器发送请求，势必会造成网络资源浪费，会给服务器带来压力
+        //     // 这种请求，就特别适合用防抖来做性能优化
+
+        //     // 我们想要的一个效果是什么样的？
+        //     // 1. 抬起一个键，不会立马触发请求，而是给了一个延迟发送请求的时间
+        //     // 2. 比如500ms，如果500ms之内，又按下了键后抬起，重新计时，还是不会向服务器发送请求
+        //     // 3. 只有当我们最后一次抬起按键，并且，500ms内没有再次触发这个keyup，这个时候，才会往服务端发送请求。
+        // })
+
+        // 防抖：debounce
+        // 当持续触发事件时，一定时间内没有再触发事件，回调函数才会执行一次。
+        // 如果设定的延迟时间到来之前，又触发了事件，就重新计时。
+
+        // 防抖：防止抖动，你先抖动着，啥时候停了，再执行下一步。
+        // 游戏 回城键 b回城。按下了回城键，等待5s回城。再5s之内，继续又按一下回城，又会重新计时。
+
+        // 防抖的应用场景
+        // 1. 搜索框输入查询的时候
+        // 2. 鼠标连续点击按钮提交等
+
+
+        /* ==================== 防抖 ===================== */
+        // 事件的回调函数，我们可以用表达式的形式写在外面
+        const input = document.querySelector('input')
+        
+        // 需求：当keyup触发的时候，让sendMsg这个函数，等待300ms才执行。
+
+        // 我们可以封装一个debounce防抖函数来操作这个sendMsg，让它300ms后执行。
+        const sendMsg = function(){
+            console.log('发送请求')
+        }
+
+        // 我们在debounce里面去控制什么时候执行sendMsg
+        const debounce = (fn, ms = 100) => {
+            return function(){
+                console.log(1111)
+            }
+        }
+
+        // input.addEventListener('keyup', sendMsg)
+        // 用debounce来控制sendMsg
+        // 正常情况下，事件监听的第二个参数，是一个函数声明，但是我们这里加了小括号，表示调用
+
+        // 按理说，我们这里应该要传一个函数
+        input.addEventListener('keyup', debounce(sendMsg, 300))
+        // input.addEventListener('keyup', function(){
+        //         console.log(1111)
+        //     })
+        // input.addEventListener('keyup', undefined)
+
+    </script>
+</body>
+</html>

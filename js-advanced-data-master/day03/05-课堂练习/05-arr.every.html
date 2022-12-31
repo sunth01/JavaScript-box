@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 1.语法：arr.every(cbFn)
+        // 作用：检测数组内的所有元素是否都满足指定的条件，如果都满足，返回true 、否则，返回false
+        // 参数：cbFn   ==> return
+        //   cbFn的参数 ：
+                // 第一个参数   ： item 当前元素
+                // 第二个参数   ： index 当前元素的索引号（可选）
+        // 返回值： boolean    true/false (所有元素都通过 返回true)
+        const arr = [10,20,30]
+        const resBool = arr.every(function(item){
+            return item >= 10
+        })
+        console.log(resBool) // true
+
+        // 2. arr.some(cbFn)
+        // 作用:检测数组中的元素是否满足指定条件,只要有一个满足,就返回true / 否则返回false
+        const resSome= arr.some(el => el >= 30)
+        console.log(resSome) // true
+
+        // 3. arr.includes()
+        // 作用:判断数组里面是否包含某个元素,如果有,返回true , 否则 false
+        const res2 = arr.includes(50)
+        console.log(res2) // false
+    </script>
+</body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 类： 泛指， 一大类  ==> 构造函数  
+        // 对象（实例）：具体的某一个
+
+        // function Person(name){
+        //     this.name = name 
+        // }
+        // const p1 = new Person('淞桑')
+
+        // 父类
+        function Parent(name, age){
+            this.name = name 
+            this.age = age
+        }
+
+        // 子类
+        function Child(name){
+            this.name = name 
+            
+        }
+
+        Child.prototype.sayHi = function(){
+            console.log('hello~~~')
+        }
+
+        const p = new Child('儿子')
+        console.log(p)
+        p.sayHi()
+
+        // 面向对象的三大特征
+        // 1. 封装   （可以复用）
+        // 2. 继承   子类拥有父类的属性和方法
+        // 3. 多态   
+
+        // 举个例子 
+        // 手机  大类  
+        // function Phone(){
+
+        // }
+        // const iphone = new Phone('苹果')
+        // const xm = new Phone('小米')
+        // iphone.open() ---> iphone logo
+        // xm.open()   ---> 小米logo
+        // 苹果手机一个14 手上的某一个具体的 ， 开机动画   --> logo 
+
+        // 大类 ===> 父亲 
+        // 实例/对象  ==> 儿子3
+
+        // 父亲 --> 儿子 可以继承父亲的一些属性和方法
+        // 多态：每个儿子，它不是完全一样的，可以有一些自己的特性。
+
+        // 葫芦娃每个功能不一样 --->  航桑
+
+
+    </script>
+</body>
+</html>

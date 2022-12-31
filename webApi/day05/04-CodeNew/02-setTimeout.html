@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button>click me</button>
+    <script>
+        // setInterval(fn, wait)  每隔一段时间，执行fn
+
+        // setTimeout(fn, wait) 等待延迟时间到了，执行一次fn，只会执行一次
+
+        // 1. window省略了，它也是window对象的方法
+        // 2. wait 单位 毫秒 ms, 最小延迟时间可以写0  最小延时 >=4ms
+
+        // 书写方式
+        // 1. 直接写函数
+        setTimeout(function(){
+            console.log('好好学习,天天向上')
+        }, 1000)
+
+        // 2. 写函数名,再放进去
+        function cb(){
+            console.log('两天后开始')
+        }
+        const cb2 = function(){
+            console.log('考试是真的')
+        }
+
+        setTimeout(cb, 2000)
+        setTimeout(cb2, 4000)
+
+        // 2. 清除定时器
+        const fn = function(){
+            console.log('我是炸弹')
+        }
+        let timer1 = setTimeout(fn, 5000)
+        console.log(timer1)
+        console.log(typeof timer1)
+
+        // 关闭 : clearTimeout(timerId)
+        const btn = document.querySelector('button')
+        btn.addEventListener('click', function(){
+            clearTimeout(timer1)
+        })
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <ul>
+        <li class="item">1</li>
+        <li class="item">1</li>
+        <li class="item">1</li>
+    </ul>
+    <script>
+        // 需求  修改 每一个li标签 字体颜色,还要修改内容 ===> "我被修改了"
+        // 思路
+        // 1. 获取所有元素==> All
+        const lis = document.querySelectorAll('.item')
+        for (let i = 0; i < lis.length; i++) {
+            lis[i].style.color = "blue"
+            lis[i].innerHTML = "我被修改了"
+        }
+
+
+
+        // 伪数组： 有length，有索引，没有数组的一些方法，比如pop push.
+        lis.push(6) // Error lis.push is not a function
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 大于10的 添加到新组
+        let arr = [2,0,6,1,77,0,52,0,25,7]
+        let arr1 = []
+        for (let i = 0; i < arr.length; i++) {
+            if(arr[i] >= 10){
+                arr1.push(arr[i])
+            }
+        }
+        console.log(arr1);
+
+        console.log('----------------------------------');
+        // 去0  添加到无0 新组
+        let arr3 = [2,0,6,1,77,0,52,0,25,7]
+        let arr4 = []
+        for (let index = 0; index < arr3.length; index++) {
+            if (arr3[index] != 0){
+                arr4.push(arr3[index])
+            }
+        }
+        console.log(arr4);
+        
+    </script>
+</body>
+</html>

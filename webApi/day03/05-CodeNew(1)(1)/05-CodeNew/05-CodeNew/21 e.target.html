@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul>
+        <li class="item">1</li>
+        <li class="item">2</li>
+        <li class="item">3</li>
+        <li class="item">4</li>
+        <li>5</li>
+    </ul>
+    <script>
+        const ul = document.querySelector('ul')
+        // 想要打印类名为item的里标签中的内容
+        ul.addEventListener('mouseover', function(e){
+
+            // dir ==> 打印一个对象的所有属性和方法
+            console.log(e.target)
+
+            // if(e.target.tagName === 'LI'){
+            //     console.log(e.target.innerHTML)
+            // }
+            if (e.target.className === 'item'){
+                console.log(e.target.innerHTML)
+            }
+        })
+        // e.target.tagName 
+        // e.target.className  通过类名来判断
+    </script>
+</body>
+</html>

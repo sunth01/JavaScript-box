@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    // 闭包产生的问题：
+    // fun全局的，页面内没有关闭的时候，fun不会被销毁，
+    // 一路按照箭头的顺序。i是可以从根节点找到的，
+    // 所以会被标记清除法标记为活动对象，所以不会被回收，
+    // 所以内存泄漏
+    //   闭包的缺点：内存泄漏
+    function gn() {
+      let i = 0
+      return function fn() {
+        i++
+        console.log(i)
+      }
+    }
+    let fun = gn()
+    fun()
+  </script>
+</body>
+
+</html>

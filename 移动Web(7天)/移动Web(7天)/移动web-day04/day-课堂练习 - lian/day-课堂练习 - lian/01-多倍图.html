@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        /* 先把更大的图, 手动设置缩小比例 */
+        /* 等到了真正的手机上时, 会被放大 */
+        /* 先缩小, 再放大, 就等于还原, 所以图片不会模糊 */
+
+        img {
+            width: 55px;
+            height: 53px;
+            display: block;
+            margin: 20px 0;
+        }
+
+        /* 用到背景图时, 同理 使用background-size 即可*/
+        /* 在后期开发中: 可以利用js来获取用户的设备物理像素比, 来使用合适的倍数图片 */
+    </style>
+</head>
+
+<body>
+    <!-- 移动端开发时, 对图片处理要特殊注意: -->
+    <!-- 需要使用多倍图技术: -->
+    <!-- 1倍 2倍 3倍 ++  -->
+
+    <img src="./images/矢量智能对象1.png" alt="">
+    <img src="./images/矢量智能对象1@2x.png" alt="">
+    <img src="./images/矢量智能对象1@3x.png" alt="">
+    
+</body>
+
+</html>

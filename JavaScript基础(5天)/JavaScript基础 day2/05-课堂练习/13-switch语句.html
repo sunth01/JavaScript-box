@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let num = +prompt('请输入1~4之间的数值');
+        switch (num) {
+            case 1:
+                alert('您输入的是1');
+                break;
+            case 2:
+                alert('您输入的是2');
+                break;
+                // break
+                // 如果没有break，就会一直往后直行，直到遇到下一个break
+            case 3:
+                alert('您输入的是3');
+                break;
+            case 4:
+                alert('您输入的是4');
+                break;
+
+            default:
+                alert('您输入的不合规矩，我的规矩就是规矩');
+                break;
+        }
+
+        // 注意点:
+        // 1. switch(开关) case(具体情况)
+        // 2. switch("数据") 与case后的值, 要全等匹配上
+        // 3. 如果都没有匹配上, 就会执行最后面的default代码块
+        // 4. case后必须添加break, 否则就会一直往后执行, 直到遇到下一个break(case穿透)
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        function out(){
+            let a = 10
+            function inner(){
+                console.log(a)
+            }
+            return inner
+        }
+        out()()
+
+      // 外部作用域没办法直接访问内层的变量
+      //   function out() {
+      //     let a = 10
+      //   }
+      //   out()
+      //   console.log(a)
+
+      // 可以让外部作用域访问到函数内部的变量
+      function out() {
+        let a = 10
+        function inner() {
+          console.log(a)
+        }
+        return inner
+      }
+      //   fn===>out()===>inner() {
+      //       console.log(a)
+      //     }
+      let fn = out()
+      fn()
+
+      //   简写
+      function out1() {
+        let a = 10
+        return function inner1() {
+          console.log(a)
+        }
+      }
+      let fn1 = out1()
+      fn1()
+    </script>
+</body>
+</html>

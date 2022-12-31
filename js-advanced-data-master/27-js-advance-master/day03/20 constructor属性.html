@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function Star(name,age){
+            this.name = name 
+            this.age = age 
+        }
+        const xss = new Star('小淞桑', 20)
+
+        console.dir(Star)
+
+        // 1. 每个原型对象上都默认有一个constructor属性，指回构造函数本身的。
+        console.log(Star.prototype.constructor === Star)
+
+        // ==> 表示我这个原型，和哪个构造函数相关联，是哪个构造函数的原型
+
+        // 2. 实例的隐式原型 等于 构造函数的显式原型
+        xss.__proto__ === Star.prototype
+    </script>
+</body>
+</html>

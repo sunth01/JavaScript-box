@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 媒体查询: */
+        /* 1. 属于css代码, 写在style标签内 */
+        /* 2. 能够监测屏幕尺寸(视口)的变化, 满足条件就执行内部对应的css代码, 不满足则不执行 */
+        /* 3. 因电脑逻辑分辨率设置问题(比例影响下 => 375px 可能会变成 375.2px) */
+        /* 4. 目前阶段需要修改为与之对应的具体数值才可以触发媒体查询的满足条件代码*/
+        /*  375.2px 无法触发 375px的媒体查询  */
+        @media (width:375.2px) {
+            html {
+                font-size: 20px;
+            }
+
+            div {
+                background-color: red !important;
+            }
+        }
+
+        @media (width:390.4px) {
+            html {
+                font-size: 30px;
+            }
+
+            div {
+                background-color: rgb(93, 0, 255) !important;
+                border-radius: 50%;
+            }
+        }
+
+        @media (width:414.4px) {
+            html {
+                font-size: 30px;
+            }
+
+            div {
+                background-color: rgb(255, 0, 200) !important;
+                border-radius: 30%;
+            }
+        }
+
+        div {
+            width: 5rem;
+            height: 4rem;
+            background-color: pink;
+        }
+    </style>
+</head>
+
+<body>
+    <div>颠三倒四</div>
+</body>
+
+</html>

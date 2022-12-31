@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 构造函数-实例-原型（对象）
+        function Person(name){
+            this.name = name 
+        }
+        const person = new Person('贵儿桑')
+
+        // 四条线 
+        // 1. 构造函数有prototype属性，指向原型对象
+        // 2. 原型对象默认有一个constructor属性，指向构造函数
+        // （构造函数和原型相互指向）
+
+        // 3. 构造函数 new 创建一个实例
+        // 4. 实例通过__proto__访问到原型（对象）
+    </script>
+</body>
+</html>

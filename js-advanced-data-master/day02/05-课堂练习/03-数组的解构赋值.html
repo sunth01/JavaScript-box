@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        // 解构赋值：es6允许我们按照一定的模式，从数组、对象中提取出值然后赋值给对应的变量
+        let arr = [1,2,3]
+        let [a,b,c] = [1,2,3]
+        let [d,e,f] = arr
+        console.log(a,b,c)  // 1 2 3
+        console.log(d,e,f) // 1 2 3
+        // 如果不加let /const关键字，相当于就是var声明的，会成为window的属性，挂到全局
+        ;[g,h] = [11,22]
+        console.log(g,h,window.g) // 11 22 11
+        ;[1,2,3].forEach((item) => console.log(item)) 
+        //交换两个变量的值
+        let hh = 66
+        let ff = 88
+        ;[ff,hh] = [hh,ff]
+        console.log(ff,hh) //66 88
+    </script>
+</body>
+</html>

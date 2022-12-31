@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            width: 500px;
+            height: 500px;
+            background-color: pink;
+            transition: all 1s;
+            margin: 100px auto;
+        }
+        .box:hover {
+            /* 3D复合属性 */
+            /* 参数:(x,y,z,角度度数) */
+            /* xyz的取值为0-1(可以为负数) */
+            transform: rotate3d();
+            /* x轴旋转 */
+            transform: rotate3d(1,0,0,100deg);
+            /* y轴旋转 */
+            transform: rotate3d(0,1,0,100deg);
+            /* 对角线旋转 */
+            transform: rotate3d(1, 1, 0, 100deg);
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+
+    </div>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let arr = ['元素1','元素2','元素3','元素4','元素5','元素6']
+        // 1. 对数组的元素重新赋值
+        // arr[1] = '100'
+        // arr[5] = '数据6'
+        // console.log(arr);
+
+        // 2. push （推/增加）
+        // 语法：数组.push（）
+        // 作用：将一个或者多个元素添加到数组的“末尾”，并返回该新数组的长度
+        arr.push('新增元素1','新增元素2')
+        console.log(arr); //8
+
+        let num = arr.push('新增元素3','新增元素4')
+        console.log(num); //10
+        // 注意点：
+        // 1. 使用push添加元素时，不需要用新变量去接收改动后的数据即可修改数组
+        // 2. 如使用变量去接收结果，会受到最新数组的长度
+
+        // 3. unshift
+        // 语法：数组.unshift（）
+        // 作用：将一个或者多个元素添加到数组的“开头”，并返回该新数组的长度
+
+        arr.unshift('插队来了，我排最前面')
+        console.log(arr);
+        let num2 = arr.unshift('我也来插队')
+        console.log(num2);
+    </script>
+</body>
+</html>

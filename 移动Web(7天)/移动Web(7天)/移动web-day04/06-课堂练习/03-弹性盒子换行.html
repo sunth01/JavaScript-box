@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+        ul {
+            width: 1000px;
+            height: 700px;
+            background-color: pink;
+            margin: 100px auto;
+            display: flex;
+            /* 允许弹性盒子换行 */
+            flex-wrap: wrap;
+            /* 因为换行后,多了一个行与行之间的对齐方式 */
+            /* 利用align-contont 来控制(取值基本与justify-content一致) */
+            /* 换行后默认会触发align-content: stretch 所以看起来多个子元素不是顶端对齐 */
+            /* 只要align-contont 取值不为默认值都可以解决此现象 */
+            align-content: flex-start;
+            align-content: flex-end;
+            align-content: space-around;
+            align-content: space-between;
+        }
+
+        li {
+            width: 200px;
+            height: 200px;
+            background-color: red;
+            border: 1px solid #000;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <ul>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+    </div>
+</body>
+</html>

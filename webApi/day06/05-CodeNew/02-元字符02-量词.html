@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 量词 设定某个模式(规则)出现的次数
+
+        // 1. *
+        // * 表示 >=0  0次或者更多次
+        console.log(/^哈哈$/.test('哈哈哈哈'))
+        console.log(/^哈哈*$/.test('哈哈'))
+        console.log(/^哈*$/.test('')) // 
+        console.log(/^哈哈*$/.test('哈哈哈哈哈'))
+        console.log('-------------------')
+
+        // 2. +
+        // + 表示 >=1  重复一次或者多次
+        console.log(/^哈+$/.test('哈哈哈哈')) // true
+        console.log(/^哈+$/.test('')) // false
+        console.log(/^哈+$/.test('哈')) // true
+
+        console.log('----------------------')
+        console.log(/^哈+$/.test('哈二哈')) // false
+        console.log(/^哈+$/.test('二哈很聪明')) // false
+
+
+        // /^哈+$/ /^哈$/ /^哈哈$/ /^哈哈哈$/
+
+        console.log('--------------------------')
+        // 3.  ?  ==> 0||1 重复0次或1次
+        console.log(/^哈?$/.test('')) // true
+        console.log(/^哈?$/.test('哈')) // true
+        console.log(/^哈?$/.test('哈哈')) // false
+
+        console.log('-----------------------')
+
+        // 4. {n}  写几就是几  重复n次
+        console.log(/^哈{3}$/.test('')) // false
+        console.log(/^哈{3}$/.test('哈')) // false
+        console.log(/^哈{3}$/.test('哈哈')) // false
+        console.log(/^哈{3}$/.test('哈哈哈')) // true
+        console.log(/^哈{3}$/.test('哈哈哈哈')) // false
+        console.log(/^哈{3}$/.test('哈哈哈哈哈')) // false
+        console.log('------------------------------------------')
+
+        // {n,}  >=n  重复n次 或更多次
+        console.log(/^哈{3}$/.test('')) // false
+        console.log(/^哈{3}$/.test('哈')) // false
+        console.log(/^哈{3}$/.test('哈哈')) // false
+        console.log(/^哈{3}$/.test('哈哈哈')) // true
+        console.log(/^哈{3}$/.test('哈哈哈哈')) // true
+        console.log(/^哈{3}$/.test('哈哈哈哈哈')) // true
+        console.log('------------------------------------------')
+        // {n,m}  >=n && <=m 重复n次 或更多次
+        console.log(/^哈{3,6}$/.test('')) // false
+        console.log(/^哈{3,6}$/.test('哈')) // false
+        console.log(/^哈{3,6}$/.test('哈哈')) // false
+        console.log(/^哈{3,6}$/.test('哈哈哈')) // true
+        console.log(/^哈{3,6}$/.test('哈哈哈哈')) // true
+        console.log(/^哈{3,6}$/.test('哈哈哈哈哈')) // true
+        console.log(/^哈{3,6}$/.test('哈哈哈哈哈哈')) // true
+        console.log(/^哈{3,6}$/.test('哈哈哈哈哈哈哈')) // false
+
+        console.log('---------------------------')
+        console.log(/^大熊猫*$/.test('')) // false  * 只作用于最近的一个字符
+        console.log(/^大熊猫*$/.test('大熊猫')) // true 
+        console.log(/^大熊猫*$/.test('大熊猫猫')) // true
+
+        // 量词
+        // *       ==>      >= 0
+        // +       ==>      >= 1
+        // ?       ==>      0 || 1 
+        // {n}     ==>       n个
+        // {n,}    ==>      >=n
+        // {n,m}   ==>      >=n && <=m
+        console.log('------------------')
+        console.log('------------------')
+
+        const reg = /^ab{2,5}c$/
+        // abbc abbbc abbbbc abbbbbc
+        const res = reg.test('abbbbc')
+        console.log(res)
+
+
+        // 横向模糊匹配  一个正则可匹配的字符串长度是不固定的的，可以是多种情况 
+        // 实现方式 ： 量词 
+    </script>
+</body>
+
+</html>

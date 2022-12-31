@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .yanse {
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+    <button>click me</button>
+    <button>click me</button>
+    <button>click me</button>
+    <button>click me</button>
+    <button>click me</button>
+
+    <script>
+        // 需求:点击那个按钮,就让那个按钮的颜色变red,其他颜色不变
+        // 排他思想
+        // 1. 精确的排他 找到具有active类名的移除掉
+        // 2. 不管有没有active类名,都溢出 / 都应用某个样式
+        const btns = document.querySelectorAll('button')
+        for (let i = 0; i < btns.length; i++) {
+            btns[i].addEventListener('click', function(){
+                // 让点击的哪个元素 字体颜色改变
+                // 让所有的其他按钮样式都重置一遍
+                for (let i = 0; i < btns.length; i++) {
+                    btns[i].style.color = "black"
+                }
+                // 给自己设置
+                this.style.color = 'red'
+            })
+        }
+        
+    </script>
+</body>
+</html>

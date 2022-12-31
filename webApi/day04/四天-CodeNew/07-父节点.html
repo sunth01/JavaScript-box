@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <div class="grand-father">
+    <div class="father">
+      <div class="son">x</div>
+      <p>我是文本节点</p>
+    </div>
+  </div>
+  <script>
+    // 文档 document一个页面就是一个文档
+    // 元素 element页面上所有的标签都叫元素
+    // 节点 node元素节点/文本节点/属性节点/注释节点页面上所有的内容都可以叫做节点
+
+    const son = document.querySelector('.son')
+
+    // 父节点 node.parentNode
+    // ===> 返回节点最近的一个父节点
+    // 可以多次找爷爷
+
+    // console.log(son.parentNode)
+    const father = son.parentNode
+    console.log(father)
+
+    const grandFather = son.parentNode.parentNode.parentNode.parentNode.parentNode
+    console.log(grandFather)
+
+
+
+  </script>
+</body>
+
+</html>

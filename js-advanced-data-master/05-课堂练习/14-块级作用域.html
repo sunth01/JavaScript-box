@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 块级作用域  ES6新增
+        // 全局作用域 、 函数作用域（局部作用域） 块级作用域 
+        // {} 包裹起来的称为代码块， 使用let 或者 const声明的变量， 在{} 中会产生块级作用域
+
+        // {} + let / const
+
+        for (let i = 0; i <= 3; i++){
+            // 块级作用域
+            console.log(i)
+        }
+
+        // 1. 只有let或const才会产生块级作用域，var不行 
+        // 2. 块级作用域外部不能访问内部的变量
+
+        // if 和 for 是语句，var不会产生作用域，但是内部使用let声明变量，会产生块级作用域
+
+        // if (true){
+        //     let i = 10
+        // }
+        // console.log(i)
+
+        // if 和 for是语句 
+        // var 声明的变量会提升到当前作用域的最顶层。
+        var i
+        if (false){
+             i = 10
+        }
+        console.log(i)
+
+
+        // Scope 作用域  
+        // Global 全局 
+        // Local 局部作用域
+        // Block 块级作用域
+        // Closure 闭包 
+    </script>
+</body>
+</html>

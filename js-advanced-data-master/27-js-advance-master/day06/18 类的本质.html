@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        class Star {
+
+        }
+
+        console.log(typeof Star)
+
+        // 1. 类的本质是一个函数，我们可以简单的认为，类就是构造函数的另一种写法。
+        // 2. 类有原型
+        console.log(Star.prototype)
+
+        // 3. 我们也可以直接在类的原型上添加方法（不推荐），公共方法一般写在类里面
+        Star.prototype.sing = function(){
+            console.log('唱歌')
+        }
+        console.log(Star.prototype)
+        // 4. 通过类创建的实例，有__proto__属性，可以访问到原型
+        const ldh = new Star()
+        console.log(ldh.__proto__)
+
+        console.log(ldh.__proto__ === Star.prototype)
+        console.log(Star.prototype.constructor === Star)
+    </script>
+</body>
+</html>

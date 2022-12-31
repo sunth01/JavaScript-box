@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <ul>
+    <li>第1个孩子</li>
+    <li>第2个孩子</li>
+    <li>第3个孩子</li>
+    <li>第4个孩子</li>
+    <li>第5个孩子</li>
+    <p>我不需要变色</p>
+  </ul>
+  <script>
+    // 需求: 点击每一个li, 让点击的那个li标签文字颜色变为橘色
+    // const lis = document.querySelectorAll('li')
+    // for(let i = 0; i < lis.length; i++){
+    //     lis[i].addEventListener('click', function(){
+    //         console.log(this.innerHTML)
+    //         console.log(this.style.color = 'orange')
+    //     })
+    // }
+
+
+    // 事件委托 ：把事件委托给别人，代为处理。
+    const ul = document.querySelector('ul')
+    ul.addEventListener('click', function(e){
+      console.dir(e.target)
+      // 通过tagName这个属性，标签名
+      // 如果是li标签，才会执行里面的代码
+      if (e.target.tagName === 'LI'){
+        // e.target  ==> 触发事件的元素
+        e.target.style.color = 'orange'
+      }
+
+      // 点击的是li标签，li标签接收到了这个点击事件，这个点击事件会往上冒泡，
+      // 我们的父元素ul接收到了这个点击事件，所以，会执行内部的回调函数
+
+
+    })
+
+    /* ==================== 以下背下来 ===================== */
+
+    // 事件委托的原理：
+    // 利用事件冒泡，将事件监听绑定到父元素上，利用父元素来监听子元素的事件
+
+    // e.target  ==> 触发事件的元素
+    // this      ==> 绑定事件的元素
+    // e.currentTarget  ==> 绑定事件的元素
+
+    // e.target.tagName === '标签名（大写）' 用它来判断点击的是否是某些标签
+
+    // 事件委托的好处（作用）
+    // 减少注册事件的次数，提高程序的性能。
+
+
+
+
+  </script>
+</body>
+
+</html>

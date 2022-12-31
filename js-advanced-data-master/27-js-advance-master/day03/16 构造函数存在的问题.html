@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 构造函数存在浪费内存的问题（方法）
+        function Star(name, age){
+            this.name = name 
+            this.age = age 
+            this.sing = function(){
+                console.log('唱歌')
+            }
+        }
+        const kk = new Star('坤坤', 18)
+        const jl = new Star('杰伦', 20)
+        console.log(kk)
+
+        kk.sing()
+        jl.sing()
+        console.log(kk.sing === jl.sing) // false
+        // 每创建一个对象，都会在堆内存中新开辟一个空间，存储方法
+        // 这个时候，就存在浪费空间的问题。
+    </script>
+</body>
+</html>

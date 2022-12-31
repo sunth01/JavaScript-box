@@ -1,0 +1,414 @@
+body {
+    background-color: #f7f7f7;
+}
+
+/* <!-- 顶部时间栏------------- --> */
+.time_top {
+    width: 100%;
+    position: fixed;
+    top: 0;
+    height: 20px;
+    background-color: #262626;
+    background-image: url(../images/33.png);
+    background-size: 375px;
+    background-repeat: no-repeat;
+    background-position: center;
+    vertical-align: middle;
+}
+
+/* <!-- 顶部占位----------------- --> */
+.zhanwei_top {
+    height: 20px;
+    width: 100%;
+    /* background-color: blue; */
+}
+
+/* 个人中心 */
+.zhongxin {
+    display: flex;
+    justify-content: center;
+    font-size: 34px;
+    color: #fff;
+    background-color: #262626;
+}
+
+/* 电话号码-------------------------- */
+.iphone {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 200px;
+    margin-top: 15px 0;
+    background-color: #262626;
+    padding: 15px 15px 0;
+    border-radius: 0 0 100% 100%/0 0 15% 15%;
+    overflow: hidden;
+}
+
+.iphone_top {
+    display: flex;
+    height: 50px;
+    /* background-color: skyblue; */
+    align-items: center;
+}
+
+.touxiang {
+    width: 43px;
+    height: 43px;
+    border-radius: 50%;
+    background-image: url(../images/头像.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 42px;
+}
+
+.dianhua {
+    flex: 1;
+    height: 48px;
+    /* background-color: #f70; */
+    padding: 0px 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    /* background-color: blue; */
+}
+
+.dianhua p {
+    font-size: 20px;
+    color: #fff;
+    font-weight: 700;
+}
+
+.qianming span {
+    font-size: 12px;
+    color: #d4b77b;
+}
+
+.erweima {
+    width: 40px;
+    height: 50px;
+    /* background-color: red; */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.tupianma {
+    width: 26px;
+    height: 26px;
+    background-size: 26px;
+    background-image: url(../images/二维码.png);
+}
+
+.erweima i {
+    font-size: 12px;
+    color: #fff;
+}
+
+/* 余额 ------------------------*/
+.yue {
+    height: 48px;
+    /* background-color: pink; */
+}
+
+.yue ul {
+    height: 48px;
+    /* background-color: skyblue; */
+    display: flex;
+    justify-content: space-around;
+
+}
+
+.yue li {
+    width: 95px;
+    height: 48px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #303030;
+}
+
+.yue em {
+    font-size: 12px;
+    color: #fff;
+}
+
+.yue span {
+    font-size: 16px;
+    font-weight: 700;
+    color: #fff;
+
+}
+
+.qianbao i {
+    color: #fff;
+    font-size: 12px;
+}
+
+/* 会员 ----------------------*/
+.vip {
+    height: 55px;
+    border-radius: 10px 10px 0 0;
+    background-color: #f76734;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.vip span {
+    font-size: 18px;
+    font-weight: 700;
+    color: #fff;
+}
+
+.vip img {
+    width: 19px;
+    height: 16px;
+}
+
+.vip i {
+    font-size: 12px;
+    color: #fff;
+}
+
+.dengdai {
+    width: 73px;
+    height: 23px;
+    background-color: #262626;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.dengdai em {
+    font-size: 12px;
+    color: #fff;
+}
+
+/* 订单以下大盒子------------- */
+.dingdan_big {
+    height: 375px;
+    margin: 10px 15px;
+    /* background-color: skyblue; */
+}
+
+/* 我的订单------------- */
+.wode {
+    height: 105px;
+    background-color: #fff;
+
+}
+
+.wode_top {
+    height: 50px;
+    /* background-color: #f70; */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 18px;
+}
+
+.wode_top p {
+    color: #333;
+    font-weight: 700;
+    font-size: 18px;
+}
+
+.suoyou {
+    display: flex;
+    align-items: center;
+}
+
+.suoyou em {
+    font-size: 14px;
+    color: #808080;
+}
+
+.hongdian {
+    width: 9px;
+    height: 9px;
+    background-color: red;
+    border-radius: 50%;
+    margin: 0 7px;
+}
+
+/* 类目----------------- */
+.leimu ul {
+    height: 45px;
+    /* background-color: skyblue; */
+    display: flex;
+    justify-content: space-around;
+}
+
+.leimu li {
+    height: 45px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.leimu img {
+    height: 21px;
+    width: 23px;
+
+}
+
+.leimu span {
+    color: #333;
+    font-size: 12px;
+}
+
+.leimu li:nth-last-child(3) img {
+    width: 26px;
+    height: 20px;
+}
+
+.leimu li:nth-last-child(2) img {
+    width: 25px;
+    height: 21px;
+}
+
+.leimu li:last-child img {
+    width: 18px;
+    height: 21px;
+}
+
+/* 水果--------------------- */
+.shuiguo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 70px;
+    margin-top: 10px;
+    padding: 0 8px;
+    background-color: #fff;
+    border-radius: 10px;
+}
+
+.xianmei {
+    width: 50px;
+    height: 50px;
+}
+
+.mihoutao {
+    width: 64px;
+    height: 44px;
+}
+
+.pingguo {
+    width: 67px;
+    height: 45px;
+}
+
+.yipin p {
+    font-size: 17px;
+    font-weight: 700;
+    color: #333;
+}
+
+.yipin span {
+    font-size: 13px;
+    color: #f76734;
+}
+
+.yuanquan {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 18px;
+    height: 18px;
+    background-color: #eaeaea;
+    border-radius: 50%;
+}
+
+.yuanquan .icon-youjiantou1 {
+    color: #f76734;
+}
+
+/* 功能 ----------------------*/
+.gongneng {
+    height: 180px;
+    margin-top: 10px;
+    background-color: #fff;
+    border-radius: 10px;
+}
+
+.gongneng_top {
+    display: flex;
+    align-items: center;
+    height: 45px;
+    padding-left: 18px;
+    font-size: 18px;
+    color: #333;
+    font-weight: 700;
+}
+
+.gongneng ul {
+    height: 125px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-content: space-between;
+}
+
+.gongneng li {
+    width: 70px;
+    height: 55px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    font-size: 12px;
+    color: #333;
+}
+
+.gongneng img {
+    width: 36px;
+    height: 36px;
+}
+
+/* 底部占位 =---------------------*/
+.bottom_zhanwei {
+    height: 45px;
+}
+
+/* 底部-------------------------- */
+.bottom_big {
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    background-color: #fff;
+    height: 45px;
+
+}
+
+.bottom_big ul {
+    height: 45px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.bottom_big li {
+    height: 45px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    font-size: 12px;
+}
+
+.bottom_big .iconfont {
+    font-size: 18px;
+}
+
+.bottom_big li:last-child .iconfont {
+    color: #ff4200;
+}
+
+.bottom_big li:last-child span {
+    color: #ff4200;
+
+}

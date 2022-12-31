@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 函数的定义
+
+        // 1. 声明式
+        function fn(a, b){  // 形参
+            console.log(a + b)
+            return 8
+        }
+        fn(3, 6) // 实参
+        // 函数名() 调用执行
+        // const res = fn()
+        // console.log(res)
+        
+        // 函数的返回值
+        // 函数内部，如果写了return， 函数执行完，表达式的值就是返回值
+        // 如果没有写，函数表达式的值就是undefined
+
+        // 2. 表达式  const / let / var 
+         const cb = function(){
+             console.log('大家吃早饭了吗')
+         }
+         cb()
+
+
+        // 注意：
+        // 1.声明式function定义的函数，具有函数提升
+        // 2.let / const定义的函数，不会有提升，var定义的会有提升
+        
+    </script>
+</body>
+</html>

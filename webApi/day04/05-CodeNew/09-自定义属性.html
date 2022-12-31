@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <a href="http://www.baidu.com" target="_blank" demo="我也是自定义" data-test="1232"></a>
+  <div data-id="0" data-test-id="222"></div>
+  <ul>
+    <li>123</li>
+    <li>123</li>
+    <li>123</li>
+    <li>123</li>
+    <li>123</li>
+  </ul>
+  <script>
+    // 自定义属性 ，我们自己定义的一些属性。
+    // const div = document.querySelector('div')
+    // // console.log(div)
+    // console.log(div.dataset) // object
+
+    // console.log(typeof div.dataset)
+    // // 对象获取属性 
+    // // 1. 对象.属性名
+    // // 2. 对象['属性名']
+    // console.log(div.dataset.id)
+    // console.log(div.dataset['id'])
+
+    // console.log(div.dataset.testId)
+    // console.log(div.dataset['testId'])
+
+    // 复合属性 指的是一些简写的属性 background; flex;
+
+    // 1. H5 新增， 以 data- 来定义自定义属性。
+    // 2. 要获取自定义属性，通过dataset。
+    //    它获取到的是一个对象，存放了所有以data开头定义的自定义属性
+    //  element.dataset.属性名
+    //  element.dataset['属性名']
+    // 3. dataset内， 属性名从短横线变为了驼峰。
+
+    /*================  自定义属性  =====================*/
+
+    // 获取属性值
+    const a = document.querySelector('a')
+    console.log(a.href)
+    console.log(a.target)
+    // console.log(a.demo)
+    // console.log(a.dataset)
+
+    // 1.获取自定义属性 
+    // ==> element.getAttribute('属性名')
+    // 它可以获取元素本身自带的属性，自定义的，data-的 都行
+    console.log(a.getAttribute('demo'))
+    console.log(a.getAttribute('href'))
+    console.log(a.getAttribute('target'))
+    console.log(a.getAttribute('data-test')) // data- 
+
+
+    // 2. 设置自定义属性
+    // 1. 本身自带的属性可以设置
+    // 2. 自定属性也可以设置
+    // 3. data- 也可以设置
+    // ==> element.setAttribute('属性名', 值)
+    a.setAttribute('href', 'http://jd.com')
+    a.setAttribute('testDemo', '123')
+    a.setAttribute('test-emo', '123')
+
+    // 需求：给li标签设置自定义属性 data-id ，属性值是 0 - arr.length-1
+
+    const lis = document.querySelectorAll('li')
+    lis.forEach(function(el, i){
+      el.setAttribute('data-id', i)
+    })
+
+    // 3. 移除属性
+    // element.removeAttribute('属性名')
+    a.removeAttribute('href')
+    a.removeAttribute('test-emo')
+
+
+    // ===>
+
+    // 1. 获取属性  el.getAttribute('属性名')
+    // 2. 设置属性  el.setAttribute('属性名', 值)
+    // 3. 移除属性  el.removeAttribute('属性名')
+
+    // data- ==> 如果我们要设置自定义属性，建议大家使用 data-
+
+
+  </script>
+</body>
+
+</html>

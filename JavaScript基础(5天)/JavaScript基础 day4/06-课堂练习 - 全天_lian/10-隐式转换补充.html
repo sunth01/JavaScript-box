@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 布尔值隐式转换注意点:
+        // 1. 减法会使空字符串转换为 0
+        // 2. 减法会使false转换为 0
+        // 3. 减法会使true转换为 1
+        // 4. 减法会使null转换为 0
+
+        console.log('' * 3)          //  0 * 3 = 0 
+        console.log('' - 1)          //  0 - 1 = -1 
+        console.log('哈哈' - 1)      //  NaN
+        console.log(false - 1)      //  0 - 1 = -1
+        console.log(true - 1)       //  1 - 1 = 0
+        console.log(null - 1)       //  0 - 1 = -1
+        console.log(undefined - 1)  //  NaN
+
+    </script>
+</body>
+
+</html>

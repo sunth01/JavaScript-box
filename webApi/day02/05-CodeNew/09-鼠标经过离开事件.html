@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        .box {
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+            margin: 100px auto;
+            transition: all 0.5s;
+            
+        }
+        .active {
+            background-color: skyblue;
+            transform: rotate(360deg);
+        }
+    </style>
+</head>
+<body>
+    <div class="box"></div>
+    <script>
+        // 需求:
+        // 1. 当鼠标经过盒子的时候,让这个盒子背景色变成skyblue
+        // 2. 让盒子旋转360deg,并且有动画效果
+        // 3. 鼠标离开的时候,再转回去
+        const box = document.querySelector('.box')
+        box.addEventListener("mouseenter", function(){
+            console.log('轻轻地我来了')
+            // box.style.transform = 'rotate(360deg)'
+            // box.style.backgroundColor = "skyblue"
+            box.classList.add('active')
+        })
+        box.addEventListener("mouseleave", function(){
+            console.log('轻轻地我走了,不带走一片云彩')
+            // box.style.backgroundColor = "pink"
+            // box.style.transform = 'rotate(0deg)'
+            box.classList.remove('active')
+        })
+    </script>
+</body>
+</html>

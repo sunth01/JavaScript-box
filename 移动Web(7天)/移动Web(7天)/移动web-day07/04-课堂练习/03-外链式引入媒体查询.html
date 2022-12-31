@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>外链式引入媒体查询</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        ul {
+            list-style: none;
+        }
+    </style>
+    <!-- 多套尺寸的样式代码 如果都写在同一个css文件中,会特别杂乱不方便阅读 -->
+    <!-- 利用link标签的媒体查询功能,按需引入对应的样式文件 -->
+
+    <!-- 满足媒体查询特性时,在生效对应的样式文件 -->
+    <!-- 在实际开发中:使用频率极低(采取更有的框架实线)属于原理性解决方案 -->
+
+    <!-- 400px -->
+    <link rel="stylesheet" media="(min-width:400px)" href="./w400.css">
+
+    <!-- 700px -->
+    <link rel="stylesheet" media="(min-width:700px)" href="./w700.css">
+
+    <!-- 1200px -->
+    <link rel="stylesheet" media="(min-width:1200px)" href="./w1200.css">
+</head>
+
+<body>
+    <ul>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+</body>
+
+</html>

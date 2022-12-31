@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <!-- 结构代码: -->
+  <ul>
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+  </ul>
+
+  <div class="box">
+    <ul>
+      <li>1</li>
+      <li>2</li>
+      <li>3</li>
+      <li>4</li>
+      <li>5</li>
+      <li>6</li>
+      <li>7</li>
+      <li>8</li>
+    </ul>
+  </div>
+
+  <!-- 需求: 让box里ul的li, 偶数项的 2 4 6 8  文本变红色. -->
+  <script>
+    const list = document.querySelectorAll('.box ul li')
+    for (let i = 0; i < list.length; i++) {
+      // 判断偶数项的元素，进行样式修改
+      // 用不断变化的i来判断，i从0开始
+      // 下标从0开始，页面显示从1开始
+      // 所以用奇数的算法刚好可以实现页面的偶数项
+      console.dir(list[i])
+
+      if (i % 2 !== 0) {
+        list[i].style.color = 'red'
+      }
+    }
+  </script>
+</body>
+
+</html>

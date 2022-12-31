@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=1, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // try-catch ==> 补货我们代码中一些错误
+        function fn(){
+            // try 将可能发生错误的代码,写到try里面
+            try{
+                const p = document.querySelector('.p')
+                console.log(p)
+                p.style.color = 'red' // 这里报错了
+                console.log(666)
+            } catch(err) {
+                console.log(err)
+                // try-catch可以拦截错误,捕获错误,并且不会中断后面代码的执行
+                // 如果要中断后面代码执行
+                // 1. return
+                // 2. throw new Error('msg')
+            }
+            finally {
+                // 这里面也可以写代码
+                // 不管程序对不对,都会执行这里的代码
+                console.log('会执行')
+            }
+            console.log(999)
+        }
+        fn()
+    </script>
+</body>
+</html>

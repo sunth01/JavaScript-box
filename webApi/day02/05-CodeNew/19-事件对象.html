@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            width: 200px;
+            height: 200px;
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+    <button>点击</button>
+
+    <div class="box"></div>
+
+    <input type="text">
+
+
+    <script>
+        const btn = document.querySelector('button')
+        btn.addEventListener('click', function(e){
+            // 1. e.target ==> 触发事件的元素,也就是我们点了谁
+            console.log(e.target)
+        })
+
+        const box = document.querySelector('.box')
+        box.addEventListener("mouseenter", function(e){
+            // 事件对象有很多种属性和方法
+            // 1. 事件类型 e.type
+            console.log(e.type)
+        })
+
+        // 事件对象的常用属性
+        // 1. e.type  事件类型
+        // 2. e.target  触发事件的元素
+        // 3. e.pageX e.pageY   ===> 鼠标在页面文档上的坐标
+        // 4. e.key 用户拿下了哪个键 (e.keyCode 了解 ASIIC 码表示)
+
+        // 鼠标移动事件
+        // document.addEventListener("mousemove", function(e){
+        //     console.log(e.pageX, e.pageY)
+        // })
+
+
+        const input = document.querySelector('input')
+        input.addEventListener("keyup", function(e){
+            console.log(e)
+            console.log(e.key) // ===> 表示用户按下哪个键
+            if(e.key === "Enter") {
+                console.log(666)
+            }
+
+            // Enter ===> 13 
+            console.log(e.keyCode)
+            if(e.keyCode === 13) [
+            console.log('按下了enter键')
+            ]
+
+
+
+        })
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        input {
+            width: 200px;
+            transition: all 0.3s;
+        }
+
+        /* 伪类选择器 : focus */
+        input:focus {
+            width: 300px;
+            height: 50px;
+            background-color: pink;
+            border-radius: 50%;
+        }
+        /* 如果一个动画既可以css实现,又可以js实现,推荐使用css,因为性能更好 */
+
+    </style>
+</head>
+<body>
+    <!-- 当获取焦点的时候,让input框的宽度变成300px -->
+    <input type="text">
+</body>
+</html>

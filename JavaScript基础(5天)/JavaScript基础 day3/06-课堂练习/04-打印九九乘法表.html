@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        span {
+            display: inline-block;
+            width: 60px;
+            height: 20px;
+            margin: 10px;
+
+        }
+    </style>
+</head>
+<body>
+    <script>
+
+        // 外层循环 行数 1-9
+        for (let i = 1; i <= 9; i++) {
+            // 内层循环控制 内容 1x1=1
+            // 内层循环控制 内容 1x2=2 2x2=4
+
+            // 1. 起始变量：单独声明为j
+            // 2. 终止条件：在第几行就魂环几次，正好可以利用外层循环的次数i的值作为内层循环次数
+            for (let j = 1; j <=i; j++) {
+                // 分析原效果，得到j在前，i在后，内层循环变量x外层循环变量
+                // 利用span熏染页面，再利用css修饰样式
+                document.write(`<span>${j}x${i}=${j*i}</span>`);
+            }
+            // 外层循环的换行处理
+            document.write(`<br>`);
+            
+        }
+    </script>
+</body>
+</html>

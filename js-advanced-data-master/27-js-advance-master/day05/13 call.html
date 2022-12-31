@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 改变this的指向
+        const obj = {
+            msg:'hello world'
+        }
+        function fn(x, y) {
+            console.log(this)
+            return x + y
+        }
+        
+
+        const res = fn(1, 2)
+        // console.log(res)
+
+        // fn.call() 
+        // 1. 可以改变this的指向
+        // 2. 调用函数，立即执行，返回执行结果
+        // 3. fn.call() 第一个参数，就是让this指向哪个对象，后面紧跟的是参数列表
+
+        const res2 = fn.call(obj, 1, 2)
+        console.log(res2)
+
+
+        // eg2
+
+        const obj2 = {
+            name:'hw',
+            // getName:function(){}
+            getName(){
+                console.log(this)
+                console.log(this.name)
+            }
+        }
+        const obj3 = {
+            name:'iphone'
+        }
+        // obj2.getName()
+        // 改变getName里面的this指向，让它指向obj3 
+        obj2.getName.call(obj3) // 可以不接受后面的参数。第一个参数就是this的指向
+    </script>
+</body>
+</html>

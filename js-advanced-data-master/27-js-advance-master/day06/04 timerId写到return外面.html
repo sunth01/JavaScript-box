@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text">
+    <script>
+        const input = document.querySelector('input')
+        const sendMsg = function(){
+            console.log('发送请求')
+        }
+
+        // 1. timerId写在return里面
+        // const debounce = (fn, ms = 0) => {
+            
+        //     return function(){
+        //         let timerId // 放到了return函数里面，这里面的代码，每次keyup触发的时候都执行
+        //         clearTimeout(timerId)
+        //         timerId = setTimeout(function(){
+        //             fn()
+        //         }, ms)
+                
+        //     }
+        // }
+
+        // input.addEventListener('keyup', function(){
+        //         //  timerid undefined
+        //         let timerId // 放到了return函数里面，这里面的代码，每次keyup触发的时候都执行
+        //         clearTimeout(timerId)  // 这里的清除，没有清掉前一个定时器，
+        //         // 每次键盘抬起的时候，就开启了一个定时器
+        //         timerId = setTimeout(function(){
+        //             fn()
+        //         }, ms)
+                
+        //     })
+
+
+        // timerId写在return外面
+        const debounce = (fn, ms = 0) => {
+            let timerId  // 一开始就声明了一次 
+            // 这里形成了一个闭包， timerId 和 内部函数捆绑在了一起
+            // timerId被return出去的内层函数，一直使用着，不会被销毁
+            return function(){
+                clearTimeout(timerId)
+                timerId = setTimeout(function(){
+                    fn()
+                }, ms)
+            }
+        }
+
+        input.addEventListener('keyup', debounce(sendMsg, 500))
+        // input.addEventListener('keyup', function(){
+        //         // 当keyup触发的时候，第一次调用  undefined
+        //         clearTimeout(timerId)
+        //         // 这个timerId一直在内存中存在着
+        //         // 相当于内存中有一个timerId的变量  1 
+        //         timerId = setTimeout(function(){
+        //             fn()
+        //         }, ms) 
+        //     })
+
+
+        // 我们timerId写在return的外面，为什么就能清除呢？
+    </script>
+</body>
+</html>

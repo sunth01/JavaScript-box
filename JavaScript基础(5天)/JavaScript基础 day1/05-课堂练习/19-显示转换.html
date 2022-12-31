@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 理解：利用合理的属性明确的告诉浏览器，数据应该转换成什么类型
+        
+        // 1. Number（数据）
+        console.log(Number('100')); // 100
+        console.log(Number('100测试内容')); // NaN
+        console.log(typeof Number('100测试内容')); // Number
+        console.log(typeof typeof Number('100测试内容')); // string
+
+        // 2. parseInt（数据）=> 只保留整数，后面的小数一律不看
+        console.log(parseInt('3')); // 3
+        console.log(parseInt('3.4')); // 3
+        console.log(parseInt('3.8')); // 3
+        console.log(parseInt('3.8rem')); // 3
+        console.log(parseInt('px3.8rem')); // NaN
+        console.log(parseInt('3.8都是')); // 3
+
+        // 3. parseFloat(数据) 可以保留小数
+        console.log(parseFloat('3.8')); // 3.8
+        console.log(parseFloat('3.888')); // 3.888
+        
+    </script>
+</body>
+</html>

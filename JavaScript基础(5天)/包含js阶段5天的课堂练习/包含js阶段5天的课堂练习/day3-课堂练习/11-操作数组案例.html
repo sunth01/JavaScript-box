@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let arr = [2, 0, 6, 1, 77, 0, 52, 0, 25, 7]
+        // 声明一个新的空数组
+        let newArr1 = []
+        let newArr2 = []
+        console.log(newArr2)
+        for (let i = 0; i < arr.length; i++) {
+            // console.log(arr[i])
+            // 大于等于10
+            if (arr[i] >= 10) {
+                // console.log(arr[i])
+                // 把符合条件的元素塞到新数组里
+
+                
+                newArr2[newArr2.length] = arr[i] 
+
+                // newArr1.push(arr[i])
+            }
+
+            // 形成一个不包含 0 (每一个值和0是对比,找到不是0的所有元素)的新数组
+            // if (arr[i] !== 0) {
+            //     // console.log(arr[i])
+            //     newArr2.push(arr[i])
+            // }
+        }
+        // console.log(newArr1)
+        console.log(newArr2)
+    </script>
+</body>
+
+</html>

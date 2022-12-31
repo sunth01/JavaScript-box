@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* rem单位理解! */
+        /* 1. rem是个相对单位 */
+        /* 2. 相对当前html的字体大小来计算 */
+        /* 3. 1 rem = 1 html 里的字体大小(font-size) */
+
+        html{
+            /* rem 单位会随着html里的字体代销改变而变化 */
+
+            font-size: 12px;
+        }
+        /* 使用rem单位! */
+        div {
+            width: 2rem;
+            height: 3rem;
+            background-color: pink;
+            font-size: 2rem;
+        }
+        
+
+        /* 下一个问题: */
+        /* 如何使用rem实现移动适配? */
+        /* 原理: 让html的fz, 根据屏幕尺寸的变化而变化, 此时 rem也就随之变化 */
+        /* 例如: 设备宽度为375px, html里的fz为20, 此时1rem = 20px */
+        /* 例如: 设备宽度为414px, html里的fz为25, 此时1rem = 25px */
+
+        /* 前提: 需要一个能够监测屏幕尺寸(宽度)的手段? */
+        /* 答案: 媒体查询 */
+        /* 检测屏幕尺寸的变化, 满足条件时, 设置相应的html的样式 */
+    </style>
+</head>
+<body>
+    <div>测试内容</div>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+          width: 500px;
+          height: 500px;
+          background-color: #ccc;
+          color: #fff;
+          text-align: center;
+          font-size: 100px;
+        }
+      </style>
+</head>
+<body>
+    <div class="box"></div>
+    <script>
+        const box = document.querySelector('.box')
+        let i = 1 
+        const move = () => {
+            // 只要鼠标一移动，i就会变化
+            box.innerHTML = i++
+        }
+
+        // 需求: 每间隔100ms只执行一次,setTimeout
+        //时间戳的写法
+        const throttle = (fn, ms = 0) => {
+            // 1. 记录一个开始时间
+            // 2. 获取一个当前事件
+            // 3. 当前事件 - 开始时间 >= 等待时间 100ms , 就让move回调函数执行一次
+            let pre = 0 // 记录一个开始时间
+            return function(...args){
+                // 里面的代码  鼠标一移动 就会执行
+                // 时间戳 + new Date() , Date.now() , new Date().getTime()
+                let now = + new Date()
+                if(now - pre >= ms){
+                    fn.apply(this, args)
+                    pre = Date.now()
+                }
+            }
+        }
+        box.addEventListener('mousemove', throttle(move, 500))
+    </script>
+</body>
+</html>

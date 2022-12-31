@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button>点击获取验证码</button>
+    <script>
+        // setInterval  Interval(间隔)
+        // 作用: 每隔一段时间就执行一次内部的代码
+        // 参数:
+        // (1) 可执行的js代码 / 函数(常用)
+        // (2) 间隔执行的时间(毫秒)
+
+        // 用法1: 直接在定时器内部书写函数 (推荐)
+        // setInterval(function () {
+        //     console.log("哈哈哈")
+        // }, 1000);
+
+        // 用法2: 字符串的形式传递可执行的js代码 了解即可
+        // setInterval("console.log(100)", 1000);
+
+        // // 用法3：了解即可
+        // setInterval(fn, 1000)
+
+        // // 用法4：了解即可
+        // setInterval("fn()", 1000)
+
+        // function fn() {
+        //     console.log("滴滴滴")
+        // }
+
+
+        // 清除(关闭)定时器
+        // 先给定时器取一个名字
+        // let i = 1
+        // let timer = setInterval(function () {
+        //     console.log(i)
+        //     i++
+        //     if (i == 5) {
+        //         // 满足某种条件后, 就关闭定时器
+        //         clearInterval(timer)
+        //     }
+        // }, 1000);
+
+        // 案例：
+
+        const btn = document.querySelector('button')
+        // 模拟点击事件
+        let i = 59
+
+        let timer = setInterval(function () {
+            btn.disabled = true
+            i--
+            btn.innerText = `${i}s后可重新获取验证码`
+
+            if (i === 0) {
+                btn.disabled = false
+                btn.innerText = `点击获取验证码`
+                clearInterval(timer)
+            }
+
+        }, 2000)
+        // 注意点: 定时器首次执行, 也会等待一段时间!
+    </script>
+</body>
+
+</html>

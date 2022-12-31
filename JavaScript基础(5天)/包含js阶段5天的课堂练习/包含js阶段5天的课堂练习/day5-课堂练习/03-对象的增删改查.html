@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>对象的增删改查</title>
+</head>
+
+<body>
+    <script>
+        let goods = {
+            name: "娃哈哈",
+            id: 10046,
+            weight: 500,
+            address_link: "杭州"
+        }
+
+
+        // 1. 属性 - 查
+        // 理解: 访问对象里的某个属性值
+        // 语法: 对象名.属性名
+        console.log(`这款产品叫做${goods.name}, 一瓶有${goods.weight}g,公司在${goods.address}`)
+        // 数组取值 数组名[下标], 都是为了取数据
+        // 相比之下, 对象取值时, 阅读起来更清晰明了
+
+
+        // 2. 属性 - 改
+        // 理解: 修改对象里的某个属性的属性值
+        // 语法: 对象名.属性名 = 新值
+        goods.name = "娃哈哈-AD钙奶"
+        console.log(goods) // name: "娃哈哈-AD钙奶"
+
+
+        // 3. 属性 - 增
+        // 理解: 为对象新增属性
+        // 语法: 对象名.属性名 = 新值
+        // 注意点: 确保新增的属性名在原对象里没有存在过
+
+        // 原对象之前没有title属性名 => 新增
+        goods.title = "AD钙奶好喝"
+        // 原对象之前有 title属性名  => 修改
+        goods.title = "AD钙奶好不好喝"
+        console.log(goods)
+
+        // 3.1 属性 - 查(第二种)
+
+        let app = {
+            name: '地图指南',
+            "Downloa-URL": "www.XXXX.com",
+            "URL": "测试地址"
+        }
+
+        console.log(app.name)
+        console.log(app.Downloa-URL) // NaN
+        console.log(app["Downloa-URL"]) // www.XXXX.com
+
+
+        // 说明:
+        // 1. 部分场景下, 对象属性名带有 - 之类的字符, 需要用到引号包裹才能合法书写.
+        // 2. 此时就不能通过用 对象.属性名的方式来取值.
+        // 3. 使用 对象名["属性名"] 来取值
+
+
+
+
+
+
+
+        
+        // 4. 属性 - 删(了解)
+        // 理解: 为对象删除某条属性
+        // 语法: delete 对象名.属性名
+        delete app.name
+        console.log(app) 
+        
+    </script>
+
+</body>
+
+</html>

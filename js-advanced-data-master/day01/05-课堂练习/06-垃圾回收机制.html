@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 全局的变量，会在页面关闭的时候，被回收
+        let num = 10
+        // 局部的变量：
+        for (let i = 0; i < 4; i++) {
+          // 块作用域，是每执行一次，回收一次
+        }
+        function fn() {
+          const str = '你阳了吗'
+          console.log(str)
+          // 在函数被调用完毕的时候，就会被回收
+        }
+        fn()
+        fn()
+        fn()
+        //   面试题：
+        //   什么是垃圾回收机制？
+        //   垃圾回收机制（garbage collection）简称GC，
+        //   JS中内存的分配和回收是自动完成的，内存在不使用的时候会被JS引擎/垃圾回收程序自动回收。
+  
+        //   什么是内存泄漏呢？
+        //   内存泄漏: 不再使用的内存，没有及时的释放。
+      </script>
+</body>
+</html>

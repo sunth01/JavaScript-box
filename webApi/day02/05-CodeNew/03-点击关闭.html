@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            position: relative;
+            width: 1000px;
+            height: 200px;
+            background-color: pink;
+            margin: 100px auto;
+            text-align: center;
+            font-size: 50px;
+            line-height: 200px;
+            font-weight: 700;
+        }
+
+        .box1 {
+            position: absolute;
+            right: 20px;
+            top: 10px;
+            width: 20px;
+            height: 20px;
+            background-color: skyblue;
+            text-align: center;
+            line-height: 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        我是广告
+        <div class="box1">X</div>
+    </div>
+    <script>
+        // 需求： 点击x， 关掉大盒子
+
+        // 1. 事件源： x 按钮
+        // 2. 事件类型： 点击事件 click
+        // 3. 事件处理程序： 关掉大盒子
+
+
+        // 1. 获取事件源
+        // const box = document.querySelector('.box')
+        // const box1 = document.querySelector('.box1')
+        // // 2. 注册事件（绑定事件）（给事件源）
+        // box1.addEventListener("click", function () {
+        //     // 3. 关掉大盒子 隐藏 display:none
+        //     box.style.display = "none"
+        // })
+
+        // 变量声明 语义化一些 看到这个名字我就知道他是用来干嘛的
+
+
+        const box = document.querySelector('.box')
+        const box1 = document.querySelector('.box1')
+        box1.addEventListener('click', function(){
+            box.style.display = 'none'
+        })
+        
+    </script>
+</body>
+
+</html>

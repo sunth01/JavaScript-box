@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            width: 400px;
+            height: 200px;
+            border: 2px solid #000;
+            margin: 200px auto;
+            /* 溢出隐藏 */
+            overflow: hidden;
+        }
+
+        div::before {
+            display: block;
+            content: '';
+            width: 799px;
+            height: 806px;
+            background-color: pink;
+            /* 先写一个0度, 去页面中调试成想要的样子 */
+            transform: translate(-850px, -51px) rotate(40deg);
+            transition: all 2s;
+        }
+
+        div:hover::before {
+            transform: translate(-200px, -51px) rotate(40deg);
+        }
+        
+    </style>
+</head>
+
+<body>
+    <div></div>
+</body>
+
+</html>

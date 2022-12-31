@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    span {
+      display: inline-block;
+      width: 70px;
+      height: 30px;
+      line-height: 30px;
+      border: 1px solid #000;
+      text-align: left;
+      margin-bottom: 5px;
+      padding-left: 10px;
+    }
+  </style>
+</head>
+
+<body>
+  <script>
+    // 利用函数(function)封装代码
+
+    function aaa() {
+      
+      for (let i = 1; i <= 9; i++) {
+        for (let k = 1; k <= i; k++) {
+          document.write(`<span> ${k}X${i}=${i * k}</span>`)
+        }
+        document.write("<br>")
+      }
+
+    }
+
+    // 把99乘法表通过(函数封装)的方式完成类似alert()的效果
+    // 在需要的时候直接调用
+    aaa()
+    aaa()
+    aaa()
+    aaa()
+    aaa()
+    aaa()
+    aaa()
+
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text">
+
+    <script>
+        // 键盘事件   keydown  keyup 
+
+        const input = document.querySelector('input')
+
+        // 1. keydown 键盘按下的时候触发
+        //  keydown 如果一直按住，会不断调用执行我们的回调函数
+
+        // 注意：==> keydown里面的回调函数，在我们的文本还没有落入到input框的时候就触发了
+        // 比如，第一次输入a, 在a落入到input框之前，监听keydown的这个函数就已经执行了，打印的是输入a之前input框中存在的value值
+        input.addEventListener('keydown', function(){
+            console.log(input.value)
+        })
+
+        // 2. keyup 键盘抬起
+        // keyup 不会一直执行，只会执行一次
+        input.addEventListener('keyup', function(){
+            console.log('键盘抬起了')
+        })
+
+        // 3. input表单输入事件 输入内容的时候触发
+        input.addEventListener('input', function(){
+            // 获取表单的内容
+            console.log(input.value)
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text">
+    <script>
+        const input = document.querySelector('input')
+        const sendMsg = function(){
+            console.log('发送请求')
+        }
+
+        // 分析需求：
+        // 1. 当我们触发keyup的时候，300ms之后，才会执行sendMsg这个函数
+        // 2. 如果300ms之内，再次触发了keyup，重新计时
+
+        // 我们是不是应该声明一个定时器，来控制fn什么时候执行。setTimeout
+        // 我们这个定时器需要关闭，重新计时吗？ 需要 clearTimeout， 是不是还需要定时器的id
+
+        // const debounce = (fn, ms = 100) => {
+        //     // 这里的代码，一开始就执行
+        //     return function(){
+        //         // 这里的代码，每次触发keyup的时候执行 
+        //         // console.log(fn) // fn就是我们传递过来的sendMsg
+        //         fn()
+        //     }
+        // }
+
+        // 留下一个问题，timerId写在return外面还是里面？
+        const debounce = (fn, ms = 0) => {
+            let timerId // 作为清除定时器的id
+            return function(){
+                // 如果存在定时器，先清除定时器，让整个程序只有一个定时器在执行
+                clearTimeout(timerId)
+                // 重新计时
+                timerId = setTimeout(function(){
+                    // 当等待时间到了之后，调用执行fn
+                    fn()
+                }, ms)
+                
+            }
+        }
+
+        input.addEventListener('keyup', debounce(sendMsg, 300))
+        // input.addEventListener('keyup', function(){
+        //         // 如果存在定时器，先清除定时器，让整个程序只有一个定时器在执行
+        //         clearTimeout(timerId)
+        //         // 计时
+        //         timerId = setTimeout(function(){
+        //             // 当等待事件到了之后，调用执行fn
+        //             fn()
+        //         }, ms)
+                
+        //     })
+    </script>
+</body>
+</html>

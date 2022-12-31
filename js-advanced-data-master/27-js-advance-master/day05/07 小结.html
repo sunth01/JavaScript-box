@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 原型链继承
+        Child.prototype = new Parent()
+        Child.prototype.constructor = Child
+
+        // 寄生式组合继承 ===> 最完美的  
+        // extends 继承 （语法糖）
+
+
+        // 什么是浅拷贝，什么是深拷贝 ？
+        // 实现浅拷贝的方式
+        // 1. Object.assign()
+        // 2. 扩展运算符 ...
+        // 3. concat() 
+        // 4. slice()
+
+
+        // 实现深拷贝的方式
+        // 1. 手写递归实现   ===> 理解递归
+        // 2. JSON.parse(JSON.stringify())
+        // 3. lodash库
+
+    </script>
+</body>
+</html>

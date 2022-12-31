@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    body {
+      height: 2000px;
+    }
+
+    div {
+      width: 200px;
+      height: 200px;
+      padding: 10px;
+      border: 10px solid red;
+      background-color: pink;
+      margin: 100px;
+    }
+  </style>
+</head>
+
+<body>
+  <div></div>
+  <script>
+      // 获取元素的大小 
+      // clientWidth = width + padding 
+      // offsetWidth = width + padding + border
+
+      // 获取元素的位置
+      // offsetLeft / offsetTop ==> 获取距离最近一级带有定位父元素的位置
+
+      // 视口 ==> 可视区域的窗口
+      const div = document.querySelector('div')
+      console.log(div.getBoundingClientRect().top)
+      // const res = div.getBoundingClientRect()
+
+
+      // x / left  ==> 元素相对于左边视口的位置
+      // y / top   ==> 元素相对于顶部视口的位置
+
+      // width 和 height => 同 offsetWidth / offsetHeight 
+      // width  ==> width + padding + border
+      // height ==> height + padding + border 
+
+  </script>
+</body>
+
+</html>

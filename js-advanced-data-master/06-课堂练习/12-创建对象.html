@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 类：用于创建对象的目标，描述了一类对象的行为和特征。一大类，泛指
+        // 对象：具体的某一个，属性和方法的集合。
+        // 实例：实际的，具体的例子。（对象）
+        // 实例化：通过构造函数（类）创建实例（对象）的过程。
+
+        // 创建对象
+        // 1. 字面量创建对象
+        const ht = {
+            name:'浩天',
+            age:18
+        }
+        console.log(ht)
+
+        const xx = new Object({name:'李萧', age:6})
+        console.log(xx)
+
+        // 2. 通过构造函数创建对象
+        function Star(name, age){
+            this.name = name 
+            this.age = age 
+        }
+        const gg = new Star('贵贵', 18)
+        console.log(gg)
+    </script>
+</body>
+</html>

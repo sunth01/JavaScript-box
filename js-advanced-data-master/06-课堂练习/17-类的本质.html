@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 1.  ES6中  类 没有变量提升，所以必须先声明类，再通过类实例化对象。
+        // const ldh = new Star('刘德华', 18)
+        class Star {
+            constructor(name, age){
+                this.name = name 
+                this.age = age 
+                // console.log(this)
+                // sing()
+                this.sing()
+            }
+            // 2. 公共的属性和方法，在类里面使用的时候，前面一定要记得加this
+            sing(){
+                console.log('唱冷冷的冰雨')
+                console.log(this.name)
+            }
+            dance(){
+                console.log('跳舞')
+            }
+        }
+        const ldh = new Star('刘德华', 18)
+        // 想要new Star 的时候，就去调用执行sing方法
+        // ldh.sing()
+    </script>
+</body>
+</html>

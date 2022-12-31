@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 面试题 
+        // ===> var let const 区别？
+        /* ====================  ===================== */
+        // 1. let / const 会形成块级作用域
+        // 2. let / const 不存在变量提升，var有
+        // 3. let / const 不允许重复声明，var可以
+        // 4. let / const 存在暂时性死区（temporal dead zone） TDZ 
+            // ==>  let / const  声明的变量，不能在声明之前使用，var可以
+        // 5. 浏览器中，var声明的全局变量会挂载到window对象下，let / const 不会
+
+        // ===> const 
+        // 1. const 一旦声明，必须马上赋值
+        let p; var p1 ;
+        const p2 = 10
+
+        // 2. const 声明的变量不能改变值 （简单类型值，引用类型不能改变地址）
+        // const p3 = '不能改变'
+        // p3 = '我就想试一试'
+
+        const obj = {name:'萧萧'}
+        obj.name = '贵贵'
+        
+
+    </script>
+</body>
+</html>

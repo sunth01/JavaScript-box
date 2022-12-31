@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        
+        // 语法：arr.reduce(cbFn, initValue)
+        // 作用：对数组里面的每一个元素都执行一个自定义的reducer函数, 将其结果汇总为单个返回值。
+        //     cbFn：       回调函数    必须 
+        //     initValue:   初始值     可选
+
+        // cbFn的参数：   ==> 要记住的 两个   ===> cbFn中不要忘记写return了！
+            //  previousValue:     上一次调用cbFn时的返回值  √
+            //  currentValue:      当前的元素           √
+            //  currentIndex:      当前元素的索引号  （可选）
+            //  array       ：      源数组（可选）
+
+        // 返回值： 调用cbFn之后，遍历整个数组后的结果
+        const arr = [1, 2, 3]
+
+        const res = arr.reduce(function(prev, cur){
+            return prev + cur
+        }, 0)
+
+        // 1. 判断有没有初始值，如果有， prev第一次调用的时候，就是我们写的初始值
+        // 2. 如果不写初始值， prev ==> 是数组的第一个元素arr[0]
+
+    </script>
+</body>
+</html>

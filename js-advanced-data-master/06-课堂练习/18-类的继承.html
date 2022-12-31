@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 寄生式组合继承 
+        // ===> extends ES6 类的继承  完美的 perfect~~~
+        // 继承： 让子类拥有父类的属性和方法
+
+        // 定义一个父类
+        class Animal {
+            constructor(name, age){
+                this.name = name
+                this.age = age
+            }
+            run(){
+                console.log('奔跑')
+            }
+        }
+
+        // 写一个子类Dog 继承 Animal这个父类
+        class Dog extends Animal {
+            // 子类里面没有写属性和方法,但是 通过extends,直接继承了父类的name和age
+            // 子类 创建的实例，可以调用父类的方法 （继承父类的属性和方法）
+        }
+
+        const dog = new Dog('大黄', 2)
+        console.log(dog)
+        dog.run()
+    </script>
+</body>
+</html>

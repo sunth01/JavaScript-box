@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+// 闭包的一个应用：实现数据的私有化
+// 闭包产生的问题： 内存泄漏
+
+function count(){
+    let i = 0
+    return function(){
+        i++
+        console.log(`函数被调用了${i}次`)
+    }
+}
+const fn = count()
+// const fn = function(){
+//         i++
+//         console.log(`函数被调用了${i}次`)
+//     }
+fn()
+
+// 1. 本来i是函数内部的一个局部变量，按理说我们，当我们调用完count()之后，应该释放掉这个变量
+// 2. 但是这里，每次调用fn的时候，一直都能访问到这个i变量， i一直没有被回收。
+
+// i本来应该被回收，但是没有释放，所以会造成内存泄漏
+
+// 闭包的应用：
+// 面试可能会问到，实际开发中，你在哪里用到过闭包？
+// 1. 节流：throttle 
+// 2. 防抖：debounce
+
+// ====>
+// 1. 箭头函数的this指向
+// 2. 闭包搞定
+// 3. call / apply / bind 搞定
+// 4. 剩余参数rest 搞定 
+// 5. 定时器搞定
+// 6. 函数的返回值搞定 
+    </script>
+</body>
+</html>

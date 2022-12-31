@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const obj = {
+            name:'航桑',
+            age:18,
+            hobby:['dance', 'music']
+        }
+        const o = {}
+
+        const deepClone = (newObj, oldObj) => {
+            // oldObj ==> ['dance', 'music']
+            // k  ===>  索引号
+            // oldObj[k] ==> 'dance'
+            for(let k in oldObj){
+                // 1. 如果属性值是数组
+                // ['dance', 'music']
+                // 当 k 等于 hobby 的时候 oldObj[k] => ['dance', 'music']
+                if (oldObj[k] instanceof Array){
+                    newObj[k] = []
+                    // 'hobby'
+                    // 左边的参数 [] , 右边的参数  ['dance', 'music']
+                    deepClone(newObj[k], oldObj[k])
+                // 2. 如果属性值不是数组
+                } else {
+                    newObj[k] = oldObj[k]
+                }
+            }
+        }
+
+        deepClone(o, obj)
+
+        console.log(o, obj)
+
+        o.hobby[0] = 'book'
+        console.log(o, obj)
+
+    </script>
+</body>
+</html>

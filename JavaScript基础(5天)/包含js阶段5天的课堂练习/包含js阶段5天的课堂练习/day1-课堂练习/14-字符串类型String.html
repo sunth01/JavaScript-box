@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>字符串</title>
+</head>
+
+<body>
+    <script>
+        let str1 = "双引号"
+        let str2 = '单引号'
+        let str3 = `反引号`
+        let str4 = "ABCD"
+        let str5 = "10086"
+        let str6 = ""
+        console.log(str1);
+        console.log(str2);
+        console.log(str3);
+        console.log(str4);
+        console.log(str5);
+        console.log(str6);
+
+        // 需求: 输出引号在控制台
+        console.log("''");
+        console.log('""');
+        console.log(" 今天讲的东西有点'多' ");
+
+
+        
+        // 1. 字符串的运算:
+        // 字符串 +号运算 => 让多个字符串进行拼接
+        let name = prompt("请输入你的姓名")
+        let time = "早上"
+        console.log("我叫" + name + ",我" + time + "不吃早餐");
+
+        console.log("用户输入的内容是" + name);
+        console.log("time的执行结果是" + time);
+
+        
+        // 2. 模板字符串
+        // 让字符串拼接变的更简单高效, 方便阅读
+        let str = `我叫${name},我${time}不吃早餐`
+        document.write(str)
+
+
+
+
+
+
+
+
+
+
+        // 3. 把动态的变量, 渲染到页面中
+        document.write(
+            `
+        <ol>
+        <li>${str1}</li>
+        <li>${str2}</li>
+        <li>${str3}</li>
+        <li>${str4}</li>
+        <li>${str5}</li>
+        <li>${str6}</li>
+        </ol>
+            `
+        )
+        
+    </script>
+</body>
+
+</html>

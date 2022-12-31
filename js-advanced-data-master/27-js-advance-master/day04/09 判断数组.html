@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+    <script>
+        // 判断 检测数组 
+        /* ====================  ===================== */
+        // 1. Array.isArray()
+        // 2. A instanceof B   
+        // 3. Object.prototype.toString.call()
+        /* ====================  ===================== */
+
+
+        const arr = [1, 2, 3]
+        const obj = {}
+
+        console.log(Array.isArray(arr))
+        console.log(arr instanceof Array)
+        console.log(Object.prototype.toString.call(arr))
+
+
+        // 将伪数组（类数组）转为真数组 
+        /* ====================  ===================== */
+        // 1. Array.from() 
+        // 2. 扩展运算符 [...arrayLike]
+        /* ====================  ===================== */
+        
+        const lis = document.querySelectorAll('ul li')
+        console.log(lis)
+        // lis.push(66) // 伪数组没有push方法 
+        const res = Array.from(lis)
+        const resArr = [...lis]
+
+
+
+
+    </script>
+</body>
+</html>

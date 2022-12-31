@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 1. 两个相同函数名的函数, 后面的函数会覆盖前面的函数
+        function fn() {
+            alert("我是第一个fn")
+        }
+
+        function fn() {
+            alert("我是第二个fn")
+        }
+        fn()
+
+        // 2. break和return的区别 ?
+        // 作用不同:
+        // break : 结束的是循环, 退出Switch语句.
+        // return: 结束的是函数, 并可以返回数据.
+
+    </script>
+</body>
+
+</html>

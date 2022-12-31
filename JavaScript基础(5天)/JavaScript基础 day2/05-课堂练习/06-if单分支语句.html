@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // if（如果）   else（否则）
+        // if/else（小括号里写条件）
+        // {大括号里写满足小括号条件之后要执行的代码}
+        let num = +prompt("请输入成绩");
+        if (num >= 700) {
+            alert('恭喜考入清华大学');
+        } else {
+            alert('很抱歉，分数不符合条件')
+        }
+
+        // 语法格式：
+        // if (条件) {
+        //     如果条件成立，就执行内部的代码
+        // }
+        
+        // 注意点 ：括号里不是布尔值，会自动触发隐式转换为布尔值
+        console.log(Boolean('字符串')); // true
+        console.log(Boolean('123')); // true
+        console.log(Boolean('')); // false
+        console.log(Boolean(999)); // true
+        console.log(Boolean(0)); // false
+        console.log(Boolean(NaN)); //false
+        console.log(Boolean(undefined)); //false
+        console.log(Boolean(-99)); // true
+        // 除了空字符串的任意字符都为true
+        // 除了0 其他数字都为true
+    </script>
+</body>
+
+</html>

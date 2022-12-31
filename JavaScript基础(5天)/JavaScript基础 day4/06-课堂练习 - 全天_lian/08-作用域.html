@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 什么是作用域?
+        // 代码中提到的名字(函数名/变量名)等, 是有使用范围的.
+        // 这个名字的有效范围, 就是这个名字的作用域.
+        // 作用: 提高了代码的局部性, 增强代码的可靠性, 减少了命名冲突.
+        // 作用域可以分为全局作用域和局部作用域.
+
+        // 1. 全局作用域: 全局有效
+        // 描述: 在全局幻境下声明的名字, 在整个js环境内部都可以访问.
+        let i = 990
+        function fn() {
+            console.log("我在fn函数里用到了外面的变量i----" + i)
+        }
+        fn()
+        
+        // 2. 局部作用域: 局部有效/ 在当前环境有效
+        function fn2() {
+            let k = 10
+            console.log(k)
+        }
+        // console.log(`我在fn2函数外部用到内部的变量k----` + k)
+        // 报错:  k is not defined
+
+        // 3. 变量的访问原则
+        // (1) 只要是代码, 就有作用域
+        // (2) 作用域的查找过程: 就近原则, 优先在当前环境下查找, 一直往外层找
+        // (3) 先找布局, 再全局, 如果还没找到(报错变量未定义)
+
+    </script>
+</body>
+
+</html>

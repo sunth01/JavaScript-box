@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let obj1 = {
+            name:'JS',
+            book:{
+                title:"You Don't Know JS",
+                price:"169"
+            }
+        }
+
+        // 浅拷贝：在堆内存中新开辟一个空间，创建一个新对象
+        //        拷贝原对象的第一层基本数据类型的值 和 引用类型的地址。
+
+        // 第一层：最外面的一层 {} 最近的一层
+
+        // 实现浅拷贝的方式
+
+        // 1. Object.assign()
+        let obj2 = Object.assign({}, obj1)
+        // 第一层 name属性值 是基本数据类型，拷贝前后两个对象相互不影响
+        obj2.name = 'Hello World'
+        console.log(obj2)
+        console.log(obj1) // 如果obj1不受影响
+        // 第一层 如果属性值是引用类型，引用类型的值改变，会相互影响
+        obj2.book.price = '66'
+        console.log(obj2)
+        console.log(obj1)
+
+
+        console.log(obj2.book === obj1.book) // 新旧两个对象指向同一个内存地址
+        console.log(obj2.book.price === obj1.book.price) // 基本数据类型，值和类型都相等
+
+        // 2. 扩展运算符 spread ...
+        let c = {
+            name:'JS',
+            book:{
+                title:"You Don't Know JS",
+                price:"169"
+            }
+        }
+
+        let d = {...c}
+        d.name = '贵桑'
+        d.book.price = '99'
+
+        // 3. Array.prototype.concat()
+        const arr1 = [1, 2, {name:'淞桑'}]
+        const arr2 = arr1.concat()
+        // console.log(arr2)
+        arr2[0] = 666 
+        arr2[2].name = '贵儿桑'
+        console.log(arr1)
+        console.log(arr2)
+
+        // 4. Array.prototype.slice() 
+
+        const arr3 = [1, 2, {name:'杰伦'}]
+        const arr4 = arr3.slice()
+        arr4[0] = 888
+        arr4[2].name = '萧萧'
+        console.log(arr3, arr4)
+
+        
+        // 面试
+        // Q1: 什么是浅拷贝？
+        // 在堆内存中新开辟空间，创建一个新的对象。
+        // 拷贝第一层基本数据类型的值和引用类型的地址。
+        // Q2: 实现浅拷贝的方式有哪些？
+        // 1. Object.assign()
+        // 2. 扩展运算符
+        // 3. 数组的concat()
+        // 4. 数组的slice()
+
+
+
+
+    </script>
+</body>
+</html>

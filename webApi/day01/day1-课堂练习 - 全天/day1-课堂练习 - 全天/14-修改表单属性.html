@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- 场景1: -->
+    <input type="text" id="ipt" value="测试内容-张三" placeholder="请输入账号">
+    <br>
+    <br>
+    <!-- 场景2: -->
+    <button id="btn">点击</button>
+    <br>
+    <br>
+    <!-- 场景3: -->
+
+    <h3>
+        <input type="checkbox" id="checkBoxALL"> 全选按钮
+    </h3>
+    <div class="box">
+        <input type="checkbox" id="checkBox"> 商品1
+        <br>
+        <input type="checkbox" id="checkBox"> 商品2
+        <br>
+        <input type="checkbox" id="checkBox"> 商品3
+    </div>
+
+
+    <script>
+        // 场景1: 
+        const ipt = document.querySelector('#ipt')
+        // console.log(ipt)
+        // console.dir(ipt)
+        // 访问属性值
+        console.log(ipt.value)
+        console.log(ipt.type)
+        console.log(ipt.placeholder)
+        // 设置属性值
+        ipt.value = "李四"
+        // 点击显示按钮, 把密码框 互相转换 明文框
+        ipt.type = 'password'
+        ipt.placeholder = '请输入密码'
+
+
+        // 场景2:
+        const btn = document.querySelector('#btn')
+        console.log(btn)
+        // disabled 禁用按钮的状态 默认false  /  不禁用
+        console.dir(btn.disabled)
+        btn.disabled = true // 禁用按钮
+        // (1) 注册按钮旁边有一个确认协议, 如果不勾选, 注册按钮就永远禁用
+        // (2) 发送验证码, 点击第一次后,就把按钮给禁用, 然后提示XXs以后才可以重新发送.
+        btn.innerText = '58秒后可重新获取验证码'
+        // 假设时间到了以后
+        btn.disabled = false // 禁用按钮
+        btn.innerText = '点击获取验证码'
+
+
+        // 场景3:
+        const checkBoxAll = document.querySelector('h3 #checkBoxALL')
+        const checkBoxList = document.querySelectorAll('.box #checkBox')
+
+        console.dir(checkBoxAll)
+        console.dir(checkBoxList)
+        // 更改复选框的选中状态
+        checkBoxAll.checked = true // 手动更改状态 (布尔值)
+        
+        // (1) 点击全选按钮的复选框时, 下列所有商品的选中状态都得被勾选
+        // (2) 当我把下列所有的商品都一一选中时, 上方的全选按钮也应该自动被勾选
+
+        // 根据全选按钮的状态进行判断
+        if(checkBoxAll.checked) {
+            // 检测到全选按钮被勾选, 把内部单个按钮全部勾选!
+            for (let i = 0; i < checkBoxList.length; i++) {
+                checkBoxList[i].checked = true
+            }
+        }
+
+    </script>
+</body>
+
+</html>

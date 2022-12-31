@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 赋值是将某一数值或对象赋给某个变量的过程
+        // 基本数据类型：值传递，赋值之后两个变量相互不影响
+        // 引用数据类型：赋址（地址），两个变量具有相同的引用，指向同一个对象，相互之间有影响
+
+        // 赋值操作，不是浅拷贝，我们并没有在内存中创建一个新的对象，对象还是那个对象。
+
+        let a = '莫听穿林打叶声，何妨吟啸且徐行'
+        let b = a
+        console.log(b)
+        a = '贵有恒，何必三更起五更眠'
+        console.log(a, b)
+
+        // 引用类型  存在堆内存中，栈里面存的是地址
+        let obj1 = {
+            name:'JS',
+            book:{
+                title:"You Don't Know JS",
+                price:"169"
+            }
+        }
+        let obj2 = obj1  // 赋值 ===> 赋的是地址
+        obj2.name = 'Hello World'
+        console.log(obj1)
+    </script>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            height: 6000px;
+        }
+
+        div {
+            /* 1vh 视口高度的百分之一 */
+            background-color: pink;
+            height: 100vh;
+            /* 100vh 让容器铺满视口高度 */
+            /* 百分比相对的父级的高度 */
+            /* 额外考虑:应为body和html是块级元素,所以他们的高度默认是0 */
+        }
+
+        /* 通常 无法直接直接获取到视口宽度,在部分场景需要设置容器/图片为全屏展示时 */
+        /* 之前的做法是利用js来获取,但是现在可以直接利用vh获取,简单且高效 */
+    </style>
+</head>
+
+<body>
+    <div></div>
+</body>
+
+</html>
+
+

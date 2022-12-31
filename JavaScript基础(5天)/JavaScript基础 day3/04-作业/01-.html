@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 输入五个有效年龄放到组里
+        let arr = []
+        while (arr.length < 5) {
+            let num = +prompt(`请输入第${arr.length + 1}个人的年龄`);
+
+            if (num > 0 && num < 100) {
+                arr.push(num)
+            }
+        }
+        console.log(arr);
+
+        // 打印成年人的年龄
+        for (let i = 0; i < arr.length; i++) {
+            if (arr[i] >= 18) {
+                console.log(`这是成年人的年龄：${arr[i]}<br>`);
+            }
+        }
+
+        let sum = 0
+        for (let i = 0; i < arr.length; i++) {
+            sum += arr[i]
+        }
+        console.log(`这是所有人年龄的总和:${sum}`);
+        // 打印所有人的年龄总和
+
+        let average = 0
+        for (let i = 0; i < arr.length; i++) {
+            average = (sum / arr.length)
+        }
+        console.log(`这是所有人的平均年龄：${average}`);
+
+        // 打印最大年龄和最小年龄
+        let max = arr[0]
+        let min = arr[0]
+        for (let i = 0; i < arr.length; i++) {
+            if (max < arr[i]) {
+                max = arr[i]
+            }
+            if (min > arr[i]) {
+                min = arr[i]
+            }
+        }
+        console.log(max);
+        console.log(min);
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul>
+        <li class="item">1</li>
+        <li class="item">1</li>
+        <li class="item">1</li>
+    </ul>
+    <script>
+        // 需求 修改每一个li标签 字体颜色， 还要修改内容  ==> "我被修改了"
+
+        // 思路：
+        //  1. 获取所有的元素  ==>All
+        //  2. 循环遍历 
+        //  3. 修改颜色   style 
+        //  4. 修改内容  innerHTML
+
+        // s表示复数
+        const lis = document.querySelectorAll('.item')
+        // 等号左右两边 加空格， <  ; 后面加空格
+        // 不建议大家使用自动格式化，手敲
+        for(let i = 0; i < lis.length; i++){
+            lis[i].style.color = 'orange'
+            lis[i].innerHTML = '我被修改了'
+        }
+
+        // 伪数组： 有length，有索引，没有数组的一些方法，比如pop push.
+        lis.push(6)  // Error lis.push is not a function
+
+
+    </script>
+</body>
+</html>

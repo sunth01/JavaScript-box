@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- 移动端viewport处理完整版代码 -->
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1 minimum-scale=1 maximum-scale=1 user-scalable=no" />
+    <title>XXX</title>
+    <link rel="stylesheet" href="./lib/iconfont/iconfont.css">
+    <link rel="stylesheet" href="./css/base.css">
+    <link rel="stylesheet" href="./css/orders.css">
+</head>
+
+<body>
+    <!-- 头部固定手机状态栏 -->
+    <header>
+        <!-- <img src="./images/top.png" alt=""> -->
+    </header>
+
+    <!-- 主体内容 -->
+    <div class="main">
+        <!-- 因为分析得出 顶部需要40px为手机状态栏占位置 -->
+        <!-- 左右还有11px的边距 -->
+        <!-- 底部有80px的边距需要替底部支付模块占位置 -->
+        <!-- 所以用一个最大的外层主体内容盒子 设置内边距 -->
+
+        <!-- 高度为40的空盒子 替顶部手机状态栏占据位置 -->
+        <!-- <div class="h40"></div> -->
+
+        <!-- 地址信息 address_info -->
+        <div class="address_info">
+            <!-- 图标 -->
+            <div class="address_Icon"></div>
+            <!-- 用户信息 user_info -->
+            <div class="user_info">
+                <!-- 用户姓名和电话 -->
+                <div class="userName">
+                    <em>小明</em>
+                    <span>186874654</span>
+                </div>
+                <!-- 门牌号 -->
+                <p>
+                    北京市 海淀区 中关村软件园 信息科技大厦1号 楼410#
+                </p>
+            </div>
+            <!-- 查看更多 more -->
+            <div class="more"></div>
+        </div>
+
+        <!-- 产品信息 product_Info -->
+        <div class="product_Info">
+            <!-- 1. 产品图片 -->
+            <div class="product_pic">
+                <img src="./uploads/pic.png" alt="">
+            </div>
+            <!-- 2. 产品详情 product_details-->
+            <div class="product_details">
+                <!-- 标题1 -->
+                <h3>康尔贝 非接触式红外体温仪</h3>
+                <!-- 标题2 -->
+                <h3>领券立减30元 婴儿级材质 测温…</h3>
+                <!-- 配置 select -->
+                <div class="select">
+                    <span>粉色 红外体温计</span>
+                </div>
+                <!-- 价格  Price -->
+                <div class="price">
+                    <em>¥</em>
+                    <span>266</span>
+                    <i>¥299</i>
+                </div>
+
+            </div>
+            <!-- 3. 产品数量 product_number -->
+            <div class="product_number">3</div>
+
+        </div>
+
+        <!-- Form Template  -->
+        <!-- 因为多处使用到同一个样式模板 -->
+        <!-- 所以类名不能取的太个性化 -->
+        <!-- 尽量的实现复用代码 -->
+
+        <!-- 表单模板 复用 -->
+        <ul class="form_Template mt6">
+            <li>
+                <div>配送方式</div>
+                <div>顺丰快递</div>
+            </li>
+            <li class="remarks">
+                <div>买家备注</div>
+                <div class="remarks_text">希望可以尽快发货，谢谢~</div>
+                <!-- <div>￥299.00</div> -->
+            </li>
+            <li>
+                <div>运费</div>
+                <div>￥0.00</div>
+            </li>
+        </ul>
+        <!-- 表单模板 复用 -->
+        <ul class="form_Template mt10">
+            <li>
+                <div>配送方式</div>
+                <div>顺丰快递</div>
+            </li>
+            <li>
+                <div>商品总价</div>
+                <div>￥299.00</div>
+            </li>
+            <li>
+                <div>运费</div>
+                <div>￥0.00</div>
+            </li>
+        </ul>
+        <!-- 表单模板 复用 -->
+        <ul class="form_Template mt10">
+            <li>
+                <div>配送方式</div>
+                <div>顺丰快递</div>
+            </li>
+            <li>
+                <div>商品总价</div>
+                <div>￥299.00</div>
+            </li>
+            <li>
+                <div>运费</div>
+                <div>￥0.00</div>
+            </li>
+        </ul>
+        <!-- 表单模板 复用 -->
+        <ul class="form_Template mt10">
+            <li>
+                <div>配送方式</div>
+                <div>顺丰快递</div>
+            </li>
+            <li>
+                <div>商品总价</div>
+                <div>￥299.00</div>
+            </li>
+            <li>
+                <div>运费</div>
+                <div>￥0.00</div>
+            </li>
+        </ul>
+        <!-- 表单模板 复用 -->
+        <ul class="form_Template mt10">
+            <li>
+                <div>配送方式</div>
+                <div>顺丰快递</div>
+            </li>
+            <li>
+                <div>商品总价</div>
+                <div>￥299.00</div>
+            </li>
+            <li>
+                <div>运费</div>
+                <div>￥0.00</div>
+            </li>
+        </ul>
+    </div>
+
+
+    <!-- 支付模块 -->
+    <div class="pay"></div>
+
+</body>
+
+</html>

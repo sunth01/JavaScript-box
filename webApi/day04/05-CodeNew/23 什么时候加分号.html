@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    // 真正会导致上下行解析出问题的 token 有 5 个：括号，方括号，正则开头的斜杠，加号，减号。
+
+    // 1. ()
+    // 2. []
+    // 3. / 
+    // 4.  +
+    // 5. -
+
+    // 只需要记住这两种情况 () [] 开头，给我们的代码加上分号
+    // ;()
+    // ;[]
+
+    const arr = [1, 2, 3]
+    arr.forEach(function(el){
+        console.log(el)
+    })
+
+    ;[3, 4, 5].forEach(function(el){
+        console.log(el)
+    })
+
+    // 交换两个变量 
+    let a = 10 
+    let b = 20
+    // let temp
+    // temp = a 
+    // a = b 
+    // b = temp
+    // console.log(a, b)
+
+    // ==> 以后学，交换两个变量
+    ;[a, b] = [b, a]
+    console.log(a, b)
+
+
+    // 没有应该不应该，只有你自己喜欢不喜欢  -- 尤雨溪  Vue   
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    body {
+      padding-top: 100px;
+      height: 3000px;
+    }
+
+    div {
+      display: none;
+      margin: 100px;
+      overflow: scroll;
+      width: 200px;
+      height: 200px;
+      border: 1px solid #000;
+    }
+  </style>
+</head>
+
+<body>
+  <div>
+    我里面有很多很多的文字
+    我里面有很多很多的文字
+    我里面有很多很多的文字
+    我里面有很多很多的文字
+    我里面有很多很多的文字
+    我里面有很多很多的文字
+    我里面有很多很多的文字
+    我里面有很多很多的文字
+    我里面有很多很多的文字
+    我里面有很多很多的文字
+    我里面有很多很多的文字
+    我里面有很多很多的文字
+    我里面有很多很多的文字
+    我里面有很多很多的文字
+  </div>
+  <script>
+
+    // 1. 监听页面的滚动事件  scroll  window/document 都可以绑定
+    // window/document  ==> scroll 
+    // window.addEventListener('scroll', function(){
+    //   console.log('我滚了')
+    // })
+    // document.addEventListener('scroll', function(){
+    //   console.log('页面滚动了')
+    // })
+    // const html = document.documentElement // 不行
+
+    // 2. scroll 还可以监听dom元素的滚动事件
+    const div = document.querySelector('div')
+    // div.addEventListener('scroll', function(){
+    //   // console.log('元素滚动')
+    //   console.log(div.scrollTop)  // 返回值是不带单位的数字
+    // })
+
+    // 3. 应用场景
+    // 监听页面或者元素滚动到某个位置，让某些元素显示隐藏 
+
+    // 怎么知道某个元素滚动了多少距离，或者说滚动到某个位置了呢？
+
+    // 4. 元素被卷去的头部
+    // element.scrollTop  ==> 元素被卷去的头部
+    // element.scrollLeft ==> 元素被卷去的左侧距离（用得少）
+
+    // 5. 
+    // 当页面被卷去的头部（页面滚动上去的距离 >= 100 像素的时候）显示这个div
+
+    // 1. 监听的是页面的滚动事件
+    // 2. 页面被卷去的头部 ==> document.documentElement.scrollTop
+
+   
+    window.addEventListener('scroll', function(){
+      
+      // 获取页面被卷去的头部 ==> html
+      const n = document.documentElement.scrollTop
+      console.log(n)
+      if (n >= 100){
+        div.style.display = 'block'
+      } else {
+        div.style.display = 'none'
+      }
+      
+    })
+
+
+  </script>
+</body>
+
+</html>

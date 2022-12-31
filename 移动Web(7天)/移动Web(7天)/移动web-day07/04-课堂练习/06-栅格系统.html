@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./bootstrap/css/bootstrap.min.css">
+    <style>
+        .box {
+            height: 600px;
+            background-color: pink;
+        }
+        .row div{
+            height: 50px;
+            border: 1px solid #000;
+            background-color: rgb(149, 128, 255);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container box">
+        <!-- 从文档中复制过来的基本样式 -->
+        <!-- 栅格系统:八亿份分为12分,利用不同的预定义好的类名去控制排列方式 -->
+
+        <!-- 需求 -->
+        <!-- 大屏(lg) 一行4个 -->
+        <!-- 中屏(md) 一行2个 -->
+        <!-- 小屏(sm) 一行1个 -->
+
+        <div class="row">
+            <div class="col-sm-12 col-md-6 col-lg-3">测试内容</div>
+            <div class="col-sm-12 col-md-6 col-lg-3">测试内容</div>
+            <div class="col-sm-12 col-md-6 col-lg-3">测试内容</div>
+            <div class="col-sm-12 col-md-6 col-lg-3">测试内容</div>
+        </div>
+
+    </div>
+    
+
+</html>

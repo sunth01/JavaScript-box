@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        /* .box {
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+        } */
+
+        
+        /* img {
+            background-position: center;
+            background-repeat: no-repeat;
+            width: 100vw;
+            height: 100vh;
+        } */
+
+        .yanse {
+            font-size: 30px;
+            background-color: skyblue;
+            color: red;
+            width: 100px;
+            height: 100px;
+
+        }
+
+
+    </style>
+</head>
+<body>
+    <!-- <div class="box" id="box">测试内容!!!</div> -->
+
+    <!-- <img src="./images/slider01.jpg" alt=""> -->
+
+    <!-- <div class="box"></div> -->
+
+    <!-- <img src="./images/desktop_1.jpg" alt=""> -->
+
+    <div class="box yanse">文字测试</div>
+
+    
+
+
+
+    <script>
+        // const box = document.querySelector('#box')
+        // console.log(box.innerText)
+        // // console.dir(box)
+        // box.innerText = '我是一个div盒子'
+        
+
+        // console.log(box.innerHTML)
+        // box.innerHTML = '<strong>我要修改div盒子</Strong>'
+
+        // const img = document.querySelector('img')
+        // img.src = './images/slider02.jpg'
+        // img.alt = '@#$#%^$%^&'
+        // img.title = '这是第二章图'
+        // const box = document.querySelector('.box')
+
+        // box.style.width = '50px'
+        // box.style.backgroundColor = 'blue'
+        // box.style.border = '5px solid red'
+        // box.style.borderTopColor = 'black'
+
+
+        // console.log(document.body)
+
+        // function getRandom(min,max) {
+        //     return Math.floor(Math.random() * (max - min+ 1) + min)
+        // }
+        
+        // const random = getRandom(1,10)
+        // document.style.backgroundImage = `url(./images/desktop_${random}.jpg)`
+        
+        const box = document.querySelector('.box')
+        box.classList.add('yanse')
+        // 删除样式
+        box.classList.remove('yanse')
+        // toggle 有就删掉 没有就加上
+        // box.classList.toggle('yanse')
+
+
+
+    </script>
+</body>
+</html>

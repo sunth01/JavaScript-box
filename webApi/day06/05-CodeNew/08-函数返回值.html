@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        const fn = function () {
+            console.log('今天大家学得怎么样')
+            console.log('今天又废了')
+            return false
+
+        }
+
+        const res = fn()
+        // 函数调用之后，fn() 这个表达式就有值
+        console.log(fn())
+
+        // 1. 函数内部，如果不写return ，调用之后的表达式的值就是undefined
+        // 2. 如果函数内部return了一个值，fn() 就是return后的值
+    </script>
+</body>
+
+</html>

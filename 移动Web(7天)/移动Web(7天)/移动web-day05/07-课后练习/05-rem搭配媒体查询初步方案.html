@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        /* 方案: 把页面宽度等分为10份,设置当前html的fz 例如:375px下,fz为37.5px */
+        @media (width:375px) {
+            html {
+                font-size: 37.5px;
+            }
+        }
+        @media (width:414px) {
+            html {
+                font-size: 41.4px;
+            }
+        }
+        div {
+            /* <!-- 需求:完成一个350px宽,410px高的粉色盒子 --> */
+            /* <!-- 需要把350px 转换为rem单位 --> */
+            /* <!-- width: 350 / 37.5 --> */
+            width: 9.33rem;
+            /* height :410px / 37.5 */
+            height: 10.93rem;
+            background-color: pink;
+        }
+    </style>
+</head>
+
+<body>
+    <div></div>
+</body>
+
+</html>

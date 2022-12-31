@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        div {
+            position: relative;
+            width: 200px;
+            height: 200px;
+            /* border: 1px solid #000; */
+            margin: 100px;
+            /* 添加运动动画 */
+            animation: move 6s linear infinite;
+        }
+
+        div::before,
+        div::after {
+            position: absolute;
+            content: '';
+            width: 200px;
+            height: 100px;
+            background-color: #f70;
+        }
+
+        div::before {
+            top: 0;
+            border-radius: 100px 100px 0 0;
+            animation: shang 0.5s linear infinite alternate;
+        }
+
+        div::after {
+            bottom: 0;
+            border-radius: 0 0 100px 100px;
+            animation: xia 0.5s linear infinite alternate;
+        }
+
+        /* 张嘴动画 - 上 */
+        /* 张嘴动画 - 下 */
+
+        @keyframes shang {
+            100% {
+                transform: rotate(-30deg);
+            }
+        }
+
+        @keyframes xia {
+            100% {
+                transform: rotate(30deg);
+            }
+        }
+
+        /* 移动 */
+        @keyframes move {
+            0% {
+                transform: translate(0) rotateY(0);
+            }
+
+            49.99% {
+                transform: translate(1200px) rotateY(0);
+            }
+
+            50% {
+                transform: translate(1200px) rotateY(180deg);
+            }
+
+            100% {
+                transform: translate(0px) rotateY(180deg);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div></div>
+
+    <!-- /* 得有一个整体容器, 因为这个球 要移动 */ -->
+    <!-- /* 容器内部肯定有2个元素, 一上一下(伪元素) */ -->
+</body>
+
+</html>

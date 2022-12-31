@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 深拷贝
+        // 在堆内存中开辟新的空间，创建新对象
+        // 递归的拷贝原对象的所有属性和方法。拷贝之后，两个对象相互不影响。
+
+        // 实现深拷贝的方式
+        // 1. 手写递归 ---> 递归理解  （以后，工作了两三年 ==> 掌握手写）
+        // 2. JSON.parse(JSON.stringify()) ==> 缺陷
+        // 3. lodash库 
+
+        // 需求， 把上面的obj拷贝给 o 这个对象
+
+        // 深拷贝：一层一层的把所有属性都拷贝到新的对象中
+
+        // for in  ==> 遍历对象的属性，属性值 ，for in  也可以遍历数组（不推荐）
+
+        // for(let k in obj){
+        //     console.log(k) // 属性名
+        //     console.log(obj[k]) // 属性值
+        //     // 这里k表示一个变量，'name'  'age'
+        // }
+
+        const obj = {
+            name:'航桑',
+            age:18,
+            // hobby:['dance', 'music']
+        }
+        const o = {}  
+        const deepClone = (newObj, oldObj) => {
+            // 把oldObj的属性名，属性值，给newObj添加上
+            // newObj  {}
+            for(let k in oldObj){
+                // k ==> 'name'  k属性名   oldObj[k]  属性值
+                // 当k取 hobby时， oldObj['hobby'] ==> 引用类型的数组['dance', 'music'] 
+                newObj[k] = oldObj[k]
+            }
+        }
+
+        deepClone(o, obj)
+
+        console.log(o)
+        o.hobby[0] = 'rap'
+
+        console.log(o, obj)
+
+    </script>
+</body>
+</html>

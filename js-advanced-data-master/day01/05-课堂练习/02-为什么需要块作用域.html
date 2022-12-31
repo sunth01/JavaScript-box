@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //   var t = new Date()
+      //   function fn() {
+      //     console.log(t)
+      //     if (true) {
+      //       var t = 'hello'
+      //     }
+      //   }
+      //   fn()
+
+      // 等价于：
+      //   var t = new Date()
+      //   function fn() {
+      //     var t
+      //     console.log(t) // undefined
+      //     if (true) {
+      //       t = 'hello'
+      //     }
+      //   }
+      //   fn()
+
+      // 为什么需要一个块作用域
+      //   var t = new Date()
+      //   function fn() {
+      //     console.log(t)
+      //     if (true) {
+      //       let t = 'hello'
+      //     }
+      //   }
+      //   fn()
+
+      //   for (var i = 0; i < 6; i++) {
+      //     // console.log(i)
+      //   }
+      //   console.log(i) // 6
+      //   相当于
+      //   var i
+      //   for (i = 0; i < 6; i++) {
+      //     console.log(i)
+      //     i++
+      //   }
+      //   console.log(i)
+
+      for (let i = 0; i < 6; i++) {
+        // console.log(i)
+      }
+      console.log(i) // 报错
+    </script>
+  </body>
+</html>d

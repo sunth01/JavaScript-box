@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function foo(){
+            console.log(this, 'foo')
+        }
+
+        const obj = {
+            name:'test',
+            fn:function(){
+                console.log(this, '---定时器外层的this') // obj
+                setTimeout(function(){
+                    // console.log(this, 'function')  // window
+                    // 在定时器的回调函数中，又调用了一个函数
+                    // foo调用执行的时候，它里面的this和定时器是不是箭头函数没有关系
+                    foo()
+                }, 1000);
+                setTimeout(() => {
+                    // console.log(this, '箭头函数')  // obj
+                    foo()
+                }, 2000)
+            }
+        }
+        obj.fn()
+    </script>
+</body>
+</html>

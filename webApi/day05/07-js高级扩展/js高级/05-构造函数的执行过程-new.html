@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function Star(name, age) {
+            // 1. 创建了一个空对象
+            // {}
+            // 2. 让this指向这个空对象（指向可以理解为等于）
+            // this = {}
+            // 3. 执行构造函数里面的代码，给这个空对象添加属性和方法
+            // 属性
+            this.name = name
+            this.age = age
+            // 方法
+            this.sayHi = function () {
+                console.log('hi')
+            }
+            // 4. 返回这个对象（this） (return this)
+            // return  {} 
+        }
+        const zjl = new Star('周杰伦', 18)
+        // new 的执行过程(构造函数的执行过程)
+        // 1. 在函数内部创建了一个空对象
+        // 2. 让this指向这个空对象
+        // 3. 执行构造函数里面的代码,给这个对象添加属性和方法
+        // 4. 返回这个对象(this)
+    
+
+
+
+    </script>
+</body>
+
+</html>

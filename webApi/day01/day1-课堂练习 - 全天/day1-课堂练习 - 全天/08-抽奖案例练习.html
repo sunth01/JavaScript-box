@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>年会抽奖</title>
+  <style>
+    .wrapper {
+      width: 840px;
+      height: 420px;
+      background: url(../04-code/images/bg01.jpg) no-repeat center / cover;
+      padding: 100px 250px;
+      box-sizing: border-box;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrapper">
+    <strong>27期班级抽奖</strong>
+    <h1>一等奖：<span id="one">???</span></h1>
+    <h3>二等奖：<span id="two">???</span></h3>
+    <h5>三等奖：<span id="three">???</span></h5>
+  </div>
+  <script>
+    // 1.声明数组
+    // const personArr = ['小美老师', '何老师', '何国美老师', '小美姐', '班长']
+
+    // 复习:
+    // // (1) 随机函数
+    // console.log(Math.random()); // 0 - 0.9999999~   包含0不包含1
+    // // (2) 0-10
+    // console.log(Math.random() * 10); // 0 - 9.999999~   包含0不包含10
+    // // (3) 0-10的整数
+    // console.log(Math.floor(Math.random() * 10)); //包含0不包含10
+    // // (4) 0-10的整数
+    // console.log(Math.floor(Math.random() * (10 + 1))); //包含0也包含10
+
+    // 需求: 每轮不会重复出现同一个中奖者
+    // 待补充: 
+
+    // 原数组
+    const personArr = ['小美老师', '何老师', '何国美老师', '小美姐', '班长']
+    // 获取span的集合
+    const list_span = document.querySelectorAll('span')
+
+    // 封装抽奖函数
+    function edit(list) {
+      // for循环给每个span都进行内容处理
+      for (let i = 0; i < list.length; i++) {
+        // 根据原数组生成随机数(0-4)
+        const SJnum = Math.floor(Math.random() * personArr.length)
+        // 给每个span都赋予一个随机的中奖者姓名
+        list[i].innerText = personArr[SJnum]
+        // 操作原数组, 删除当前的中奖者, 确保同一个名称不会重复出现
+        personArr.splice(SJnum, 1)
+      }
+    }
+    // 调用函数并进行传参
+    edit(list_span)
+  </script>
+</body>
+
+</html>

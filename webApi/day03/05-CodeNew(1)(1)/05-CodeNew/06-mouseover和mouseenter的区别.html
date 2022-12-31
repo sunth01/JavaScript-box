@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .father {
+      width: 400px;
+      height: 400px;
+      background-color: pink;
+    }
+
+    .son {
+      width: 200px;
+      height: 200px;
+      background-color: purple;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="father">
+    <div class="son"></div>
+  </div>
+  <script>
+    // 鼠标经过时间,鼠标离开
+    // mouseenter / moseleave 没有事件冒泡的 
+    const father = document.querySelector('.father')
+    father.addEventListener('mouseenter', function(){
+      console.log('鼠标经过了')
+    })
+    father.addEventListener('mouseleave', function(){
+      console.log('鼠标离开了')
+    })
+
+    // 鼠标经过事件 离开事件
+    // mouseover / mousout ===> 有事件冒泡 (事件再传播 由内到外)
+
+    father.addEventListener('mouseover', function(){
+      console.log('鼠标经过了')
+  })
+  father.addEventListener('mouseout', function(){
+    console.log('鼠标离开了')
+  })
+
+  // 事件在传播,son这个盒子也有mouseover这个时间按 只是我们没有监听到他而已,这个mouseover这个事件的
+  //father这个盒子,监听到了这个事件,所以打印log一句话
+  </script>
+</body>
+
+</html>

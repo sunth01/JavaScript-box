@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function Star(name, age) {
+            this.name = name
+            this.age = age
+            this.sayHi = function () {
+                console.log('hi')
+            }
+        }
+        const zjl = new Star('周杰伦', 18)
+        const ldh = new Star('刘德华', 29)
+        // zjl.sayHi()
+        // ldh.sayHi()
+        console.log(zjl, ldh)
+        // 如果这个方法全等,说明内存中是一个方法
+        console.log(zjl.sayHi === ldh.sayHi) // false
+
+        // 每创建一个对象,都会在堆内存中新开辟一个空间来存储方法. ==> 存在浪费内存空间的问题
+
+        // 我们常说的指向,指针
+        // ==> 表示的是内存中的地址,相当于是门牌号,房间号,这个地址指向了内存中数据真实的位置
+
+
+    </script>
+</body>
+
+</html>

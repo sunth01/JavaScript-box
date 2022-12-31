@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    const date = new Date()
+
+    console.log(date.getFullYear()) //年
+    console.log(date.getMonth() + 1) // 月 从0 - 11
+    console.log(date.getDate()) // 几号
+    console.log(date.getDay()) // 星期几 取值 0 - 6
+    console.log(date.getHours()) // 时
+    console.log(date.getMinutes()) // 分
+    console.log(date.getSeconds()) // 秒
+
+
+
+    const arr = ['星期天', '星期一', '星期二', '星期三', '星期四', '星期五', '星期六']
+
+    // 1. 先得到日期对象
+    const date2 = new Date()
+    const i = date2.getDay()
+    console.log(arr[i])
+  </script>
+</body>
+
+</html>

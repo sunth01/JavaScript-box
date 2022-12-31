@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const obj = {
+            name:'航桑',
+            age:18,
+            hobby:['dance', 'music'],
+            book:{
+                title:'Javascript',
+                price:66
+            }
+        }
+        const o = {}
+
+        const deepClone = (newObj, oldObj) => {
+            for(let k in oldObj){
+                // 如果是数组
+                if (oldObj[k] instanceof Array){
+                    newObj[k] = []
+                    deepClone(newObj[k], oldObj[k])
+                // 如果属性值是对象 
+                } else if (oldObj[k] instanceof Object){
+                    // 需要新建一个对象，然后单独再把哪个对象再拷贝了
+                    // newObj[k]  ===> {}
+                    // oldObj[k]  ===> {title:'Javascript', price:66}
+                    newObj[k] = {}
+                    deepClone(newObj[k], oldObj[k])
+                } else {
+                    newObj[k] = oldObj[k]
+                }
+            }
+        }
+        // 如果先判断对象，再判断数组，可以不可以 ====> 不可以的
+        // 我们需要先判断是否是数组，再判断是否是对象。 因为数组也是属于Object。
+
+        // 深拷贝， 应该是在堆内存中新开辟一个空间，创建一个新的对象
+
+        deepClone(o, obj)
+
+        // console.log(o, obj)
+
+        // o.book.price = 88
+        // console.log(o, obj)
+
+        // console.log(o.book === obj.book) // false
+    </script>
+</body>
+</html>

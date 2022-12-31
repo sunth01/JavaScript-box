@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+        <script>
+            // 函数返回值语法格式：return 数据
+            let arr1 = [28,43,56,17,86]
+            // 封装求和函数
+            function getSum(arr) {
+                let sum = 0
+                for (let i = 0; i < arr.length; i++) {
+                    sum += arr[i]
+                }
+
+                alert('我出‘发’了');
+                // 把最终结果返回去
+                return sum
+                // return 后的代码不会被执行，函数立即结束
+            }
+            // 调用函数，但是因为函数内部右返回值，需要声明新变量去接收结果
+            let sum1 = getSum(arr1)
+            // 让调用者自行决定对这个返回值得处理方式！
+            document.write(sum1);
+            console.log(sum1);
+
+            // 注意点：
+            // 1. return后的代码不会被执行 => 确保已经得到结果后在return
+            // 2. return后的数据不会被返回 （不能换行书写）
+            // 3. 函数可以没有return，返回值是undefined
+            
+
+
+        </script>
+</body>
+</html>

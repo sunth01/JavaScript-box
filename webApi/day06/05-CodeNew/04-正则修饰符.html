@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    // 1. 修饰符
+    //   约束正则的某些细节行为，比如是否区分大小写。
+
+    // 2. 语法
+    //  /表达式/修饰符
+
+    // 3. 
+    // 1. i  ignore  忽略   忽略大小写
+    // 2. g  global  全局匹配
+
+    console.log(/^java$/.test('java'))
+    console.log(/^java$/i.test('jAvA'))
+    console.log(/^java$/i.test('JAVA'))
+
+    // 字符串的方法  替换
+    // str.replace(正则表达式,要替换成什么)
+    // 返回值; 替换之后的字符串
+    const str = 'Java是一门编程语言,学了Java就掉头发'
+    const res = str.replace(/java/ig, 'Go')
+    console.log(res)
+    // 如果不加g 就只替换匹配的第一个
+
+
+  </script>
+</body>
+
+</html>

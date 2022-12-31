@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>测试内容</div>
+    <script>
+        // 利用js语法获取div对象
+        const div1 = document.querySelector('div')
+        console.log(div1);// 获取div的结构代码
+
+        // 利用dir输出DoM对象
+        console.dir(div1); // 获取div的DOM对象
+        
+        div1.innerText = '哈哈哈哈'
+        
+        div1.innerName = 'pink'
+        // 根据div的关系链，获取到他的父元素
+        console.log(div1.parentElement);
+        // 输出u父元素的DOM对象
+        console.dir(div1.parentElement);
+
+        // 4. DOM的核心思想
+        // 把网页内容当做对象来处理，就可以对网页进行动态的增删改查等操作
+
+        // DOM树最顶级的对象
+        console.dir(document);
+        document.title = '我是一个修改过的标题'
+
+    </script>
+</body>
+</html>

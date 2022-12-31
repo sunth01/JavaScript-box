@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //猜数字小游戏案例
+
+        //函数功能：产生两个数之间的随机数，包含这两个数
+        function getRandomIntInclusive(min, max) {
+            min = Math.ceil(min);
+            max = Math.floor(max);
+            return Math.floor(Math.random() * (max - min + 1)) + min; //含最大值，含最小值 
+        }
+        //1.先生成一个随机数
+        var randomX = getRandomIntInclusive(1, 100);
+        // alert(randomX);
+        //2.接着让用户先输入一个数，并判定这个数与随机数是否一样
+        //3.充值系统
+        //监控用户猜测的次数，大部分用户猜测到了10次以上就会没有耐心了，所以我们可以设置一个次数的监控，到达十次之后就提示用户需不需要充值
+        var guessCnt = 0;
+        do {
+            var guessNmb = prompt('系统已经生成了一个1至100之间的随机数（包括1和100）' + '\n' + '请输入您猜测的数字：');
+            if (guessNmb > randomX) {
+                alert('数字大了，继续猜！');
+                guessCnt += 1;
+                if (guessCnt % 5 == 0) {
+                    alert('体验充值服务，只需9.9就可以立即获取答案' + '\n' + '添加QQ1548223723付款，即可获取数字');
+                }
+            } else if (guessNmb < randomX) {
+                alert('数字小了，继续猜！');
+                guessCnt += 1;
+                if (guessCnt % 5 == 0) {
+                    alert('体验充值服务，只需9.9就可以立即获取答案' + '\n' + '添加QQ1548223723付款，即可获取数字');
+                }
+            } else {
+                alert('答案是' + randomX + '，恭喜您猜对了！');
+            }
+        } while (guessNmb != randomX);
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

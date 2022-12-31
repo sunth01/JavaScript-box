@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        // apply ===> 也可以改变this指向
+        const obj = {
+            msg: 'hello world'
+        }
+        function fn(x,y){
+            console.log(this)
+            return x + y
+        }
+
+        const res = fn(1,2)
+        // console.log(res)
+        const res2 = fn.apply(obj,[1,2])
+        console.log(res2)
+        // fn.apply()
+        // 1. 改变this指向
+        // 2. 调用函数,立即执行
+        // 3. 第一个参数是this指向的对象.--
+        // call / apply 的区别 ===> 都是改变this指向 : call接收参数列表 , apply接收数组
+    </script>
+</body>
+</html>

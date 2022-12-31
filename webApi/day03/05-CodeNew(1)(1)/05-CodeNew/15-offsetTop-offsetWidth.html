@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .wrap {
+      position: relative;
+      width: 200px;
+      height: 200px;
+      background-color: pink;
+      margin: 100px;
+    }
+
+    .box {
+      width: 100px;
+      height: 100px;
+      background-color: orange;
+      padding: 20px;
+      border: 30px solid pink;
+      /* margin: 100px; */
+    }
+
+    .grand-father {
+      position: relative;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+    <div class="box">
+    </div>
+  </div>
+
+
+  <script>
+    // element.offsetTop (多一些)  /  element.offsetLeft
+    // 获取元素距离最近一级带有定位父元素的位置
+    // 如果元素的父级都没有定位,获取的就是相对于body的位置
+    const box = document.querySelector('.box')
+    console.log(box.offsetTop)
+
+
+    // 2. offsetWidth / offsetHeight
+    //  动态获取元素的大小 
+    //  offsetWidth = width + padding + border 
+    //  offsetHeight = height + padding + border 
+    console.log(box.offsetWidth)
+    console.log(box.clientWidth)
+
+    // ==> clientWidth
+    //  clientWidth = width + padding , 它不包含boder
+  </script>
+</body>
+
+</html>

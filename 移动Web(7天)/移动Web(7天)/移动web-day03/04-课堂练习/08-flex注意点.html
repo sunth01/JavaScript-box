@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            margin: 100px auto;
+            width: 500px;
+            height: 500px;
+            background-color: pink;
+            display: flex;
+        }
+        .div{
+            background-color: blue;
+            /* 1. 块级元素变成弹性盒子之后,宽度由默认的父级100%,便蔚有自身内容撑开 */
+        }
+        .span {
+            background-color: red;
+            width: 200px;
+            height: 200px;
+            /* 2. 行内元素变成弹性盒子可以直接设置宽高大小 */
+        }
+
+        a {
+            /* 3. 行内元素作为弹性容器(父元素时),可以直接设置大小宽高 */
+            display: flex;
+            background-color: #f70;
+            width: 300px;
+            height: 300px;
+            text-decoration: none;
+            color: black;
+        }
+
+    </style>
+</head>
+<body>
+        <div class="box">
+            <div class="div">我是div</div>
+            <div class="span">我是span</div>
+        </div>
+        <a href="#">我是a标签</a>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=`">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+
+
+        const fn = function(){
+            console.log(123)
+        }
+        // 基本语法
+        const fn1 = () => {
+            console.log(123)
+        }
+        fn1()
+        //传参
+        const fn2 = (x) => {
+            console.log(x)
+        }
+        fn2(1234)
+        //只有一个形参的时候 ,可以省略小括号
+        const fn3 = x => {
+            console.log(x)
+        }
+        fn3(456)
+        //函数体里面只有一行代码的时候 可以省略{}
+        const fn4 = x => console.log(x)
+        fn4(678)
+        // 函数体里面只有一行代码的时候 可以省略{}和return
+        const fn5 = x => x
+        console.log(fn5(121111))
+        // 当箭头函数直接返回一个对象的时候,如果要简写
+        const fn6 = x => ({name:'xxx'})
+        console.log(fn6())
+
+        // 参数求和
+        const sum = (...arr)=>{
+            // 箭头函数里面没有arguments
+            // console.log(arguments)
+            let count = 0
+            arr.forEach(item => count += item)
+            return count
+        }
+        console.log(sum(1,2,3,4,5))
+    </script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+.box {
+  width: 700px;
+  height: 600px;
+  background-color: #f70;
+  display: flex;
+  justify-content: space-between;
+}
+.box .box_left {
+  width: 300px;
+  height: 300px;
+  background-color: pink;
+}
+.box .box_right {
+  width: 400px;
+  height: 500px;
+  background-color: #00ffea;
+  font-size: 24px;
+  line-height: 500px;
+  text-align: center;
+}
+.box .box_right span {
+  color: #6f00ff;
+}
+.box .box_right:hover {
+  background-color: #fff;
+}

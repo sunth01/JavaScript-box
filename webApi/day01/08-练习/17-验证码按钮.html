@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button id="btn">发送验证码</button>
+    <script>
+        const btn = document.querySelector('#btn')
+        for (let i = 0; i < 60; i++) {
+            if(i < 1 && i < 59) {
+                btn.disabled = true
+            }
+            setInterval(function () {
+                console.log(`还剩${i}秒`)
+            }, 1000);
+
+            break
+
+        }
+    </script>
+</body>
+
+</html>

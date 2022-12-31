@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div></div>
+    <script>
+        const spec = {size:'40cm*40cm', color:'黑色'}
+
+        const div = document.querySelector('div')
+
+        // 1. 获取对象的所有属性值
+        const res = Object.values(spec)
+        console.log(res)
+        // 2. 将数组以 / 分隔， 转为字符串
+        div.innerHTML = res.join('/')
+
+        
+    </script>
+</body>
+</html>

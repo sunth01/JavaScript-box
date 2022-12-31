@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .pink {
+            background-color: pink;
+        }
+
+        .fz35 {
+            font-size: 35px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box1">测试内容</div>
+    <br>
+    <br>
+    <div class="box2">测试内容</div>
+    <br>
+    <br>
+    <div class="box3">测试内容</div>
+
+    <script>
+        // 一. 通过style属性操作CSS
+        const box1 = document.querySelector('.box1')
+        console.dir(box1)
+
+        // (1)  注意右边的值是字符串
+        box1.style.color = "red"
+        // (2)  之前有-的属性, 需要更改写法 margin-left => marginLeft
+        // (3)  注意单位的添加
+        // box1.style.margin-left = "100px"
+        box1.style.marginLeft = "100px"
+        box1.style.border = "1px solid"
+
+        // 问题: 在js里写css属性, 没有编辑器提示, 且某些单词过长, 容易出错!
+
+
+        // 二. 利用className 修改 元素的类名
+        const box2 = document.querySelector('.box2')
+        console.dir(box2)
+        console.log(box2.className) // 既然能够获取, 就代表能够进行赋值
+
+        // 在style里预定义好一些类名, 动态的添加到元素身上
+        box2.className = "pink"
+        box2.className = "fz35" //  覆盖了之前的类名
+        // 改进写法 => 多类名写法 空格隔开
+        box2.className = "pink fz35"
+
+
+        // 三. 利用 classList 去修改元素的类名 ☆☆☆
+        const box3 = document.querySelector('.box3')
+        // (1) 追加类名 add()
+        // box3.classList.add("pink") // class="box3 pink"
+        // box3.classList.add("fz35") // class="box3 pink fz35"
+        box3.classList.add("pink","fz35") // class="box3 pink fz35"
+
+        // (2) 删除类名
+        box3.classList.remove("pink")  // class="box3"
+        // 删除多个类名, 用逗号隔开
+        box3.classList.remove("pink","fz35")  // class="box3"
+        
+        // (3) 切换类名: 之前有此类名, 就删掉它, 之前没有此类名, 就添加上
+        box3.classList.toggle("pink")
+
+    </script>
+</body>
+
+</html>

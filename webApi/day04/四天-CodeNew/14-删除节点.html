@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .box {
+      display: none;
+    }
+  </style>
+</head>
+
+<body>
+  <button>删除</button>
+  <ul class="test">
+    <li>熊大</li>
+    <li>熊二</li>
+    <li>光头强1</li>
+    <li>光头强2</li>
+    <li>光头强3</li>
+    <li>光头强4</li>
+  </ul>
+
+  
+  <ul class="ul-test">
+    <li>
+        <span>
+            <button class="btn">删除</button>
+        </span>
+    </li>
+  </ul>
+  <script>
+
+    // 删除节点
+    // node.removeChild(child)
+    // node => 父节点
+    // child => 要删除的那个节点
+
+    // Q: 点击按钮,删除ul下的第一个元素节点? ul.childre[0]
+    const btn = document.querySelector('button')
+    const ul = document.querySelector('.test')
+
+    // 注册事件
+    btn.addEventListener('click', function(){
+      // 删除完所有元素禁用按钮
+      if(ul.children.length === 0) {
+        this.disabled = true
+      } else {
+        ul.removeChild(ul.children[0])
+      }
+    })
+
+    // Q2 : 点击删除按钮btn,删除他的父节点(元素)ul中的span
+    const ul2 = document.querySelector('.ul-test')
+    const btn2 = document.querySelector('.btn')
+
+    btn2.addEventListener('click', function(){
+      // this.parentNode  ==> span
+      ul2.removeChild(this.parentNode.parentNode)
+      // The node to be removed is not a child of this node.
+      // 我们要删除的span  不是ul亲儿子
+      console.log(this)
+    })
+    // ==> node.removeChild(child)
+    // ==> 我们要删除的这个元素 (节点)，一定父元素的最近的一级(亲儿子) ，不能跨层级删除
+
+  </script>
+</body>
+
+</html>

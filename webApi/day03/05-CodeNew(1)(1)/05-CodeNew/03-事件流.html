@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .father {
+      width: 500px;
+      height: 500px;
+      background-color: pink;
+    }
+
+    .son {
+      width: 200px;
+      height: 200px;
+      background-color: purple;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="father">
+    <div class="son"></div>
+  </div>
+  <script>
+    // 🚩🚩🚩🚩🚩
+    // 事件流:事件执行过程中的流动路径
+    // 事件流描述的元素在页面中接收事件的顺序
+
+    // eg1. 北京的朋友来成都找我吃饭。
+    // 北京 四川 金牛区 黑马  --> 捕获 
+    // 找到我了      --> 找到目标了 
+    // 金牛区  四川   北京    --> 冒泡 
+
+    // eg2. 按压手机这个事件 
+    // 钢化膜 接收到 按压的事件  --> 手机屏幕 --> 内部传感器 
+    // 内部传感器接收到这个按压事件 ---> 处于目标
+    // 传感器 --> 手机屏幕 --> 钢化膜  
+
+    // 我们的事件 有一个传播的过程 ， 事件在传播 
+
+
+    // DOM事件流 三个阶段💡💡💡💡💡💡
+    // 1. 捕获阶段 (从外到内)
+    // 2. 处于目标
+    // 3. 冒泡阶段 (从内到外)
+
+
+        // div.addEventListener(type, listener, useCapture);
+    // 1. type 事件类型
+    // 2. listener 回调函数
+    // 3. useCapture 是否使用捕获 如果使用，传true, 否则 false (如果这个参数不传，默认是false)
+
+    // const son = document.querySelector('.son')
+    // const father = document.querySelector('.father')
+    // const body = document.body
+    // const html = document.documentElement
+
+    // 事件捕获：document  ->  html -> body -> father -> son
+
+    // 事件捕获：addEventListener第三参数为 true
+    // 与书写顺序无关
+
+    // body.addEventListener('click', function(){
+    //     console.log('我是body, 我被点击了')
+    // }, true)
+
+    // html.addEventListener('click', function(){
+    //     console.log('我是html, 我被点击了')
+    // }, true)
+
+    
+
+    // son.addEventListener('click', function(){
+    //     console.log('我是子盒子,我被点击了')
+    // }, true)
+
+    // father.addEventListener('click', function(){
+    //     console.log('我是父盒子, 我被点击了')
+    // }, true)
+
+    // document.addEventListener('click', function(){
+    //     console.log('我是document, 我被点击了')
+    // }, true)
+
+
+        // 事件冒泡 
+    // 事件从最具体的元素（文档树中最深的节点）开始触发，然后向上传播至没有那么具体的元素（文档）  --- JS高程四
+
+
+    // addEventListener第三个参数如果不传，默认就是false， 就是事件冒泡 
+    
+    // 事件冒泡： son ->  father -> body -> html -> document
+    const son = document.querySelector('.son')
+    const father = document.querySelector('.father')
+    const body = document.body
+    const html = document.documentElement
+
+    // 事件冒泡：addEventListener第三个参数省略，或者为false
+    son.addEventListener('click', function(){
+        console.log('我是子盒子,我被点击了')
+    })
+
+    father.addEventListener('click', function(){
+        console.log('我是父盒子, 我被点击了')
+    })
+
+    body.addEventListener('click', function(){
+        console.log('我是body, 我被点击了')
+    })
+
+    html.addEventListener('click', function(){
+        console.log('我是html, 我被点击了')
+    })
+
+    document.addEventListener('click', function(){
+        console.log('我是document, 我被点击了')
+    })
+
+
+
+  </script>
+</body>
+
+</html>

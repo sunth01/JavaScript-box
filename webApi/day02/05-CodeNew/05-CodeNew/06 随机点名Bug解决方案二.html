@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        h2 {
+            text-align: center;
+        }
+
+        .box {
+            width: 600px;
+            margin: 50px auto;
+            display: flex;
+            font-size: 25px;
+            line-height: 40px;
+        }
+
+        .qs {
+
+            width: 450px;
+            height: 40px;
+            color: red;
+
+        }
+
+        .btns {
+            text-align: center;
+        }
+
+        .btns button {
+            width: 120px;
+            height: 35px;
+            margin: 0 50px;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>随机点名</h2>
+    <div class="box">
+        <span>名字是：</span>
+        <div class="qs">这里显示姓名</div>
+    </div>
+    <div class="btns">
+        <button class="start">开始</button>
+        <button class="end">结束</button>
+    </div>
+
+    <script>
+        // 数据数组
+        const arr = ['马超', '黄忠', '赵云', '关羽', '张飞']
+
+        const startBtn = document.querySelector('.start')
+        const person = document.querySelector('.qs')
+
+        let timerId = 0 
+        let i = 0
+
+        // 点击开始
+        startBtn.addEventListener('click', function(){
+            // 当我点击第二次开始按钮的时候，又开启了一个定时器
+            // 点击了三次，就会开启三个定时器， timerId ==> 目前等于3 
+
+            // 解决方案 ==> 让环境中只有一个定时器 当我们带点击开始按钮的时候
+            // 判断有没有定时器，有的话，就不要再开启定时器 
+            // if (timerId !== 0) return 
+            // 上面的代码，等效于，下面这一行
+            if (timerId) return 
+
+            // 1. if语句，如果只有一行，可以省略花括号 
+            // 2. 如果return生效，return后面的代码不会执行
+            console.log(6666)
+            timerId = setInterval(function(){
+                i = parseInt(Math.random() * arr.length)
+                person.innerHTML = arr[i]
+            }, 15)
+
+            console.log(timerId)
+            if (arr.length === 1){
+                startBtn.disabled = endBtn.disabled = true
+            }
+        })
+
+
+        // 点击结束
+        const endBtn = document.querySelector('.end')
+        endBtn.addEventListener('click', function(){
+            // 这个时候，关闭的是第三次开启的哪个定时器，前面两个，就关不掉了 
+            clearInterval(timerId)
+            arr.splice(i, 1)
+
+            // 2. 点击关闭的之后，让 定时器可以重新开启。
+            timerId = 0
+        })
+
+
+        // problem:
+        // 1. 点击多次开始，关不掉定时器 
+
+        // 怎么解决？ 
+
+        // 思路 
+        // 1. 点击开始时，先删除之前的定时器，再开启新的 
+        // 2. 开始判断有没有定时器,有的话直接return 
+        // 3. timerId 当成数组 每次生成定时器push一个元素
+        // 4. flag 等等
+
+    </script>
+</body>
+
+</html>

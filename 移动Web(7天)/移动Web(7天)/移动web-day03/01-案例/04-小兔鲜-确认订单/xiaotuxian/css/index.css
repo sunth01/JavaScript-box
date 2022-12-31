@@ -1,0 +1,284 @@
+body {
+    background-color: #f7f7f8;
+}
+
+/* 顶部时间栏 start */
+.time_box {
+    width: 375px;
+    height: 89px;
+    position: fixed;
+    top: 0;
+}
+
+.time img {
+    width: 375px;
+    height: 40px;
+}
+
+.dingdan {
+    position: relative;
+    height: 42px;
+    width: 375px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #282828;
+    font-size: 14px;
+    padding: 0 10px;
+    background-color: #fff;
+    top: -1px;
+
+
+}
+
+.dingdan .icon-more {
+    position: absolute;
+    display: inline-block;
+    left: 10px;
+    transform: rotate(180deg);
+}
+
+/* --------------------------------------- */
+
+/* 地址栏 */
+.dizhi {
+    display: flex;
+    padding: 0 11px;
+    margin: 89px 11px 5px 11px;
+    width: 354px;
+   
+
+    height: 85px;
+    background-color: #fff;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 6px;
+}
+
+.lvyuan {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30px;
+    height: 30px;
+    background-color: #56b298;
+    border-radius: 50%;
+}
+
+.lvyuan .icon-location {
+    color: #fff;
+}
+
+.dianzan .icon-more {
+    color: #808080;
+
+}
+
+.text_dizhi {
+    flex: 1;
+    height: 42px;
+    padding: 0px 11px;
+    margin-bottom: 15px;
+}
+
+.text_dizhi i {
+    margin-right: 15px;
+    font-size: 15px;
+}
+.text_dizhi em {
+    font-size: 13px;
+    color: #333;
+}
+
+.text_dizhi p {
+    font-size: 12px;
+}
+
+/* 产品 ----------------------*/
+.chanpin {
+    display: flex;
+    margin: 0 auto;
+    width: 354px;
+    
+
+    height: 107px;
+    padding: 0 11px;
+    border-radius: 6px;
+    background-color: #fff;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+.photo img {
+    width: 85px;
+    height: 85px;
+    background-repeat: no-repeat;
+    border-radius: 5px;
+}
+
+.chanpin_text {
+    flex: 1;
+    margin: 0 10px;
+    /* background-color: skyblue; */
+}
+
+.chanpin_text span {
+    font-size: 13px;
+}
+
+.one {
+    margin-bottom: 40px;
+}
+
+.chanpin_text i,
+.chanpin_text em {
+    margin-right: 6px;
+    font-size: 11px;
+    color: #999;
+}
+
+.chanpin_text .renminbi {
+    color: #cf4444;
+    font-size: 9px;
+    margin-right: 4px;
+}
+
+.chanpin_text .shuzi {
+    font-size: 16px;
+    color: #cf4444;
+}
+
+.chanpin_text .renminbi1 {
+    color: #999;
+    font-size: 9px;
+    margin-right: 10px;
+    text-decoration: line-through
+}
+
+.chanpin_text .shuzi1 {
+    font-size: 12px;
+    color: #999;
+}
+
+/* <!-- 配送 --> */
+.peisong {
+    margin: 0 auto;
+    width: 354px;
+    
+
+    height: 125px;
+    background-color: #fff;
+    margin-top: 5px;
+    border-radius: 6px;
+    padding: 0 11px;
+    line-height: 40px;
+
+}
+
+.peisong1 {
+    display: flex;
+    font-size: 13px;
+    justify-content: space-between;
+
+}
+
+.peisong2 {
+    display: flex;
+    font-size: 13px;
+    justify-content: left;
+}
+
+.peisong2 .peisong_r {
+    margin-left: 20px;
+    font-size: 12px;
+    color: #999;
+}
+
+.peisong3 {
+    display: flex;
+    font-size: 13px;
+    justify-content: space-between;
+}
+
+/* 商品总价 */
+.peisong_yunfei {
+    display: flex;
+    font-size: 13px;
+    justify-content: space-between;
+}
+
+.peisong_yunfei .peisong_r {
+    margin-left: 20px;
+    font-size: 12px;
+}
+.peisong_r .icon-more {
+    color: #999;
+}
+
+.peisong_zhekou {
+    display: flex;
+    font-size: 13px;
+    justify-content: space-between;
+}
+
+.peisong_zhekou .peisong_r {
+    color: #cf4444;
+}
+/* 合计 */
+.heji {
+    position: fixed;
+    bottom: 0;
+    width: 375px;
+    
+
+    height: 79px;
+    background-color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px;
+
+}
+
+.wenzi {
+    font-size: 16px;
+}
+
+
+.wenzi i {
+    color: #cf4444;
+    font-size: 12px;
+    margin-right: 6px;
+}
+.wenzi .shuzi266 {
+    font-size: 20px;
+    color: #cf4444;
+    font-weight: 700;
+}
+.wenzi em {
+    font-size: 18px;
+    color: #cf4444;
+}
+.wenzi .bianju {
+    margin-right: 15px;
+}
+.quzhifu {
+    width: 90px;
+    height: 35px;
+    background-color: #57b298;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 13px;
+}
+
+/* 占位 */
+.zhanwei {
+    width: 375px;
+    height: 85px;
+    background-color: transparent;
+}

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // function Star(name,age){
+        //     this.name = name 
+        //     this.age = age 
+        // }
+        // // 构造函数的时候， 公共的方法写在原型上
+        // Star.prototype.sayHi = function(){
+        //     console.log('hi~')
+        // }
+
+        class Star {
+            // 1. 公共的属性写在constructor里面
+            constructor(name, age){
+                this.name = name
+                this.age = age
+            }
+            // 2. 类里面可以直接写方法,方法不需要加function关键字
+            sing(song){
+                console.log(song)
+            }
+            // 3. 多个方法之间不需要逗号隔开
+            dance(){
+                console.log('跳舞')
+            }
+        }
+
+        const ldh = new Star('刘德华',18)
+        console.log(ldh)
+        ldh.sing('冰雨')
+
+        console.log(ldh.__proto__ === Star.prototype)
+    </script>
+</body>
+</html>

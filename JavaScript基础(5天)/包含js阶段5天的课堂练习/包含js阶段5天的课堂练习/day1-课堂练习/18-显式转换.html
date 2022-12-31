@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>显式转换</title>
+</head>
+
+<body>
+    <script>
+        // 理解: 利用合理的属性明确的告诉浏览器, 数据应该转换成什么类型
+
+        // 1. Number(数据)
+        console.log(Number("100")); // 100
+        console.log(Number("100测试内容")); // NaN
+        console.log(typeof Number("100测试内容")); // number
+        console.log(typeof typeof Number("100测试内容")); // string
+
+        // 2. parseInt(数据) => 只保留整数, 后面的小数一律不看
+        console.log(parseInt("3")); // 3
+        console.log(parseInt("3.4")); // 3
+        console.log(parseInt("3.6")); // 3
+        console.log(parseInt("3.9999")); // 3
+        console.log(parseInt("3.9999rem")); // 3
+        console.log(parseInt("px3.9999rem")); // NaN
+
+        // 3. parseFloat(数据) 可以保留小数
+        console.log(parseFloat("3.999")); // 3.999
+        console.log(parseFloat("3.999rem")); // 3.999
+    </script>
+</body>
+
+</html>

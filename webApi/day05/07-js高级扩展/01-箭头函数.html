@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 原来定义函数的方式
+        // 声明式
+        // function fn(){
+        //     console.log(111)
+        // }
+
+        // // 表达式
+        // const cb = function(){
+        //     console.log(222)
+        // }
+
+        // ES6  ==> ECMAScript 6 ==> 2015.5月份 JavaScript新的版本，大更新
+        // ES7                       2016.5月
+        // ES8                   ==> 2017.6月
+
+        // 1. 箭头函数
+        const fn = () => {
+            console.log(111)
+        }
+        fn()
+
+        const fn2 = (a) => {
+            console.log(a)
+        }
+        fn2(666)
+
+        // 2. 如果只有一个形参,小括号可以省略
+        const fn3 = b => {
+            console.log(b)
+        }
+        fn3(333)
+
+        // 3. 如果只有一行代码,我们可以是衡略大括号{}
+        const fn4 = c => console.log(c)
+        fn4(888)
+
+        // 4. 只有一行代码的时候,我们还可以省略return
+        // const fn5 = (a, b) => {
+        //     return a + b
+        // }
+
+        const fn5 = (a, b) => a + b
+        console.log(fn5(1,2))
+
+
+   
+        // 把下面的函数改为箭头函数
+        // function cb(x){
+        //     return x * x
+        // }
+        // ==>
+
+        const cb = x => x * x
+        console.log(cb(5))
+
+
+
+        // 5. 箭头函数可以直接返回一个对象,但是需要小括号把返回对象括起来
+        const fn6 = function(name) {
+            return {username:name}
+        }
+        const res = fn6('刘德华')
+        console.log(res)
+        
+        const fn7 = name => ({username:name})
+        console.log(fn7('张学友'))
+
+    </script>
+</body>
+
+</html>

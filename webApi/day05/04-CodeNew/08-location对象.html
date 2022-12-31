@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button>click</button>
+    <script>
+        // location 是一个对象，了解3个属性 1个方法
+        // location.href  可读写的属性，获取URL的完整地址，还可以用于跳转
+        // location.search
+        // location.hash 
+        console.log(window)
+
+        const btn = document.querySelector('button')
+        btn.addEventListener('click', function () {
+            // 点击按钮,让页面跳转
+            // window.location.href
+            // location.search 获取"?xxxxxx"
+            // location.hash 获取"#xxxxx"
+            console.log(location.href)
+            // location.href = 'http://www.baidu.com'
+        })
+
+
+        // 2.方法
+        // location.reload()
+        const reload = document.querySelector('.reload')
+        reload.addEventListener('click', function(){
+            // 刷新页面
+            // Ctrl + R 刷新  /  F5 
+
+            // Mac cmd + R 刷新 
+            // location.reload()
+
+            //  强制刷新  清空缓存，重新刷新页面
+            // Ctrl+Shift + R 强制刷新   / Ctrl + F5
+            // cmd + shift + R 强制刷新
+            location.reload(true)
+        })
+    </script>
+</body>
+
+</html>

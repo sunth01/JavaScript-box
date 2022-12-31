@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    div {
+      width: 300px;
+      height: 40px;
+      border: 1px solid pink;
+      text-align: center;
+      line-height: 40px;
+    }
+  </style>
+</head>
+
+<body>
+  <div></div>
+  <script>
+    // 1. 先封装一个得到当前日期的函数
+    const getDate = function(){
+      // 1. 先获取日期对象
+      const date = new Date()
+      // 2. 获取年月日
+      const year = date.getFullYear()
+      let month = date.getMonth() + 1
+      let day = date.getDate()
+      // 3. 时分秒
+      let h = date.getHours()
+      let m = date.getMinutes()
+      let s = date.getSeconds() 
+      // 4. 补0 除了年
+      month = month < 10 ? '0' + month : month
+      day = day < 10 ? '0' + day : day
+      h = h < 10 ? '0' + h : h
+      m = m < 10 ? '0' + m : m
+      s = s < 10 ? '0' + s : s
+      return `${year}-${month}-${day} ${h}:${m}:${s}`
+    }
+    const div = document.querySelector('div')
+    // 一开始就获取一次事件,不然会有一秒延迟
+    div.innerHTML = getDate()
+
+    setInterval(function(){
+      div.innerHTML = getDate()
+    },1000)
+</script>
+</body>
+
+</html>

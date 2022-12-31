@@ -1,0 +1,307 @@
+/* 把我们所有标签的内外边距清零 */
+@import '../lib/iconfont/iconfont.css';
+* {
+  margin: 0;
+  padding: 0;
+  /* css3盒子模型 */
+  box-sizing: border-box;
+}
+.w {
+  width: 1250px;
+}
+/* em 和 i 斜体的文字不倾斜 */
+em,
+i {
+  font-style: normal;
+}
+/* 去掉li 的小圆点 */
+li {
+  list-style: none;
+}
+img {
+  /* border 0 照顾低版本浏览器 如果 图片外面包含了链接会有边框的问题 */
+  border: 0;
+  /* 取消图片底侧有空白缝隙的问题 */
+  vertical-align: middle;
+}
+button {
+  /* 当我们鼠标经过button 按钮的时候，鼠标变成小手 */
+  cursor: pointer;
+}
+a {
+  color: #666;
+  text-decoration: none;
+}
+a:hover {
+  color: #c81623;
+}
+button,
+input {
+  /* "\5B8B\4F53" 就是宋体的意思 这样浏览器兼容性比较好 */
+  font-family: Microsoft YaHei, Heiti SC, tahoma, arial, Hiragino Sans GB, "\5B8B\4F53", sans-serif;
+  /* 默认有灰色边框我们需要手动去掉 */
+  border: 0;
+  outline: none;
+}
+body {
+  /* CSS3 抗锯齿形 让文字显示的更加清晰 */
+  -webkit-font-smoothing: antialiased;
+  background-color: #fff;
+  font: 12px/1.5 Microsoft YaHei, Heiti SC, tahoma, arial, Hiragino Sans GB, "\5B8B\4F53", sans-serif;
+  color: #666;
+}
+.hide,
+.none {
+  display: none;
+}
+/* 清除浮动 */
+.clearfix:after {
+  visibility: hidden;
+  clear: both;
+  display: block;
+  content: ".";
+  height: 0;
+}
+.clearfix {
+  *zoom: 1;
+}
+.toubu {
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  height: 1.71rem;
+  width: 10rem;
+  background-image: url(../images/wx.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 10rem;
+}
+.zhanwei_top {
+  height: 1.71rem;
+  width: 10rem;
+}
+.baiyuan {
+  height: 4.27rem;
+  background-image: url(../uploads/banner_1.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 10rem;
+}
+.leyuan {
+  height: 1.09rem;
+  display: flex;
+  align-items: center;
+  padding-left: 0.4rem;
+}
+.leyuan span {
+  font-size: 0.37rem;
+  color: #3C3C3C;
+  font-weight: 700;
+}
+.tuandui_box {
+  height: 6.67rem;
+  background-color: #0091ff;
+}
+.tuandui_box .tuandui {
+  position: relative;
+  background-color: #daff9b;
+}
+.tuandui_box .tuandui img {
+  height: 4.27rem;
+  background-position: 0;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+.tuandui_box .tuandui .sanjiao {
+  position: absolute;
+  top: -0.13rem;
+  left: 0.4rem;
+  width: 1.81rem;
+  height: 0.77rem;
+  background-image: url(../images/status_active.png);
+  background-position: 0;
+  background-repeat: no-repeat;
+  background-size: contain;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.tuandui_box .tuandui .sanjiao span {
+  font-size: 0.32rem;
+  color: #fff;
+}
+.tuandui_box .tuandui .iconfont {
+  position: absolute;
+  font-size: 0.64rem;
+  color: #fff;
+  top: 0.48rem;
+  right: 0.48rem;
+}
+.tuandui_box .text_box {
+  display: flex;
+  justify-content: space-between;
+  height: 2.4rem;
+  background-color: #ffffff;
+  padding: 0.13rem 0.4rem 0.27rem 0.4rem;
+}
+.tuandui_box .text_box .text_left {
+  width: 7.87rem;
+  line-height: 0.56rem;
+  background-color: #fff;
+}
+.tuandui_box .text_box .text_left span {
+  font-size: 0.4rem;
+  color: #3C3C3C;
+}
+.tuandui_box .text_box .text_left i,
+.tuandui_box .text_box .text_left em {
+  font-size: 0.29rem;
+  color: #B4B4B4;
+}
+.tuandui_box .text_box .text_right {
+  font-size: 0.4rem;
+  margin-top: 0.13rem;
+  color: #FE6249;
+}
+.sanjiao1 {
+  position: absolute;
+  top: -0.13rem;
+  left: 0.4rem;
+  width: 1.81rem;
+  height: 0.77rem;
+  background-image: url(../images/status_default.png);
+  background-position: 0;
+  background-repeat: no-repeat;
+  background-size: contain;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.sanjiao1 span {
+  font-size: 0.32rem;
+  color: #fff;
+}
+.tuandui_box2 {
+  height: 6.67rem;
+  background-color: #0091ff;
+}
+.tuandui_box2 .tuandui2 {
+  position: relative;
+  background-color: #daff9b;
+}
+.tuandui_box2 .tuandui2 .xiaoxin {
+  position: absolute;
+  top: 0.48rem;
+  right: 0.48rem;
+  width: 0.64rem;
+  height: 0.64rem;
+}
+.tuandui_box2 .tuandui2 .zhezhao_box {
+  position: relative;
+  height: 4.27rem;
+  background-color: #fff;
+}
+.tuandui_box2 .tuandui2 .zhezhao_box img {
+  position: absolute;
+  height: 4.27rem;
+  background-position: 0;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+.tuandui_box2 .tuandui2 .zhezhao_box .zhezhao {
+  position: absolute;
+  top: 0;
+  z-index: 1;
+  width: 10rem;
+  height: 4.27rem;
+  background-color: rgba(0, 0, 0, 0.304);
+}
+.tuandui_box2 .tuandui2 .iconfont {
+  position: absolute;
+  font-size: 0.64rem;
+  color: #fff;
+  top: 0.48rem;
+  right: 0.48rem;
+}
+.tuandui_box2 .sanjiao2 {
+  position: absolute;
+  z-index: 1;
+  top: -0.13rem;
+  left: 0.4rem;
+  width: 1.81rem;
+  height: 0.77rem;
+  background-image: url(../images/status_default.png);
+  background-position: 0;
+  background-repeat: no-repeat;
+  background-size: contain;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.tuandui_box2 .sanjiao2 span {
+  font-size: 0.32rem;
+  color: #fff;
+}
+.tuandui_box2 .text_box2 {
+  display: flex;
+  justify-content: space-between;
+  height: 2.4rem;
+  background-color: #ffffff;
+  padding: 0.13rem 0.4rem 0.27rem 0.4rem;
+}
+.tuandui_box2 .text_box2 .text_left2 {
+  width: 7.87rem;
+  line-height: 0.56rem;
+  background-color: #fff;
+}
+.tuandui_box2 .text_box2 .text_left2 span {
+  font-size: 0.4rem;
+  color: #3C3C3C;
+}
+.tuandui_box2 .text_box2 .text_left2 i,
+.tuandui_box2 .text_box2 .text_left2 em {
+  font-size: 0.29rem;
+  color: #B4B4B4;
+}
+.tuandui_box2 .text_box2 .text_right2 {
+  font-size: 0.4rem;
+  margin-top: 0.13rem;
+  color: #FE6249;
+}
+.bottom_box {
+  position: fixed;
+  z-index: 1;
+  bottom: 0;
+  width: 10rem;
+  height: 1.31rem;
+  background-color: #feca49;
+  padding-top: 0.11rem;
+}
+.bottom_box ul {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.bottom_box ul li {
+  height: 1.07rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  font-size: 0.29rem;
+  color: #D78B09;
+}
+.bottom_box ul li .iconfont {
+  font-size: 0.56rem;
+}
+.bottom_box ul li .icon-index-copy {
+  font-size: 0.56rem;
+}
+.bottom_box ul li .icon-youhuiquan {
+  font-size: 0.61rem;
+}
+.bottom_box ul li .icon-iconfront- {
+  font-size: 0.64rem;
+}
+.bottom_box ul .one {
+  color: #fff;
+}

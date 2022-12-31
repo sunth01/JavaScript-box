@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        const obj = {
+            name:'刘德华',
+            age:18
+        }
+        let age = 10
+        // 对象的解构赋值，是按照属性名来解构的，可以交换位置
+        // 解构属性的时候重命名，语法=>旧属性名：新属性名
+        const {age:newAge, name} = obj
+        console.log(name,newAge)
+    </script>
+</body>
+</html>

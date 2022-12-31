@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>对象</title>
+</head>
+
+<body>
+    <script>
+        // 1. js的对象是什么?
+        // 是js的一种数据类型, 它用于存储各种键值(键值对 => name:"张三")的集合
+
+        // 2. 对象的作用? 
+        // 作用: 用来描述一个具体的事物
+        // 后端传递过来的一系列数据, 按照之前的写法, 没办法完整的描述清楚
+        // 例如: 一款手机信息 (名称/型号/价格/配置/描述/活动/图片/视频)
+        // 需要用对象的数据形式来进行展示
+
+        // 3.尝试用对象来描述商品
+
+        // let 手机 = {
+        //     属性名: 属性值,
+        //     名称: 'XX手机',
+        //     标题: '2022新款^..',
+        //     价格: 1999,
+        //     id: 15646464,
+        //     封面图: '../img/1.png',
+        //     增值业务: true,
+        //     活动: null,
+        //     版本选择: [128, 256, 512]
+        // }
+
+        // 4. 对象的语法格式:
+
+        // let 对象名(变量)  = {
+        // 属性名: 属性值  => 信息或者特征
+        // 方法名: 函数    => 功能或者行为
+        // }
+
+        let goods = {
+            name: "娃哈哈",
+            id: 10046,
+            weight: 500,
+            address: "杭州"
+        }
+
+        console.log(goods)
+        // 用log语句, 在控制台输出对象, 才可以查看更多属性
+
+        // document.write(goods) // [object Object]
+        // alert(goods); // [object Object]
+
+        console.log(typeof goods) // object
+        let arr = [1, 2, 3]
+        console.log(typeof arr) // object
+        
+    </script>
+</body>
+
+</html>

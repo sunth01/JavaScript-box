@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const arr = [10, 20, 30]
+        // arr.forEach(function(el, i){
+        //     console.log(el)
+        // })
+        arr.forEach(el => console.log(el))
+
+        // 取数组中的每个元素 + 6 得到一个新数组 用箭头函数写
+        const resArr = arr.map(el => el + 6)
+        console.log(arr)
+        console.log(resArr)
+    </script>
+</body>
+</html>

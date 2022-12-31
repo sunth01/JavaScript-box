@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 在逻辑运算符中  与 / 或 存在逻辑中断(短路操作)
+        // && 逻辑与 并且  口诀: 一假则假
+        // || 逻辑或 或者  口诀: 一真则真
+
+        console.log(false && "哈哈")  // false
+        console.log("哈哈" && "呵呵") // 呵呵
+        console.log(0 && 11)         // 0
+        console.log(true && false)   // false
+
+        // ☆☆☆ 运算结果就看代码最后执行到哪一步 ☆☆☆
+        // 左边能得出结果, 就不会去看右边的代码:
+        console.log("--------------------------------------")
+
+        console.log(false || "哈哈")   // 哈哈
+        console.log("哈哈" || "呵呵")  // 哈哈
+        console.log(false || 0)       // 0
+
+    </script> 
+</body>
+
+</html>

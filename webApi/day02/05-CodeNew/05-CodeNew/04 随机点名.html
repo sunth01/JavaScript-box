@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        h2 {
+            text-align: center;
+        }
+
+        .box {
+            width: 600px;
+            margin: 50px auto;
+            display: flex;
+            font-size: 25px;
+            line-height: 40px;
+        }
+
+        .qs {
+
+            width: 450px;
+            height: 40px;
+            color: red;
+
+        }
+
+        .btns {
+            text-align: center;
+        }
+
+        .btns button {
+            width: 120px;
+            height: 35px;
+            margin: 0 50px;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>随机点名</h2>
+    <div class="box">
+        <span>名字是：</span>
+        <div class="qs">这里显示姓名</div>
+    </div>
+    <div class="btns">
+        <button class="start">开始</button>
+        <button class="end">结束</button>
+    </div>
+
+    <script>
+        // 数据数组
+        const arr = ['马超', '黄忠', '赵云', '关羽', '张飞']
+
+        // 1. 给开始按钮绑定事件 
+        const startBtn = document.querySelector('.start')
+        // 获取显示名字的div
+        const person = document.querySelector('.qs')
+
+        // 全局作用域中 定义 timerId
+        let timerId = 0 
+        let i = 0
+
+        // 2. 给它绑定点击事件
+        startBtn.addEventListener('click', function(){
+            // 3. 事件处理程序 我们要做什么
+            timerId = setInterval(function(){
+                // 点一次， 随机从数组中取一个，修改名字的内容  随机取下标 
+                i = parseInt(Math.random() * arr.length)
+                // console.log(i)  ==> arr[i] 取元素
+                person.innerHTML = arr[i]
+            }, 15)
+            console.log(timerId)
+
+            // 当我们删除只剩一个元素的时候，可以把按钮禁用了
+            if (arr.length === 1){
+                // startBtn.disabled = true
+                // endBtn.disabled = true
+                startBtn.disabled = endBtn.disabled = true
+            }
+        })
+
+
+        // ==>---------------------------------------
+        // console.log(endBtn) // const声明的变量 先声明后使用
+
+        // 点击关闭按钮的时候，结束定时器 
+        const endBtn = document.querySelector('.end')
+        endBtn.addEventListener('click', function(){
+            // 这是函数作用域 局部作用域
+            clearInterval(timerId)
+            arr.splice(i, 1)
+            console.log(arr)
+        })
+
+
+        // problem:
+        // 1. 会重复点到同一个人 
+        // ==> 每次点击抽奖后，不能再抽这位同学
+        // 2. 点击多次开始，关不掉定时器 
+
+    </script>
+</body>
+
+</html>

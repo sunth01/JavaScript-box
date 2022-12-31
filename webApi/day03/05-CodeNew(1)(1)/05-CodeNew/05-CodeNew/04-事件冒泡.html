@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .father {
+      width: 500px;
+      height: 500px;
+      background-color: pink;
+    }
+
+    .son {
+      width: 200px;
+      height: 200px;
+      background-color: purple;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="father">
+    <div class="son"></div>
+  </div>
+  <script>
+    // 事件冒泡 
+    // 事件从最具体的元素（文档树中最深的节点）开始触发，然后向上传播至没有那么具体的元素（文档）  --- JS高程四
+
+
+    // addEventListener第三个参数如果不传，默认就是false， 就是事件冒泡 
+
+    // 事件冒泡： son ->  father -> body -> html -> document
+    const son = document.querySelector('.son')
+    const father = document.querySelector('.father')
+    const body = document.body
+    const html = document.documentElement
+
+    // 事件冒泡：addEventListener第三个参数省略，或者为false
+    son.addEventListener('click', function(e){
+        
+        console.log('我是子盒子,我被点击了')
+        // 阻止事件冒泡， 事件就不会再继续往上传播了
+        // 阻止的是事件的传播，不会阻止代码的运行  注意要写e！
+        // e.stopPropagation()
+    })
+
+    father.addEventListener('click', function(e){
+        console.log('我是父盒子, 我被点击了')
+        e.stopPropagation()
+    })
+
+    body.addEventListener('click', function(){
+        console.log('我是body, 我被点击了')
+    })
+
+    html.addEventListener('click', function(){
+        console.log('我是html, 我被点击了')
+    })
+
+    document.addEventListener('click', function(){
+        console.log('我是document, 我被点击了')
+    })
+
+    // 默认就是以冒泡的方式， 事件要么以捕获的方式传播，要么以冒泡的方式传播
+
+  </script>
+</body>
+
+</html>

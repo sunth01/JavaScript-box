@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>项目适配方案</title>
+    <style>
+        .box{
+            /* rem ==> 相对于html的font-size的大小 */
+            width: 2.5rem;
+            height: 2.5rem;
+            background-color: pink;
+        }
+        /* 1024  1920 自适应缩放 */
+        /* // 实现rem适配 */
+
+        /* width 小于或等于1024的时候生效 */
+        @media screen and (max-width: 1024px) {
+            html {
+                /* 1024 / 24 */
+                font-size: 42.66px !important;
+            }
+        }
+
+        /* 表示 width >= 1920 生效 */
+        @media screen and (min-width: 1920px) {
+            html {
+                font-size: 80px !important;
+            }
+        }
+
+
+    </style>
+</head>
+
+<body>
+    <div class="box"></div>
+    <!-- 只要窗口大小改变，html的font-size改变 -->
+    <script src="./new-project/js/flexible.js"></script>
+</body>
+
+</html>

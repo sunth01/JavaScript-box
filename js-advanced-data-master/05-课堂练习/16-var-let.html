@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button>click</button>
+    <button>click</button>
+    <button>click</button>
+    <button>click</button>
+    <button>click</button>
+    <script>
+        const btns = document.querySelectorAll('button')
+
+        // var i;
+        // for(i = 0; i < btns.length; i++){
+        //     // for循环同步执行
+        //     btns[i].addEventListener('click', function(){
+        //         // 绑定事件内部的代码，不会立马执行。
+        //         console.log(i)
+        //     })
+        // }
+        // 1. for循环是同步执行的， 但是回调函数是点击之后再执行
+        // 当我们for循环执行完之后，点击事件还没有执行。 i 已经变为了5
+        // 2. var提升到全局环境中
+
+
+        // let形成了块级作用域，点击事件中的i 和 for循环里面的i绑定在一起了
+        for(let i = 0; i < btns.length; i++){
+            btns[i].addEventListener('click', function(){
+                console.log(i)
+            })
+        }
+    </script>
+</body>
+</html>

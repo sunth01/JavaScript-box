@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let i = 1
+        while (i <= 10) {
+            // 吃到第三个包子的时候发现有虫子不吃第三个了
+            if (i === 3) {
+                document.write(`我发现第三个包子有虫子，换吃下一个<br>`);
+                // 跳出本次循环后，没有改变条件变量，导致一直都是3，陷入死循环
+                i++
+                continue
+                // continue 结束本次循环：后面的代码都不执行，直接重新继续下次循环
+                // 不会执行写在最后的i++
+                // i++
+            }
+
+
+
+            document.write(`我吃的这是第${i}个包子了<br>`);
+            i++
+        }
+
+
+
+
+
+        document.write(`=====================================================<br>`);
+
+        let q = 1
+        while (q <= 10) {
+            if (q === 4) {
+                document.write(`吃到第四个包子的时候发现半只虫子，之后都不吃了<br>`);
+                break
+            }
+            document.write(`我吃了第${q}个包子<br>`);
+            q++
+        }
+    </script>
+</body>
+
+</html>

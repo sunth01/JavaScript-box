@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    div {
+      width: 200px;
+      height: 200px;
+      background-color: pink;
+    }
+  </style>
+</head>
+
+<body>
+  <div></div>
+
+  <script>
+
+    // 移动端的事件，一定要注意切换到移动端
+    const div = document.querySelector('div')
+
+    // 1. touchstart 当手指触摸到dom元素的时候触发
+    div.addEventListener('touchstart', function(){
+      console.log('我触摸到了这个div---touchstart')
+    })
+    // 2. touchmove 手指在dom元素上移动的时候触发
+    div.addEventListener('touchmove', function(){
+      console.log('我的手指在这个div上移动---touchmove')
+    })
+    // 3. touchend 手指离开dom元素了
+    div.addEventListener('touchend', function(){
+      console.log('我的手指离开了div---touchend')
+    })
+  </script>
+</body>
+
+</html>

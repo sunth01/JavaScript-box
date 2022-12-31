@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        // 如何判断内存不会被使用了=>垃圾回收算法
+        //   1. 引用计数法 （淘汰）
+        //   2. 标记清除法 （主流）
+  
+        //   引用计数法
+        // 1. 跟踪记录每个值被引用的次数
+        // 2. 如果这个值被引用了一次，那么就记录次数1
+        // 3. 多次引用会累加
+        // 4. 如果减少一个引用就减少1
+        //   5. 如果引用次数是0，则释放内存
+        //   const person = {
+        //     name: '黑马',
+        //     age: 20,
+        //   }
+        //   const p = person
+        //   person = 1
+        //   p = null
+  
+        // 缺陷：循环引用：
+        //   堆内存空间中的对象 互相引用，计数永远不能为0，无法被回收，内存泄漏
+        function fn() {
+          let a = {}
+          let b = {}
+          a.xx = b
+          b.yy = a
+        }
+        fn()
+      </script>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let num1 = 10
+        let num2 = num1
+        num1 = 30
+        console.log(num2) // 10
+
+        // num1和num2都是Number数据类型, 属于基础数据类型, 在内存中存储与栈空间
+        // 基本数据类型保存在栈空间中, 因为它的占用空间小, 大小固定, 通过值来访问, 属于被频繁使用的数据.
+
+        // num1在栈里开辟了一片空间, 有属于自己的id, 值为10存储在里面
+        // num2在栈里开辟了一片空间, 有属于自己的id, 值为和num1一样(10)的数据
+        // num1 又把栈里的数据10 改为30
+        // 此时不会影响到num2的存储值, 依旧是10
+
+
+        // ------------------------
+
+        let obj1 = {
+            age: 18
+        }
+
+        let obj2 = obj1 // 把引用地址赋值给了obj2
+        // 修改obj2的值
+        obj2.age = 80
+        // 输出obj1的值
+        console.log(obj1) // 80
+
+        // 复杂数据类型:
+        // obj1在栈空间里存储了数据, 该数据有自己的id, 值是一个地址(引用地址), 地址指向堆里的具体对象数据
+        // obj2在栈空间里存储了数据, 该数据有自己的id, 值是一个地址(引用地址), 地址用的同一个, 根据地址查找,找到obj1的对象数据
+        // 修改了obj1, obj2就会受到影响
+        // 修改了obj2, obj1就会受到影响
+        // obj1和obj2的栈里所存储的引用地址是同一个
+        
+    </script>
+</body>
+
+</html>

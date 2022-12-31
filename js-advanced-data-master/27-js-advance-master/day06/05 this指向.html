@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text">
+    <script>
+        const input = document.querySelector('input')
+        const sendMsg = function(){
+            console.log('发送请求')
+            console.log(this)
+            // 不用防抖的情况，原本sendMsg里面的this指向的是input
+        }
+
+        const debounce = (fn, ms = 0) => {
+            let timerId
+            return function(){
+                clearTimeout(timerId)
+                // console.log(this) // setTimeout外面，的 this 指向的就是input
+                timerId = setTimeout(() => {
+                    // 在定时器中，去调用这个fn()
+                    // setTimeout里面的this指向了input 
+                    // fn() // 这个fn内部的this都是指向window
+                    fn.call(this)
+                }, ms)
+            }
+        }
+
+        // input.addEventListener('keyup', sendMsg)
+        // 当我们使用debounce防抖函数来控制sendMsg的执行时，改变了sendMsg里的this的指向
+        input.addEventListener('keyup', debounce(sendMsg, 300))
+
+        // 我们是不是不应该改变sendMsg原本的this指向。
+
+
+        // 1. 因为本身sendMsg里面如果有this，它应该是指向的input，当我们用debounce函数来控制sendMsg的执行时，
+        // 我们不应该改变sendMsg里面原本的this指向。
+
+    </script>
+</body>
+</html>

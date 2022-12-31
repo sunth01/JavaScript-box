@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 1. JS 是一门单线程的语言  
+        // 同一时间只能做一件事，前一件事情做完了，才做下一件事情。
+
+        // 为什么JS是一门单线程的语言呢？
+        // JS设计之初为了操作DOM元素的， 我们不能同时去添加或者删除同一个DOM.
+
+        // 2. 线程 和 进程 
+        // 线程 ： thread  是操作系统能够进行运算调度的最小单位
+        // 进程 ： process 是系统进行资源分配和调度的基本单位
+
+        // 进程 ==> 可以理解为正在运行着的程序 
+        // 线程 ==> 程序中不同的小任务
+
+
+        // 进程 比作 火车  ， 火车 由 车厢
+        // 线程 一节一节的车厢 。
+
+        // 一个正在生产着运行着的工厂 。。 ==> 进程。
+        // 工厂里面 不同的流水线，  ===> 线程 
+
+        // 1. 线程必须依附进程才能运行
+        // 2. 一个进程可以有多个线程
+
+
+
+        console.log(1)
+        setTimeout(function(){
+            console.log(2)
+        }, 10000)
+        console.log(3)
+
+        // 3. 同步和异步
+        // 同步：同一时间只有一个任务再执行，前一个任务执行完，才能执行后一个任务。 串联
+        // 异步：可以同时执行多个任务，可以提高程序的性能。 并联
+
+
+
+        
+    </script>
+</body>
+
+</html>

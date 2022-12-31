@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const msg = {
+          code: 200,
+          msg: '获取新闻列表成功',
+          data: [
+            {
+              id: 1,
+              title: '乌克兰和俄罗斯持续冲突1',
+              count: 18,
+            },
+            {
+              id: 2,
+              title: '乌克兰和俄罗斯持续冲突2',
+              count: 19,
+            },
+            {
+              id: 3,
+              title: '乌克兰和俄罗斯持续冲3',
+              count: 20,
+            },
+          ],
+        }
+        const { data } = msg
+        function render(o) {
+          // 渲染逻辑
+        }
+        render(data)
+  
+        function render1(obj) {
+          // 渲染逻辑
+          const { data } = obj
+        }
+        render(msg)
+  
+        function render2({ data: newData }) {
+          // 渲染逻辑
+          let data = 20
+        }
+        render2(msg)
+      </script>
+</body>
+</html>

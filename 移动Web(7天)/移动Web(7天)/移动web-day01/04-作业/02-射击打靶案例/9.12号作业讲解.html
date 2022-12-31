@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            width: 1600px;
+            height: 500px;
+            /* background-color: pink; */
+        }
+
+        .renwu {
+            position: relative;
+            float: left;
+            width: 588px;
+            height: 499px;
+            background-image: url(./img/人物.png);
+        }
+
+        /* 用renwu容器的伪元素实现子弹的效果 */
+        .renwu::after {
+            content: '';
+            position: absolute;
+            right: 13px;
+            top: 47%;
+            width: 20px;
+            height: 8px;
+            background-color: #212425;
+            /* background-color: red; */
+            border-radius: 0 50% 50% 0;
+        }
+
+        .box:hover .renwu::after {
+            transform: translate(1200px);
+            /* 鼠标移开,不需要过渡效果 */
+            /* 所以把过渡效果,写在hover上 */
+            /* 鼠标移开后,内部的代码全部失效 */
+            transition: all 3s;
+
+        }
+
+        .bazi {
+            float: right;
+            width: 310px;
+            height: 310px;
+            background-color: red;
+            margin-top: 85px;
+            /* 把靶子分为一左一右 */
+            /* 双开门效果 */
+        }
+
+        .bazi::before,
+        .bazi::after {
+            content: '';
+            float: left;
+            width: 155px;
+            height: 310px;
+            background-image: url(./img/靶子.png);
+        }
+
+        .bazi::after {
+            background-position: right;
+            /* 给靶子的右边部分添加相对定位 */
+            position: relative;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 超大的容器,方便人物和靶子放置位置 -->
+    <div class="box">
+        <div class="renwu"></div>
+        <div class="bazi"></div>
+    </div>
+</body>
+
+</html>

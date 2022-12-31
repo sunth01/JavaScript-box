@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 字符组， 同一个位置上可能出现各种字符，也叫做纵向模糊匹配
+        // 写法： []方括号中列出所有的可能性 ， 最后只选一个
+
+        // 联想  ： 抽奖，只取一个！
+
+        // [abc] 只选一个
+        console.log(/^[abc]$/.test('a'))
+        console.log(/^[abc]$/.test('b'))
+        console.log(/^[abc]$/.test('c'))
+        console.log('----------------')
+        console.log(/^[abc]$/.test('ab')) // false
+        console.log(/^[abc]$/.test('aa')) // false
+
+        // /^[abc]$/ ==> /^a$/ /^b$/ /^c$/
+        // 我们加了边界符，精确匹配，只能选一个， ab是两个字符
+
+        console.log('--------------')
+        // 不写边界符 
+        console.log(/[abc]/.test('aa')) // true
+
+        // ==> 字符组+量词   量词只作用于前一个字符组
+        console.log(/^[abc][abc]$/.test('ab')) // true
+        console.log(/^[abc]{3}$/.test('abc')) // true
+
+        console.log(/^[ef][abc]{2}$/.test('eac')) // true
+
+        //[abc][abc] ==> a b c  ; a b c ==>  aa  ab ac  ba bb bc ca cb cc
+
+
+        
+    </script>
+</body>
+
+</html>

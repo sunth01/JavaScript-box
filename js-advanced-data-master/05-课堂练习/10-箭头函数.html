@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 1. 箭头函数没有prototype属性，也没有原型
+        let a = () => {}
+        // 所有的函数，都有prototype属性
+        console.log(a.prototype)
+
+        // 2. 不能使用new 调用箭头函数，也就是说箭头函数不能作为构造函数
+        // let B = () => {}
+        // let c = new B()
+        // console.log(c)
+
+        // 3. 箭头函数没有arguments，利用rest接收剩余参数
+        let d = (first, ...abc) => {
+            // console.log(arguments) Error
+            console.log(first, abc) // 1, abc ==> [2, 3, 4]
+        }
+        d(1, 2, 3, 4)
+
+        // 4. 箭头函数本身没有this 
+        //  箭头函数的this指向在定义的时候就确定了，指向的是上层作用域中的this
+        // ===>  箭头函数内部的this指向是固定的。普通函数的this指向是可变的
+
+        let msg = '666' // 坑点 let / const声明的变量不会挂载到window上
+        let obj = {
+            msg:'777',
+            sayHi: function(){
+                console.log('sayHi', this.msg)
+            },
+            sayHello: () => {
+                // 对象 不能形成作用域
+                // 这里的this指向的是window
+                console.log('sayHello', this.msg)
+            }
+        }
+        obj.sayHi() // sayHi 777 
+        obj.sayHello() // sayHello  undefined
+    </script>
+</body>
+</html>

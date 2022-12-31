@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>学生信息管理</title>
+  <link rel="stylesheet" href="css/index.css" />
+</head>
+
+<body>
+  <h1>新增学员</h1>
+  <form class="info" autocomplete="off">
+    姓名：<input type="text" class="uname" name="uname" />
+    年龄：<input type="text" class="age" name="age" />
+    性别:
+    <select name="gender" class="gender">
+      <option value="男">男</option>
+      <option value="女">女</option>
+    </select>
+    薪资：<input type="text" class="salary" name="salary" />
+    就业城市：<select name="city" class="city">
+      <option value="北京">北京</option>
+      <option value="上海">上海</option>
+      <option value="广州">广州</option>
+      <option value="深圳">深圳</option>
+      <option value="曹县">曹县</option>
+    </select>
+    <button class="add">录入</button>
+  </form>
+
+  <h1>就业榜</h1>
+  <table>
+    <thead>
+      <tr>
+        <th>学号</th>
+        <th>姓名</th>
+        <th>年龄</th>
+        <th>性别</th>
+        <th>薪资</th>
+        <th>就业城市</th>
+        <th>操作</th>
+      </tr>
+    </thead>
+    <tbody>
+      
+        <!-- <tr>
+          <td>1001</td>
+          <td>欧阳霸天</td>
+          <td>19</td>
+          <td>男</td>
+          <td>15000</td>
+          <td>上海</td>
+          <td>
+            <a href="javascript:;">删除</a>
+          </td>
+        </tr>  -->
+       
+    </tbody>
+  </table>
+  <script>
+      // 获取元素
+      const uname = document.querySelector('.uname')
+      const age = document.querySelector('.age')
+      const gender = document.querySelector('.gender')
+      const salary = document.querySelector('.salary')
+      const city = document.querySelector('.city')
+      const tbody = document.querySelector('tbody')
+
+    const arr = []
+    const form = document.querySelector('.info')
+    const items = document.querySelector('.info [name]')
+    console.log(items)
+
+    form.addEventListener('submit', function(e){
+      e.preventDefault()
+      // 点击录入的时候,判断输入的内容,如果有空,alert弹出一个提示
+      for (let i = 0; i < items.length; i++) {
+        // 如果没有数据,就提示  取反!
+        if(!items[i].value) {
+          // 终止for循环
+          // return 终止循环 并且后续代码不会执行
+          return alert('请输入内容')
+        }
+      }
+
+      // 点击录入,把输入的内容存到临时的对象中
+      const obj = {
+        stuId:arr.length + 1,
+        name:uname.value,
+        age:age.value,
+        gender:gender.value,
+        salary:salary.value,
+        city:city.value
+      }
+      // 把这个对象放到数组中
+      arr.push(obj)
+      console.log(obj)
+      // 把表格重置
+      this.reset()
+      // 渲染表格
+      renderTable()
+    })
+
+    const renderTable = function(){
+      // 先清空tbody的内容
+      tbody.innerHTML = ''
+      // 执行第二次的时候,arr长度为2
+      for (let i = 0; i < arr.length; i++) {
+        // 创建tr
+        const tr = document.createElement('tr')
+        tr.innerHTML = `
+          <td>${arr[i].stuId}</d>
+          <td>${arr[i].name}</td>
+          <td>${arr[i].age}</td>
+          <td>${arr[i].gender}</td>
+          <td>${arr[i].salary}</td>
+          <td>${arr[i].city}</td>
+          <td>
+            <a href="javascript:;" data-id="${i}" >删除</a>
+          </td>
+        `
+        // 把创建好的tr追加到tbody中
+        tbody.appendChild(tr)
+      }
+    }
+
+    // 删除功能
+    tbody.addEventListener('click', function(e){
+      if(e.target.tagName === 'A') {
+        console.log('删除')
+        // 删除数组中某个元素
+        // arr.splice(要删除的元素的索引号, 个数)
+        arr.splice(e.target.dataset.id, 1)
+        // 删除之后再渲染一次
+        renderTable()
+      }
+    })
+  </script>
+
+</body>
+
+</html>

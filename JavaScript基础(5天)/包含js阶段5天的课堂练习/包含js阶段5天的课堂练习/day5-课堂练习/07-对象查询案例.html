@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let arr = [{
+                name: "小红",
+                age: 18,
+                ID: 14644
+            },
+            {
+                name: "小绿",
+                age: 18,
+                ID: 15648
+            },
+            {
+                name: "小蓝",
+                age: 18,
+                ID: 74755
+            },
+            {
+                name: "小紫",
+                age: 18,
+                ID: 67886
+            },
+            {
+                name: "小粉",
+                age: 18,
+                ID: 95676
+            },
+        ]
+
+
+        // 根据已知用户id修改用户昵称案例:
+
+        // 需求: 
+        // 1. 封装一个函数, 调用传参(数组,ID,"新昵称"), 
+        // 修改成功, 则返回 1,   |  失败修改则返回 0
+
+        // 2. 根据返回结果在页面弹窗提示, 
+        // 成功: "更新成功"      |  失败: '未知错误, 请重新尝试'
+        // 例如: editName(arr,14644,"天天向上") 
+
+        // 可多次测试  使用存在或者不存在的id 测试函数代码完整性
+        function editName(arr, id, newName) {
+            // 1. 循环处理数据
+            // 2. 对比id
+            // 3.如果能找到此id, 4. 就修改它的name值为newName,并且返回1
+            // 5.如果找不到, 返回0
+            for (let i = 0; i < arr.length; i++) {
+                console.log(arr[i].ID)
+
+                if (arr[i].ID === id) {
+                    arr[i].name = newName
+                    return 1
+                }
+            }
+            // 如果for循环全部执行完毕后, 还没有找到/还未 return 1
+            // 那么其实就代表可以告诉结果为0
+            return 0
+        }
+        // 根据函数返回值, 在页面弹窗提示是否修改成功/未知错误
+        let status = editName(arr, 95676, "新的名字")
+        if (status) {
+            alert("更新成功");
+        } else {
+            alert("未知错误");
+        }
+        
+    </script>
+
+</body>
+
+</html>

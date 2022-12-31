@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 对象：是属性和方法的集合（集合本身是无序的）
+        // 属性：事物的特征，名词
+        // 方法：事物的行为，动词
+
+        // 1. 利用字面量的方式  {}
+        const obj = {} // 创建了一个空对象
+
+        obj.name = '小松松'
+        obj.fn = function () {
+            console.log('打篮球')
+        }
+        console.log(obj)
+
+        const p1 = {
+            name: '小贵儿',
+            age: 6,
+            rap: function () {
+                console.log('rap')
+            }
+        }
+
+        // 2. 获取对象的属性 
+        // 2.1 对象.属性名
+        console.log(p1.name)
+        // 2.2 对象['属性名']
+        console.log(p1['age'])
+
+        // 3. 调用对象的方法
+        p1.rap() // 调用方法，加小括号
+        p1['rap']() // 不太推荐，但是可以
+    </script>
+</body>
+
+</html>

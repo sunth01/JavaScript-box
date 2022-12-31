@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 调用函数, 目的通常只有一个
+        // 例如: 求和, 只需要函数帮忙计算和
+        // 函数内部不能自行决定最终如果处理这个数据
+        // 需要函数执行完毕后, 把这个结果, 通过某种语法, 返回给调用者
+        // 由调用者自行决定如果处理这个结果
+
+        // 举例:
+        // 领导让你这个工具人帮忙把数据整理好, 领导要开会用
+        // 你需要做的就是按照规范把数据处理完毕后, 交给领导手里
+        // 而不是擅自决定把数据处理好以后, 替领导把会给开了.
+
+
+        // 函数返回值语法格式: return 数据
+        let arr1 = [100, 60, 90, 30, 59]
+        // 封装求和函数
+        function getSum(arr) {
+            let sum = 0
+            for (let i = 0; i < arr.length; i++) {
+                sum += arr[i]
+            }
+            return sum
+        }
+        // 调用函数, 但是因为函数内部有返回值, 需要声明新变量去接收结果
+        let sum1 = getSum(arr1)
+        // 让调用者自行决定对这个返回值的处理方式!
+        document.write(sum1)
+        console.log(sum1)
+        
+        // 注意点:
+        // 1. return后的代码不会被执行 => 确保已经得到结果后再return
+        // 2. return后的数据会被返回(不能换行书写)
+        // 3. 函数可以没有return, 默认返回值是 undefined
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 内层函数引用了外层函数的变量的集合
+
+        // 定义：内层函数引用了外层函数的变量的集合
+        // 闭包 = 内层函数 + 外层函数的变量
+
+        // 1. 首先需要有内层函数
+        // 2. 内层函数使用了外层函数的变量  
+
+        function outer(){
+            let a = 10 
+            function fn(){
+                console.log(a)
+            }
+            fn()
+        }
+        // // 外层函数outer 把内层函数和这个被引用的变量，包裹起来 
+
+        // outer()
+
+
+        // 改写一下
+        // function outer(){
+        //     let a = 10
+        //     // fn 和 a 捆绑在一起了
+        //     function fn(){
+        //         console.log(a)
+        //     }
+        //     return fn
+        // }
+        // const fun = outer()
+        // // ==>
+        // // const fun = function fn(){
+        // //         console.log(a)
+        // //     }
+        // // console.log(fun)
+        // fun()
+
+        // 简约写法
+        function outer (){
+            let a = 10
+            // 改写成匿名函数
+            return function(){
+                console.log(a)
+            }
+        }
+
+        const foo = outer()
+        // const foo = function(){
+        //     console.log(a)
+        // }
+        foo()
+    </script>
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- /* 需求: */
+    /* 1. 默认网页背景色是灰色 #ccc */
+    /* 2. 在768 - 992 背景色是 红色 */
+    /* 3. 在992 - 1200 背景色是 白色 */
+    /* 4. 大于1200 背景色是 绿色 */ -->
+    <style>
+        /* 背景色:默认是灰色 */
+            body {
+                background-color: #ccc;
+            }
+            /* 在768-992之间 背景色是红色 */
+            @media (min-width:768px) {
+                body {
+                    background-color: red;
+                }
+                .box {
+                    width: 200px;
+                    height: 200px;
+                    background-color: rgb(85, 0, 255);
+                }
+            }
+            /* 在992-1200之间是白色 */
+            @media (min-width:992px) {
+                body {
+                    background-color: rgb(255, 255, 255);
+                }
+                .box {
+                    width: 200px;
+                    height: 200px;
+                    background-color: rgb(0, 255, 8);
+                }
+            }
+            /* 大于1200px是绿色 */
+            @media (min-width:1200px) {
+                body {
+                    background-color: rgb(0, 255, 110);
+                }
+                .box {
+                    width: 200px;
+                    height: 200px;
+                    background-color: rgb(153, 0, 255);
+                }
+            }
+
+            /* 媒体查询开发常用: */
+            /* max-width(最大宽度768) */
+            /* min-width(最小宽度768) */
+    </style>
+</head>
+<body>
+    <div class="box"></div>
+</body>
+</html>

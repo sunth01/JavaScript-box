@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>对象中的方法</title>
+</head>
+
+<body>
+    <script>
+        // 关于对象中的方法:
+        // 可以减少所写js代码对全局环境的污染, 以使得局部变量和函数都在对象中作为属性存在
+        // 它们组成某个主题(对象名称来体现), 相关属性和方法的集合.
+
+        // 举例: 完成一个计算器的功能对象
+        let calculator = {
+            name: '小小计算器',
+            version: '1.112',
+            author: '小小',
+            // 添加计算器的功能 => 为计算器对象的属性名, 赋予一个函数作为属性值
+            jia: function (num1, num2) {
+                return num1 + num2
+            },
+            jian: function (num1, num2) {
+                return num1 - num2
+            }
+        }
+        // 使用计算器对象访问内容
+        console.log(`版本号为${calculator.version}`)
+        // 使用计算器对象访问 函数/方法
+       let res1 =  calculator.jia(10,24)
+       console.log(`我使用了${calculator.name}里的加法功能, 得到了结果为${res1}`)
+
+       let res2 =  calculator.jian(50,20)
+       console.log(`我使用了${calculator.name}里的减法功能, 得到了结果为${res2}`)
+
+    // 总结: 
+    // 1. 可以为对象添加功能性的函数, 语法 => 属性名: 函数
+    // 2. 函数可以正常接收传参 并且 返回结果
+    // 3. 使用时, 正常访问对象里的属性名并进行调用传参即可
+
+    </script>
+</body>
+
+</html>

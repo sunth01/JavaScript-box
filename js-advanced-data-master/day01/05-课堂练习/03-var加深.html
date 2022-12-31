@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button>按钮</button>
+    <button>按钮</button>
+    <button>按钮</button>
+    <button>按钮</button>
+    <button>按钮</button>
+    <script>
+      const btn = document.querySelectorAll('button')
+      //   for (var i = 0; i < btn.length; i++) {
+      //     btn[i].addEventListener('click', function () {
+      //       console.log(i) // 5 5 5 5 5
+      //     })
+      //   }
+      //   相当于：
+      //   var i
+      //   for (i = 0; i < btn.length; i++) {
+      //     btn[i].addEventListener('click', function () {
+      //       console.log(i)
+      //     })
+      //   }
+      //   btn[0].addEventListener('click', function () {
+      //     console.log(i)
+      //   })
+      //   btn[1].addEventListener('click', function () {
+      //     console.log(i)
+      //   })
+      // let:
+
+      for (let i = 0; i < btn.length; i++) {
+        btn[i].addEventListener('click', function () {
+          console.log(i) // 0,1,2,3,4
+        })
+      }
+    </script>
+  </body>
+</html>

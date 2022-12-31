@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 普通函数的this：谁调用它，指向谁（跟函数定义的位置无关）
+  
+        // 箭头函数的this：没有自己的this，取决于函数定义的位置（与谁调用它无关），
+        // 即包裹该箭头函数的第一个普通函数的this，没有包裹它的普通函数，则指向window
+        console.log(this) //window
+        // 普通函数
+        function fn() {
+          console.log(this) // window
+        }
+        fn()
+        对象方法中的this
+        const obj2 = {
+          name: '仙女',
+          sayHi: function () {
+            console.log(this) // obj
+          },
+        }
+        obj2.sayHi()
+        const obj = {
+          name:'刘德华',
+          fn:() => {
+          // 箭头函数中,没有this,往上层作用域中查找
+            console.log(this) // window
+          }
+      }
+      obj.fn()
+  
+        // 箭头函数的this
+        const fn1 = () => {
+          console.log(this) // window
+        }
+        fn1()
+        // 对象方法中箭头函数的this
+        const obj1 = {
+          name: '仙女',
+          sayHi: () => {
+            console.log(this) // window
+          },
+        }
+        obj1.sayHi()
+      </script>
+</body>
+</html>

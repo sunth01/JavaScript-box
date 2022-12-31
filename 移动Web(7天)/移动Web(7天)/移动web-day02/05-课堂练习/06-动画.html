@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .box {
+            margin: 100px auto;
+            width: 800px;
+            height: 600px;
+            border: 2px solid #000;
+        }
+
+        .son {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            /* 第二步 调用动画 */
+            /* 动画属性 */
+            /* 1. 动画名称(调用其他地方的动画规则) */
+            /* 2. 完成动画一周期所花费的总时长 */
+
+            /* 3. 运动曲线 默认值 ( 慢-快-慢) 可选匀速(linear) */
+            /* 4. 延迟执行 s结尾 (复合属性里出现2个时间单位时,前者永远是总时间) */
+            /* 5. 动画被执行的次数 可选(数字 例如 1 2 3) 可选(infinite 无限的) */
+            /* 6. 规定动画下一周期是否逆向播放 (alternate) */
+            /* 8. 动画执行完毕后的状态 可选(forwards 保持结束状态) */
+            animation: donghua 4s linear 0s infinite alternate forwards;
+        }
+
+        /* 7. 动画暂停 */
+        /* .box:hover .son { */
+            /* animation-play-state: paused; */
+        /* } */
+        .son img {
+            width: 100%;
+            height: 100%;
+        }
+
+        /* 第一步 定义动画规则 */
+        /* @keyframes(关键帧) + 动画名称(自定义) */
+        @keyframes donghua {
+            0% {
+                transform: translate(0,0);
+            }
+            25% {
+                transform: translate(700px,0);
+            }
+            50% {
+                transform: translate(700px,500px);
+            }
+            75% {
+                transform: translate(0px,500px);
+            }
+            100% {
+                transform: translate(0,0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <div class="son">
+            <img src="./images/2.jpg" alt="">
+
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let that 
+        function Star(name){
+            this.name = name 
+            console.log(this)
+            that = this
+        }
+
+        // 当我们new执行完之后，this是不是就会被释放掉了，是释放的了
+        // 我们可以声明一个全局变量，来存this, 最后再看that是不是等于我们的实例
+
+        const ldh = new Star('刘德华')
+        console.log(that)
+        // const zjl = new Star('周杰伦')
+        // 1. 构造函数里面的this指向的是实例对象
+
+
+        // 2. 原型对象的方法中，this指向 还是实例对象 
+        Star.prototype.sing = function(){
+            console.log('sing唱歌')
+            console.log(this)
+        }
+        ldh.sing()
+    </script>
+</body>
+</html>

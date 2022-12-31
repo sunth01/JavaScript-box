@@ -1,0 +1,137 @@
+@import "./base.less";
+@import "../iconfont/iconfont.css";
+@import "./index.less";
+
+
+.shang_box {
+    // 固定定位
+    height: 255px;
+    position: fixed;
+    top: 0;
+
+    // 头部start=================================================
+header {
+    width: 375px;
+    height: 43.99px;
+    // background-color: skyblue;
+    padding: 0 10.01px;
+
+    
+
+    // 头部盒子上---------
+    .header_top {
+        width: 100%;
+        height: 43.99px;
+        display: flex;
+
+        // 头部上左
+        .box_left {
+            width: 60px;
+            height: 43.99px;
+            padding: 2px 0 0 8px;
+
+            &::after {
+                content: '\e6b4';
+                font-family: "iconfont" !important;
+                font-size: 28px;
+                color: #fb7299;
+
+            }
+        }
+
+        // 头部上右
+        .box_right {
+            flex: 1;
+            height: 43.99px;
+            display: flex;
+            justify-content: end;
+            align-items: center;
+
+            img {
+                width: 72px;
+                height: 24px;
+                background-repeat: no-repeat;
+                background-position: center;
+                order: 1;
+
+            }
+
+            // 头像
+            .portrait img {
+                width: 24px;
+                height: 24px;
+                border-radius: 50%;
+                order: 2;
+                margin-right: 19.99px;
+            }
+
+            // <!-- 放大镜 -->
+            &::before {
+                content: '\e6e4';
+                font-family: "iconfont" !important;
+                font-size: 24px;
+                color: #ccc;
+                margin: 3px 22.01px 0 0;
+            }
+        }
+    }
+}
+
+// 视频页面=====================
+.video_box {
+    position: relative;
+    height: 211px;
+    background-image: url(../images/fengmian.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: pink;
+    background-size: contain;
+    display: flex;
+    justify-content:flex-start;
+    align-items: flex-end;
+
+    &::after {
+        align-self: center;
+        left: 50%;
+        transform: translate(-50%);
+        position: absolute;
+        content: '\e6ab';
+        font-size: 54px;
+        color: rgba(255, 255, 255, .8);
+        font-family: "iconfont" !important;
+    }
+
+    .wenzi {
+        width: 375px;
+        height: 80px;
+        padding: 0 10px 10px 0px;
+        // background-color: rgb(82, 82, 82);
+        background-image: linear-gradient(transparent, rgb(40, 40, 40));
+        display: flex;
+        justify-content: space-between;
+        font-size: 12px;
+        color: #fff;
+        .text_box {
+            width: 200px;
+            display: flex;
+            align-items: flex-end;
+            span {
+                margin-left: 12px;
+            }
+        }
+        .time {
+            display: flex;
+            align-items: flex-end;
+            width: 40px;
+            height: 20px;
+            background-color: rgba(0, 0, 0, .3);
+            border-radius: 5px 5px 5px 5px;
+            margin-top: 50px;
+            // text-align: center;
+            line-height: 20px;
+        }
+
+    }
+}
+
+}

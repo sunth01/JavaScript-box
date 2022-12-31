@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 定义父类
+        class Father {
+            // 这里的constructor叫做构造函数
+            constructor(x, y) {
+                this.x = x 
+                this.y = y
+                console.log(this)
+            }
+            // 求和 
+            sum(){
+                console.log(this.x + this.y)
+            }
+        }
+
+        // 定义一个子类，继承父类
+        class Son extends Father {
+            // 1. super() 必须在子类的this前面调用
+            // 2. super() 代表了父类的构造函数
+            // 3. super() 里面的this 指向的是谁呢？
+            //  ===> 指向的是子类的实例，Son的实例 p这个对象
+            constructor(x, y, color){
+                super(x, y) // ==> super(x, y)  父类的constructor(x, y)
+                this.color = color
+               
+            }
+
+            // 4. 怎么理解super()要在this前面调用？
+            // 我们现在是不是在实现继承，让子类拥有父类的属性和方法
+            // 我们需要先继承父类的属性和方法，然后再扩展自己的属性和方法。
+        }
+
+        const p = new Son(5, 3, 'orange')
+        console.log(p)
+    </script>
+</body>
+</html>

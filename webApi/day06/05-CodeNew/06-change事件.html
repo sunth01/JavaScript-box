@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <input type="text">
+  <script>
+    const input = document.querySelector('input')
+    // input 用户输入事件 只要输入框输入，就会实时触发
+    // input.addEventListener('input', function(){
+    //   console.log(input.value)
+    // })
+
+    // change事件 输入框中的内容发生了改变,并且当我们按下回车或者失去焦点的时候触发
+    input.addEventListener('change', function(){
+      console.log(input.value)
+    })
+
+    
+  </script>
+</body>
+
+</html>

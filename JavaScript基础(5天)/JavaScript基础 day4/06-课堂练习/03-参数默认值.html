@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 正常传参
+        function getSum(num1, num2) {
+            document.write(num1 + num2 + '<br>');
+
+        }
+
+        getSum(28, 35)
+
+        getSum(10) // NaN = > 10 + undefined + NaN (非数值)
+        // 优化代码：给形参添加默认值：
+        function getSum2(num1 = 0, num2 = 0) {
+            document.write(num1 + num2 + '<br>');
+        }
+        getSum2(2) //2
+        // 4.传递undefined作为参数
+        getSum2(7, undefined) // 7 + 0 = 7
+        // ☆ undefined 不能作为参数进行传递 ☆
+
+
+
+
+    </script>
+</body>
+
+</html>

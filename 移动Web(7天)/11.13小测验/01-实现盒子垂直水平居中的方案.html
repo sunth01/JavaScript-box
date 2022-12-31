@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>第一题:</title>
+    <style>
+        /* 盒子初始样式: */
+        /* 需求: 尽可能多的用不同的方案实现son基于box的位置垂直水平居中效果 */
+        .box1,
+        .box2,
+        .box3 {
+            width: 400px;
+            height: 400px;
+            background-color: pink;
+            margin: 100px auto;
+        }
+
+        .son {
+            width: 100px;
+            height: 100px;
+            background-color: tomato;
+        }
+
+
+
+        /* ----------------------- */
+        .box1 {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+
+
+
+
+        .box2 {
+            position: relative;
+        }
+
+        .box2 .son {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+
+        .box3 {
+            display: flex;
+        }
+
+        .box3 .son {
+            margin: 0 auto;
+            display: flex;
+            align-self: center;
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+        /* 例如: */
+        .box1 {
+            /* XXXXX */
+        }
+
+        .box1 .son {
+            /* XXXXX */
+        }
+
+
+        /* 例如: */
+        .box2 {
+            /* XXXXX */
+        }
+
+        .box2 .son {
+            /* XXXXX */
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 父容器 -->
+    <div class="box1">
+        <!-- 子元素 -->
+        <div class="son">box1</div>
+    </div>
+
+    <!-- 父容器 -->
+    <div class="box2">
+        <!-- 子元素 -->
+        <div class="son">box2</div>
+    </div>
+
+    <!-- 父容器 -->
+    <div class="box3">
+        <!-- 子元素 -->
+        <div class="son">box3</div>
+    </div>
+
+</body>
+
+</html>

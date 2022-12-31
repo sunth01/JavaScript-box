@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- 某些运算符被执行时, 系统内部会自动将数据类型进行转换, 这种方式就称之为隐式转换. -->
+    <!-- 除了 + 以外的算术运算符 比如 - * / 等都会把数据转换为数字型 -->
+
+    <script>
+        console.log("100" - 1); // 99
+        console.log("100" - 1); // 99
+        console.log("100" / 20); // 5
+        console.log("100" * 2); // 200
+
+        // 字符串与任何数据相加 都是字符串
+        console.log("100" + 1); // "1001"
+        console.log("100" + NaN); // 100NaN
+        console.log("100" + undefined); // 100undefined
+        
+        // 优点: 方便快捷
+        // 缺点: 不够严谨
+        
+    </script>
+</body>
+
+</html>

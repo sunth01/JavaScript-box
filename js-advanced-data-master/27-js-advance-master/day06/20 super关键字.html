@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 定义一个父类
+        class Father {
+            constructor(){}
+        }
+
+        // 定义一个son继承Father
+        class Son extends Father {
+            constructor(){
+                super()
+            }
+        }
+        // 1. 子类实现继承的时候必须在constructor方法里面，调用super(), 否则会报错。
+        //  ===> 如果子类里面写了constructor() ，就必须要写super()
+        const p = new Son()
+
+        // 2. 如果子类没有写constructor(), 这个方法会默认添加，并且里面还会默认调用super()
+
+        class Son extends Father {
+        }
+
+        // 等同于
+        class Son extends Father {
+            constructor(){
+                super()
+            }
+        }
+
+        // 正常情况下，我们都会在子类里写constructor，并且写super()
+    </script>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const obj = {
+            name: 'zjl',
+            age: 18,
+            hobby:['dance','music'],
+            book:{
+                book_name:'Golang',
+                price:66
+            },
+            test1: function(){},
+            test2: undefined,
+            test3: Symbol('id'),
+            test4: new RegExp(/a/, 'g'),
+            test5: NaN,
+            test6: Infinity,
+            test7: new Date()
+        }
+        // JSON.parse()   将JSON格式的字符串转为对象 
+        // JSON.stringify() 将对象转为JSON格式的字符串
+
+        const res = JSON.parse(JSON.stringify(obj))
+        console.log(res)
+
+        // res.hobby[0] = 'rap'
+        // res.book.price = 99
+        // console.log(obj, res)
+
+
+        // 缺陷：
+        // 1. 拷贝对象的属性值如果是function / undefined / Symbol ， 这个键值对丢失！
+        // 2. 如果拷贝对象的属性值是RegExp, 会变成{}
+        // 3. 如果NaN, Infinity 会变成null
+        // 4. 拷贝Date日期对象，会变成日期字符串
+
+        // 等我们学了手写深拷贝，大家又会感受到这个方法的快乐~~~
+
+        // 李隆
+        // 这么多缺陷我都不想用了￼
+        // 苟金超
+        // 好家伙，破绽百出￼
+
+    </script>
+</body>
+</html>

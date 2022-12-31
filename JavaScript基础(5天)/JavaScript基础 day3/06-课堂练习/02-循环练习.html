@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>练习</title>
+</head>
+
+<body>
+    <script>
+        // 1. 求1-100之间的所有偶数和
+        let sum = 0 //sum 总和/总数
+        for (let i = 1; i <= 100; i++) {
+            // 1. 先输出1-100
+            // console.log(i)
+            // 2. 判断1-100之间那些是偶数
+            // 奇数 i % 2 !== 0
+            // 偶数 i % 2 === 0
+            if (i % 2 === 0) {
+                // console.log(i)
+                // 3. 开始求和
+                // sum = sum + i
+                sum += i
+            }
+        }
+        console.log(`1-100之间所有的偶数和为 ${sum}`)
+
+
+
+        // 2. 页面中打印5个小星星
+
+        for (let i = 0; i < 5; i++) {
+            document.write("😍")
+        }
+
+
+        // 3. 依次打印数组内的元素(循环数组)  [‘马超’，‘赵云’， ‘张飞’, ‘关羽‘，’黄忠’]
+        let arr = ['马超', '赵云', '张飞', '关羽', '黄忠']
+        // 1. 先打印数组 看到length属性, 根据数组的长度作为循环次数
+        console.log(arr)
+        // 2. 循环条件/终止条件 使用arr.length
+        for (let i = 0; i < arr.length; i++) {
+            // 数组取值: arr[下标] / 利用再变化的i, 合理的取出每一个值 下标是从0开始的
+            document.write(arr[i])
+        }
+
+        // 循环数组的注意点:
+        // 1. 数组内的元素下标是从0开始的   => 初始变量的值通常为0
+        // 2. 利用数组的数据长度           => 作为循环/终止条件
+        
+    </script>
+</body>
+
+</html>

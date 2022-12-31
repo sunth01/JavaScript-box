@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 立即执行函数 ==> IIFE 也叫作自执行函数
+
+        // 1. 普通函数  先声明  后调用
+        function fn(a){ // 形参
+            console.log(a)
+            console.log('普通函数')
+        }
+        fn(6)
+
+        // 2. 立即执行函数
+        // 两种写法
+        // 1. (function(){ /* code */})()
+        // 2. (function(){}())
+
+        // 3. 多个立即执行函数之间,要用分号隔开
+        // 养成习惯 写立即执行函数之前 在前面先写分号
+        ;(function(){
+            console.log(666)
+        })()
+
+        ;(function(){
+            console.log(999)
+        })()
+
+        // 4.立即执行函数 前面的小括号写形参 后一个括号写实参
+        ;(function(a, b){
+            console.log(a + b)
+        })(1, 2)
+        ;(function(a, b){
+            console.log(a * b)
+        }(4, 4))
+
+        // 5. 立即执行函数的作用
+        // 作用:创建一个独立的空间(作用域)内部声明的变量和外部不影响
+        const a = 10
+        console.log(a)
+        ;(function(){
+            // 这个立即执行函数中的变量和外面的不影响
+            const a = 10
+            console.log(a)
+        })()
+
+        ;(function(){
+            // 这个立即执行函数中的变量和外面的不影响
+            const a = 10
+            console.log(a)
+        })()
+    </script>
+</body>
+</html>

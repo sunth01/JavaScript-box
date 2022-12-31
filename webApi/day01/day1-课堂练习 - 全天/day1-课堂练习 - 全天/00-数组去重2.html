@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 需求: 利用双重for循环实现数组去重!
+        // [20, "小明", 30, 40, 30, "小明", "小红", "100", 30]
+        // 通过函数处理后变为
+        // [20, 40, 30, "小明", "小红", "100"]
+
+        let arr = [20, "小明", 30, 40, 30, "小明", "小红", "100", 30]
+
+        // 方案2的思路:
+
+        // 声明一个新数组, 拿旧数组的每一个元素跟新数组里的每个元素做比较
+        // 如果有相同的元素, 证明新数组里已经有这个元素了, 就不进行操作
+        // 如果本轮比较结束后, 还没有找到相同元素, 则代表新数组里没有这个元素, 进行添加即可
+
+        let newArr = []
+
+        // 外层循环 根据旧数组长度来控制次数
+        for (let i = 0; i < arr.length; i++) {
+            // 声明一个开关
+            let flag = true
+            for (let j = 0; j < newArr.length; j++) {
+                if (arr[i] === newArr[j]) {
+                    // 如果找到相同的, 就不进行操作
+                    flag = false
+                    break
+                }
+            }
+            // 如果本轮结束后, 没有满足条件, 那么flag依旧是true
+            // 可以根据flag的状态来判断是否要添加元素到新数组
+            if (flag) {
+                newArr.push(arr[i])
+            }
+
+        }
+        console.log(newArr)
+    </script>
+</body>
+
+</html>

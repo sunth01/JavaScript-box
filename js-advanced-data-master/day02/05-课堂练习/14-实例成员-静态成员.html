@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 实例成员
+        // 实例对象中的属性和方法称为实例成员
+        // 实例成员 只能通过实例本身（生成的那个对象）访问
+        function Person(age) {
+          this.name = 'ddd'
+          this.age = age
+          this.sayHi = function () {
+            console.log('哈哈哈')
+          }
+        }
+        const p = new Person(18)
+        // 访问实例成员
+        console.log(p.name)
+  
+        // 静态成员(直接加在构造函数本身的属性和方法)
+        // 静态成员 只能通过构造函数本身访问
+        Person.demo = '我是给构造函数添加的静态属性'
+        Person.sayHi = function () {
+          console.log('hello')
+          console.log(this) // 静态成员中的this指向构造函数本身
+        }
+        console.dir(Person)
+        Person.sayHi()
+  
+        let arr1 = [2, 3]
+        let arr2 = 'ef'
+        new Array(1, 2, 3)
+        //   Array.from() // 静态方法
+        //   Array.isArray() // 静态方法
+        console.log(Array.isArray(arr1)) //true
+        console.log(Array.isArray(arr2)) //false
+  
+        let arr = []
+        // 实例方法
+        //   arr.forEach()
+        //   arr.filter()
+        //   arr.map()
+      </script>
+</body>
+</html>

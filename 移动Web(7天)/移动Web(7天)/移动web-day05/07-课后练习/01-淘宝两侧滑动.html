@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        .box {
+            width: 375px;
+            height: 667px;
+            background-color: pink;
+            display: flex;
+        }
+
+        .box_left {
+            width: 100px;
+            background-color: skyblue;
+            padding: 20px;
+            height: 667px;
+            overflow-y: scroll;
+        }
+        .box_left::-webkit-scrollbar {
+            width: 0 !important;
+        }
+
+        .box_right::-webkit-scrollbar {
+            width: 0 !important;
+        }
+
+
+        .box_left p {
+            font-size: 18px;
+            color: #f70;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+
+        .box_right {
+            flex: 275;
+            height: 667px;
+            background-color: rgb(240, 255, 125);
+            overflow-y: scroll;
+        }
+
+        .box_right ul {
+            padding: 0 10px;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: baseline;
+            /* justify-content: first baseline; */
+        }
+
+        .box_right li {
+            margin: 0 5px;
+        }
+
+        .box_img {
+            width: 50px;
+            height: 50px;
+            background-color: #ff7474;
+            /* margin: 5px 0; */
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <div class="box_left">
+            <p>女装</p>
+            <ul>
+                <li><span>手机</span></li>
+                <li><span>进口</span></li>
+                <li><span>手机</span></li>
+                <li><span>手机</span></li>
+                <li><span>食品</span></li>
+                <li><span>手机</span></li>
+                <li><span>箱包</span></li>
+                <li><span>手机</span></li>
+                <li><span>百货</span></li>
+                <li><span>内衣</span></li>
+                <li><span>手机</span></li>
+                <li><span>家电</span></li>
+                <li><span>美妆</span></li>
+                <li><span>内衣</span></li>
+                <li><span>手机</span></li>
+                <li><span>家电</span></li>
+                <li><span>美妆</span></li>
+                <li><span>内衣</span></li>
+                <li><span>手机</span></li>
+                <li><span>家电</span></li>
+                <li><span>美妆</span></li>
+                <li><span>手机</span></li>
+                <li><span>家电</span></li>
+                <li><span>美妆</span></li>
+                <li><span>内衣</span></li>
+                <li><span>手机</span></li>
+                <li><span>家电</span></li>
+                <li><span>美妆</span></li>
+                <li><span>手机</span></li>
+                <li><span>家电</span></li>
+                <li><span>美妆</span></li>
+                <li><span>内衣</span></li>
+                <li><span>手机</span></li>
+                <li><span>家电</span></li>
+                <li><span>美妆</span></li>
+                <li><span>手机</span></li>
+                <li><span>家电</span></li>
+                <li><span>美妆</span></li>
+                <li><span>内衣</span></li>
+                <li><span>手机</span></li>
+                <li><span>家电</span></li>
+                <li><span>美妆</span></li>
+                <li><span>手机</span></li>
+                <li><span>家电</span></li>
+                <li><span>美妆</span></li>
+                <li><span>内衣</span></li>
+                <li><span>手机</span></li>
+                <li><span>家电</span></li>
+                <li><span>美妆</span></li>
+            </ul>
+        </div>
+        <div class="box_right">
+            <ul>
+                <li>
+                    <div class="box_img"></div>
+                    <span>卫衣</span>
+                </li>
+
+                <li>
+                    <div class="box_img"></div>
+                    <span>卫衣</span>
+                </li>
+
+                <li>
+                    <div class="box_img"></div>
+                    <span>卫衣</span>
+                </li>
+
+                <li>
+                    <div class="box_img"></div>
+                    <span>卫衣</span>
+                </li>
+
+                <li>
+                    <div class="box_img"></div>
+                    <span>卫衣</span>
+                </li>
+
+                <li>
+                    <div class="box_img"></div>
+                    <span>卫衣</span>
+                </li>
+
+                <li>
+                    <div class="box_img"></div>
+                    <span>卫衣</span>
+                </li>
+                <li>
+                    <div class="box_img"></div>
+                    <span>卫衣</span>
+                </li>
+                <li>
+                    <div class="box_img"></div>
+                    <span>卫衣</span>
+                </li>
+                <li>
+                    <div class="box_img"></div>
+                    <span>卫衣</span>
+                </li>
+                <li>
+                    <div class="box_img"></div>
+                    <span>卫衣</span>
+                </li>
+                <li>
+                    <div class="box_img"></div>
+                    <span>卫衣</span>
+                </li>
+                <li>
+                    <div class="box_img"></div>
+                    <span>卫衣</span>
+                </li>
+                <li>
+                    <div class="box_img"></div>
+                    <span>卫衣</span>
+                </li>
+                <li>
+                    <div class="box_img"></div>
+                    <span>卫衣</span>
+                </li>
+                <li>
+                    <div class="box_img"></div>
+                    <span>卫衣</span>
+                </li>
+                <li>
+                    <div class="box_img"></div>
+                    <span>卫衣</span>
+                </li>
+                <li>
+                    <div class="box_img"></div>
+                    <span>卫衣</span>
+                </li>
+                <li>
+                    <div class="box_img"></div>
+                    <span>卫衣</span>
+                </li>
+                <li>
+                    <div class="box_img"></div>
+                    <span>卫衣</span>
+                </li>
+                <li>
+                    <div class="box_img"></div>
+                    <span>卫衣</span>
+                </li>
+                <li>
+                    <div class="box_img"></div>
+                    <span>卫衣</span>
+                </li>
+                <li>
+                    <div class="box_img"></div>
+                    <span>卫衣</span>
+                </li>
+                <li>
+                    <div class="box_img"></div>
+                    <span>卫衣</span>
+                </li>
+                <li>
+                    <div class="box_img"></div>
+                    <span>卫衣</span>
+                </li>
+                <li>
+                    <div class="box_img"></div>
+                    <span>卫衣</span>
+                </li>
+                <li>
+                    <div class="box_img"></div>
+                    <span>卫衣</span>
+                </li>
+                <li>
+                    <div class="box_img"></div>
+                    <span>卫衣</span>
+                </li>
+                <li>
+                    <div class="box_img"></div>
+                    <span>卫衣</span>
+                </li>
+                <li>
+                    <div class="box_img"></div>
+                    <span>卫衣</span>
+                </li>
+                <li>
+                    <div class="box_img"></div>
+                    <span>卫衣</span>
+                </li>
+                <li>
+                    <div class="box_img"></div>
+                    <span>卫衣</span>
+                </li>
+                <li>
+                    <div class="box_img"></div>
+                    <span>卫衣</span>
+                </li>
+                <li>
+                    <div class="box_img"></div>
+                    <span>卫衣</span>
+                </li>
+                <li>
+                    <div class="box_img"></div>
+                    <span>卫衣</span>
+                </li>
+                <li>
+                    <div class="box_img"></div>
+                    <span>卫衣</span>
+                </li>
+                <li>
+                    <div class="box_img"></div>
+                    <span>卫衣</span>
+                </li>
+                <li>
+                    <div class="box_img"></div>
+                    <span>卫衣</span>
+                </li>
+                <li>
+                    <div class="box_img"></div>
+                    <span>卫衣</span>
+                </li>
+
+
+            </ul>
+        </div>
+
+
+    </div>
+
+
+
+</body>
+
+</html>

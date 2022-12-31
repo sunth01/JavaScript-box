@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <form>
+    <table>
+      <tr id="row1">
+        <td>行 1</td>
+        <td><button type="button" id="rowUpButton">向上</button></td>
+        <td><button type="button" id="rowDownButton">向下</button></td>
+      </tr>
+      <tr id="row2">
+        <td>行 2</td>
+        <td><button type="button" id="rowUpButton">向上</button></td>
+        <td><button type="button" id="rowDownButton">向下</button></td>
+      </tr>
+      <tr id="row3">
+        <td>行 3</td>
+        <td><button type="button" id="rowUpButton">向上</button></td>
+        <td><button type="button" id="rowDownButton">向下</button></td>
+      </tr>
+      <tr id="row4">
+        <td>行 4</td>
+        <td><button type="button" id="rowUpButton">向上</button></td>
+        <td><button type="button" id="rowDownButton">向下</button></td>
+      </tr>
+      <tr id="row5">
+        <td>行 5</td>
+        <td><button type="button" id="rowUpButton">向上</button></td>
+        <td><button type="button" id="rowDownButton">向下</button></td>
+      </tr>
+    </table>
+  </form>
+  <script>
+    // 为表单中的按钮添加点击事件处理函数
+    document.addEventListener("click", function (e) {
+      // 如果点击的是上移按钮
+      if (e.target.id === 'rowUpButton') {
+        // 向上移动一行
+        moveRowUp(e.target);
+      }
+      // 如果点击的是下移按钮
+      else if (e.target.id === 'rowDownButton'){
+        // 向下移动一行
+        moveRowDown(e.target);
+      }
+    });
+
+    // 向上移动一行
+    function moveRowUp(button) {
+      // 获取按钮所在行的 DOM 元素
+      const row = button.parentNode.parentNode;
+      // 获取按钮所在行的前一行的 DOM 元素
+      const prevRow = row.previousElementSibling;
+      // 如果按钮所在行不是第一行
+      if (prevRow) {
+        // 向上移动一行
+        row.parentNode.insertBefore(row, prevRow);
+      } else {
+        alert('no')
+      }
+    }
+
+    // 向下移动一行
+    function moveRowDown(button) {
+      // 获取按钮所在行的 DOM 元素
+      const row = button.parentNode.parentNode;
+      // 获取按钮所在行的后一行的 DOM 元素
+      const nextRow = row.nextElementSibling;
+      // 如果按钮所在行不是最后一行
+      if (nextRow) {
+        // 向下移动一行
+        row.parentNode.insertBefore(nextRow, row);
+      } else {
+        alert('no')
+      }
+    }
+  </script>
+</body>
+
+</html>

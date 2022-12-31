@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            perspective: 1200px;
+        }
+        .box {
+            position: relative;
+            margin: 100px auto;
+            width: 100px;
+            height: 40px;
+            /* border: 1px solid #000; */
+            transition: all 1s;
+            transform-style: preserve-3d;
+        }
+        
+        .shang {
+            position: absolute;
+            width: 100px;
+            height: 40px;
+            background-color: skyblue;
+            top: 0;
+            left: 0;
+            line-height: 40px;
+            text-align: center;
+            transform: rotateX(90deg) translateZ(20px);
+
+        }
+
+        .qian {position: absolute;
+            width: 100px;
+            height: 40px;
+            background-color: pink;
+            top: 0;
+            left: 0;
+            line-height: 40px;
+            text-align: center;
+            transform: translateZ(20px);
+        }
+        .box:hover {
+            transform: rotateX(-90deg);
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <div class="shang">index</div>
+
+        <div class="qian">首页</div>
+    </div>
+</body>
+</html>

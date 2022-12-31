@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .box {
+            width: 800px;
+            height: 600px;
+            background-color: pink;
+            margin: 100px auto;
+            color: #fff;
+            display: flex;
+        }
+
+        .son1 {
+            width: 100px;
+            height: 60px;
+            background-color: blue;
+        }
+
+        /* 内容模块1 */
+        .son2 {
+            background-color: tomato;
+            height: 60px;
+            /* 取值: 数值(整数) */
+            flex: 1;
+            /* 理解: 把父元素的剩余空间分成了2份, son2占了其中1份 */
+        }
+
+        /* 内容模块2 */
+        .son3 {
+            flex: 1;
+            /* 理解: 把父元素的剩余空间分成了2份, son3占了其中1份 */
+            height: 60px;
+            background-color: red;
+        }
+        /* 总结: 根据父元素的剩余空间, 按照设置的份数去自行分配, 直接赋予盒子相应的大小, 不需要单独计算 */
+
+
+        .son4 {
+            width: 100px;
+            height: 60px;
+            background-color: skyblue;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <div class="son1">序号</div>
+        <div class="son2">内容1</div>
+        <div class="son3">内容2</div>
+        <div class="son4">热度</div>
+    </div>
+</body>
+
+</html>

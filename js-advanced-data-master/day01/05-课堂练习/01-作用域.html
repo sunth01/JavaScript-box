@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 全局作用域：<script>或者.js文件顶级，在此声明的变量在任何地方都可以被访问
+        //   const num = 10
+        //   console.log(num)
+        //   function fn() {
+        //     console.log(num)
+        //   }
+        //   fn()
+        //   console.log(num)
+            // 函数内部如果没有使用任何关键词,那么这个变量就会挂到window上,全局的
+        //   function bar() {
+        //     abc = 20
+        //     console.log(abc)
+        //   }
+        //   bar()
+        //   console.log(abc)
+
+        // 局部作用域：函数作用域、块作用域
+
+        // 函数作用域，在函数内部声明的变量，只能在函数内部被访问
+        // 函数的参数，相当于函数内部的局部变量
+        // function foo(a, b) {
+        //   const abc = 666
+        //   console.log(abc, a, b)
+        // }
+
+        // foo(1, 2)
+        //     console.log(b, a)
+        //     console.log(abc)
+
+        // 块作用域：在 JavaScript 中使用 `{}` 包裹的代码称为代码块，
+        // 使用let/const声明的变量，在{}中就会产生块级作用域。
+
+          {
+            const aa = '000'
+            console.log(aa) // 000
+          }
+        //   console.log(aa)
+
+          for (let i = 0; i < 4; i++) {
+            console.log(i)
+          }
+        //   console.log(i)
+
+          if (true) {
+            let temp = '777'
+            console.log(temp)
+          }
+          console.log(temp)
+          if (true) {
+            var temp = '777'
+            console.log(temp)
+          }
+          console.log(temp)
+    </script>
+</body>
+
+</html>

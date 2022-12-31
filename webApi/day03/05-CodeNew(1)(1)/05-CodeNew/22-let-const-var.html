@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        const ab = 100
+        let abc = 200
+        var abcd = 300
+
+        // function fn(){
+        //     console.log(ab)
+        //     console.log(abc)
+        //     console.log(abcd)
+        // }
+        // fn()
+        console.log(window.ab)
+        console.log(window.abc)
+        console.log(window.abcd)
+        // console.log()
+
+        // 1. let / const 声明的变量，不会挂载到window对象上  挂载 ==> 成为window对象的属性
+        // 2. var声明的变量会 挂载到window对象上
+        console.log(window)
+
+
+        function abcde() {
+            console.log('我是函数')
+        }
+        console.log(window)
+
+        // 3. 用function声明的函数，也会挂载到window对象上
+
+        const abcdef = function () {
+            console.log()
+        }
+        console.log(window)
+
+        // 4. 本身window对象上就有 name，top等属性，不建议使用var声明这类变量名
+        var name = 123
+        var top = 333
+
+
+        // 6. 注意，特例
+        ;(function () {
+            // 如果立即执行函数中的这个变量，不用关键字声明, 这个变量会成为window对象的属性
+            abc = 77
+            console.log(abc)
+        })()
+        console.log(window)
+    </script>
+</body>
+
+</html>

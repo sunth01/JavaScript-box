@@ -1,0 +1,17 @@
+.focus {
+    margin: 0 auto;
+    width: 1920px;
+    height: 610px;
+    animation: focus 20s infinite;
+}
+@keyframes focus {
+    0%{
+        background-image: url(../嘉环科技/imges/banner1.jpg);
+    }
+    50%{
+        background-image: url(../嘉环科技/imges/banner2.jpg);
+    }
+    100%{
+        background-image: url(../嘉环科技/imges/banner3.jpg);
+    }
+}

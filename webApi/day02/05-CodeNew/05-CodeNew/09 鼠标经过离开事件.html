@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box{
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+            margin: 100px auto;
+            transition: all 0.3s;
+        }
+        .active{
+            /* 把我们需要修改添加的样式，写到一个类名里面 */
+            transform: rotate(360deg);
+            background-color: skyblue;
+        }
+    </style>
+</head>
+<body>
+    <div class="box"></div>
+    <script>
+        // 需求：
+        // 1. 当鼠标经过这个盒子的时候，让这个盒子的背景色变为skyblue
+        // 2. 让这个盒子旋转360deg，并且还要有动画效果
+        //    ==> transform:rotate(360deg)
+        // 3. 鼠标离开的时候，转回去
+
+        const box = document.querySelector('.box')
+        // 鼠标经过盒子
+        box.addEventListener('mouseenter', function(){
+            console.log('轻轻的我来了')
+            // 用一个类名
+            // box.style.backgroundColor = 'skyblue'
+            // box.style.transform = 'rotate(360deg)'
+            box.classList.add('active')
+            // box.classList.toggle('active')
+        })
+        // 鼠标离开的时候
+        box.addEventListener('mouseleave', function(){
+            console.log('轻轻的我走了，不带走一片云彩')
+            // box.style.backgroundColor = 'pink'
+            // box.style.transform = 'rotate(0deg)'
+            box.classList.remove('active')
+            // box.classList.toggle('active')
+        })
+    </script>
+</body>
+</html>

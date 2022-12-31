@@ -1,0 +1,218 @@
+@import './base.less';
+@import '../iconfont/iconfont.css';
+
+// 头部start=================================================
+header {
+    width: 100vw;
+    height: 22.67vw;
+    // background-color: skyblue;
+    padding: 0 2.67vw;
+
+    // 头部盒子上---------
+    .header_top {
+        width: 100%;
+        height: 11.73vw;
+        display: flex;
+
+        // 头部上左
+        .box_left {
+            width: 16vw;
+            height: 11.73vw;
+
+            &::after {
+                content: '\e6b4';
+                font-family: "iconfont" !important;
+                font-size: 7.47vw;
+                color: #fb7299;
+
+            }
+        }
+
+        // 头部上右
+        .box_right {
+            flex: 1;
+            height: 11.73vw;
+            display: flex;
+            justify-content: end;
+            align-items: center;
+
+            img {
+                width: 19.2vw;
+                height: 6.4vw;
+                background-repeat: no-repeat;
+                background-position: center;
+                order: 1;
+
+            }
+
+            // 头像
+            .portrait img {
+                width: 6.4vw;
+                height: 6.4vw;
+                border-radius: 50%;
+                order: 2;
+                margin-right: 5.33vw;
+            }
+
+            // <!-- 放大镜 -->
+            &::before {
+                content: '\e6e4';
+                font-family: "iconfont" !important;
+                font-size: 6.4vw;
+                color: #ccc;
+                margin: .8vw 5.87vw 0 0;
+            }
+        }
+    }
+
+    // 头部盒子下------------
+    .header_bottom {
+        position: relative;
+        height: 10.67vw;
+
+        // background-color: rgb(134, 253, 255);
+        ul {
+            display: flex;
+            justify-content: space-between;
+            padding: 0 2.67vw;
+
+            li {
+                height: 10.67vw;
+                display: flex;
+                align-items: center;
+                font-size: 3.73vw;
+            }
+        }
+
+        // 下箭头
+        .xiajiantou {
+            width: 5.33vw;
+            height: 10.67vw;
+            background-color: rgb(255, 255, 255);
+            position: absolute;
+            top: 0;
+            right: .8vw;
+            line-height: 10.67vw;
+
+            .iconfont {
+                font-size: 6.13vw;
+                font-weight: 700;
+            }
+        }
+    }
+}
+
+// 头部盒子end=============================================
+
+
+// 视频部分=================================================
+.bili_body {
+    margin: 0 2.67vw;
+    // background-color: skyblue;
+    ul {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        
+
+    }
+
+    li {
+        position: relative;
+        width: 46.67vw;
+        height: 40vw;
+        // background-color: pink;
+        padding: 2.13vw 1.33vw;
+        // 图片
+        .video_box img {
+            width: 44vw;
+            height: 26.67vw;
+            margin-bottom: 1.33vw;
+        }
+        span {
+            font-size: 3.2vw;
+            color: rgb(36, 36, 36);
+        }
+        .bullet_box {
+            position: absolute;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 1.33vw;
+            top: 21.33vw;
+            width: 44vw;
+            height: 7.47vw;
+            // background-color: rgb(0, 136, 255);
+            span {
+                color: #fff;
+                font-size: 3.2vw;
+            }
+            .bullet_left {
+                height: 5.33vw;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+
+                .iconfont {
+                    font-size: 4.27vw;
+                }
+            }
+            .bullet_right {
+
+                height: 5.33vw;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+
+                .iconfont {
+
+                    font-size: 3.47vw;
+
+                }
+            }
+        }
+    }
+    
+}
+// 视频内容end=============================
+
+// 底部查看更多部分
+.app {
+    height: 16vw;
+    padding: 5.33vw 0;
+    // background-color: pink;
+    text-align: center;
+    font-size: 3.73vw;
+    color: #999;
+}
+
+// 公司信息部分===========
+.company {
+    height: 32vw;
+    text-align: center;
+    padding: 5.33vw 0;
+    font-size: 3.2vw;
+    color: #999;
+    background-color: #f4f4f4;
+    line-height: 5.87vw;
+}
+
+// 底部固定栏=========  
+.open {
+    position: fixed;
+    bottom: 6.67vw;
+    width: 93.33vw;
+    height: 9.87vw;
+    background-color: #fb7299;
+    border-radius: 5.33vw 5.33vw 5.33vw 5.33vw;
+    line-height: 9.87vw;
+    text-align: center;
+    font-size: 3.73vw;
+    color: #fff;
+    margin: 0 2.67vw;
+    .iconfont {
+        width: 9.33vw;
+        height: 4.53vw;
+        color: #fff;
+    }
+}

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        ul {
+            display: flex;
+            justify-content: space-around;
+            align-items: flex-end;
+            list-style: none;
+            width: 700px;
+            height: 400px;
+            border: 3px solid #000;
+            border-top: none;
+            border-right: none;
+            margin: 300px auto;
+        }
+
+        li {
+            position: relative;
+            width: 80px;
+            height: 180px;
+            background-color: pink;
+        }
+
+        span {
+            position: absolute;
+            top: -25px;
+            left: 50%;
+            transform: translate(-50%);
+        }
+
+        p {
+            position: absolute;
+            width: 100px;
+            text-align: center;
+            bottom: -40px;
+            left: 50%;
+            transform: translate(-50%);
+            font-size: 25px;
+            font-weight: 700;
+        }
+    </style>
+</head>
+
+<body>
+    <script>
+        // 新建空数组用来接收用户所输入的4个季度的数据
+
+        let arr = []
+        for (let i = 1; i <= 4; i++) {
+            arr.push(+prompt(`请输入第${i}个季度的数据`))
+        }
+        // console.log(arr)
+        // 处理柱状图的生成
+        let li = ''
+        for (let i = 0; i < arr.length; i++) {
+            // 生成li元素/span/p元素的动态数据
+            li +=
+                `
+                <li style="height: ${arr[i]}px;">
+                    <span>${arr[i]}</span>
+                    <p>第${i+1}季度</p>
+                </li>
+                `
+        }
+
+        // 把拼接好的li元素加入ul当中
+        document.write(`<ul>${li}</ul>`)
+    </script>
+
+</body>
+
+</html>

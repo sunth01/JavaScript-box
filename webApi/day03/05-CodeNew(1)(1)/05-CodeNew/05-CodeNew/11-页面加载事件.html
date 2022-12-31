@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script>
+    // 页面加载事件
+    // 1. window  ===> load 
+    // 等页面上所有资源都加载完毕后，执行回调。 包括DOM元素，img ， css等资源
+
+
+    // window.addEventListener('load', function(){
+    //   // 等页面上所有资源都加载完毕后，才会执行
+    //   const btn = document.querySelector('button')
+    //   // console.log(btn)
+    //   btn.addEventListener('click', function(){
+    //     console.log('点击')
+    //   })
+    // })
+
+
+    // 2. document   ==> DOMContentLoaded
+    // 作为：当所有的DOM元素加载完毕之后，去执行回调函数
+    document.addEventListener('DOMContentLoaded', function(){
+      const btn = document.querySelector('button')
+      btn.addEventListener('click', function(){
+        console.log('DOM元素已经加载过了哦')
+      })
+    })
+
+    // window  ===> load   1. 页面上所有内容都加载完毕
+    // document  ===> DOMContentLoaded  2. DOM元素加载完毕
+  </script>
+</head>
+
+<body>
+  <!-- 还没有渲染 -->
+  <button>点击</button>
+  <script>
+    // 推荐js写到body闭标签的前面
+  </script>
+</body>
+
+</html>

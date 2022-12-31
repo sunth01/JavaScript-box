@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function Person(age) {
+          // 1、创建一个空对象{}
+          // 2、让this指向这一个空对象：const this={}
+          // 3、给这个空对象 添加属性和方法
+          this.name = 'ddd'
+          this.age = age
+          this.sayHi = function () {
+            console.log('哈哈哈')
+          }
+          // 4、return this 返回这个对象（this）
+        }
+        //   当我们执行new的时候，会去执行构造函数里面的代码
+        const p = new Person(18)
+        console.log(p)
+        p.sayHi()
+  
+        //   面试题（背）：
+        //   new的执行过程？
+        // 1、创建一个空对象{}
+        // 2、让this指向这一个空对象：const this={}
+        // 3、给这个空对象 添加属性和方法
+        // 4、return this 返回这个对象（this）
+      </script>
+</body>
+</html>

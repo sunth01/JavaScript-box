@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 遍历数组 for循环方式
+        const arr = ['pink', 'red', 'blue']
+        // for (let i = 0; i < arr.length; i++) {
+        //     console.log(arr[i])            
+        // }
+
+        // 语法:arr.forEach(fn)
+        // fn这个回调函数,又接收两个参数
+        // 第一个参数 数组里面的元素 item element el
+        // 第二个参数 数组元素的下标/索引号  index , i
+        // 作用: 对数组的每个元素执行一次给定的函数
+        arr.forEach(function(el){
+            // console.log(item)
+            console.log(el)
+        })
+    </script>
+</body>
+</html>

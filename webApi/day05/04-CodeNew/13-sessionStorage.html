@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=\, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 1. 生命周期:关掉页面数据就没了
+        // 2. 数据共享： sessionStorage的数据可以同窗口共享，同一个页面
+        // 3. 数据以键值对的形式，存储在浏览器中。 存的数据的类型 ==>  字符串
+
+
+        // 1. 存数据 sessionStorage.setItem(key，value)
+        // 如果key存在,修改数据
+        sessionStorage.setItem('demo-test', '嘿嘿嘿')
+        sessionStorage.setItem('demo-test', 'O∩_∩O哈哈~')
+
+        // 2,. 取数据 sessionStorage.getItem(key)
+        // 有返回值,返回值就是取的数据
+        const res = sessionStorage.getItem('demo-test')
+        console.log(res)
+
+        // 3. 删除数据 sessionStorage.removeItem(key) 删一条
+        sessionStorage.removeItem('demo-test')
+
+        // 4. 全部删除 sessionStorage.clear()
+
+        // PS.还可以使用 对象.属性名的方式存取数据
+        sessionStorage.book = "Professional JavasScript"
+        console.log(sessionStorage.book)
+    </script>
+</body>
+
+</html>

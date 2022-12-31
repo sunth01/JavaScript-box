@@ -1,0 +1,227 @@
+/* 把我们所有标签的内外边距清零 */
+@import '../font/iconfont.css';
+* {
+  margin: 0;
+  padding: 0;
+  /* css3盒子模型 */
+  box-sizing: border-box;
+}
+/* p标签 */
+/* em 和 i 斜体的文字不倾斜 */
+em,
+i {
+  font-style: normal;
+}
+/* 去掉li 的小圆点 */
+li {
+  list-style: none;
+}
+img {
+  /* border 0 照顾低版本浏览器 如果 图片外面包含了链接会有边框的问题 */
+  border: 0;
+  /* 取消图片底侧有空白缝隙的问题 */
+  vertical-align: middle;
+}
+button {
+  /* 当我们鼠标经过button 按钮的时候，鼠标变成小手 */
+  cursor: pointer;
+}
+a {
+  color: #666;
+  text-decoration: none;
+}
+a:hover {
+  color: #c81623;
+}
+button,
+input {
+  /* "\5B8B\4F53" 就是宋体的意思 这样浏览器兼容性比较好 */
+  font-family: Microsoft YaHei, Heiti SC, tahoma, arial, Hiragino Sans GB, "\5B8B\4F53", sans-serif;
+  /* 默认有灰色边框我们需要手动去掉 */
+  border: 0;
+  outline: none;
+}
+body {
+  /* CSS3 抗锯齿形 让文字显示的更加清晰 */
+  -webkit-font-smoothing: antialiased;
+  background-color: #fff;
+  font: 12px/1.5 Microsoft YaHei, Heiti SC, tahoma, arial, Hiragino Sans GB, "\5B8B\4F53", sans-serif;
+  color: #666;
+}
+.hide,
+.none {
+  display: none;
+}
+/* 清除浮动 */
+.clearfix:after {
+  visibility: hidden;
+  clear: both;
+  display: block;
+  content: ".";
+  height: 0;
+}
+.clearfix {
+  *zoom: 1;
+}
+.box {
+  width: 100%;
+  height: 93.33vw;
+  background-color: #68787f;
+  margin-top: 29.33vw;
+  padding: 5.33vw 4vw;
+}
+.box .box_top {
+  width: 92vw;
+  height: 41.33vw;
+  display: flex;
+}
+.box .box_top .img_box {
+  width: 27.2vw;
+  height: 37.87vw;
+  border-radius: 1.33vw;
+  overflow: hidden;
+  position: relative;
+}
+.box .box_top .img_box img {
+  width: 100%;
+  height: 100%;
+}
+.box .box_top .img_box .text {
+  width: 8vw;
+  height: 5.33vw;
+  background-color: rgba(0, 0, 0, 0.5);
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  text-align: center;
+  line-height: 5.33vw;
+  border-radius: 0.8vw 0vw 0 0.8vw;
+}
+.box .box_top .img_box .text span {
+  color: #fff;
+  font-size: 3.2vw;
+}
+.box .box_top .wenzi {
+  flex: 1;
+  margin-left: 2.67vw;
+}
+.box .box_top .wenzi i {
+  font-size: 6.13vw;
+  color: #fff;
+}
+.box .box_top .wenzi p {
+  margin: 1.07vw 0;
+  font-size: 4vw;
+  color: #fff;
+}
+.box .box_top .wenzi span {
+  font-size: 3.2vw;
+  color: #F0f0f0;
+}
+.box .box_top .wenzi .snakuang ul {
+  margin-top: 4.53vw;
+  height: 8vw;
+  display: flex;
+  justify-content: space-between;
+  font-size: 3.47vw;
+}
+.box .box_top .wenzi .snakuang ul img {
+  width: 3.73vw;
+  height: 3.73vw;
+}
+.box .box_top .wenzi .snakuang ul li {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 18.67vw;
+  height: 8vw;
+  border-radius: 1.07vw;
+  background-color: #fff;
+}
+.box .pingfen {
+  width: 92vw;
+  height: 26.67vw;
+  background-color: #5d6c72;
+  border-radius: 1.87vw;
+  padding: 2.67vw 4vw;
+}
+.box .pingfen .pingfen_top {
+  height: 6.93vw;
+  display: flex;
+  justify-content: space-between;
+}
+.box .pingfen .pingfen_top .le {
+  color: #fff;
+}
+.box .pingfen .pingfen_top .rig {
+  width: 21.6vw;
+  height: 6.93vw;
+  border: 0.27vw solid #fff;
+  border-radius: 1.33vw;
+  color: #fff;
+  text-align: center;
+  line-height: 6.93vw;
+  font-size: 3.2vw;
+}
+.box .pingfen .wuxing {
+  width: 84vw;
+  height: 13.33vw;
+  margin-top: 1.33vw;
+  display: flex;
+  justify-content: space-between;
+}
+.box .pingfen .wuxing .wuxing_l {
+  display: flex;
+  width: 37.33vw;
+  height: 13.33vw;
+}
+.box .pingfen .wuxing .wuxing_l .fenshu {
+  width: 13.33vw;
+  height: 13.33vw;
+  font-size: 9.6vw;
+  color: #fff;
+  margin-right: 1.33vw;
+}
+.box .pingfen .wuxing .wuxing_l .xingxing {
+  display: flex;
+  flex-wrap: wrap;
+  align-content: flex-start;
+}
+.box .pingfen .wuxing .wuxing_l .xingxing .iconfont {
+  color: #ffb712;
+}
+.box .pingfen .wuxing .wuxing_l .xingxing p {
+  color: #f0f0f0;
+  color: 3.2vw;
+  padding-left: 1.33vw;
+}
+.box .pingfen .wuxing .wuxing_r {
+  width: 40vw;
+  height: 13.33vw;
+  border-left: 0.27vw solid #999;
+}
+.box .dibu {
+  width: 92vw;
+  height: 13.33vw;
+  padding: 0 4vw;
+  margin-top: 2.67vw;
+  background-color: #5d6c72;
+  border-radius: 1.6vw;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.box .dibu .dibu_l {
+  width: 32vw;
+  height: 5.33vw;
+  color: #fff;
+  font-size: 3.73vw;
+}
+.box .dibu .dibu_l img {
+  width: 5.87vw;
+  height: 5.87vw;
+}
+.box .dibu .dibu_r {
+  color: #cfd3d5;
+  font-size: 3.2vw;
+}

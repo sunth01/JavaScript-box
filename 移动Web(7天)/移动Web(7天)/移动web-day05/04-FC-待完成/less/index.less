@@ -1,0 +1,314 @@
+@import './base.less';
+@import '../lib/iconfont/iconfont.css';
+
+// 头部
+.toubu {
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    height: 1.71rem;
+    width: 10rem;
+    background-image: url(../images/wx.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 10rem;
+}
+
+// 占位头部
+.zhanwei_top {
+    height: 1.71rem;
+    width: 10rem;
+    // background-color: pink;
+}
+
+// 第一张图片
+.baiyuan {
+    height: 4.27rem;
+    background-image: url(../uploads/banner_1.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 10rem;
+}
+
+// 乐园活动
+.leyuan {
+    height: 1.09rem;
+    // background-color: skyblue;
+    display: flex;
+    align-items: center;
+    padding-left: .4rem;
+
+    span {
+        font-size: .37rem;
+        color: #3C3C3C;
+        font-weight: 700;
+    }
+}
+
+// 第二大图 团队
+.tuandui_box {
+    height: 6.67rem;
+    background-color: rgb(0, 145, 255);
+
+    .tuandui {
+        position: relative;
+        background-color: rgb(218, 255, 155);
+
+
+        img {
+            height: 4.27rem;
+            background-position: 0;
+            background-repeat: no-repeat;
+            background-size: contain;
+        }
+
+        // 内置三角形
+        .sanjiao {
+            position: absolute;
+            top: -0.13rem;
+            left: .4rem;
+            width: 1.81rem;
+            height: .77rem;
+            // background-color: red;
+            background-image: url(../images/status_active.png);
+            background-position: 0;
+            background-repeat: no-repeat;
+            background-size: contain;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            span {
+                font-size: .32rem;
+                color: #fff;
+            }
+        }
+
+        .iconfont {
+            position: absolute;
+            font-size: .64rem;
+            color: #fff;
+            top: .48rem;
+            right: .48rem;
+        }
+
+    }
+
+    .text_box {
+        display: flex;
+        justify-content: space-between;
+        height: 2.4rem;
+        background-color: rgb(255, 255, 255);
+        padding: .13rem .4rem .27rem .4rem;
+
+        .text_left {
+            width: 7.87rem;
+            line-height: .56rem;
+            background-color: #fff;
+
+            span {
+                font-size: .4rem;
+                color: #3C3C3C;
+            }
+
+            i,
+            em {
+                font-size: .29rem;
+                color: #B4B4B4;
+            }
+
+        }
+
+        // 免费
+        .text_right {
+            font-size: .4rem;
+            margin-top: .13rem;
+            color: #FE6249;
+        }
+
+    }
+
+
+}
+
+.sanjiao1 {
+    position: absolute;
+    top: -0.13rem;
+    left: .4rem;
+    width: 1.81rem;
+    height: .77rem;
+    background-image: url(../images/status_default.png);
+    background-position: 0;
+    background-repeat: no-repeat;
+    background-size: contain;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    span {
+        font-size: .32rem;
+        color: #fff;
+    }
+}
+
+
+// zuihou----------------------------
+.tuandui_box2 {
+    height: 6.67rem;
+    background-color: rgb(0, 145, 255);
+
+    .tuandui2 {
+        position: relative;
+        background-color: rgb(218, 255, 155);
+
+
+        .xiaoxin {
+            position: absolute;
+            top: .48rem;
+            right: .48rem;
+            width: .64rem;
+            height: .64rem;
+        }
+
+        .zhezhao_box {
+            position: relative;
+            height: 4.27rem;
+            background-color: #fff;
+
+            img {
+                position: absolute;
+                height: 4.27rem;
+                background-position: 0;
+                background-repeat: no-repeat;
+                background-size: contain;
+            }
+    
+            .zhezhao {
+                position: absolute;
+                top: 0;
+                z-index: 1;
+                width: 10rem;
+                height: 4.27rem;   
+                background-color: rgba(0, 0, 0, 0.304);
+            }
+        }
+        
+
+        
+
+        .iconfont {
+            position: absolute;
+            font-size: .64rem;
+            color: #fff;
+            top: .48rem;
+            right: .48rem;
+        }
+
+        
+
+    }
+    
+
+    // 内置三角形
+
+    .sanjiao2 {
+        position: absolute;
+        z-index: 1;
+        top: -0.13rem;
+        left: .4rem;
+        width: 1.81rem;
+        height: .77rem;
+        background-image: url(../images/status_default.png);
+        background-position: 0;
+        background-repeat: no-repeat;
+        background-size: contain;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    
+        span {
+            font-size: .32rem;
+            color: #fff;
+        }
+    }
+    
+
+    .text_box2 {
+        display: flex;
+        justify-content: space-between;
+        height: 2.4rem;
+        background-color: rgb(255, 255, 255);
+        padding: .13rem .4rem .27rem .4rem;
+
+        .text_left2 {
+            width: 7.87rem;
+            line-height: .56rem;
+            background-color: #fff;
+
+            span {
+                font-size: .4rem;
+                color: #3C3C3C;
+            }
+
+            i,
+            em {
+                font-size: .29rem;
+                color: #B4B4B4;
+            }
+
+        }
+
+        // 免费
+        .text_right2 {
+            font-size: .4rem;
+            margin-top: .13rem;
+            color: #FE6249;
+        }
+
+    }
+
+
+}
+
+.bottom_box {
+    position:fixed;
+    z-index: 1;
+    bottom: 0;
+    width: 10rem;
+    height: 1.31rem;
+    background-color: #feca49;
+    padding-top: .11rem;
+
+    ul {
+        display: flex;
+        justify-content:space-around;
+        align-items: center;
+        li {
+            height: 1.07rem;
+            display: flex;
+            flex-direction: column;
+            justify-content:space-around;
+            // align-items: center;
+            font-size: .29rem;
+            color: #D78B09;
+            .iconfont {
+                font-size: .56rem;
+            }
+
+            .icon-index-copy {
+                font-size: .56rem;
+            }
+            .icon-youhuiquan {
+                font-size: .61rem;
+            }
+            .icon-iconfront- {
+                font-size: .64rem;
+            }
+        }
+
+        .one {
+            color: #fff;
+        }
+    }
+
+}

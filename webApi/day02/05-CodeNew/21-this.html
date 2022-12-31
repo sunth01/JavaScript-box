@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button class="btn">click</button>
+    <script>
+        // 搜资料，查文档 尽量看一些官方权威一点
+
+        // MDN, 掘金（多看几篇点赞高的综合一下） 权威一点的书籍（JavaScript高级程序设计（3/4））
+        // 你不知道的JavaScript 上中下 三册 
+        // Vue React Webpack ==> 官方文档 
+        // Github  ==> git
+
+        // CSDN 不推荐 
+
+
+        // 不严格定义
+        // this 就是一个变量,值是一个对象,程序运行时内部自动生成的,代表着当前运行环境
+
+        // 1. 全局环境中,this 指向的就是window  指向 可以理解为 等于
+        console.log(this)
+
+        // 2. 普通函数调用时  this指向的还是window
+        function fn () {
+            console.log(this)
+        }
+        fn()  // == > window.fn()
+        console.log(window.fn())
+
+
+        // 3. 定时器中,this还是指向window
+        // setInterval(function(){
+        //     console.log(this)
+        // },1000)
+
+
+        // 4. 函数作为对象的方法调用
+        const obj = {
+            name:'测试',
+            fn:function(){
+                console.log(this)
+            }
+        }
+        obj.fn()  // ==> 相当于是obj调用的这个fn函数,fn里面的this指向的就是obj
+        // ===> 粗略规则:谁调用,fn内部的this,就指向谁
+
+
+        // 5. 事件绑定(注册)中,this指向绑定事件的元素(事件源)
+        const btn = document.querySelector('.btn')
+        btn.addEventListener('click', function(){
+            console.log(this)
+            console.log(btn === this)
+            // btn.style.color = 'red'
+            this.style.color = 'blue'
+        })
+
+        
+
+        
+    </script>
+</body>
+
+</html>

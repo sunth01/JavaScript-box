@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 回顾一下遍历数组
+        // let arr = [1,2,3,4,5]
+        // for (let i = 0; i < arr.length; i++) {
+        //     console.log(arr[i])
+        // }
+
+        // 遍历数组可以利用数组类型自带的下标,配合for循环的i进行属性访问
+        // 但是 对象没有下标, 无法利用for循环的i来进行访问
+
+        let obj = {
+            name: "小明",
+            age: 18,
+            title: "学生"
+        }
+
+        // 利用for in 语法进行对象遍历:
+        for (let k in obj) {
+            // console.log(k) // k => 属性名
+            // console.log(obj[k]) // obj[k] => 属性值
+        }
+
+        // 注意点: 
+        // 1. k => key 理解标识符(键)
+        // 2. k 代表对象里的属性名
+        // 3. 根据属性名取属性值的语法为: 对象名[属性名]  obj[k]
+        // 4. for in 主要目的为: 重新构建对象
+
+        // 5. 目前了解for in 即可, 目前使用场景较少
+
+
+
+
+        
+        // 声明一个新的对象, 但是它的值为obj
+        let obj1 = obj
+        console.log(obj1)
+        
+        // // 修改了obj1
+        obj1.name = "我修改了"
+        console.log(obj1)
+
+        // // 此时再次打印obj
+        console.log(obj) // 修改obj1,导致obj也被改动了
+        // 因为object数据类型在内存中存储方式的问题导致
+        // 简单理解: 它们共享了一个内存地址 
+
+
+
+
+
+
+
+
+
+
+
+
+        // --------------------------------------------------
+        // 复制一个新的内存地址的对象:
+        let obj2 = {}
+        // 利用for in 来重新构建一个对象
+        for (let k in obj) {
+            // k代表属性名
+            // obj2[name] = "小明"
+            obj2[k] = obj[k]
+        }
+        // 得到一个新的对象,但是内容和obj一致
+        console.log(obj2)
+        obj2.name = '修改了'
+        console.log(obj2)
+
+        // 查看原对象
+        console.log(obj)
+
+    </script>
+</body>
+
+</html>

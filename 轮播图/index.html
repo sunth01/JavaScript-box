@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>轮播图</title>
+</head>
+<!-- style 里面是css样式 因为代码较少就没有再次创建 -->
+<style>
+    /* 盒子1的样式 */
+    .box1 {
+        width: 1920px;
+        height: 610px;
+        margin: 0 auto;
+        /* 超出的位置将隐藏并且不占位 */
+        overflow: hidden;
+    }
+
+    .box {
+        width: 7000px;
+        height: 700px;
+        animation: move 20s infinite;
+    }
+
+    @keyframes move {
+        0% {
+            transform: translateX(0);
+        }
+
+        20% {
+            transform: translateX(-1920px);
+        }
+
+        40% {
+            transform: translateX(-3860px);
+        }
+
+        60% {
+            transform: translateX(-1920px);
+        }
+
+        100% {
+            transform: translateX(0px);
+        }
+    }
+
+    .box img {
+        float: left;
+        height: 608px;
+        width: 1920px;
+    }
+</style>
+
+<body>
+    <div class="box1">
+        <div class="box">
+            <img src="../嘉环科技/imges/banner1.jpg" alt="">
+            <img src="../嘉环科技/imges/banner2.jpg" alt="">
+            <img src="../嘉环科技/imges/banner3.jpg" alt="">
+        </div>
+    </div>
+</body>
+
+</html>

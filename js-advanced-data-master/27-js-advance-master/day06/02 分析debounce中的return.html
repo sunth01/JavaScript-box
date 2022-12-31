@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text">
+    <script>
+        const input = document.querySelector('input')
+        const sendMsg = function(){
+            console.log('发送请求')
+        }
+
+        const debounce = (fn, ms = 0) => {
+            // console.log(1111)
+            console.log(fn)
+            return function(){
+                // console.log(2222)
+                console.log(fn)
+                fn() // 表示调用执行sendMsg这个方法  ==> sendMsg()
+            }
+        }
+
+        // input.addEventListener('keyup', sendMsg)
+        input.addEventListener('keyup', debounce(sendMsg, 300))
+
+        // 1. return function 的外层， 它是绑定keyup的时候，就立即执行了，只执行一次
+        // 2. return function 的里面， 每次触发keyup的时候，才执行，只要触发就执行
+        // 3. fn就是我们传入的sendMsg
+    </script>
+</body>
+</html>

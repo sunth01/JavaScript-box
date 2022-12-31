@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // switch ("数据") {
+        //     case "1":
+        //         // 执行代码
+        //         break;
+        //     case "2":
+        //         // 执行代码
+        //         break;
+        //     default:
+        //         // 默认执行代码
+        //         break;
+        // }
+        // if else分支较多的情况, 导致代码过长, 不方便阅读, 此时用Switch效率会更高
+        // switch("数据") 与case后的值, 要全等匹配上, 才会执行相应的代码, 最后break退出switch程序.
+
+
+        let num = +prompt("请输入1到4之间的一个数")
+        switch (num) {
+            case 1:
+                alert("您输入的是1");
+                break;
+            case 2:
+                alert("您输入的是2");
+                break;
+            case 3:
+                alert("您输入的是3");
+                // break;
+                // 如果没有break,就会一直往后执行,直到遇到下一个break
+            case 4:
+                alert("您输入的是4");
+                break;
+            default:
+                alert("您输入的不合法")
+                break;
+        }
+
+        // 注意点:
+        // 1. switch(开关) case(具体情况)
+        // 2. switch("数据") 与case后的值, 要全等匹配上
+        // 3. 如果都没有匹配上, 就会执行最后面的default代码块
+        // 4. case后必须添加break, 否则就会一直往后执行, 直到遇到下一个break(case穿透)
+    </script>
+</body>
+
+</html>

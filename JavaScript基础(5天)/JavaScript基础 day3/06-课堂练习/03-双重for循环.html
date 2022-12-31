@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 部分情况下，单层的for循环无法满足需求
+        // 做法：for循环里在嵌套一层for循环
+
+        // 1. 外层循环，记录天数
+        for (let z = 1; z <= 3; z++) {
+            // console.log(z);
+            document.write(`今天是第${z}天<br><br>`);   
+
+            // 2. 在内部嵌套一层for循环，用于记录当天的单词量
+            // 内层循环
+            for (let x = 1; x <= 5; x++) {
+                document.write(`这是今天背的第${x}个单词<br><br>`);
+            }         
+        }
+        // ✍✍✍外层循环执行1次，内层循环执行全部☆☆☆☆☆✍✍✍
+
+
+        console.log('========================');
+
+        for (let y = 1; y <= 5; y++) {
+            console.log(y);
+            for (let t = 1; t <= 5; t++) {
+                document.write(`✌`);
+            }
+            document.write(`<br>`);
+
+        }
+    </script>
+</body>
+</html>

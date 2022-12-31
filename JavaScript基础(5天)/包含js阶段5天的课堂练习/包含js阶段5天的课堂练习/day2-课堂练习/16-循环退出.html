@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>循环退出</title>
+</head>
+<body>
+    <script>
+        // 吃包子案例
+        let i = 1
+        while (i <= 6) {
+
+            // 吃到第三个包子的时候, 发现一条虫子, 就不吃这个包子了, 继续吃其他
+            if (i === 3) {
+                document.write(`第三个包子有问题, 我换下一个吃<br>`)
+                // 跳出本次循环后, 没有改变条件变量, 导致一直都是3,陷入死循环
+                i++
+                // continue 结束本次循环: 后面的代码都不执行, 直接重新继续下次循环
+                continue
+                // 不会执行写在最后的i++
+                // i++
+            }
+
+            document.write(`我是了第${i}个包子 <br>`)
+            i++
+        }
+
+        document.write("-------------------------------------------------------------<br>")
+
+        let k = 1
+        while (k <= 6) {
+            // 吃到第三个包子的时候, 发现一条半只虫子, 恶心的后面的包子都不想吃了
+            if (k === 3) {
+                document.write(`第三个包子有问题, 不吃了<br>`)
+                break
+            }
+            document.write(`我是了第${k}个包子 <br>`)
+            k++
+        }
+
+        // 总结:
+        // continue:  结束本次循环, 继续下次循环, 一般用于排除, 跳过某个选项时;
+        // break   :  退出整个循环, 一般用于结果已经得到, 后续的循环不需要执行时使用;
+    </script>
+
+</body>
+
+</html>

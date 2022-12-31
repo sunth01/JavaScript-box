@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    // 正则表达式 Regular Expression  Regular 有规则的
+    // 定义： 是一种字符串匹配模式（pattern）  模式 ==> 规则
+
+    // 作用：
+    //  1. 表单验证： 匹配
+    //  2. 过滤敏感词： 替换
+    //  3. 字符串中提取想要的部分： 提取
+
+    // 使用
+    // 1. 先定义规则
+    // 2. 看是否匹配
+
+    const reg = /前端/ // /xxx/ 是正则的字面量
+    console.log(typeof reg)
+    console.log(reg instanceof Object)
+
+    const str = '我们在学前端'
+
+    // 1. reg.test(要匹配的字符串)
+    // ==> true / false
+    console.log(reg.test(str))
+
+    const str2 = '我们再成都学前端'
+    const reg2 = /成都/
+    console.log(reg2.exec(str2))
+  </script>
+</body>
+
+</html>

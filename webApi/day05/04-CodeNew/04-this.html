@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // this指向    指向 ==> 等于
+
+        // 1. 全局作用域 / 普通函数 / 定时器  里面 this 指向的是window
+        // 2. 函数作为对象的方法调用的时候，谁调用，指向谁
+
+        // 重点:!!! this的指向,在定义的时候不能确定的,只有执行调用的时候才能确定他的指向
+        const obj = {
+            name: '小白',
+            fn: function () {
+                console.log(this)
+            }
+            // ES6的简写
+            // fn(){
+            // console.log(this)
+            // }
+        }
+        obj.fn()
+
+        // 1. 以前的
+        obj.fn() // this指向的是obj
+
+        // 2. 先取出函数,在调用执行 window
+        let foo = obj.fn
+        // let foo = function(){
+        //     console.log(this)
+        // }
+        foo() // ==> this 指向的是window
+
+        // 3. 事件绑定的时候，this指向事件源
+                const btn = document.querySelector('button')
+        btn.addEventListener('click', function(e){
+            console.log(this)
+            console.log(e.target) // 触发事件的元素
+            console.log(e.currentTarget) // 绑定事件的元素，同this
+        })
+
+        // 4. 构造函数中的this指向的是它创建的实例
+        // 实例：实际的例子，具体的例子
+        function Foo(name, age){
+            this.name = name 
+            this.age = age 
+            console.log(this)
+        }
+        const p1 = new Foo('小鸣', 19)
+        const p2 = new Foo('小贵儿', 20)
+        // console.log(p1)
+        // console.log(p2)
+    </script>
+</body>
+
+</html>

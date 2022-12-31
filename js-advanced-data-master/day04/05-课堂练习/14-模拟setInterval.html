@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div></div>
+    <script>
+        const div = document.querySelector('div')
+        // 利用setTimeout 来模拟 setInterval 的效果
+        // 递归+setTimout
+
+        function getTime(){
+            div.innerHTML = new Date().toLocaleString()
+            setTimeout(getTime, 1)
+        }
+        getTime()
+
+        // 不推荐这么用！ 实践检验真理 
+    </script>
+</body>
+</html>

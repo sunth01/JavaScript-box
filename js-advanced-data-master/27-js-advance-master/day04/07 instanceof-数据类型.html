@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+// instanceof 可以用于引用类型的检测。基本数据类型无效
+
+// 基本类型 无效
+console.log('1' instanceof String) // false
+console.log(1 instanceof Number)
+console.log(true instanceof Boolean)
+console.log(Symbol('id') instanceof Symbol)
+console.log(9007199254740999n instanceof BigInt)
+console.log(BigInt(9007199254740999) instanceof BigInt)
+
+// instanceof 只能用于引用类型的检测
+console.log({} instanceof Object) // ture
+console.log([] instanceof Object) // true
+console.log(function (){} instanceof Function) // true
+    </script>
+</body>
+</html>

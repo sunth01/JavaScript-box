@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const pos = {
+          x: 10,
+          y: 20,
+        }
+        //   function move(obj) {
+        //     console.log(obj.x)
+        //     console.log(obj.y)
+        //   }
+        //   move(pos)
+        //   let {x,y}=pos
+        // 重命名=》y: newY
+        // 形参上解构出来的变量，相当于是函数范围内let声明的一个变量，是可以修改的
+        function move1({ y: newY, x }) {
+          console.log(x) // 10
+          console.log(newY) // 20
+          x = 666
+          console.log(x) // 666
+        }
+        move1(pos)
+  
+        function move2([a = 0, b, c, d = 20]) {
+          console.log(a, b, c, d) // 1 2 3 20
+        }
+        move2([1, 2, 3])
+      </script>
+</body>
+</html>

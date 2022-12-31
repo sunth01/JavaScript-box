@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // const 声明常量, 不允许二次修改
+
+        // 场景1:
+        // const a = 1
+        // a = 2
+        // console.log(a) // 会报错
+
+        // 场景2:
+        const obj = {
+            uanme: "小明",
+            age: 18
+        }
+
+        obj.age = 20
+        console.log(obj) //  不会报错, 可以正常修改对象
+
+        
+        // 场景3:
+        const arr = [1, 2, 3, 4, 5]
+        // arr = [1, 2, 3, 4, 5]  // 会报错
+        arr[0] = "修改"
+        console.log(arr) // 不会报错, 可以正常修改数组
+
+        
+
+        // 复习数据类型在内存里的存储位置:
+        // (1) 基础数据类型的数据, 会在内存里存储于栈空间中.
+        // (2) 引用数据类型的数据, 会在内存里存储的栈空间中存储数据的引用地址, 根据该地址
+        // 指向堆空间, 具体的数据存在堆空间里.
+
+        // 重点:
+        // (1) const声明的变量, 赋值基本数据类型时, 在栈空间开辟空间存储了该值, 栈里的数据不可二次修改
+        // 所以重新赋值时会报错.
+
+        // (2) const声明的变量, 赋值引用数据类型时, 在栈空间里开辟空间存储了数据的引用地址, 重新修改
+        // 对象里的属性值时, 栈里的引用地址并没有被改变, 改变的是堆里的数据, 所以不会报错.
+    </script>
+</body>
+
+</html>

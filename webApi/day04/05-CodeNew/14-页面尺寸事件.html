@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    div {
+      display: inline-block;
+      /* width: 200px; */
+      height: 200px;
+      background-color: pink;
+      padding: 20px;
+      border: 20px solid red;
+    }
+  </style>
+</head>
+
+<body>
+  <div>12312311123123123123123123123122</div>
+  <script>
+      // 1. 监听页面尺寸变化的事件  resize  
+      window.addEventListener('resize', function(){
+        console.log('页面尺寸变化了')
+      })
+
+      // 2. clientWidth / clientHeight 
+      // ==> 动态获取元素的大小 
+      //  clientWidth = width + padding 
+      //  clientHeight = height + padding
+
+      // ==> 不包含border， 返回值 是number
+      const div = document.querySelector('div')
+      console.log(div.clientWidth)
+
+      // 3. 监听屏幕的宽度
+      window.addEventListener('resize', function(){
+            // 获取html宽度 
+          const w = document.documentElement.clientWidth
+          console.log(w)
+      })
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function Person(name){
+            this.name = name 
+        }
+
+        const person = new Person('周杰伦')
+
+        // 原型链
+        // JS中一切皆对象  
+
+        // 1. Person.prototype 原型对象，也是一个对象，所以，它也有__proto__属性 （规则2）
+        // 既然Person.prototype也是一个对象（相当于实例），那么 Person.prototype这个对象的构造函数是谁呢？
+        // 原型对象的构造函数？
+        // Person.prototype 这个对象的构造函数  ===> Object
+        // 规则4  
+        // 所以  Person.prototype的隐式原型 指向 它的构造函数(Object)的显式原型
+        console.log(Person.prototype.__proto__ === Object.prototype)
+
+        // 2. Object.prototype 得到的是什么？原型，谁的原型？ Object构造函数的原型
+
+        // 2.1 Object.prototype原型， 原型上默认有一个constructor属性，指向构造函数
+        // Object.prototype.constructor === Object
+        // 2.2 Object这个构造函数 访问到原型 
+        // Object.prototype  ===> 访问到原型 
+        // 2.3 刚才的
+        // Person.prototype.__proto__  ===> 访问到原型
+
+
+        // 3. Object是构造函数，Object.prototype ===> 原型、原型对象 
+        // 规则2 所以 Object.prototype也有__proto__属性 ==> Object.prototype.__proto__ 
+        // 特殊
+        console.log(Object.prototype.__proto__ === null)
+
+
+
+    </script>
+</body>
+</html>

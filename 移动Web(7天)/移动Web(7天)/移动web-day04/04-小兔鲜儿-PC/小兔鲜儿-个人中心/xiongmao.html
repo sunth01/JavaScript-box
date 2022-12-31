@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        
+        /* 竹子__________________________________________________________________________ */
+        .box_big {
+            position: relative;
+            width: 1250px;
+            height: 40px;
+            background-color: rgb(139, 243, 142);
+        }
+        /* 上面熊猫运动_________________________________________________________________ */
+        .box {
+            position: absolute;
+            left: 0;
+            bottom: 6px;
+            width: 38px;
+            height: 103px;
+            animation: box 50s linear infinite;
+        }
+
+        .xiongmao {
+            width: 38px;
+            height: 103px;
+            background-image: url(./images/xiongmao.png);
+            background-repeat: no-repeat;
+            animation: xiongmao 2s steps(14) infinite;
+            transform: rotate(90deg);
+        }
+
+        @keyframes xiongmao {
+            0% {
+                background-position: 0 0;
+            }
+
+            100% {
+                background-position: -532px 0px;
+            }
+        }
+
+        @keyframes box {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(1250px);
+            }
+        }
+
+
+        .box2 {
+            position: absolute;
+            left: 0;
+            width: 38px;
+            height: 103px;
+            animation: box2 50s linear infinite;
+        }
+
+        .xiongmao2 {
+            width: 38px;
+            height: 103px;
+            background-image: url(./images/xiongmao.png);
+            background-repeat: no-repeat;
+            animation: xiongmao2 2s steps(14) infinite;
+            transform: rotate(90deg) rotateY(-180deg);
+        }
+
+        @keyframes xiongmao2 {
+            0% {
+                background-position: 0 0;
+            }
+
+            100% {
+                background-position: -532px 0px;
+            }
+        }
+
+        @keyframes box2 {
+            0% {
+                transform: translateX(1250px);
+            }
+            100% {
+                transform: translateX(0);
+            }
+        }
+
+         
+
+
+
+    </style>
+</head>
+
+<body>
+    <div class="box_big">
+        <div class="box">
+            <div class="xiongmao"></div>
+        </div>
+
+
+
+        <div class="box2">
+            <div class="xiongmao2"></div>
+        </div>
+
+    </div>
+
+
+</body>
+
+</html>

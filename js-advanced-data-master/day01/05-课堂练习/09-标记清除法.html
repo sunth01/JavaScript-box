@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 标记清除算法
+        // 主要将GC的过程分为两个阶段
+        // 1. 标记阶段：标记空间中的活动对象和非活动对象
+        // 2. 清除阶段：回收非活动对象，也就是销毁非活动对象
+  
+        // 标记阶段从一组根元素开始，
+        // 递归遍历（一层一层的）这组根元素，
+        // 在这个遍历过程中，能访问到的元素称为活动对象，不能访问到的可以判断为垃圾数据。
+        function fn() {
+          let a = {}
+          let b = {}
+          a.xx = b
+          b.yy = a
+        }
+        fn()
+        //   缺陷：内存碎片化
+        //   解决：标记整理（Mark-Compact）算法
+      </script>
+</body>
+</html>

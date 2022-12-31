@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text">
+    <script>
+        const input = document.querySelector('input')
+        const sendMsg = function(x, y){
+            console.log('发送请求')
+            // console.log(this)
+            // // 不用防抖的情况，原本sendMsg里面的this指向的是input
+            // console.log(x + y)
+        }
+
+        // input.addEventListener('keyup', sendMsg.bind(input, 1, 2))
+
+        // 防抖函数
+        // const debounce = (fn, ms = 0) => {
+        //     let timerId
+        //     return function(...args){
+        //         console.log(args)
+        //         clearTimeout(timerId)
+        //         timerId = setTimeout(() => {
+        //             // 我们还需要做一件事情，再调用fn的时候
+        //             // 1. 不仅要绑定它内部的this指向
+        //             // 2. 调用的时候，参数还得传进去
+
+        //             // call接收的是参数列表
+        //             // fn.call(this, ...args)
+        //             fn.apply(this, args)
+        //         }, ms)
+        //     }
+        // }
+
+        // 最终的防抖
+        const debounce = (fn, ms = 0) => {
+            let timerId 
+            return function(...args){
+                clearTimeout(timerId)
+                timerId = setTimeout(() => {
+                    // fn.call(this, ...args)
+                    // args 是一个真数组，...扩展运算符，可以展开数组
+                    fn.apply(this, args)
+                }, ms)
+            }
+        }
+
+        input.addEventListener('keyup', debounce(sendMsg, 300))
+
+        // input.addEventListener('keyup', debounce(sendMsg, 300).bind(input, 3, 9))
+        // input.addEventListener('keyup', function(){
+        //         clearTimeout(timerId)
+        //         timerId = setTimeout(() => {
+        //             fn.call(this)
+        //         }, ms)
+        //     })
+
+    </script>
+</body>
+</html>

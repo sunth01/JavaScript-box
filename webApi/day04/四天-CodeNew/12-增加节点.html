@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <ul>
+    <li>我是老大</li>
+    <li>我是老大</li>
+    <li>我是老大</li>
+  </ul>
+  <script>
+    // 1. 创建节点 (元素,标签)
+    document.createElement('标签名')
+    const li = document.createElement('li')
+    // 一般情况下,我们创建好了标签,会给他添加内容
+    li.innerHTML = `<p>我是内容</p>`
+    console.log(li)
+
+    // 2. 添加节点(追加)
+    // 父元素.appendChild(要添加的元素)
+    // ===> 在父元素最后追加
+    const ul = document.querySelector('ul')
+    ul.appendChild(li)
+
+    // 3. 插入节点
+    // 父元素.insertBefore(要插入的元素,放到哪一个元素的前面)
+    const p = document.createElement('p')
+    p.innerHTML = '我是p标签'
+
+    // 想把p标签 放到ul中第一个li标签的前面
+    ul.insertBefore(p, ul.children[0])
+
+  </script>
+</body>
+
+</html>

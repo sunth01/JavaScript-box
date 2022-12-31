@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const pig = {
+          name: 'xxx',
+          sss: {
+            xx: 23,
+            uu: '灌灌灌灌',
+            demo: {
+              test: 345,
+            },
+          },
+          age: 90,
+        }
+        // 分步解构
+        // const { name, age, sss } = pig
+        //   const { xx, uu, demo } = sss
+        //   const { test } = demo
+  
+        // 分析步骤
+        //   const { name, age, sss:newSSS } = pig
+        //   const { xx, uu, demo:demo1 } = newSSS
+        //   const { test } = demo1
+  
+        // 合并：
+        const {name,age,sss:{xx,uu,demo: { test },},} = pig
+      </script>
+</body>
+</html>

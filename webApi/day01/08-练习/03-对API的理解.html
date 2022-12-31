@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+                // 问题: 怎么理解API?
+        // 应用编程接口
+        // 软件或者硬件预定义好的一些程序, 供后续开发者直接调用, 即可使用这部分功能.
+
+        // 例如: 
+        // (1) 手机硬件自带了陀螺仪功能, 游戏厂商设计游戏时就可以直接调用此功能进行体感控制等等.
+        // (2) 浏览器自带了各种弹窗效果, 前端开发需要时就可以直接调用.
+        // (3) 手机自带相机功能, 移动端/app开发时就可以直接调用相机功能.
+        // (4) 微信调用手机硬件自带的相机功能, 优化为扫一扫, 此时开发微信小程序时, 就可以直接调用扫一扫API.
+
+        // 举例1.
+        // const i= confirm ('自己定义的内容')
+        // 作用：弹出一个带有确认按钮和取消那妞及自定义内容的弹窗，返回用户的选择（布尔值）
+        // alert(i);
+
+        // 举例二
+        // windows.onfocus 浏览器获得焦点时
+        window.onfocus = function() {
+            document.write('抓到你切屏了')
+        }
+    </script>
+</body>
+</html>

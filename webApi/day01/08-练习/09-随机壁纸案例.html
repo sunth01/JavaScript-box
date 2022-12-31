@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        img {
+            display: block;
+            width: 100vw;
+            height: 100vh;
+        }
+
+    </style>
+</head>
+<body>
+    <img src="../04-code/images/desktop_1.jpg" alt="" title="这是第几张壁纸">
+
+    <script>
+        // 声明
+        const img = document.querySelector('img')
+
+        // console.dir(img.src)
+        // console.dir(img.title)
+
+        // 赋值操作
+        img.src = "../04-code/images/desktop_1.jpg"
+        img.title = '滴滴滴'
+
+        // 复习随机函数
+        function getRandom(min,max) {
+            return Math.floor(Math.random() * (max - min+ 1) + min)
+        }
+        console.log(getRandom(0,10))
+
+
+        const num = getRandom(1,10)
+        img.src = `../04-code/images/desktop_${num}.jpg`
+        img.title = `这是第${num}张`
+
+
+
+
+
+    </script>
+</body>
+</html>

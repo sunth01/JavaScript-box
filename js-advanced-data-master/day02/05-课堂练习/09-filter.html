@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // array.filter(fn) // 过滤满足条件的元素，凑成一个新数组
+        // fn(第一个参数，第二个参数)
+        // 第一个参数：数组的元素（当前元素）
+        // 第二个参数:当前元素的索引
+        // 返回值：一个全新的 过滤之后的数组
+        const arr = [10, 20, 30, 40]
+        const res = arr.filter(function(item){
+            return item > 20
+        })
+        console.log(res) // [30, 40]
+        const res1 = arr.filter((item) => item > 20)
+
+        // map:改造数组，原来的数组不会变化，返回的是改造后的全新的数组
+        const res2 = arr.map((item) => item * 2)
+        console.log(res2)
+    </script>
+</body>
+
+</html>

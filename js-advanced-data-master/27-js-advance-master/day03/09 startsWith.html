@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 1. str.startsWith()
+        // str.startsWith(seaerchString[, position])
+        // seaerchString : 要搜索的字符串
+        // position      : 在str中开始搜索查找的位置 默认为0
+
+        // 作用：判断字符串是否以某个子串开头
+        const str = "To be, or not to be, that is the question.";
+
+        console.log(str.startsWith('To be'))
+        console.log(str.startsWith('not to be', 10))
+
+
+        // 2. str.includes() 
+        // 判断一个字符串是否包含在另一个字符串中   true / false
+        // 区分大小写
+        const str2 = "To be, or not to be, that is the question.";
+
+        console.log(str2.includes('To be')) // true
+        console.log(str2.includes('To be or'))  // false
+
+
+
+
+
+    </script>
+</body>
+</html>

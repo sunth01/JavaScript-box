@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 查MDN的步骤  学一个新的方法
+
+        // 1. 语法， 先大致了解
+        // 2. 作用， 看这个方法是干嘛的 
+        // 3. 参数， 熟悉参数
+        // 4. 返回值，看这个方法是否有返回值
+
+        // 5. 描述   注意事项
+        // 6. 示例代码   自己尝试一下 
+
+
+        // arr.find(cbFn)
+        // 1. 语法
+        // 2. 作用：返回数组中满足条件的第一个数组元素，如果不满足，返回undefined。
+        // 3. 参数   
+                // cbFn 回调函数  ===> 这个函数，一般要写上return
+                // cbFn的参数
+                // 第一个参数       : item  当前元素
+                // 第二个参数       : index 当前的元素的索引号 （可选）
+        // 4. 返回值：数组中第一个满足条件的数组元素 / undefined.
+
+        const arr = ['red', 'blue', 'orange']
+
+        const res = arr.find(function(item){
+            return item === 'blue'
+        })
+        console.log(res)
+
+        const res2 = arr.find(el => el === 'orange')
+        console.log(res2)
+
+    </script>
+</body>
+</html>

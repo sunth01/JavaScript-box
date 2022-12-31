@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>练习</title>
+</head>
+
+<body>
+    <script>
+        let row = +prompt("请输入星星的行数")
+        let col = +prompt("请输入星星的列数")
+        // 1. 外层循环 控制行数(一共有几行)
+        for (let i = 0; i < row; i++) {
+
+            // 2. 内层循环控制列数(每行有几个星星)
+            for (let j = 0; j < col; j++) {
+                document.write(`☆`)
+            }
+            // 3. 既然控制行数, 就需要实现换行操作
+            document.write(`<br>`)
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .demo{
+            width: 600px;
+            height: 300px;
+            margin: 100px auto;
+            background-color: pink;
+        }
+        .panel{
+            position: relative;
+            border: 15px solid transparent;
+            /* border-width 挤压文字，占了宽度 */
+            border-width: .6375rem .475rem .25rem 1.65rem;
+            /* 1. 引入 */
+            border-image-source: url('./new-project/images/border.png');
+            /* 2. 切割 */
+            border-image-slice: 51 38 20 132;
+        }
+        .inner{
+            position: absolute;
+            top: -.6375rem;
+            right: -.475rem;
+            bottom: -.25rem;
+            left: -1.65rem;
+            padding: .3rem .45rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="demo panel">
+        12312312323
+        <!-- <div class="inner">123123</div> -->
+    </div>
+    <script src="./new-project/js/flexible.js"></script>
+</body>
+</html>

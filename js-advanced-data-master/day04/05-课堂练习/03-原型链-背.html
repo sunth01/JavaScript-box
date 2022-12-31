@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 正常的原型链都会终止于Object的原型对象 (或者说终于null)
+        // 每个对象通过__proto__都能访问到它的原型，原型也有它的原型
+        // 当访问一个对象的属性和方法时，先在自身中寻找
+        // 如果没有，就会沿着__proto__这条链，向上查找，一直找到最顶层object.prototype为止
+        //数组的原型链
+        const arr = [1,2,3]  // arr = new Array(1,2,3)
+        console.dir(arr)
+        // console.log(arr.__proto__ === Array.prototype)
+        // arr ---> Array.prototype ---> Object.prototype ---> null
+
+        // 函数的原型链
+        const fn = function(){} // fn ==> new Function()
+    </script>
+</body>
+</html>

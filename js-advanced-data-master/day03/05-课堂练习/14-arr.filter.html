@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+                // arr.filter(cbFn) 筛选数组，由满足条件的元素组成一个新的数组
+        // cbFn中接收两个参数 
+        //   第一个参数 数组的元素
+        //   第二个参数 数组的下标
+        const arr = [10, 20, 30, 40, 50]
+        const res = arr.filter(function(item,index){
+            return item >= 30
+        })
+        console.log(res)
+    </script>
+</body>
+</html>

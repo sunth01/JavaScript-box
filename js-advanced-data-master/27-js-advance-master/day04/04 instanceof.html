@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // instanceof 运算符     instance 实例    of 谁的
+        // 用于检测构造函数的 prototype 属性是否出现在某个实例对象的原型链上。
+
+        // 语法
+        // 实例 instanceof 构造函数     A instanceof B
+
+        // 通俗一点的解释： 检测左边的实例，是不是右边的构造函数创建的，或者是不是祖先构造函数创建的
+        // 检测引用类型
+
+        function C(){}
+        function D(){}
+
+        const o = new C()
+
+        console.log(o instanceof C)  // true    o.__proto__ === C.prototype
+
+        console.log(o instanceof D)  // false
+
+        console.log(o instanceof Object) // true
+
+        // eg. 
+        function Person(name){
+            this.name = name 
+        }
+        const ldh = new Person('刘德华')
+        console.log(ldh instanceof Person) // true
+        ldh.__proto__ === Person.prototype
+
+        console.log([1,2,3] instanceof Array )  // true
+        console.log(Array instanceof Object) // true
+        console.log(Person instanceof Function) // true
+    </script>
+</body>
+</html>

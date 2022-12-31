@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 成立识别第一条条件
+        // 三元表达式语法
+        // 条件 ？ 满足条件执行的代码 ：不满足条件执行的代码
+        true ? console.log('条件成立') : console.log('条件不成立');
+        false ? console.log('条件成立') : console.log('条件不成立');
+
+        // 举例
+        // 有一个变量，存用户头像地址的
+        let imgSrc
+        // 1. 用户未登录时
+        // 无操作
+        // 2. 用户已登录时
+        // 获取到用户的头像地址赋值给imgSrc
+        imgSrc = "小兔子图片"
+
+        document.write(imgSrc ? imgSrc : "默认头像");
+    </script>
+</body>
+</html>

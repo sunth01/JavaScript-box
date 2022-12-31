@@ -1,0 +1,612 @@
+body {
+    background-color: #f6f6f6;
+}
+
+/* 主体部分 */
+/* 熊猫 ---------------------------*/
+
+.box_big {
+    position: relative;
+    margin: 0px auto;
+    width: 1250px;
+    height: 40px;
+    /* background-color: rgba(139, 243, 142, 0.496); */
+    /* border: 1px solid rgb(0, 122, 8); */
+    /* overflow: hidden; */
+}
+
+/* 上面熊猫运动_________________________________________________________________ */
+.box {
+    position: absolute;
+    left: 0;
+    bottom: -30px;
+    width: 38px;
+    height: 103px;
+    /* background-color: pink; */
+    animation: box 50s linear infinite;
+}
+
+.xiongmao {
+    width: 38px;
+    height: 103px;
+    /* background-color: skyblue; */
+    background-image: url(../images/xiongmao.png);
+    /* 不平铺 */
+    background-repeat: no-repeat;
+    /* steps 属于运动曲线的一种 千万不要和linear使用  */
+    /* steps 将动画过程等分位N份 */
+    animation: xiongmao 2s steps(14) infinite;
+    transform: rotate(90deg);
+}
+
+@keyframes xiongmao {
+    0% {
+        background-position: 0 0;
+    }
+
+    100% {
+        background-position: -532px 0px;
+    }
+}
+
+@keyframes box {
+    0% {
+        transform: translateX(30px);
+    }
+
+    100% {
+        transform: translateX(1180px);
+    }
+}
+
+
+.box2 {
+    position: absolute;
+    left: 0;
+    bottom: -30px;
+    width: 38px;
+    height: 103px;
+    /* background-color: pink; */
+    animation: box2 50s linear infinite;
+}
+
+.xiongmao2 {
+    width: 38px;
+    height: 103px;
+    /* background-color: skyblue; */
+    background-image: url(../images/xiongmao.png);
+    /* 不平铺 */
+    background-repeat: no-repeat;
+    /* steps 属于运动曲线的一种 千万不要和linear使用  */
+    /* steps 将动画过程等分位N份 */
+    animation: xiongmao2 2s steps(14) infinite;
+    transform: rotate(-90deg) rotateY(-180deg);
+}
+
+@keyframes xiongmao2 {
+    0% {
+        background-position: 0 0;
+    }
+
+    100% {
+        background-position: -532px 0px;
+    }
+}
+
+
+
+@keyframes box2 {
+    0% {
+        transform: translateX(1180px);
+    }
+    100% {
+        transform: translateX(30px);
+    }
+}
+
+
+
+.zhuti_box {
+    display: flex;
+    justify-content: space-between;
+    height: 1520px;
+    /* width: 100%; */
+    margin: 0px auto;
+    /* background-color: pink; */
+
+}
+
+/* 左侧盒子 */
+.shu_left {
+    width: 230px;
+    height: 1520px;
+    background-color: skyblue;
+}
+
+/* 头像 */
+.touxiang {
+    width: 230px;
+    height: 250px;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    border-bottom: 1px solid #ccc;
+}
+
+
+.lin {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background-color: #fff(255, 0, 21);
+    transition: all 0.5s;
+}
+
+/* 鼠标移动 */
+.lin:hover {
+    transform: scale(1.2);
+    box-shadow: 1px 1px 3px 3px rgba(130, 130, 130, 0.451);
+}
+
+.huiyuan_box:hover img {
+    transform: rotateY(360deg);
+}
+
+
+.huiyuan_box {
+    width: 150px;
+    height: 40px;
+    border-radius: 30px;
+    background-color: #e86f54;
+}
+
+.touxiang p {
+    font-size: 25px;
+    font-weight: 700;
+    color: rgb(51, 51, 51);
+}
+
+.huiyuan_box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+    color: #ffd499;
+    cursor: pointer;
+}
+
+.huiyuan_box img {
+    vertical-align: bottom;
+    margin-right: 10px;
+    width: 25px;
+    height: 25px;
+    transition: all .5s;
+}
+
+/* 左侧账户------------------- */
+.zhanghu_box,
+.jiaoyi,
+.shoucang,
+.bangzhu {
+    width: 230px;
+    height: 500px;
+    background-color: #fff;
+    padding-left: 30px;
+    border-bottom: 1px solid #ccc;
+
+}
+
+/* --我的账户鼠标移动效果---------------------------------- */
+.zhanghu_box li::before,
+.jiaoyi li::before,
+.shoucang li::before,
+.bangzhu li::before {
+    content: '';
+    width: 10px;
+    height: 10px;
+    background-color: #5eb69c;
+    display: inline-block;
+    border-radius: 50%;
+    margin-right: 5px;
+    opacity: 0;
+    transition: all 0.3s;
+}
+
+.zhanghu_box li:hover::before,
+.jiaoyi li:hover::before,
+.shoucang li:hover::before,
+.bangzhu li:hover::before {
+    /* color: red; */
+    opacity: 1;
+}
+
+.zhanghu_box li:hover a,
+.jiaoyi li:hover a,
+.shoucang li:hover a,
+.bangzhu li:hover a {
+    color: #5eb69c;
+
+}
+
+
+/* 帮助去除下边框线------- */
+.bangzhu {
+    border-bottom: 0;
+}
+
+.biaoti_top {
+    width: 180px;
+    height: 80px;
+    font-size: 22px;
+    line-height: 80px;
+    font-weight: 700;
+    margin-left: 20px;
+    /* color: rgb(50, 50, 50); */
+    /* background-color: rgb(255, 148, 148); */
+}
+
+.zhanghu_box a,
+.jiaoyi a,
+.shoucang a,
+.bangzhu a {
+    font-size: 18px;
+    /* font-weight: 700; */
+    color: rgb(88, 88, 88);
+}
+
+.zhanghu_box li,
+.jiaoyi li,
+.shoucang li,
+.bangzhu li {
+    line-height: 30px;
+    width: 120px;
+    height: 30px;
+    background-color: #fff;
+    margin: 15px 0;
+}
+
+/* 交易管理 */
+.jiaoyi {
+    width: 230px;
+    height: 320px;
+    background-color: #fff;
+}
+
+/* 我的收藏 */
+.shoucang {
+    width: 230px;
+    height: 250px;
+    background-color: #fff;
+}
+
+.bangzhu {
+    width: 230px;
+    height: 200px;
+    background-color: #fff;
+}
+
+/* 右侧大盒子---------------- */
+.youce_right {
+    width: 1000px;
+    height: 1520px;
+    /* background-color: rgb(243, 255, 164); */
+}
+
+.right_top {
+    display: flex;
+    height: 130px;
+    background-color: #fff;
+}
+
+.right_top_left {
+    height: 130px;
+    width: 500px;
+    /* background-color: rgb(255, 106, 223); */
+}
+
+.right_top_left ul {
+    height: 130px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+
+}
+
+.right_top_left li {
+    width: 76px;
+    height: 75px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.right_top_left a {
+    color: #333333;
+}
+
+/* 鼠标移动跳动 */
+.right_top_left li:hover img {
+    /* transform: rotate3d(1,1,0,360deg); */
+    transform: rotateY(360deg);
+}
+
+.right_top_left img {
+    width: 40px;
+    height: 35px;
+    transition: all 1s;
+}
+
+.right_top_left li:last-child img {
+    width: 30px;
+    height: 40px;
+}
+
+.right_top_left div {
+    font-size: 18px;
+    /* font-weight: 700; */
+}
+
+/* <!-- 优惠券 积分 --> */
+.right_top_right {
+    flex: 1;
+    /* background-color: pink; */
+
+}
+
+.right_top_right ul {
+    height: 130px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.right_top_right li {
+    width: 76px;
+    height: 75px;
+    /* background-color: skyblue; */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.right_top_right span {
+    font-size: 18px;
+
+}
+
+.right_top_right p {
+    font-size: 32px;
+    font-weight: 700;
+    color: #e05e30;
+}
+
+/* <!-- 右侧我的订单栏 --> */
+.my_order {
+    height: 380px;
+    width: 100%;
+    margin: 20px 0 20px 0;
+    padding: 0 20px;
+    background-color: #fff;
+}
+
+/* 右侧我的订单 */
+.my_box {
+    height: 60px;
+    display: flex;
+    background-color: #fff;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #ccc;
+}
+
+.my_box_l span {
+    font-size: 18px;
+    font-weight: 700;
+    color: rgb(78, 78, 78);
+}
+
+.my_box_r {
+    display: flex;
+    align-items: center;
+}
+
+.my_box_r span {
+    font-size: 14px;
+    color: #999;
+
+}
+
+.my_box_r .img_jiantou {
+    background: url(../images/sprites.png) no-repeat 0 -220px;
+    width: 13px;
+    height: 24px;
+    margin-left: 10px;
+}
+
+/* 短袖---------- */
+.duanxiu {
+    height: 140px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    background-color: #fff;
+
+}
+
+.yifu_tu {
+    display: flex;
+    justify-content: center;
+}
+
+.yifu_tu ul {
+    width: 600px;
+    height: 140px;
+    display: flex;
+    /* background-color: rgb(255, 167, 239); */
+    border-right: 1px solid #ccc;
+}
+
+.yifu_tu li {
+    display: flex;
+    width: 600px;
+    justify-content: center;
+    /* margin: 10px 0px 10px 10px; */
+
+}
+
+.yifu_tu img {
+    height: 120px;
+    width: 110px;
+    margin: 10px 0 0 10px;
+
+}
+
+.text_box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 190px;
+    height: 120px;
+    margin: 10px 0 0 10px;
+    background-color: #fff;
+}
+
+.text_box p {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+}
+
+.guige span {
+    color: #999;
+    font-size: 13px;
+    margin-right: 2px;
+}
+
+.daifukuan {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #e05e30;
+}
+
+.daifukuan a {
+    color: #333333;
+}
+
+
+/* 价格----------- */
+.jiage {
+    flex: 1;
+    width: 200px;
+    height: 120px;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* border-right: 1px solid #ccc; */
+}
+
+.jiage p {
+    color: red;
+}
+
+/* 立即付款---------- */
+.fukuan {
+    flex: 1;
+    width: 200px;
+    height: 140px;
+    /* background-color: rgb(98, 213, 255); */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 12px;
+    border-left: 1px solid #ccc;
+
+}
+
+.fukuan a {
+    color: #333333;
+}
+
+.lvse {
+    width: 90px;
+    height: 30px;
+    background-color: #5eb69c;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.lvse a {
+    color: #fff;
+}
+
+/* 鞋 */
+.daifukuan p {
+    color: #999;
+}
+
+/* 收藏的商品 */
+.shoucang_boxx {
+    height: 475px;
+    /* 该白色------------------------------------------------ */
+    background-color: #fff;
+    padding: 0 20px;
+    margin-bottom: 20px;
+
+}
+
+.shoucang_boxx ul {
+    height: 415px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* background-color: rgb(255, 99, 252); */
+}
+
+.shoucang_boxx img {
+    width: 180px;
+    height: 180px;
+    padding: 10px 0 0 10px;
+}
+
+.shoucang_boxx li {
+    width: 200px;
+    /* height: 300px; */
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+    transition: all .5s;
+}
+
+.shoucang_boxx li:hover {
+    /* transform:rotateX(-20deg); */
+    box-shadow: 5px 4px 5px 5px #ccc;
+    transform: translateY(-5px);
+}
+
+.wenben {
+    margin-top: 20px;
+    /* background-color: skyblue; */
+}
+
+.wenben span {
+    font-size: 16px;
+}
+
+.wenben p {
+    font-size: 18px;
+    color: #9a2e1f;
+    font-weight: 700;
+    padding-top: 10px;
+}

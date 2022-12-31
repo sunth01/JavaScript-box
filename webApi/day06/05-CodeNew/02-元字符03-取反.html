@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 取反  ^ 
+        // 在方括号中的开头写上^, 表示取反  [^]
+
+        // 1. /^[^0-9]$/ 除了0-9以外的任意单个字符
+        // 2. /^[^a-z]$/ 除了a-z以外的任意单个字符
+        // 3. /^[^abc]$/ 除了abc以外的任意单个字符
+
+        console.log(/^[^0-9]$/.test('a')) // true
+        console.log(/^[^0-9]$/.test('9')) // false 
+
+
+        // 2. 特殊单字符  . 
+        // . 匹配除了换行符之外的任意单个字符
+        console.log('---------------')
+        console.log(/./.test('22')) // ture
+        console.log(/n./.test('n2'))
+        console.log(/.n/.test('2n2'))
+
+        console.log(/.n/.test('ab+n'))
+    </script>
+</body>
+
+</html>

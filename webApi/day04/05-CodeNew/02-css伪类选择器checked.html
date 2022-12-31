@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    /* 让被勾选的复选框宽高变为20px */
+
+    /* :checked 伪类选择器，表示被勾选中的 */
+    .ck:checked {
+      width: 20px;
+      height: 20px;
+    }
+  </style>
+</head>
+
+<body>
+  <input type="checkbox" name="" id="" class="ck">
+  <input type="checkbox" name="" id="" class="ck">
+  <input type="checkbox" name="" id="" class="ck">
+  <input type="checkbox" name="" id="" class="ck">
+  <button>click</button>
+  <script>
+    // 需求2 点击btn，打印 所有被勾选中的input框
+    const btn = document.querySelector('button')
+    btn.addEventListener('click', function(){
+      // cksEd ==> 表示被勾选中的input框 我们自己命名的，可以改
+      const cksEd = document.querySelectorAll('.ck:checked')
+      console.log(cksEd)
+    })
+
+  </script>
+</body>
+</html>

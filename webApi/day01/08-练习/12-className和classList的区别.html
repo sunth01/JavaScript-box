@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        .pink {
+            background-color: pink;
+        }
+        .blue {
+            background-color: blue;
+        }
+        .fz35 {
+            font-size: 35px;
+        }
+    </style>
+</head>
+<body>
+    <div id="box" class="fz35 pink">测试内容</div>
+    <script>
+        const box = document.querySelector('#box')
+        // 1. className
+        // box.className = "blue"
+        // 结论:使用className添加类名时,会覆盖元素身上原有的类名
+        box.classList.add("blue")
+        // 结论:add()追加blue时会层叠原有的pink样式 没有影响之前的fz35
+    </script>
+</body>
+</html>

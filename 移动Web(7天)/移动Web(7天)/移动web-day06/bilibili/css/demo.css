@@ -1,0 +1,338 @@
+/* 把我们所有标签的内外边距清零 */
+@import "../iconfont/iconfont.css";
+@import '../iconfont/iconfont.css';
+* {
+  margin: 0;
+  padding: 0;
+  /* css3盒子模型 */
+  box-sizing: border-box;
+}
+.w {
+  width: 1250px;
+}
+/* p标签 */
+/* em 和 i 斜体的文字不倾斜 */
+em,
+i {
+  font-style: normal;
+}
+/* 去掉li 的小圆点 */
+li {
+  list-style: none;
+}
+img {
+  /* border 0 照顾低版本浏览器 如果 图片外面包含了链接会有边框的问题 */
+  border: 0;
+  /* 取消图片底侧有空白缝隙的问题 */
+  vertical-align: middle;
+}
+button {
+  /* 当我们鼠标经过button 按钮的时候，鼠标变成小手 */
+  cursor: pointer;
+}
+a {
+  color: #666;
+  text-decoration: none;
+}
+a:hover {
+  color: #c81623;
+}
+button,
+input {
+  /* "\5B8B\4F53" 就是宋体的意思 这样浏览器兼容性比较好 */
+  font-family: Microsoft YaHei, Heiti SC, tahoma, arial, Hiragino Sans GB, "\5B8B\4F53", sans-serif;
+  /* 默认有灰色边框我们需要手动去掉 */
+  border: 0;
+  outline: none;
+}
+body {
+  /* CSS3 抗锯齿形 让文字显示的更加清晰 */
+  -webkit-font-smoothing: antialiased;
+  background-color: #fff;
+  font: 12px/1.5 Microsoft YaHei, Heiti SC, tahoma, arial, Hiragino Sans GB, "\5B8B\4F53", sans-serif;
+  color: #666;
+}
+.hide,
+.none {
+  display: none;
+}
+/* 清除浮动 */
+.clearfix:after {
+  visibility: hidden;
+  clear: both;
+  display: block;
+  content: ".";
+  height: 0;
+}
+.clearfix {
+  *zoom: 1;
+}
+header {
+  width: 100vw;
+  height: 22.67vw;
+  padding: 0 2.67vw;
+}
+header .header_top {
+  width: 100%;
+  height: 11.73vw;
+  display: flex;
+}
+header .header_top .box_left {
+  width: 16vw;
+  height: 11.73vw;
+}
+header .header_top .box_left::after {
+  content: '\e6b4';
+  font-family: "iconfont" !important;
+  font-size: 7.47vw;
+  color: #fb7299;
+}
+header .header_top .box_right {
+  flex: 1;
+  height: 11.73vw;
+  display: flex;
+  justify-content: end;
+  align-items: center;
+}
+header .header_top .box_right img {
+  width: 19.2vw;
+  height: 6.4vw;
+  background-repeat: no-repeat;
+  background-position: center;
+  order: 1;
+}
+header .header_top .box_right .portrait img {
+  width: 6.4vw;
+  height: 6.4vw;
+  border-radius: 50%;
+  order: 2;
+  margin-right: 5.33vw;
+}
+header .header_top .box_right::before {
+  content: '\e6e4';
+  font-family: "iconfont" !important;
+  font-size: 6.4vw;
+  color: #ccc;
+  margin: 0.8vw 5.87vw 0 0;
+}
+header .header_bottom {
+  position: relative;
+  height: 10.67vw;
+}
+header .header_bottom ul {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 2.67vw;
+}
+header .header_bottom ul li {
+  height: 10.67vw;
+  display: flex;
+  align-items: center;
+  font-size: 3.73vw;
+}
+header .header_bottom .xiajiantou {
+  width: 5.33vw;
+  height: 10.67vw;
+  background-color: #ffffff;
+  position: absolute;
+  top: 0;
+  right: 0.8vw;
+  line-height: 10.67vw;
+}
+header .header_bottom .xiajiantou .iconfont {
+  font-size: 6.13vw;
+  font-weight: 700;
+}
+.bili_body {
+  margin: 0 2.67vw;
+}
+.bili_body ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.bili_body li {
+  position: relative;
+  width: 46.67vw;
+  height: 40vw;
+  padding: 2.13vw 1.33vw;
+}
+.bili_body li .video_box img {
+  width: 44vw;
+  height: 26.67vw;
+  margin-bottom: 1.33vw;
+}
+.bili_body li span {
+  font-size: 3.2vw;
+  color: #242424;
+}
+.bili_body li .bullet_box {
+  position: absolute;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 1.33vw;
+  top: 21.33vw;
+  width: 44vw;
+  height: 7.47vw;
+}
+.bili_body li .bullet_box span {
+  color: #fff;
+  font-size: 3.2vw;
+}
+.bili_body li .bullet_box .bullet_left {
+  height: 5.33vw;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.bili_body li .bullet_box .bullet_left .iconfont {
+  font-size: 4.27vw;
+}
+.bili_body li .bullet_box .bullet_right {
+  height: 5.33vw;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.bili_body li .bullet_box .bullet_right .iconfont {
+  font-size: 3.47vw;
+}
+.app {
+  height: 16vw;
+  padding: 5.33vw 0;
+  text-align: center;
+  font-size: 3.73vw;
+  color: #999;
+}
+.company {
+  height: 32vw;
+  text-align: center;
+  padding: 5.33vw 0;
+  font-size: 3.2vw;
+  color: #999;
+  background-color: #f4f4f4;
+  line-height: 5.87vw;
+}
+.open {
+  position: fixed;
+  bottom: 6.67vw;
+  width: 93.33vw;
+  height: 9.87vw;
+  background-color: #fb7299;
+  border-radius: 5.33vw 5.33vw 5.33vw 5.33vw;
+  line-height: 9.87vw;
+  text-align: center;
+  font-size: 3.73vw;
+  color: #fff;
+  margin: 0 2.67vw;
+}
+.open .iconfont {
+  width: 9.33vw;
+  height: 4.53vw;
+  color: #fff;
+}
+.shang_box {
+  height: 255px;
+  position: fixed;
+  top: 0;
+}
+.shang_box header {
+  width: 375px;
+  height: 43.99px;
+  padding: 0 10.01px;
+}
+.shang_box header .header_top {
+  width: 100%;
+  height: 43.99px;
+  display: flex;
+}
+.shang_box header .header_top .box_left {
+  width: 60px;
+  height: 43.99px;
+  padding: 2px 0 0 8px;
+}
+.shang_box header .header_top .box_left::after {
+  content: '\e6b4';
+  font-family: "iconfont" !important;
+  font-size: 28px;
+  color: #fb7299;
+}
+.shang_box header .header_top .box_right {
+  flex: 1;
+  height: 43.99px;
+  display: flex;
+  justify-content: end;
+  align-items: center;
+}
+.shang_box header .header_top .box_right img {
+  width: 72px;
+  height: 24px;
+  background-repeat: no-repeat;
+  background-position: center;
+  order: 1;
+}
+.shang_box header .header_top .box_right .portrait img {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  order: 2;
+  margin-right: 19.99px;
+}
+.shang_box header .header_top .box_right::before {
+  content: '\e6e4';
+  font-family: "iconfont" !important;
+  font-size: 24px;
+  color: #ccc;
+  margin: 3px 22.01px 0 0;
+}
+.shang_box .video_box {
+  position: relative;
+  height: 211px;
+  background-image: url(../images/fengmian.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: pink;
+  background-size: contain;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-end;
+}
+.shang_box .video_box::after {
+  align-self: center;
+  left: 50%;
+  transform: translate(-50%);
+  position: absolute;
+  content: '\e6ab';
+  font-size: 54px;
+  color: rgba(255, 255, 255, 0.8);
+  font-family: "iconfont" !important;
+}
+.shang_box .video_box .wenzi {
+  width: 375px;
+  height: 80px;
+  padding: 0 10px 10px 0px;
+  background-image: linear-gradient(transparent, #282828);
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+  color: #fff;
+}
+.shang_box .video_box .wenzi .text_box {
+  width: 200px;
+  display: flex;
+  align-items: flex-end;
+}
+.shang_box .video_box .wenzi .text_box span {
+  margin-left: 12px;
+}
+.shang_box .video_box .wenzi .time {
+  display: flex;
+  align-items: flex-end;
+  width: 40px;
+  height: 20px;
+  background-color: rgba(0, 0, 0, 0.3);
+  border-radius: 5px 5px 5px 5px;
+  margin-top: 50px;
+  line-height: 20px;
+}

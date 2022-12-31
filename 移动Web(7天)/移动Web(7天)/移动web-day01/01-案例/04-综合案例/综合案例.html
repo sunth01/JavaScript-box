@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        ul {
+            width: 600px;
+            height: 247px;
+            margin: 100px auto;
+        }
+
+        li {
+            position: relative;
+            width: 350px;
+            height: 247px;
+            background-color: pink;
+            cursor: pointer;
+            overflow: hidden;
+        }
+
+        li .pic {
+            width: 350px;
+            height: 247px;
+            transition: all 1s;
+        }
+
+        li .pic img {
+            width: 100%;
+            height: 100%;
+            /* 因为img有特殊的垂直对齐方式 */
+            /* 行内块造成的 =>我的img只要不是行内块,就没有这些问题出现 */
+            display: block;
+        }
+
+
+        .mask {
+            position: absolute;
+            left: 0;
+            top: 0;
+            /* 添加了脱标的定位属性的块级元素,宽度会由默认的父级100%,变成由自身内容撑开 */
+            width: 100%;
+            height: 100%;
+            /* background-color: transparent; */
+            background-image: linear-gradient(transparent, rgba(0, 0, 0, .6));
+
+            /* 块级元素添加了浮动 和绝对定位和固定定位 会有什么变化呢? */
+            /* 宽度会由默认的父级100%,变成由自身内容撑开 */
+
+            /* 行内元素添加了浮动 和绝对定位和固定定位 会有什么变化呢? */
+            /* 可以直接设置宽高大小 */
+
+            /* 相对定位会有变化吗? */
+            /* 不会的,继续标准流 */
+            transition: all 1s;
+
+            /* 不透明度 */
+            /* 0-1 */
+            opacity: 0;
+        }
+
+        .info {
+            position: absolute;
+            left: 0;
+            /* 浏览器里调试得出的 */
+            bottom: -70px;
+            font-size: 25px;
+            color: #fff;
+            line-height: 3;
+            /* 先放在父容器的底部 */
+
+            transition: all 1s;
+        }
+
+        /* 1. 鼠标经过li,让内部的img缩放 */
+        li:hover .pic {
+            transform: scale(1.3);
+        }
+
+        /* 2. 鼠标经过li,让内部的mask逐渐显示出来 */
+        li:hover .mask {
+            /* 如果之前不会,今天就记住,这是很经典的搭配遮罩层逐渐显示的做法 */
+            opacity: 1;
+        }
+
+        /* 3. 鼠标经过li,让内部的info位置往上移动 */
+        li:hover .info {
+            /* 浏览器 选择li,开启元素停留模式 */
+            /* 选择info,找到身上的Y轴距离, 手动调试到合适位置 */
+            /* 复制该值,拿过来直接用 */
+            transform: translateY(-70px);
+        }
+    </style>
+</head>
+
+<body>
+    <ul>
+        <li>
+            <!-- img => 放大  单独的容器 -->
+            <div class="pic">
+                <img src="./images/huawei1.jpeg" alt="">
+            </div>
+            <!-- 遮罩层 => 盖在了图片的上面, 在文字的下面  单独的容器-->
+
+            <!-- 遮罩层可以用伪元素来实现(因为遮罩层只有背景色,没有内容) -->
+
+            <!-- 如果遮罩层里有部分样式结构,就不用用伪元素(因为伪元素只有一个content,不方便调试内部结构样式) -->
+            
+            <div class="mask"></div>
+
+            <!-- 文字 => 移动位置 单独的容器-->
+            <div class="info">
+                明天是自习,大家要预习flex哦!!
+                <br>
+                明天是自习,大家要预习flex哦!!
+            </div>
+        </li>
+    </ul>
+</body>
+
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div data-demo-test="666"></div>
+    <script>
+        const div = document.querySelector('div')
+        // 获取子自定义属性 dataset
+
+        // 查看一个对象的所有属性和方法
+        console.log(div.dataset)
+        // console.dir(div.dataset)
+
+        // 1. 对象获取属性 点
+        console.log(div.dataset.demoTest)
+
+        // 2. 对象[属性]
+        console.log(div.dataset['demoTest'])
+    </script>
+</body>
+</html>

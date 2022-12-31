@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>常量</title>
+</head>
+<body>
+    <script>
+        // 常量是什么?
+        // 1. 声明变量的一种方式, 类似于let
+        // 2. 声明一个只读的命名常量 (不可二次修改)
+        // 3. 重要的数据, 通常用常量来存储(此数据不可随时修改, 或者避免无意间的改动)
+
+        
+        // 模拟一个后端传递过来的数据
+        const name = "班级数据1000";
+        console.log(name);
+        // 不小心修改了数据
+        name = "班级数据1001"
+        console.log(name); // 报错, 提示给常量进行了赋值
+
+        // 常量是不能被二次修改的
+        // 现阶段正常使用let即可, 后期会根据实际要求进行调整(框架/公司规范)
+    </script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>边框图片</title>
+    <style>
+        div{
+            width: 400px;
+            height: 300px;
+            /* 边宽图片一定要有border */
+            border: 15px solid #000;
+            /* 引入图片 */
+            border-image-source: url(./new-project/images/border.jpg);
+            /* 切割边框图片，按照 上右下左 一定不要带单位! !! */
+            border-image-slice: 167 167 167 167;
+            /* 铺排方式 ==> stretch 默认 round repeat */
+            border-image-repeat: round;
+            /* 边框图片的宽度 如果不写，默认就是border的宽度 */
+            /* * border-iamge-width 不挤压文字 * *
+            
+            /* 单独的border宽度 会挤压文字 但是border-image-width不会挤压文字,相当于是图片再文字下方/ */
+            border-image-width: 50px;
+        }
+    </style>
+
+
+</head>
+
+<body>
+    <div>边框图片</div>
+</body>
+
+</html>

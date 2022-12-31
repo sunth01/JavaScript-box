@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        img {
+            width: 100vw;
+            height: 100vh;
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 需求: 让壁纸铺满整个网页 -->
+    <img src="../04-code/images/desktop_1.jpg" alt="" title="这是几张壁纸">
+    <script>
+        // 获取元素对象
+        const img = document.querySelector('img')
+        console.dir(img.src)
+        console.dir(img.title)
+        // 赋值操作:
+        // img.src = "../04-code/images/desktop_5.jpg"
+        // img.title = '滴滴滴滴'
+
+        //  需求: 刷新页面时, 随机展示一张图片, 并且修改图片的title
+
+        // 复习随机函数
+        function getRandom(min, max) {
+            return Math.floor(Math.random() * (max - min + 1) + min)
+        }
+
+        // 用随机数来做什么?
+        // 用来更换图片的名称序号(所以是从1-10之间的数包含1也包含10)
+        const num = getRandom(1, 10)
+        img.src = `../04-code/images/desktop_${num}.jpg`
+        img.title = `这是第${num}张壁纸!`
+    </script>
+</body>
+
+</html>

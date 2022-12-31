@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>一元运算符</title>
+</head>
+
+<body>
+    <script>
+        // 自增符号: ++
+        // 作用: 让变量的值+1
+
+        // (1) 前置自增
+        // 用法: 把++写在变量的前面
+        let num1 = 1
+            ++num1
+        console.log(num1); // 2
+
+        // (2) 后置自增
+        // 用法: 把++写在变量的后面
+        let num2 = 1
+        num2++
+        console.log(num2); // 2
+
+        // 前置自增和后置自增在单独使用时, 没有区别!
+
+        console.log("------------参 与 运 算--------------");
+
+        // 利用自增写法参与运算
+        let a = 1
+        console.log(++a + 1 + a); // 
+        console.log();
+        //  ++在前, 先加再用
+
+        let b = 1
+        console.log(b++ + 1 + b);
+        //  ++在后, 先用再加
+
+        // 注意点:
+        // 1. 两种写法在单独使用时, 没有区别
+        // 2. 实际开发中通常都是单独使用, 所以不会特别麻烦
+        // 3. i++的写法使用的相对较多, 并且都是单独使用
+
+        let i = 1
+        console.log(++i + 1 + ++i + i++ + i++); // 13
+
+    </script>
+</body>
+
+</html>

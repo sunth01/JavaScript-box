@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div>
+        <p class="p_class" id="p_id"></p>
+    </div>
+    <ul>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+    <script>
+        // 目的: 能够查询/获取/选中某个元素
+        // 查询元素就是利用js选择页面中的某个标签元素
+        // CSS以不同的选择器去选择目标元素, js也要用不同的方式去选中元素对象
+        // 为了选中元素后, 对元素进行操作   
+
+        // 1. 标签选择器
+        const p1 = document.querySelector('p')
+        console.dir(p1)
+
+        // 2. 类选择器
+        const p2 = document.querySelector('.p_class')
+        console.dir(p2)
+
+        // 3. id选择器
+        const p3 = document.querySelector('#p_id')
+        console.dir(p3)
+
+        // 4. 后代选择器
+        const p4 = document.querySelector('div p')
+        console.dir(p4)
+
+        // 2. 选择匹配的“多个”元素
+        // 语法：document.querySelectorAll('选择器')
+        // 参数： 包含一个或者多个有效的css选择器 字符串
+        // 返回值： css选择器匹配到的对象集合（伪数组）/如果没有匹配到。则返回null
+
+        const list = document.querySelectorAll('ul li')
+        console.dir(list);
+        // 伪数组：
+        // 1. 有长度有索引号的数组
+        // 2. 但是没有push等数组方法
+        // 3. 需要得到里面的对象，利用for循环的形式去遍历获得
+
+        
+        for (let i = 0; i < list.length; i++) {
+            console.dir(list[i]);
+            if (i === 2) {
+                console.log(list[i].innerText)
+                list[i].innerText = '我修改啦'
+                list[i].style.border = '4px solid skyblue'
+                list[i].style.color = 'red'
+
+            }
+        }
+
+
+        
+
+    </script>
+</body>
+
+</html>

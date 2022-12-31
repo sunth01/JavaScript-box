@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // call apply bind 
+        const obj = {
+            msg:'hello world'
+        }
+        function fn(x, y) {
+            console.log(this)
+            return x + y
+        }
+
+        const fun = fn.bind(obj, 1, 2) 
+        // 这里，相当于用fun去接收了fn.bind()改变了this之后的函数
+        console.log(fun)
+
+        // 然后手动调用执行
+        const res = fun()
+        console.log(res)
+
+        // fn.bind(obj, 参数列表)
+        // 1. 改变this指向
+        // 2. bind有返回值，bind的返回值是一个函数，这个函数里面的this就是我们传入的第一个参数
+        // 3. bind不是立即执行的，需要手动调用
+
+
+        // 总结一下 
+        // 面试题  call / apply / bind 的区别
+        /* ====================  ===================== */
+        // 1. 都是改变this的指向
+        // 2. call 接收的是参数列表，apply接收的是数组
+        // 3. call 和 apply是立即执行的， bind返回一个函数，需要手动调用
+        /* ====================  ===================== */
+    </script>
+</body>
+</html>
