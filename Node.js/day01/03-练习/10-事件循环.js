@@ -6,7 +6,7 @@
 
 // 微任务：
 // 1. promise.then() 和 promise.catch()
-// 2. async await (generator和yeild的语法糖)  ==> await 这一行后面的那些会放到微任务队列中
+// 2. async await (generator和yield的语法糖)  ==> await 这一行后面的那些会放到微任务队列中
 const asyncReadFile = async function () {
     // await 这一行的代码，同步执行的
     const f1 = await readFile('/etc/fstab');
