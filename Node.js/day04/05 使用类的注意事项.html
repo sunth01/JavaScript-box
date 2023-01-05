@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<script>
+        // 1. ES6中 class 没有变量提升，必须先声明class，再使用
+        // const ldh = new Star('刘德华', 36)
+        class Star {
+            constructor(name, age){
+                this.name = name 
+                this.age = age 
+                // 2. 如果要调用类里面的方法，注意要加this！
+                this.sing()
+            }
+            sing(){
+                console.log('冰雨')
+            } 
+            dance(){
+                console.log('dance')
+            }
+        }
+
+        const ldh = new Star('刘德华', 36)
+
+        
+</script>
+</body>
+</html>

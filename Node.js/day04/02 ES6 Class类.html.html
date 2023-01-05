@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 1. 构造函数
+        // function Star(name, age){
+        //     this.name = name
+        //     this.age = age 
+        // }
+
+        // const dd = new Star('dd', 20)
+        // console.log(dd)
+
+        // 2. 创建一个Star类
+
+        class Star{
+            // 类的公共属性，写在constructor()函数里面
+            constructor(name, age){
+                this.name = name 
+                this.age = age
+            }
+        }
+        // 利用类创建实例
+        const jj = new Star('dd', 18)
+        // console.log(jj)
+
+        // 注意：通过 class关键字 创建类， 默认首字母大写
+        // 1. constructor 是类的默认方法。 只要通过new 创建一个实例，就会调用这个方法，执行里面代码
+        // 2. 一个类必须要有constructor方法，如果不写，默认的空的constructor会被添加
+        // 3. constructor可以接收传递过来的参数， 默认返回实例对象 this
+        // 4. 类必须使用new调用
+    </script>
+</body>
+</html>

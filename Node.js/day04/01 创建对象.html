@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 类：用于创建对象的模板，描述了一类对象的行为和特征
+        // 对象：具体的某一个，属性和方法的集合
+        // 实例：实际，具体的例子  （对象）
+        // 实例化：new 通过构造函数创建实例的过程叫做实例化
+
+
+        // 创建对象的方式
+
+        // 1. 字面量
+        const obj = {
+            name:'jj',
+            age:18
+        }
+
+        // 2. 通过new Object()
+        const wl = new Object({name:"磊磊",age:82})
+
+        // 3. 通过构造函数
+        function Star(name, age){
+            this.name = name
+            this.age = age 
+        }
+
+        const dd = new Star('dd', 20)
+        console.log(obj)
+        console.log(wl)
+        console.log(dd)
+
+    </script>
+</body>
+</html>

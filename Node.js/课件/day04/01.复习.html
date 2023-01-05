@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // ES6模块化
+        // 1. 浏览器和Node.js环境都支持
+            // Node.js ==> package.json  ==> "type":"module"
+            // 浏览器  ==> script  ==> type="module"
+        // 2. 导出/导入
+        //  ==> 默认导出 export default 
+        //  ==> 按需导出 export 变量名 
+        //  ==> 默认导入 import xxx from '路径.js'
+        //  ==> 按需导入 import {变量名} from 'xxx.js'
+        //  ==> 全部导入 import * as 变量名 from 'xxx.js'
+        //  ==> 直接导入 import 'xxx.js'
+
+        // 3. scripts ==>  npm start   "start":"nodemon app.js"
+
+        // 4. koa 启动web服务 
+
+        //  1.导入koa 
+        //  2.实例化koa 
+        //  3.挂载中间件 app.use(fn)
+        //  4.监听端口，启动web服务 app.listen(3000)
+
+        // 中间件 ==> 本质上就是函数
+
+        // ==> ctx 上下文 context 将request response封装到这个对象中去了
+
+        // ctx.method  ==> 请求方法
+        // ctx.url     ==> 路径/路由
+        // ctx.ip   
+        // ctx.header  ==> 请求头
+        
+
+        // ctx.status       ==> 响应的状态码
+        // ctx.set(key,val)  ==> 设置响应头
+        // ctx.body       ==> 返回给浏览器数据
+
+
+    </script>
+</body>
+</html>

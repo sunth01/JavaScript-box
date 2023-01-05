@@ -1,0 +1,2 @@
+# 忽略 所有 node_modules 及它内部的内容
+**/node_modules

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        class Star {
+            // 1. 公共属性写在constructor
+            constructor(name, age){
+                this.name = name 
+                this.age = age 
+            }
+            // 2. 类里面所有的函数方法都不需要写function
+            sing(song){
+                console.log(song)
+            } 
+            // 3. 多个方法之间，不需要逗号隔开
+            dance(){
+                console.log('dance')
+            }
+        }
+
+        // 以前，为什么把公共方法定义再原型上 ==> 节约内存
+        // 用class， 公共方法，默认就是定义在原型上的
+
+        const zjl = new Star('杰伦', 18)
+        console.log(zjl)
+        zjl.sing('东风破')
+        zjl.dance()
+
+        //  实例的隐式原型指向构造函数的显示原型
+        console.log(zjl.__proto__ === Star.prototype)
+    </script>
+</body>
+</html>

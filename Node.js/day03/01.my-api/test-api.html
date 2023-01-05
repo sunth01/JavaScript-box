@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul class="ul">
+        
+    </ul>
+    <script src="./axios.min.js"></script>
+    <script>
+        const ul = document.querySelector('.ul')
+        const api = `http://192.168.22.76:8848/api/news`
+        // 原生 
+        // fetch  ==> fetch 
+        // axios 
+        // 按理说，打开
+        fetch(api).then(res => res.json()).then(res => {
+            console.log(res)
+            const arr = res
+            const resArr = arr.map(el => {
+                return `
+                    <li>${el.title}</li>
+                `
+            })
+            ul.innerHTML = resArr.join('')
+        })
+
+    </script>
+</body>
+</html>

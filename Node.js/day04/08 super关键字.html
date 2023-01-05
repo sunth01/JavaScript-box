@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 定义一个父类
+        class Father {
+            constructor(){}
+        }
+
+        // 1. 子类必须要在constructor方法里面调用super()
+        // ==> 如果子类里面写了constructor(), 就必须在constructor方法里面调用super()
+        class Son extends Father {
+            constructor(){
+                super()
+            }
+        }
+
+        // 2. 如果子类没有写constructor， constructor() 会被默认添加，并且默认调用super()
+        class Son extends Father {
+
+        }
+
+        // 等同于 ==> 
+        class Son extends Father {
+            constructor(){
+                super()
+            }
+        }
+
+        const p = new Son()
+    </script>
+</body>
+</html>

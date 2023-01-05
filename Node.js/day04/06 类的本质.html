@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        class Star {
+            constructor(){
+
+            }
+            dance(){
+                console.log('dance')
+            }
+        }
+
+        console.log(typeof Star) // function 
+
+        // 1. 类的本质就是函数， 我们可以认为类就是构造函数的另一种写法
+
+        // 2. 类有原型（对象）, 原型上默认有constructor属性，指向的就是类本身 class Star
+        console.log(Star.prototype)
+
+        // 3. 类 也可以在它的原型上添加方法
+        Star.prototype.sing = function(){
+            console.log('sing')
+        }
+
+        // 4. 实例的隐式原型指向构造函数（类）的显示原型
+        const ldh = new Star()
+        console.log(ldh.__proto__ === Star.prototype)
+    </script>
+</body>
+</html>

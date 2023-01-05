@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        class Star {
+            // 1. constructor里面的this指向 创建（new）出的实例
+            constructor(name, age){
+                this.name = name 
+                this.age = age 
+                console.log(this)
+            }
+            // 2. 类里面的方法中的this 指向的还是实例
+            sing(song){
+                console.log(this)
+                console.log(song)
+            } 
+            dance(){
+                console.log('dance')
+            }
+        }
+
+        const ldh = new Star('刘德华', 36)
+        ldh.sing('冰雨')
+    </script>
+</body>
+</html>

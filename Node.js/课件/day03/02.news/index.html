@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="referrer" content="no-referrer" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <!-- 导入样式表 -->
+    <link rel="stylesheet" href="./assets/news.css" />
+  </head>
+
+  <body>
+    <!-- 新闻列表 -->
+    <div id="news-list">
+        <!-- box -->
+      <!-- 新闻的 item 项 -->
+      <div class="news-item">
+        <img
+          class="thumb"
+          src="https://a.zdmimg.com/202207/18/62d50d53848d77366.jpg_c350.jpg"
+          alt=""
+        />
+        <div class="right-box">
+          <!-- 新闻标题 -->
+          <h1 class="title">5G商用在即，三大运营商营收持续下降</h1>
+          <div class="footer">
+            <div>
+              <img
+                src="https://avatarimg.smzdm.com/default/4595480055/5d15aca1a4fae-small.jpg"
+                alt=""
+              />
+              <!-- 新闻来源 -->
+              <span>胡润百富</span>&nbsp;&nbsp;
+
+              <!-- 发布日期 -->
+              <span>2019-10-28 10:14:38</span>
+            </div>
+            <!-- 评论数量 -->
+            <span>评论数：66</span>
+          </div>
+        </div>
+      </div>
+      <!-- end box -->
+    </div>
+    <script>
+      const renderList = (arr) => {
+        const box = document.querySelector('#news-list')
+        const htmlArr = arr.map(el => {
+          // 解构赋值
+          const { pic_url, title, publish_time, nickname, comment_count, avatar } = el
+          return `
+          <div class="news-item">
+            <img
+              class="thumb"
+              src=${pic_url}
+              alt=""
+            />
+            <div class="right-box">
+              <!-- 新闻标题 -->
+              <h1 class="title">${title}</h1>
+              <div class="footer">
+                <div>
+                  <img
+                    src=${avatar}
+                    alt=""
+                  />
+                  <!-- 新闻来源 -->
+                  <span>${nickname}</span>&nbsp;&nbsp;
+
+                  <!-- 发布日期 -->
+                  <span>${publish_time}</span>
+                </div>
+                <!-- 评论数量 -->
+                <span>评论数：${comment_count}</span>
+              </div>
+            </div>
+          </div>
+          `
+        }) // end map
+
+        box.innerHTML = htmlArr.join('')  // 转为字符串
+      }
+
+      // 需求：当DOM加载完毕，就请求新闻列表
+      window.addEventListener('DOMContentLoaded', async () => {
+        // 请求数据 
+        const url = 'http://127.0.0.1:3000/api/news'
+        const res = await fetch(url).then(res => res.json())
+        console.log(res)
+        // 封装一个渲染数据的方法
+        renderList(res)
+      })
+
+    </script>
+  </body>
+</html>

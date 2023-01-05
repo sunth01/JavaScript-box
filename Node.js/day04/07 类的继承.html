@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 定义一个父类
+        class Animal {
+            constructor(name, age){
+                this.name = name 
+                this.age = age 
+            }
+            run(){
+                console.log('run')
+            }
+        }
+
+        // 通过extends继承父类的属性和方法
+        class Dog extends Animal {
+            // 子类没有没有run这个方法，也没有name这些属性，
+            // 但是它可以继承父类的
+        }
+
+        const dog = new Dog('西瓜', 3)
+        console.log(dog)
+        dog.run()
+    </script>
+</body>
+</html>
