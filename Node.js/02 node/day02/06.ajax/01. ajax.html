@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // ajax发送请求 五步骤
+        // 1. 创建xhr对象
+        // 2. 设置请求方法和接口地址
+        // 3. 设置请求头（可以省略）
+        // 4. 发送请求
+        // 5. 注册回调函数 ==> onreadystatechange   
+        // (4, 5 可以交换位置)
+
+
+        const api_url = 'http://192.168.19.66:8888/api/students'
+        // 1. 创建xhr对象
+        const xhr = new XMLHttpRequest()
+        // 2. 设置请求方法和接口地址
+        xhr.open('GET', api_url)
+        // 3. 设置请求头（可以省略）
+        // xhr.setRequestHeader('key', 'value')
+        // 4. 发送请求
+        xhr.send()
+        // 5. 注册回调函数 ==> onreadystatechange
+        xhr.addEventListener('readystatechange', () => {
+            // 判断ajax状态
+            if (xhr.readyState === 4) {
+                // 判断http状态码  ==> 请求成功的状态码 
+                if (xhr.status >= 200 && xhr.status < 300 || xhr.status === 304){
+                    console.log(xhr.response)
+                } else {
+                    console.log('请求不成功')
+                }
+            }
+        })
+    </script>
+</body>
+</html>

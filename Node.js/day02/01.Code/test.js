@@ -1,8 +1,13 @@
-// 导入模块
+// console.log(msg) // no!
+
+// 注意导入的时候,可以不加js后缀
+
 const myModule = require('./myModule/myModule')
-// console.log('msg:' msg)
 
 console.log(myModule)
 
+//取msg
 console.log(myModule.msg)
-myModule.jump()
+
+// 调用方法
+myModule.sleep()

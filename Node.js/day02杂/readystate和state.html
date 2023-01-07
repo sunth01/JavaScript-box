@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 1. xhr.readyState
+
+        // readyState ==> 表示的是xhr这个对象当前所处的一个状态，总是下列的某一种情况
+
+        // 0 UNSENT 代理被创建，但尚未调用 open() 方法。
+        // 1 OPENED open() 方法已经被调用。
+        // 2 HEADERS_RECEIVED send() 方法已经被调用，并且头部和状态已经可获得。
+        // 3 LOADING 下载中；responseText 属性已经包含部分数据。
+        // 4 DONE 下载操作已完成。
+
+
+        // 2. xhr.status  ===> http状态码
+        // ==> 请求成功的状态码
+        // xhr.status >= 200 && xhr.status < 300 || xhr.status === 304
+
+        const api_url = 'http://192.168.19.66:8888/api/students'
+        // 1. 创建xhr对象
+        const xhr = new XMLHttpRequest()
+        console.log('0 - UNSENT', xhr.readyState)
+
+        // 2. 设置请求方法和接口地址
+        xhr.open('GET', api_url)
+        console.log('1 - OPENED', xhr.readyState)
+
+        // 3. 发送请求
+        xhr.send()
+
+        // 4. 监听readyState的状态
+        // dom-0的方式监听的  ， 监听的就是readystate
+        xhr.onreadystatechange = function(){
+            // 2. ===> 表示send方法已经被调用
+            // 3. ===> 后端给我们前端的数据正在下载中
+            // 4. ===> 数据下载完成
+            console.log(xhr.readyState)
+        }
+    </script>
+</body>
+</html>

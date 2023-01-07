@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 1. xhr.onload ==> 其实就是 readySate === 4 的时候，才会调用执行
+        // （一次请求，这个回调只会执行一次）
+
+        // 2. xhr.onreadystatechange ==> 只要readystate，这个xhr的状态发生变化了，就会执行 
+        // （一次请求，这个回调会调用多次）
+
+        const api_url = 'http://192.168.19.66:8888/api/students'
+        // 1. 创建xhr对象
+        const xhr = new XMLHttpRequest()
+
+        // 2. 设置请求方法和接口地址
+        xhr.open('GET', api_url)
+
+        // 3. 发送请求
+        xhr.send()
+
+        // 4. 监听 
+
+        // 写法一
+        xhr.onload = function(){
+            if (xhr.status >= 200 && xhr.status < 300 || xhr.status === 304){
+                console.log(xhr.response)
+            } else {
+                console.log('Error')
+            }
+        }
+
+        // ==> 等于  xhr.readyState === 4 
+        // 写法二
+        xhr.onreadystatechange = function(){
+            // 2 3 4 
+            if (xhr.readyState !== 4) return
+            if (xhr.status >= 200 && xhr.status < 300 || xhr.status === 304){
+                console.log(xhr.response)
+            } else {
+                console.log('Error')
+            }
+        }
+    </script>
+</body>
+</html>

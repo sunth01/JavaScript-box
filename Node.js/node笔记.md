@@ -43,6 +43,7 @@ console.log(__filename)
 #### 读取文件
 
 ```js
+// 类似于浏览器中 script src="xx"
 const fs = require('fs')
 
 const res = fs.readFileSync('../test/new-.txt', 'utf-8')  // 读取文件格式
@@ -194,6 +195,8 @@ console.log(path.join(__dirname, './01.成绩累加/总成绩.txt'))
 
 #### http服务
 
+##### nodemon  xxx.js 内容修改后自动保存重启服务器
+
 ```js
 // 1. 导入http模块
 const { unwatchFile } = require('fs')
@@ -270,6 +273,113 @@ server.on('request', (req, res) => {
     } else {
         res.end('<h1>404 not found</h1>') 
     }
+})
+```
+
+#### 模块化
+
+```js
+// 模块化：把一个大的文件拆分成互相依赖的若干小文件
+// 小文件又可以通过特定的语法组合在一起的这个过程，叫模块化
+
+// 优点： 1. 更好的维护 2. 代码复用 
+// 缺点：如果不考虑文件目录结构不太好找的情况，几乎没有什么缺点，这是我们的问题
+
+// 规范  ===> 约定了模块怎么导入和导出 ， 按着这个结构或者说模式来写
+// 1. AMD
+// 2. CMD
+// 3. CommonJS  ===> 我们正在用的 nodejs推崇的
+// 4. ESM ==> ES module ==> 以后的统一标准
+
+---------------------------
+Node.js中的模块分类
+// Node.js中的模块分类
+// 1. 内置模块 （核心模块）
+//  安装了Node之后，自带的，就可以直接导入使用
+// 2. 自定义模块
+// 我们自己写的js，都算是自定义模块
+// 3. 第三方模块
+// 其他人编写的，放到了npm服务器上，我们安装使用
+```
+
+#### npm
+
+```js
+// npm ==> node package manager node包管理工具
+
+// 安装 
+// npm install xxx
+// npm i 
+// npm i xxx xxx   // 多个一起安装
+// npm i xxx@版本号  安装某个特定版本
+
+// 卸载
+// npm uninstall xxx
+// npm un xxx
+
+// 项目初始化  ==> 不能中文名，不能特殊符号
+// npm init -y  
+
+// package.json ==> 用来描述项目和这个项目所依赖的模块信息
+```
+
+#### 同源策略
+
+```js
+// 同源
+// 1. 协议 2. 主机（域名/ip） 3. 端口号
+// 如果有一个不同，即不同源
+
+// 同源策略
+// 浏览器提供的一种安全机制，只允许同源的 URL 之间进行资源的交互
+// 注意：只是浏览器的一个机制，如果我们的请求不经过浏览器，不会有这个限制
+
+// 跨域 
+// 两个url不同源，即是跨域
+```
+
+#### fetch方法
+
+```js
+const api_url = 'http://192.168.19.66:8888/api/students'
+// 固定写法
+// GET ===> 直接这么发送就可以了
+
+// 第一个then 表示把返回的数据转为json格式
+// 为了获取 JSON 的内容，
+// 我们需要使用 json() 方法（该方法返回一个将响应 body 解析成 JSON 的 promise）。
+fetch(接口地址).then(res=>res.json()).then(res => {
+    // 处理的逻辑
+})
+
+fetch(api_url).then(res => res.json()).then(res => {
+    console.log(res)  
+})
+</script>
+```
+
+#### fetch发送post请求
+
+```js
+// fetch(url, {配置项}).then(res => res.json()).then(res => {})
+// 如果用fetch发送post请求
+
+const api_login = 'http://ajax-api.itheima.net/login'
+// 要发送给后端的参数
+const params = {
+    username: "admin",
+    password: "123456"
+}
+
+fetch(api_login,{
+    method: 'POST',
+    headers:{
+        'Content-Type':'application/json'
+    },
+    body:JSON.stringify(params)
+    // 第一个then这种写法，是省略了return的
+}).then(res => res.json()).then(res => {
+    console.log(res)
 })
 ```
 

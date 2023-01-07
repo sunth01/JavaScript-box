@@ -1,13 +1,12 @@
-// 导入db模块
-const db = require('./db/index')
+// 这里做导入模块
 
-// console.log(db)
-const res = db.news()
-// console.log(res)
+const db = require('./new_index')
 
-// 学生
-const students = db.students()
+const news = db.news()
+console.log(news)
+
+const students = db.news()
 console.log(students)
 
-const luckystar = db.luckystar()
-console.log(luckystar)
+const luckDog = db.news()
+console.log(luckDog)

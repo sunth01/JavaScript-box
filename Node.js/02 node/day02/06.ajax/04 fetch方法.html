@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const api_url = 'http://192.168.19.66:8888/api/students'
+        // 固定写法
+        // GET ===> 直接这么发送就可以了
+
+        // 第一个then 表示把返回的数据转为json格式
+        // 为了获取 JSON 的内容，
+        // 我们需要使用 json() 方法（该方法返回一个将响应 body 解析成 JSON 的 promise）。
+        fetch(接口地址).then(res=>res.json()).then(res => {
+            // 处理的逻辑
+        })
+        
+        fetch(api_url).then(res => res.json()).then(res => {
+          console.log(res)  
+        })
+    </script>
+</body>
+</html>
