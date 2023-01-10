@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <h3>银行卡余额 - {{ money }}</h3>
+        <button v-on:click="money++">搬砖</button>
+        <button v-on:click="money+=2">搬两块砖</button>
+        <button v-on:click="money -= 20">被砖砸了</button>
+        <button v-on:click="addMoney">开小卖部一个月</button>
+    </div>
+    <script src="./js/vue.js"></script>
+    <script>
+        // 作用
+        // 注册事件
+        // 1. V-on:事件名 = "要执行的少量函数"
+        // 2. V-on:事件名 = "方法/函数"
+        const vm = new Vue({
+            el:'#app',
+            data(){
+                return {
+                    money:666
+                }
+            },
+            methods:{
+                addMoney(){
+                    console.log(this)
+                    this.money = this.money + 30000 - 10000 - 5000 - 12000
+                }
+            }
+        })
+        console.log(vm)
+    </script>
+</body>
+</html>

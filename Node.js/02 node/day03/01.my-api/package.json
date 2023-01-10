@@ -1,0 +1,16 @@
+{
+  "name": "05.my-api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "axios": "^1.2.2",
+    "dayjs": "^1.11.7"
+  }
+}

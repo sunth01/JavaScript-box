@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <h3>vue-翻转字符串</h3>
+        <div>{{ msg }}</div>
+        <button @click="handleBtnClick">点击翻转</button>
+    </div>
+    <script src="./js/vue.js"></script>
+    <script>
+        const vm = new Vue ({
+            el:'#app',
+            // data必须是一个甘薯,return一个对象
+            data(){
+                return{
+                    msg:'hello world'
+                }
+            },
+            methods:{
+                handleBtnClick(){
+                    // this.msg = 'dlrow olleH'
+                    // console.log(this.msg.split('i) .reverse() .join('i))this.msg = this .msg.split('') .reverse() .join(i')
+                    // console.log([...this .msg])
+                    this.msg = [...this.msg].reverse().join('')
+                }
+            }
+        })
+    </script>
+</body>
+</html>

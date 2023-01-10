@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <div title="msg">字符串</div>
+        <div :title="msg">你来不来</div>
+    </div>
+    <script src="./js/vue.js"></script>
+    <script>
+        const vm = new Vue({
+            el:'#app',
+            data(){
+                return {
+                    msg:'我在山东',
+                }
+            }
+        })
+        // 1. title="msg" 设置title属性,属性值是一个"msg"字符串 写死的
+        //  2. :title="msg"  设置title属性,值他是msg这个变量,这个变量需要在data中去找
+        // ==> v-bind 动态的设置html标签的属性值,msg是动的,可变的
+    </script>
+</body>
+</html>

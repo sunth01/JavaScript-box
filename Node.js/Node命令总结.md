@@ -27,6 +27,7 @@ const { unwatchFile } = require('fs')
 const http = require('http')
 
 创建一个web服务器---------------
+// serve ==> 可以启一个静态服务器
 const server = http.createServer
 
 启动服务器--------------
@@ -44,20 +45,35 @@ response.end('内容') 返回内容给浏览器
 response.statusCode = 500
 
 模块化--------------------
+项目初始化  ==> 不能中文名，不能特殊符号======
+npm init -y 
 
+安装模块(包)
 npm ( node package manager node包管理工具)---------------------
-npm install xxx
+npm install xxx包名
 npm i  
 npm i xxx xxx   // 多个一起安装
 npm i xxx@版本号  // 安装某个特定版本
 卸载============
 npm uninstall xxx
 npm un xxx
-项目初始化  ==> 不能中文名，不能特殊符号======
-npm init -y 
+
+nrm ==> 作用:切换镜像源
+nrm ls ==> 查看有哪些镜像源
+nrm test ==> 测试下载速度
+nrm use taobao ==> 使用淘宝镜像源
 
 package.json ==> 用来描述项目和这个项目所依赖的模块信息
 
 fetch方法--------------------------
+
+同源: 1.协议  2.主机(域名)  3.端口
+跨域:浏览器请求不同源的接口(地址)
+同源策略是 浏览器的安全机制 只是针对浏览器
+
+解决跨域的方式
+CORS  跨域资源共享
+后端--配置响应头
+Node ==> res.setHeader('Access-Control-Allow-Origin','*')
 ```
 

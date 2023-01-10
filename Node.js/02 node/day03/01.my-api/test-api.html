@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul class="ul">
+        
+    </ul>
+
+    <script>
+        const ul = document.querySelector('.ul')
+        const api = 'http://192.168.19.56:3200/api/news'
+
+        fetch(api).then(res => res.json()).then(res =>{
+            console.log(res)
+            const  htmlArr = res.map(el => {
+                return `<li>${el.title}</li>`
+            })
+            ul.innerHTML = htmlArr,join('')
+        }).catch(err => {
+            // catch可以捕获整个的错误，前面的.then() .then()
+            console.log(err)
+        })
+    </script>
+</body>
+</html>

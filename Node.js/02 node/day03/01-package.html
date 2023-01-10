@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+                // 1. package.json中的script
+        // script其实是我们自定义的可以运行的js代码
+
+        // npm run start ==> nodemon index.js 
+        // npm run start  ===> npm start 
+        // npm run test   ===> npm test 
+        // npm run stop   ===> npm stop 
+
+
+        // 2. dependencies 依赖 
+        // 生产环境的依赖
+        // "dependencies": {
+        // },
+        // 开发环境的依赖
+        // "devDependencies": {
+        // }
+
+        // less scss ===> css 
+        // 开发环境：我们正在开发的时候的一个环境 
+        // 生产环境：想象工厂车间正在生产运行了。其实就是线上运行着的环境
+
+        // 3. --save-dev 和 --save 两个npm安装时候的命令
+
+        // npm install less --save-dev  ==> 安装到devDependencies，开发环境需要用到 
+        // npm install axios --save     ==> 安装到dependencies， 开发环境用到，生产环境还会用到
+
+
+        // 生产环境的
+        // npm install 包名 dependencies
+        // npm install 包名 -S dependencies
+        // npm install 包名 --save dependencies
+
+        // 开发环境的
+        // npm install 包名 -D         devDependencies
+        // npm install 包名 --save-dev devDependencies
+    </script>
+</body>
+</html>

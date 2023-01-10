@@ -1,0 +1,19 @@
+{
+  "name": "05-chalk",
+  "version": "1.0.0",
+  "description": "",
+  "type": "module",
+  "main": "chalk-test.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "boxen": "^7.0.1",
+    "chalk": "^5.2.0",
+    "figlet": "^1.5.2",
+    "ora": "^6.1.2"
+  }
+}

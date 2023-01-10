@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <button-counter></button-counter>
+        <button-counter></button-counter>
+        <button-counter></button-counter>
+    </div>
+    <script src="./js/vue.js"></script>
+    <script>
+        // 组件：页面上的一部分 
+        // 从网页的角度来看，如果细粒度划分细一点，
+        // 每一个dom标签（元素）都可以看作是一个组件。一个按钮也可以是一个组件
+
+        // 组件：包含 html结构 / css 样式 / js逻辑
+
+
+        // 定义一个名为 button-counter 的新组件
+        // 1. 全局注册的组件 
+        // 第一个参数，是组件的名字 
+        // 第二个参数，组件的一些配置项option 和 我们new Vue中传入的是一样的
+        // 描述的是这个组件的内容和逻辑
+        Vue.component('button-counter', {
+            data() {
+                return {
+                    count: 0
+                }
+            },
+            template: '<button @click="count++">You clicked me {{ count }} times.</button>'
+        })
+
+        const vm = new Vue({
+            el:'#app',
+            data(){
+                return {
+                    msg:'Hello World'
+                }
+            }  
+        })
+
+
+    </script>
+</body>
+</html>

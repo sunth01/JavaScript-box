@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <h3>Vue中获取事件对象</h3>
+        <a href="http://baidu.com" @click="goBaidu">去百度</a>
+        <a href="http://jd.com" @click="goJD($event,'大黄','买狗粮')">去京东</a>
+    </div>
+    <script src="./js/vue.js"></script>
+    <script>
+        const vm = new Vue({
+            el:'#app',
+            data(){
+                return {
+                    money:666
+                }
+            },
+            methods:{
+                // 1. 如果html中的方法没有传参,直接在方法里写e来接收事件对象
+                goBaidu(e){
+                    e.preventDefault()
+                    console.log('去百度')
+                },
+                // 2. 如果传了参数,通过$event来代表事件对象,$event写在方法参数中
+                goJD(e, a, b){
+                    e.preventDefault()
+                    console.log(a,b)
+                    console.log('去京东')
+                }
+            }
+        })
+    </script>
+</body>
+</html>

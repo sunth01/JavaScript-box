@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+                // 1.模块 
+        // 每个JS都可以看做是一个模块，每个模块都有自己的作用域
+        // 不同模块之间的变量不会相互影响
+
+        // 2. CommonJS规范  ===> Node
+
+        // 导出，暴露 module.exports = {}
+        // 导入  const 变量名 = require('路径')  这里的路径可以省略.js
+
+
+        // 3. npm ==> node package manager 包管理工具
+        // 初始化项目 npm init -y, 文件夹的名字不要是中文
+
+        // 安装模块（包） npm i 包名  /  npm i xx xx  / npm i xx@版本号
+        // 卸载   npm un 包名  /  npm un xx xxx
+        
+
+        // 4. nrm ===> 作用：切换镜像源 
+        // nrm ls  ==> 查看有哪些镜像 
+        // nrm test  ==> 测试下载的速度
+        // nrm use taobao  ==> 使用淘宝镜像源
+
+        // 5. serve ===> 可以启一个静态服务器 
+
+        // 6. 同源：1. 协议  2. 主机（域名） 3. 端口
+        //    跨域：浏览器请求不同源的接口（地址） 
+        //    同源策略是 浏览器的安全机制，只是针对浏览器
+
+        // 7. 解决跨域的方式 
+        //    1. CORS    Cross-Origin-Resource-Sharing 跨域资源共享 
+        //    ===> 咱们前端什么都不需要做，只需要让后端同学配置一下响应头 
+        //    Node ==>  res.setHeader('Access-Control-Allow-Origin', '*')
+
+        //    2. 代理服务器 
+
+        //    3. JSONP   ===> JS的script标签，src属性 
+
+
+        // 8. Ajax   Asynchronous Javascript And XML  (异步的JavaScript和XML)
+        
+        // 使用Ajax发送请求  五步
+        // 1. 创建xhr实例
+        // 2. 设置请求方法和接口地址
+        // 3. 设置请求头（可以省略）
+        // 4. 发送请求
+        // 5. 监听事件 onload 或者 onreadystatechange 
+        const xhr = new XMLHttpRequest()
+        xhr.open('GET', url)
+        xhr.setRequestHeader(key,value)
+        xhr.send()
+        xhr.onreadystatechange = function(){
+            // 数据全部下载完了
+            if (xhr.readyState === 4){
+                if (xhr.status >= 200 && xhr.status < 300 || xhr.status === 304){
+                    console.log(xhr.response)   // ===> xhr.response 默认是字符串格式的哈
+                } else {
+                    console.log('请求不成功')
+                }
+            }
+        }
+
+        // 请求错误
+        xhr.onerror = function(){
+            console.log('你的网线被拔了')
+        }
+        
+
+        // 9. fetch 
+        // GET 请求
+        fetch(url).then(res => res.json()).then(res => {
+            console.log(res)
+        })
+
+        // POST 请求
+        // params ==> 参数
+        fetch(url, {
+            method:'POST',
+            body:JSON.stringify(params)
+        }).then(res => res.json()).then(res => {
+            console.log(res)
+        })
+
+        // 10. axios ==> Vue用得很多 
+    </script>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <div class="fatherFn">
+            <h3>Vue-事件修饰符</h3>
+            <a href="http://baidu.com" @click.prevent.stop="goBaidu">去百度</a>
+            <a href="http://jd.com" @click.stop.prevent="goJD('大黄','买狗粮')">去京东</a>
+        </div>
+    </div>
+    <script src="./js/vue.js"></script>
+    <script>
+
+                // 事件修饰符
+        // 1. @事件名.prevent  ==> e.preventDefault() 阻止默认行为
+        // 2. @事件名.stop     ==> e.stopPropagation() 阻止事件冒泡 
+        // 3. 事件修饰符可以串联 ==> @click.prevent.stop / @click.stop.prevent
+        const vm = new Vue({
+            el:'#app',
+            data(){
+                return {
+                    money:666
+                }
+            },
+            methods:{
+                goBaidu(){
+                    console.log('去百度')
+                },
+                goJD(a,b){
+                    console.log('去京东')
+                    console.log(a, b)
+                },
+                fatherFn(){
+                    console.log('父亲被点击了,说明事件冒泡')
+                }
+            }
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+        <!-- 以这个div作为容器 -->
+        <div id="app"></div>
+        <!-- CDN加速 CDN 内容分发网络、网络节点  -->
+        <script src="https://cdn.jsdelivr.net/npm/vue@2.7.14/dist/vue.js"></script>
+        <script src="./js/vue.js"></script>
+    <script>
+        // 1. 创建一个Vue实例 
+        // MVVM ==> 
+        // M:Model 模型
+        // V:View  视图
+        // VM:viewModel 视图模型  ==> Vue的实例
+
+        // 阻止Vue 在启动时生成生产提示
+        // Vue.config.productionTip = false 
+
+        // 1. el选择节点
+        const vm = new Vue({
+            el:'#app', // el跟一个css选择器
+            // 将template的内容挂在到id为app的节点上
+            template:'<div>hello world</div>'
+        })
+
+        // 2. 通过$mount方法挂载
+        // const vm = new Vue({
+        //     // 将template的内容挂在到id为app的节点上
+        //     template:'<div>hello world</div>'
+        // }).$mount('#app')
+
+
+        // const vm = new Vue({
+        //     // 将template的内容挂在到id为app的节点上
+        //     template:'<div>hello world</div>'
+        // })
+
+        // setTimeout(() => {
+        //     vm.$mount('#app')
+        // }, 2000)
+
+        
+    </script>
+</body>
+</html>

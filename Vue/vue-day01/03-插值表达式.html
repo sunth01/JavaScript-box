@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <div>{{ msg }}</div>
+        <div>{{msg_html}}</div>
+        <!-- <div>{{msg2}}</div> -->
+        <div>{{obj.age > 18 ? '成年了' : '未成年'}}</div>
+    </div>
+    <script src="./js/vue.js"></script>
+    <script>
+        const vm = new Vue({
+            el:'#app',
+            data(){
+                return {
+                    msg:'hello world',
+                    msg_html:'<h1>我是h1标签</h1>',
+                    obj:{
+                        name:'刘德华',
+                        age:20,
+                        hobby:'唱歌'
+                    }
+                }
+            }
+        })
+
+                // 插值表达式 {{}}
+        // 1. 双大括号会将数据解析为普通文本，不能解析html标签  
+        // 2. 数据的变量必须要在data中存在 
+        // 3. 插值{{}}可以放JS表达式 
+    </script>
+</body>
+</html>

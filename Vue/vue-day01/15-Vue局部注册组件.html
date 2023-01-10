@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <!-- 组件的复用 -->
+        <button-counter></button-counter>
+        <!-- 使用局部组件 -->
+        <comp-a></comp-a>
+    </div>
+    <script src="./js/vue.js"></script>
+    <script>
+
+        // 定义一个名为 button-counter 的新组件
+        // 1. 全局注册的组件 
+        //    ==> 一个组件一旦全局注册了，我们可以在所有的组件中使用它
+        Vue.component('button-counter', {
+            data() {
+                return {
+                    count: 0
+                }
+            },
+            template: '<button @click="count++">You clicked me {{ count }} times.</button>'
+        })
+
+        // 2. 局部注册组件
+        // 通过一个普通的JavaScript对象来定义组件
+
+        const ComponentA = {
+            data() {
+                return {
+                    count: 0
+                }
+            },
+            // 在局部注册的组件里，可以使用全局组件
+            template: `
+                <div>
+                    <button @click="count++">我是局部组件{{ count }}</button>
+                </div>
+            `
+        }
+
+        const vm = new Vue({
+            el:'#app',
+            data(){
+                return {
+                    msg:'Hello World'
+                }
+            },
+            components:{
+                // 左边的是组件的名字， 在html上使用的时候
+                // <comp-a></comp-a>
+                'comp-a': ComponentA
+            }
+        })
+
+
+    </script>
+</body>
+</html>
