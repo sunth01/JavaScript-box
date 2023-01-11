@@ -8,7 +8,7 @@
 </head>
 <body>
     <div id="app">
-        <div class="fatherFn">
+        <div class="fatherFn" @click="fatherFn">
             <h3>Vue-事件修饰符</h3>
             <a href="http://baidu.com" @click.prevent.stop="goBaidu">去百度</a>
             <a href="http://jd.com" @click.stop.prevent="goJD('大黄','买狗粮')">去京东</a>
