@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <h2>{{obj.a}}</h2>
+        <p>{{obj.b}}</p>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.7.14"></script>
+    <script>
+        const vm = new Vue({
+            el:'#app',
+            data(){
+                return {
+                    obj:{
+                        a:1
+                    },
+                }
+            },
+            mounted() {
+                // Vue.set()
+                // this.$set(obj,'c', 999)
+            },
+        })
+        vm.b = 2 
+        console.log(vm)
+
+        // Object.defineProperty，或者Vue2的缺陷
+        // 1. 针对对象  Vue 无法检测 property 的添加或移除
+
+        // 2. 但是可以使用Vue.set或者this.$set给嵌套对象添加响应式属性
+
+        // vm.a ==> proxy()
+        // Vue.set(vm.data, '')
+        
+        // console.log(vm.obj)
+        // 全局的Vue.set方法 （哪个对象，哪个属性，值）
+        Vue.set(vm.obj, 'b', 2)
+        console.log(vm)
+        // 等效于  
+        vm.$set(vm.obj, 'b', 66)
+    </script>
+</body>
+</html>

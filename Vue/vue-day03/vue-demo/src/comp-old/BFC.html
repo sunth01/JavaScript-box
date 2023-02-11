@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box1{
+            width: 200px;
+            height: 200px;
+            background-color: skyblue;
+            margin: 50px auto;
+        }
+        .box2{
+            /* width: 200px; */
+            /* height: 200px; */
+            overflow: hidden;
+            /* 将box2创建为一个BFC */
+            background-color: orange;
+            margin: 80px auto;
+        }
+        .wrap{
+            /* overflow: hidden; */
+            /* float: left; */
+            /* position: fixed; */
+            /* display: flex; */
+            display: inline-block;
+        }
+        .left{
+            width: 200px;
+            height: 100px;
+            background-color: red;
+            float: left;
+        }
+        .right{
+            width: 200px;
+            height: 100px;
+            background-color: skyblue;
+            float: left;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="box1"></div>
+    <!-- 创建一个wrap盒子，让它成为一个BFC，独立的空间 -->
+    <div class="wrap">
+        <div class="box2">
+            <div class="left"></div>
+            <div class="right"></div>
+        </div>
+    </div>
+    
+    <script>
+        // BFC Block Formatting Context 块级格式化上下文
+        // 创建了一个独立的空间，独立的容器，内部和外部的布局等互不干扰。
+        // ==> BFC是一个完全独立的空间（布局环境），让空间里的子元素不会影响到外面的布局。
+
+        // 触发条件（怎么创建一个BFC）
+        // 1. overflow:hidden
+        // 2. float:left / right
+        // 3. position:absolute / fixed;
+        // 4. display:inline-block / flex / table-cell 
+
+        // 外边距塌陷：==> 上下两个盒子，都有margin， 取margin为大的那个。
+
+        // 应用场景：
+        // 1. 防止外边距塌陷
+        // 2. 清浮动，（包含浮动元素），计算BFC高度的时候，浮动的子元素也会参与计算。
+    </script>
+</body>
+</html>

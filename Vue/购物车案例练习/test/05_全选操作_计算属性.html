@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://lf26-cdn-tos.bytecdntp.com/cdn/expire-1-M/vue/2.6.14/vue.js" type="application/javascript"></script>
+</head>
+<body>
+    <div id="app">
+        <ul>
+            <li>全选
+                <input type="checkbox" v-model="isAllSelected"></input>
+            </li>
+            <li v-for="item in list">
+                <input type="checkbox" v-model="item.is_selected">
+                </input>-{{item.goods_name}}
+            </li>
+        </ul>
+        <div>总数量 = {{total}} / {{getTotal()}}</div>
+        <div>总数量 = {{total}} / {{getTotal()}}</div>
+    </div>
+</body>
+<script>
+    new Vue({
+        el: '#app',
+        data(){
+            return {
+                list: [
+                    {goods_name: '商品1', goods_num: 1, is_selected: false},
+                    {goods_name: '商品2', goods_num: 1, is_selected: true}
+                ],
+                isAllSelected: false
+            }
+        },
+        methods:{
+            getTotal(){
+                console.log()
+                let result = 0
+                this.list.forEach(t => {
+                    result += t.goods_num
+                })
+                return result
+            }
+        },
+        computed:{
+            isAllSelected:{
+                set(value){
+                    this.list.forEach(t => t.is_selected = value)
+                },
+                get(){
+                    return this.list.every(t => t.is_selected)
+                }
+            },
+            total(){
+                console.log('---total---')
+                let result = 0
+                this.list.forEach(t => {
+                    result += t.goods_num
+                })
+                return result
+            }
+        }
+    })
+</script>
+</html>

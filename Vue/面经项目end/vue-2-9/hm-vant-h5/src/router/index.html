@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <div id="app">
+        <div>
+            <router-link to="/">首页</router-link>
+            <router-link to="/goods">商品</router-link>
+            <!-- 一级路由出口 -->
+            <router-view></router-view>
+        </div>
+    </div>
+    
+    <script src="./vue-2.7.min.js"></script>
+    <script src="./vue-router.js"></script>
+    
+</head>
+<body>
+    <script>
+// 1. 定义组件
+const Home = {
+    template:'<div>这是首页</div>'
+}
+const Goods = {
+    template:`
+    <div>
+        <h2>我是商品组件</h2>
+        <router-link to="/goods/iphone/1">iPhone111</router-link>
+        <router-link to="/goods/iphone/2">iPhone222</router-link>
+        <router-link to="/goods/mac">Mac</router-link>
+        <router-view></router-view>
+    </div>
+    `
+}
+const Iphone = {
+    data(){
+        return {
+            msg:'123'
+        }
+    },
+    created() {
+        console.log('created')
+    },
+    template:'<div>我是iphone</div>',
+}
+
+const Mac = {
+    template:'<div>我是Mac</div>'
+}
+const router = new VueRouter({
+    routes:[
+        {path:'/', component:Home},
+        {
+            path:'/goods', 
+            component:Goods,
+            children:[
+                {path:'iphone/:id', component:Iphone},
+                {path:'mac', component:Mac},
+
+            ],
+                // 在配置路由的时候定义的守卫，只在进入当前路由之前触发 拦住
+                    beforeEnter: (to, from, next) => {
+                // ...
+                    console.log('beforeEnter')
+                    next()
+                }
+        },
+    ]
+})
+const vm = new Vue({
+    router,
+}).$mount('#app')
+
+  // 全局守卫
+        // 1. 全局前置守卫 router.beforeEach((to,from,next)=>{})
+        // 2. 全局解析守卫 router.beforeResolve()
+        // 3. 全局后置守卫 router.afterEach((to,from) =>{})    ==>它唯一没有next函数
+        router.beforeEach((to,from,next)=>{
+            console.log('beforeEach')
+            next()
+        })
+
+        router.beforeResolve((to,from,next)=>{
+            console.log('beforeResolve')
+            next()
+        })
+
+        router.afterEach((to, from) => {
+            // to and from are both route objects.
+            console.log('afterEach')
+            console.log(to, from)
+        })
+
+
+    </script>
+</body>
+</html>
