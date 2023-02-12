@@ -1,0 +1,189 @@
+@import './base.less';
+@import '../font/iconfont.css';
+
+.box {
+    width: 100%;
+    height: 93.33vw;
+    background-color: #68787f;
+    margin-top: 29.33vw;
+    padding: 5.33vw 4vw;
+
+    .box_top {
+        width: 92vw;
+        height: 41.33vw;
+        // background-color: skyblue;
+        display: flex;
+
+        .img_box {
+            width: 27.2vw;
+            height: 37.87vw;
+            border-radius: 1.33vw;
+            overflow: hidden;
+            position: relative;
+
+            img {
+                width: 100%;
+                height: 100%;
+            }
+
+            .text {
+                width: 8vw;
+                height: 5.33vw;
+                background-color: rgba(0, 0, 0, .5);
+                position: absolute;
+                right: 0;
+                bottom: 0;
+                text-align: center;
+                line-height: 5.33vw;
+                border-radius: .8vw 0vw 0 .8vw;
+
+                span {
+                    color: #fff;
+                    font-size: 3.2vw;
+                }
+            }
+        }
+
+        .wenzi {
+            flex: 1;
+            margin-left: 2.67vw;
+            i {
+                font-size: 6.13vw;
+                color: #fff;
+            }
+            p {
+                margin: 1.07vw 0;
+                font-size: 4vw;
+                color: #fff;
+            }
+            span {
+                font-size: 3.2vw;
+                color: #F0f0f0;
+            }
+
+            .snakuang {
+
+                ul {
+                    margin-top: 4.53vw;
+                    height: 8vw;
+                    // background-color: red;
+                    display: flex;
+                    justify-content: space-between;
+                    font-size: 3.47vw;
+                    img {
+                        width: 3.73vw;
+                        height: 3.73vw;
+                    }
+
+                    li {
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        width: 18.67vw;
+                        height: 8vw;
+                        border-radius: 1.07vw;
+                        background-color: #fff;
+                    }
+                }
+            }
+        }
+    }
+
+    .pingfen {
+        width: 92vw;
+        height: 26.67vw;
+        background-color: #5d6c72;
+        border-radius: 1.87vw;
+        padding: 2.67vw 4vw;
+
+        .pingfen_top {
+            height: 6.93vw;
+            // background-color: rgb(149, 255, 158);
+            display: flex;
+            justify-content: space-between;
+            .le {
+                color: #fff;
+            }
+            .rig {
+                width: 21.6vw;
+                height: 6.93vw;
+                border: .27vw solid #fff;
+                border-radius: 1.33vw;
+                color: #fff;
+                text-align: center;
+                line-height: 6.93vw;
+                font-size: 3.2vw;
+
+            }
+        }
+
+        .wuxing {
+            width: 84vw;
+            height: 13.33vw;
+            margin-top: 1.33vw;
+            display: flex;
+            justify-content: space-between;
+
+            .wuxing_l {
+                display: flex;
+                width: 37.33vw;
+                height: 13.33vw;
+                .fenshu {
+                    width: 13.33vw;
+                    height: 13.33vw;
+                    font-size: 9.6vw;
+                    color: #fff;
+                    margin-right: 1.33vw;
+                }
+                .xingxing {
+                    display: flex;
+                    flex-wrap: wrap;
+                    align-content: flex-start;
+                    .iconfont {
+                        color: #ffb712;
+                    }
+                    p {
+                        color: #f0f0f0;
+                        color: 3.2vw;
+                        padding-left: 1.33vw;
+                    }
+                }
+            }
+
+            .wuxing_r {
+                width: 40vw;
+                height: 13.33vw;
+                border-left: .27vw solid #999;
+            }
+            
+        }
+    }
+    .dibu {
+        width: 92vw;
+        height: 13.33vw;
+        padding: 0 4vw;
+        margin-top: 2.67vw;
+        background-color: #5d6c72;
+        border-radius: 1.6vw;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .dibu_l {
+            width: 32vw;
+            height: 5.33vw;
+            color: #fff;
+            font-size: 3.73vw;
+            
+            img {
+                width: 5.87vw;
+                height: 5.87vw;
+            }
+        }
+
+        .dibu_r {
+            color: #cfd3d5;
+            font-size: 3.2vw;
+        }
+    }
+}

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .box {
+            margin: 100px auto;
+            width: 800px;
+            height: 100px;
+            border: 1px solid #000;
+            padding: 10px 0;
+        }
+
+        /* 上半圆 */
+        .shang_yuan {
+            width: 80px;
+            height: 40px;
+            background-color: #fd7801;
+            /* border-radius: 50%; */
+            border-radius: 50px 50px 0 0;
+            transform-origin: 30px;
+            transform: rotate(0deg);
+            animation: shang_yuan 1s linear infinite;
+
+        }
+        @keyframes shang_yuan {
+            0% {
+                transform: rotate(0deg);
+
+            }
+
+            80% {
+                transform: rotate(-18deg);
+            }
+        }
+
+        /* 下半圆 */
+        .xia_yuan {
+            width: 80px;
+            height: 40px;
+            background-color: #fd7801;
+            /* border-radius: 50%; */
+            border-radius: 0 0 50px 50px;
+            transform-origin: 30px;
+            transform: rotate(0deg);
+            animation: xia_yuan 1s linear infinite;
+        }
+
+        @keyframes xia_yuan {
+            0% {
+                transform: rotate(0deg);
+
+            }
+
+            80% {
+                transform: rotate(18deg);
+            }
+        }
+
+
+        .yuan_box {
+            width: 80px;
+            height: 80px;
+            animation: yuan_box 5s linear infinite alternate;
+            transform: translateX(0px);
+        }
+        @keyframes yuan_box {
+            0% {
+
+            }
+            100% {
+                transform: translateX(720px);
+                
+            }
+
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <div class="yuan_box">
+            <div class="shang_yuan"></div>
+            <div class="xia_yuan"></div>
+        </div>
+    </div>
+</body>
+
+</html>
